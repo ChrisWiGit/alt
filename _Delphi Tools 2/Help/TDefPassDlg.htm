@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>DelphiToolsForm2: Klasse TDefPassDlg</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<A name="22"></A><H1>Klasse TDefPassDlg</H1>
+<H2>Unit</H2>
+<A href="DelphiToolsForm2.htm">DelphiToolsForm2</A><BR><H2>Deklaration</H2>
+<P><CODE>type TDefPassDlg = class()</CODE></P><H2>Beschreibung</H2>
+TDefPassDlg stellt den Dialog zur Verf&uuml;gung, die eine &Auml;nderung des Passwortes mit Best&auml;tigung zul&auml;sst. Siehe <CODE><A href="dtDialogs.htm">dtDialogs</A></CODE> - <CODE><A href="dtDialogs.htm#112">DefPassWordDlg</A></CODE><A name=Fields></A><H2>Felder</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>&nbsp;</TH><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="23"></A>Bevel1</TD>
+<TD width=100%>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="24"></A>CancelBtn</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="25"></A>DelBtn</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="26"></A>Edit1</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="27"></A>Edit2</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="28"></A>Edit3</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><A name="29"></A>fCaseSensitive</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><A name="30"></A>fEnablePassword</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><A name="31"></A>fMinLen</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><A name="32"></A>foldHintHidePause</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><A name="33"></A>fPassWord</TD>
+<TD>Private-Deklarationen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><A name="34"></A>fPAssWordChar</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="35"></A>OkBtn</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="36"></A>PopupMenu1</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="37"></A>StaticText1</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="38"></A>StaticText2</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><A name="39"></A>StaticText3</TD>
+<TD>&nbsp;</TD>
+</TR>
+</TABLE><A name=Methods></A><H2>Methoden</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><CODE>procedure <A href="TDefPassDlg.htm#40"><B>CancelBtnClick</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#41"><B>ChangeHintStrings</B></A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#42"><B>DelBtnClick</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#43"><B>Edit1Change</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#44"><B>Edit1Enter</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#45"><B>Edit1Exit</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#46"><B>Edit2Change</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#47"><B>Edit2Exit</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#48"><B>Edit3Change</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#49"><B>Edit3Exit</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#50"><B>FormActivate</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#51"><B>FormClose</B></A>(Sender: TObject; var Action: TCloseAction);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#52"><B>FormCreate</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>function <A href="TDefPassDlg.htm#53"><B>GetPass</B></A>(s:String) : String;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#54"><B>OkBtnClick</B></A>(Sender: TObject);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#55"><B>SetAllowDelPassWord</B></A>(b:Boolean);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#56"><B>SetHintHidePause</B></A>(p:Integer);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#57"><B>SetMaxLength</B></A>(m : Integer);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#58"><B>SetMinLength</B></A>(l:Integer);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#59"><B>SetOkCaption</B></A>(Ok,Del : String);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#60"><B>SetPassWord</B></A>(s:String);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD><CODE>procedure <A href="TDefPassDlg.htm#61"><B>SetPAssWordChar</B></A>(c:Char);</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="40"></A><CODE>procedure <B>CancelBtnClick</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="41"></A><CODE>procedure <B>ChangeHintStrings</B>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ChangeHintStrings setzt die Hinweis-Text-Array <CODE><A href="DelphiToolsForm2.htm#16">HintArray</A></CODE> in die Kontrollelemente</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="42"></A><CODE>procedure <B>DelBtnClick</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="43"></A><CODE>procedure <B>Edit1Change</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="44"></A><CODE>procedure <B>Edit1Enter</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="45"></A><CODE>procedure <B>Edit1Exit</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="46"></A><CODE>procedure <B>Edit2Change</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="47"></A><CODE>procedure <B>Edit2Exit</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="48"></A><CODE>procedure <B>Edit3Change</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="49"></A><CODE>procedure <B>Edit3Exit</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="50"></A><CODE>procedure <B>FormActivate</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="51"></A><CODE>procedure <B>FormClose</B>(Sender: TObject; var Action: TCloseAction);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="52"></A><CODE>procedure <B>FormCreate</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="53"></A><CODE>function <B>GetPass</B>(s:String) : String;</CODE></TD>
+</TR>
+</TABLE>
+<P>Ermittelt das aktuell eingegebene Passwort</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="54"></A><CODE>procedure <B>OkBtnClick</B>(Sender: TObject);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD width=100%><A name="55"></A><CODE>procedure <B>SetAllowDelPassWord</B>(b:Boolean);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD width=100%><A name="56"></A><CODE>procedure <B>SetHintHidePause</B>(p:Integer);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD width=100%><A name="57"></A><CODE>procedure <B>SetMaxLength</B>(m : Integer);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD width=100%><A name="58"></A><CODE>procedure <B>SetMinLength</B>(l:Integer);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="59"></A><CODE>procedure <B>SetOkCaption</B>(Ok,Del : String);</CODE></TD>
+</TR>
+</TABLE>
+<P>SetOkCaption setzt die Texte des OK- und Abbruch-Schalters</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD width=100%><A name="60"></A><CODE>procedure <B>SetPassWord</B>(s:String);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="private.gif" alt="Privat"></TD>
+<TD width=100%><A name="61"></A><CODE>procedure <B>SetPAssWordChar</B>(c:Char);</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<A name=Properties></A><H2>Eigenschaften</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><CODE>property <A href="TDefPassDlg.htm#62"><B>AllowDelPassWord</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#63"><B>CaseSensitive</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#64"><B>HintHidePause</B></A>: Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#65"><B>IsPassWordEnabled</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#66"><B>IsUsedMasterPassWord</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#67"><B>MasterPassWord</B></A>: String;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#68"><B>MaxLength</B></A>: Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#69"><B>MinLength</B></A>: Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#70"><B>OldHintHidePause</B></A>: Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#71"><B>PassWord</B></A>: String;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>property <A href="TDefPassDlg.htm#72"><B>PassWordChar</B></A>: Char;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="62"></A><CODE>property <B>AllowDelPassWord</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>AllowDelPassWord gibt an, ob das Passwort gel&ouml;scht werden darf (leeres Passwort)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="63"></A><CODE>property <B>CaseSensitive</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>CaseSensitive gibt an, ob bei dem Passwort zw. Gro&szlig;- und Kleinschreibung unterschieden wird.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="64"></A><CODE>property <B>HintHidePause</B>: Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>HintHidePause gibt an, wie lange ein Hinweistext angezeigt wird (in Milisek.)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="65"></A><CODE>property <B>IsPassWordEnabled</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsPassWordEnabled gibt beim Beenden zur&uuml;ck, ob das Passwort aktiviert ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="66"></A><CODE>property <B>IsUsedMasterPassWord</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsUsedMasterPassWord gibt beim Beenden zur&uuml;ck, ob das MasterPasswort verwendet wurde.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="67"></A><CODE>property <B>MasterPassWord</B>: String;</CODE></TD>
+</TR>
+</TABLE>
+<P>MasterPassWord setzt das MasterPasswort</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="68"></A><CODE>property <B>MaxLength</B>: Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>MaxLength gibt die maximale L&auml;nge des Passwortes an.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="69"></A><CODE>property <B>MinLength</B>: Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>MinLength gibt die minimale L&auml;nge des Passwortes an.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="70"></A><CODE>property <B>OldHintHidePause</B>: Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>OldHintHidePause wird intern verwendet und sollte nicht ge&auml;ndert werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="71"></A><CODE>property <B>PassWord</B>: String;</CODE></TD>
+</TR>
+</TABLE>
+<P>PassWord gibt und setzt das aktuelle Passwort</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="72"></A><CODE>property <B>PassWordChar</B>: Char;</CODE></TD>
+</TR>
+</TABLE>
+<P>PassWordChar gibt an, welche Zeichen statt dem eingegebenen Zeichen dargestellt wird.</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

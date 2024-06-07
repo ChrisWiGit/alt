@@ -1,0 +1,514 @@
+Folgende definition styles wurde gefunden :
+
+!!!!!!!!!!!!!!!!1
+var FlatSB_EnableScrollBar: function(hWnd: HWND; wSBflags, wArrows: UINT): BOOL; stdcall;
+!!!!!!!!!!!!!!!!!!!!!!!!
+
+TVarData = packed record
+    case Integer of
+      0: (VType: TVarType;
+          case Integer of
+            0: (Reserved1: Word;
+                case Integer of
+                  0: (Reserved2, Reserved3: Word;
+                      case Integer of
+                        varSmallInt: (VSmallInt: SmallInt);
+                        varInteger:  (VInteger: Integer);
+                        varSingle:   (VSingle: Single);
+                        varDouble:   (VDouble: Double);
+                        varCurrency: (VCurrency: Currency);
+                        varDate:     (VDate: TDateTime);
+                        varOleStr:   (VOleStr: PWideChar);
+                        varDispatch: (VDispatch: Pointer);
+                        varError:    (VError: HRESULT);
+                        varBoolean:  (VBoolean: WordBool);
+                        varUnknown:  (VUnknown: Pointer);
+                        varShortInt: (VShortInt: ShortInt);
+                        varByte:     (VByte: Byte);
+                        varWord:     (VWord: Word);
+                        varLongWord: (VLongWord: LongWord);
+                        varInt64:    (VInt64: Int64);
+                        varString:   (VString: Pointer);
+                        varAny:      (VAny: Pointer);
+                        varArray:    (VArray: PVarArray);
+                        varByRef:    (VPointer: Pointer);
+                     );
+                  1: (VLongs: array[0..2] of LongInt);
+               );
+            2: (VWords: array [0..6] of Word);
+            3: (VBytes: array [0..13] of Byte);
+          );
+      1: (RawData: array [0..3] of LongInt);
+  end;
+
+-------------
+resourcestring
+
+SConvUnknownDescription = '[$%.8x]' deprecated; // no longer used
+
+
+--------------------------------
+const
+  S_OK = 0;                             {$EXTERNALSYM S_OK}
+  S_FALSE = $00000001;                  {$EXTERNALSYM S_FALSE}
+  E_NOINTERFACE = HRESULT($80004002);   {$EXTERNALSYM E_NOINTERFACE}
+  E_UNEXPECTED = HRESULT($8000FFFF);    {$EXTERNALSYM E_UNEXPECTED}
+  E_NOTIMPL = HRESULT($80004001);       {$EXTERNALSYM E_NOTIMPL}
+
+  PVariantManager = ^TVariantManager; 
+  {$EXTERNALSYM PVariantManager}
+  TVariantManager = record
+    VarClear: procedure(var V : Variant);
+    VarCopy: procedure(var Dest: Variant; const Source: Variant);
+    VarCopyNoInd: procedure; // ARGS PLEASE!
+    VarCast: procedure(var Dest: Variant; const Source: Variant; VarType: Integer);
+    VarCastOle: procedure(var Dest: Variant; const Source: Variant; VarType: Integer);
+
+    VarToInt: function(const V: Variant): Integer;
+    VarToInt64: function(const V: Variant): Int64;
+    VarToBool: function(const V: Variant): Boolean;
+    VarToReal: function(const V: Variant): Extended;
+    VarToCurr: function(const V: Variant): Currency;
+    VarToPStr: procedure(var S; const V: Variant);
+    VarToLStr: procedure(var S: string; const V: Variant);
+    VarToWStr: procedure(var S: WideString; const V: Variant);
+    VarToIntf: procedure(var Unknown: IInterface; const V: Variant);
+    VarToDisp: procedure(var Dispatch: IDispatch; const V: Variant);
+    VarToDynArray: procedure(var DynArray: Pointer; const V: Variant; TypeInfo: Pointer);
+
+    VarFromInt: procedure(var V: Variant; const Value: Integer; const Range: ShortInt);
+    VarFromInt64: procedure(var V: Variant; const Value: Int64);
+    VarFromBool: procedure(var V: Variant; const Value: Boolean);
+    VarFromReal: procedure; // var V: Variant; const Value: Real
+    VarFromTDateTime: procedure; // var V: Variant; const Value: TDateTime
+    VarFromCurr: procedure; // var V: Variant; const Value: Currency
+    VarFromPStr: procedure(var V: Variant; const Value: ShortString);
+    VarFromLStr: procedure(var V: Variant; const Value: string);
+    VarFromWStr: procedure(var V: Variant; const Value: WideString);
+    VarFromIntf: procedure(var V: Variant; const Value: IInterface);
+    VarFromDisp: procedure(var V: Variant; const Value: IDispatch);
+    VarFromDynArray: procedure(var V: Variant; const DynArray: Pointer; TypeInfo: Pointer);
+    OleVarFromPStr: procedure(var V: OleVariant; const Value: ShortString);
+    OleVarFromLStr: procedure(var V: OleVariant; const Value: string);
+    OleVarFromVar: procedure(var V: OleVariant; const Value: Variant);
+    OleVarFromInt: procedure(var V: OleVariant; const Value: Integer; const Range: ShortInt);
+
+    VarOp: procedure(var Left: Variant; const Right: Variant; OpCode: TVarOp);
+    VarCmp: procedure(const Left, Right: TVarData; const OpCode: TVarOp); { result is set in the flags }
+    VarNeg: procedure(var V: Variant);
+    VarNot: procedure(var V: Variant);
+
+    DispInvoke: procedure(Dest: PVarData; const Source: TVarData;
+      CallDesc: PCallDesc; Params: Pointer); cdecl;
+    VarAddRef: procedure(var V: Variant);
+
+    VarArrayRedim: procedure(var A : Variant; HighBound: Integer);
+    VarArrayGet: function(var A: Variant; IndexCount: Integer;
+      Indices: Integer): Variant; cdecl;
+    VarArrayPut: procedure(var A: Variant; const Value: Variant;
+      IndexCount: Integer; Indices: Integer); cdecl;
+
+    WriteVariant: function(var T: Text; const V: Variant; Width: Integer): Pointer;
+    Write0Variant: function(var T: Text; const V: Variant): Pointer;
+  end deprecated;
+
+
+
+ok
+
+const {Methodendeklarationen, die hinter einer Methode auftauchen können}
+      MethodDefinitions  : TPascalWords = [pw_message,pw_dispid,pw_default,pw_dynamic,pw_abstract,pw_override,pw_virtual,pw_reintroduce,pw_overload];
+wenn der kommentar so steht, wird er als singlecomment gewertet
+
+es funkt aber
+const
+     {Methodendeklarationen, die hinter einer Methode auftauchen können}
+      MethodDefinitions  : TPascalWords = [pw_message,pw_dispid,pw_default,pw_dynamic,pw_abstract,pw_override,pw_virtual,pw_reintroduce,pw_overload];
+
+
+
+
+
+gelöst:
+const d1 : array [1..3] of string[20] = ('dfgh','dfg','43');
+wird als dargestellt:
+const d1 : array[1..3] of string[ 20] = (' dfgh',' dfg',' 43');
+
+
+function MessageBox(HWnd: Integer; Text, Caption: PChar; Flags: Integer): Integer;   stdcall; external;
+function MessageBox(HWnd: Integer; Text, Caption: PChar; Flags: Integer): Integer;   stdcall; external 'user32.dll';
+function MessageBox(HWnd: Integer; Text, Caption: PChar; Flags: Integer): Integer;   stdcall; external 'user32.dll' name 'MessageBoxA';
+
+const origin : Point = (x: 0.0; y:0.0);
+
+----
+deprecated :
+procedure SomeOldRoutine; stdcall; deprecated;
+function SomeFunction(S: string): string; external 'strlib.dll';
+procedure FillWord(var Dest; Data: Integer; Count: Integer); external;
+
+-----
+
+Stringdefinition dürfen nur komplett verwendet werden.
+const sd = 'äüöüö'; <-- fehler : illegal char 'ä'
+
+
+--------------------------------
+
+ich geh mal davon aus, dass die Kommentare an folgenden Positionen liegen :
+
+vor der !Procedure, Klassen,Unit! deklaration
+
+-----------
+
+vorerst keine unterstützung für IFDEF usw.
+tipp : vorher durchparsen mit einem extraparser
+------------------
+"//" hinter deklarationen muss zur vorherigen hinzugefügt werden
+----
+ToDO:
+
+public 
+  class procedure Initialize; 
+end;
+
+
+TEmployee = record
+  FirstName, LastName: string[40];
+  BirthDate: TDate;
+  case Salaried: Boolean of
+    True: (AnnualSalary: Currency);
+    False: (HourlyWage: Currency);
+end;
+
+{
+  TYPENAME =
+    class of ... ;               => "normal" type
+    class ( ANCESTOR<S>,.. )        => class
+          ANYTHING               => class
+    object ( ) end ;                 => object
+          ANYTHING
+    interface end ;              => interface
+}
+------------------------------
+Interface werden nicht unterstützt
+
+type
+  IStringsDisp = dispinterface
+    ['{EE05DFE2-5549-11D0-9EA9-0020AF3D82DA}']
+    property ControlDefault[Index: Integer]: OleVariant dispid 0; default;
+    function Count: Integer; dispid 1;
+    property Item[Index: Integer]: OleVariant dispid 2;
+    procedure Remove(Index: Integer); dispid 3;
+    procedure Clear; dispid 4;
+    function Add(Item: OleVariant): Integer; dispid 5;
+
+    function _NewEnum: IUnknown; dispid -4;
+  end;
+implementation
+
+type
+  IMalloc = interface(IInterface)
+    ['{00000002-0000-0000-C000-000000000046}']
+    function Alloc(Size: Integer): Pointer; stdcall;
+    function Realloc(P: Pointer; Size: Integer): Pointer; stdcall;
+    procedure Free(P: Pointer); stdcall;
+    function GetSize(P: Pointer): Integer; stdcall;
+    function DidAlloc(P: Pointer): Integer; stdcall;
+    procedure HeapMinimize; stdcall;
+
+  end;
+
+
+
+
+
+ type
+  IAncestor = interface
+  end;
+  IDescendant = interface(IAncestor)
+    procedure P1;
+  end;
+  TSomething = class(TInterfacedObject, IDescendant)
+    procedure P1;
+    procedure P2;
+  end;
+  ...
+var
+  D: IDescendant;
+  A: IAncestor;
+begin
+  D := TSomething.Create;  // works!
+  A := TSomething.Create;  // error
+  D.P1;  // works!
+  D.P2;  // error
+end;
+
+********************************
+
+    procedure DynamicMethod; dynamic;
+
+*********+
+
+test
+const
+ANSI_LOWER_CHAR_TABLE: array[#0..#255] of AnsiChar = (
+    #000, #001, #002, #003, #004, #005, #006, #007, #008, #009, #010, #011, #012, #013, #014, #015,
+    #016, #017, #018, #019, #020, #021, #022, #023, #024, #025, #026, #027, #028, #029, #030, #031,
+    #032, #033, #034, #035, #036, #037, #038, #039, #040, #041, #042, #043, #044, #045, #046, #047,
+    #048, #049, #050, #051, #052, #053, #054, #055, #056, #057, #058, #059, #060, #061, #062, #063,
+    #064, #097, #098, #099, #100, #101, #102, #103, #104, #105, #106, #107, #108, #109, #110, #111,
+    #112, #113, #114, #115, #116, #117, #118, #119, #120, #121, #122, #091, #092, #093, #094, #095,
+    #096, #097, #098, #099, #100, #101, #102, #103, #104, #105, #106, #107, #108, #109, #110, #111,
+    #112, #113, #114, #115, #116, #117, #118, #119, #120, #121, #122, #123, #124, #125, #126, #127,
+    #128, #129, #130, #131, #132, #133, #134, #135, #136, #137, #154, #139, #156, #141, #158, #143,
+    #144, #145, #146, #147, #148, #149, #150, #151, #152, #153, #154, #155, #156, #157, #158, #255,
+    #160, #161, #162, #163, #164, #165, #166, #167, #168, #169, #170, #171, #172, #173, #174, #175,
+    #176, #177, #178, #179, #180, #181, #182, #183, #184, #185, #186, #187, #188, #189, #190, #191,
+    #224, #225, #226, #227, #228, #229, #230, #231, #232, #233, #234, #235, #236, #237, #238, #239,
+    #240, #241, #242, #243, #244, #245, #246, #215, #248, #249, #250, #251, #252, #253, #254, #223,
+    #224, #225, #226, #227, #228, #229, #230, #231, #232, #233, #234, #235, #236, #237, #238, #239,
+    #240, #241, #242, #243, #244, #245, #246, #247, #248, #249, #250, #251, #252, #253, #254, #255);
+
+
+    *****+++
+
+
+    = record
+  FirstName, LastName: string[40];
+  BirthDate: TDate;
+  case Salaried: Boolean of
+    True: (AnnualSalary: Currency);
+    False: (HourlyWage: Currency);
+end;
+
+
+
+type
+  IStringsDisp = dispinterface(IInterface)
+    [{hier}
+    '{EE05DFE2-5549-11D0-9EA9-0020AF3D82DA}'
+    ]
+    property Left: Longint index 0 read GetCoordinate write SetCoordinate;
+
+
+
+property Options: TVTHeaderOptions read FOptions write SetOptions default [hoColumnResize, hoDrag, hoShowSortGlyphs];
+
+property Text;
+  end;
+
+ {   class function _NewEnum: IUnknown; dispid $A4;
+    function Count: Integer; message SADFSADF; dispid -1;  }
+  (*  property Items{fghj};{fghj} dispid -0; default;
+    property Items : a1;
+
+
+    property Items : a2 read werf;
+    property Items : a3 read werr write asdf default 1;
+
+
+
+    property ControlDefault[Index: Integer]: OleVariant dispid -0; default;
+
+//    property Item[Index: Integer]: OleVariant dispid -2;
+    procedure Remove(Index: Integer); dispid 3;
+    procedure Clear; dispid 4;
+    function Add(Item: OleVariant): Integer; dispid 5;
+
+    function _NewEnum: IUnknown; dispid -4;*)  
+  
+implementation
+type
+  // The exception used by the trees.
+  EVirtualTreeError = class(Exception);
+
+  PCardinal = ^Cardinal;
+  
+TMain = object(TForm)
+  // ne menge komponenten...
+  private
+  public
+  {Bei Leseroutinen verwendet, um die tatsächlich gelesenen Bytes zu bestimmen.}
+   property asd : String read sdf write asdf;
+   property Options: TVTHeaderOptions read FOptions write SetOptions default [hoColumnResize, hoDrag, hoShowSortGlyphs];
+   property asdd;
+
+   property ActuallyRead : Integer read fActuallyRead;
+
+  {Wenn Create oder LoadFromFile verwendet wurde, ist Filename der Dateiname der in den Speicehr geladenen Datei.}
+  property FileName : String read fFileName;
+
+end;
+
+
+
+(*blsdudfg
+ dasfg
+*)
+function Filesplitext(filename: string;lw, dir, name, ext: string) : asdfasdf; overload;
+
+
+
+//Splittet aus einem Windows9x Dateinamen das Laufwerk lw
+//,das Verzeichnis dir ,den DateiName name und die Erweiterung ext
+//Lange Datei- und Verzeichnisnamen werden unterstützt.
+//Version 2.1
+procedure ac(asd : ds : integer = 0); overload;
+
+
+//Wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten
+procedure Filesplit(filename: string; var dir, name, ext: string); overload;
+//Gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zurück
+//Ohne Erweiterung siehe ExtractFileNameIndent
+function GetFileNameFromPath(Path: string): string;
+//Gibt das Verzeichnis eines Pfades zurück (mit Backslash am Ende)
+function GetDirFromPath(Path: string): string;
+//Ermittelt die Dateinamenerweiterung ohne "."
+function GetFileExtension(Path: string): string;
+
+//Splittet aus einem Windows9x Dateinamen das Laufwerk lw
+//,das Verzeichnis dir ,den DateiName name und die Erweiterung ext
+//Lange Datei- und Verzeichnisnamen werden unterstützt.
+//Version 2.1
+procedure ac(asd : ds : integer = 0); overload;
+
+
+//Wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten
+procedure Filesplit(filename: string; var dir, name, ext: string); overload;
+//Gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zurück
+//Ohne Erweiterung siehe ExtractFileNameIndent
+function GetFileNameFromPath(Path: string): string;
+//Gibt das Verzeichnis eines Pfades zurück (mit Backslash am Ende)
+function GetDirFromPath(Path: string): string;
+//Ermittelt die Dateinamenerweiterung ohne "."
+function GetFileExtension(Path: string): string;
+
+//Splittet aus einem Windows9x Dateinamen das Laufwerk lw
+//,das Verzeichnis dir ,den DateiName name und die Erweiterung ext
+//Lange Datei- und Verzeichnisnamen werden unterstützt.
+//Version 2.1
+procedure ac(asd : ds : integer = 0); overload;
+
+
+//Wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten
+procedure Filesplit(filename: string; var dir, name, ext: string); overload;
+//Gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zurück
+//Ohne Erweiterung siehe ExtractFileNameIndent
+function GetFileNameFromPath(Path: string): string;
+//Gibt das Verzeichnis eines Pfades zurück (mit Backslash am Ende)
+function GetDirFromPath(Path: string): string;
+//Ermittelt die Dateinamenerweiterung ohne "."
+function GetFileExtension(Path: string): string;
+
+//Splittet aus einem Windows9x Dateinamen das Laufwerk lw
+//,das Verzeichnis dir ,den DateiName name und die Erweiterung ext
+//Lange Datei- und Verzeichnisnamen werden unterstützt.
+//Version 2.1
+procedure ac(asd : ds : integer = 0); overload;
+
+
+//Wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten
+procedure Filesplit(filename: string; var dir, name, ext: string); overload;
+//Gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zurück
+//Ohne Erweiterung siehe ExtractFileNameIndent
+function GetFileNameFromPath(Path: string): string;
+//Gibt das Verzeichnis eines Pfades zurück (mit Backslash am Ende)
+function GetDirFromPath(Path: string): string;
+//Ermittelt die Dateinamenerweiterung ohne "."
+function GetFileExtension(Path: string): string;
+
+//Splittet aus einem Windows9x Dateinamen das Laufwerk lw
+//,das Verzeichnis dir ,den DateiName name und die Erweiterung ext
+//Lange Datei- und Verzeichnisnamen werden unterstützt.
+//Version 2.1
+procedure ac(asd : ds : integer = 0); overload;
+
+
+//Wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten
+procedure Filesplit(filename: string; var dir, name, ext: string); overload;
+//Gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zurück
+//Ohne Erweiterung siehe ExtractFileNameIndent
+function GetFileNameFromPath(Path: string): string;
+//Gibt das Verzeichnis eines Pfades zurück (mit Backslash am Ende)
+function GetDirFromPath(Path: string): string;
+//Ermittelt die Dateinamenerweiterung ohne "."
+function GetFileExtension(Path: string): string;
+
+type
+
+     TTextStream = class(TMemoryStream)
+     private
+       fActuallyRead : Integer;
+       fFileName : String;
+     public
+       {Erstellt ein MemoryStream mit den Inhalt der Datei Filename.
+       Mode kann den Zugriff auf die Datei bestimmen, allerdings werden Schreibrechte
+       nicht ausgeführt, weil eine Kopie der Daten in den Speicher geladen und dann verwendet wird.}
+       constructor Create(const FileName: string; Mode: Word); overload;
+
+       procedure DynamicMethod; dynamic;
+       {Liest eine Datei in den Speicher. Vorhandene geladene Daten werden gelöscht und
+       der Positionszeiger auf 0 gesetzt.
+       Mode kann den Zugriff auf die Datei bestimmen, allerdings werden Schreibrechte
+       nicht ausgeführt, weil eine Kopie der Daten in den Speicher geladen und dann verwendet wird.}
+       procedure LoadFromFile(const FileName : String; Mode: Word);
+
+       {Liest einen String aus dem Stream mit der Länge Len und gibt die tatsächlich gelesenen Bytes (bei Fehler 0) zurück}
+       function ReadString(out Str : String; Len : Integer) : Integer; overload;
+       {Liest eine Char aus dem Stream mit der Länge Len und gibt die tatsächlich gelesenen Bytes (bei Fehler 0) zurück}
+       function ReadString(out C : Char) : Integer; overload;
+
+       {Gibt wahr zurück, wenn das Ende der Datei erricht wurde, sonst unwahr.}
+       function EOF : Boolean;
+
+       {Liest einen Text in @aBuffer ein bis ein TextTeil in StopTrigger vorkommt.
+       ReadOverhead ließt x weitere Zeichen nach dem StopTrigger weiter ein.
+       Zwischen Groß- und Kleinschreibung wird unterschieden, wenn CaseSensitive wahr ist.}
+       procedure ReadText(var aBuffer : String; StopTrigger : String; var ReadOverhead : Integer; CaseSensitive : Boolean = TRUE);
+
+       {Liest ein Wort ein. Diese Methode muss überschrieben werden, weil Wörter unter
+       bestimmten Bedingung Zeichen enthalten, die normalerweise nicht dazugehören}
+       function ReadWord(GetReturn : Boolean = FALSE) : String; virtual;abstract;
+
+       {Liest einen kompletten Kommentar ein und gibt ihn zurück.
+       Der Kommentaranfang und dessen einleitenden Zeichen muss an der aktuellen Leseposition stehen.}
+       function ReadComment : String; virtual;abstract;
+
+       {Liest ein Zeichen ein und setzt den Positionszeiger auf den vorherigen Wert, wenn Move wahr ist.}
+       function GetNextChar(Move : Boolean = TRUE) : Char;
+       {Liest Len Zeichen ein und setzt den Positionszeiger auf den vorherigen Wert, wenn Move wahr ist.
+       Move wird ignoriert, wenn MoveBy ungleich 0 ist. Dabei wird der Positionszeiger um MoveBy verschoben.}
+       function GetNextChars(Len : Integer;MoveBy : Integer = 0; Move : Boolean = TRUE) : String;
+
+       {Liest ein Zeichen vor dem Positionszeiger ein und setzt den ihn auf den vorherigen Wert, wenn Move wahr ist.}
+       function GetPrevChar(Move : Boolean = TRUE) : Char;
+       {Liest Len Zeichen vor dem Positionszeiger ein und setzt den ihn auf den vorherigen Wert, wenn Move wahr ist.
+       Move wird ignoriert, wenn MoveBy ungleich 0 ist. Dabei wird der Positionszeiger um MoveBy verschoben.}
+       function GetPrevChars(Len : Integer;MoveBy : Integer = 0; Move : Boolean = TRUE) : String;
+
+       {LeaveSpaces liest solange Leerzeichen oder Zeilenumbrüche ein,
+       bis ein anderes Zeichen kommt und gibt dies zurück.
+       Wenn GetReturns wahr ist, wird bis zum nächsten Zeilenumbruch gelesen und
+       das erste Zeichen des Umbruches zurückgegeben.}
+       function LeaveSpaces(GetReturns : Boolean = FALSE) : Char;
+
+       {Liest eine Zeile bis zum Umbruch ein, egal ob Befehle dadurch getrennt werden.}
+       function ReadLine : String;
+
+       {Ermittelt die aktuelle Zeile des Positionsanzeigers.
+       Sie wird berechnet, indem alle Zeilenumbrüche zuvor gesucht werden.}
+       function ReadLineNumber : Integer;
+
+       {Bei Leseroutinen verwendet, um die tatsächlich gelesenen Bytes zu bestimmen.}
+       property ActuallyRead : Integer read fActuallyRead;
+
+       {Wenn Create oder LoadFromFile verwendet wurde, ist Filename der Dateiname der in den Speicehr geladenen Datei.}
+       property FileName : String read fFileName;
+     end;
+
+type LineSizeInt = 3..1024;
+
+const StringBufferSize : LineSizeInt = 16;
+
+implementation

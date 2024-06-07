@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtSysUtils</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtSysUtils</H1>
+<H2>Beschreibung</H2>
+dtSysUtils.pas beinhaltet Funktionen f&uuml;r den Umgang mit verschiedenen Aufgaben<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#497"><B>calcCRC32</B></A>(crcAnt : longint; buffer : <A href="dtSysUtils.htm#495">CRCT</A>; size : longint) : longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#498"><B>CRC32</B></A>(AFile : string) : longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#499"><B>ValidateAnchorIdentfier</B></A>(Ident : String; out Line: Integer) : <A href="dtSysUtils.htm#496">TPascalError</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#500"><B>ValidatePascalIdentfier</B></A>(Ident : String; out Line: Integer) : <A href="dtSysUtils.htm#496">TPascalError</A>;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="497"></A><CODE>function <B>calcCRC32</B>(crcAnt : longint; buffer : <A href="dtSysUtils.htm#495">CRCT</A>; size : longint) : longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>Berechnet eine CRC Pr&uuml;fsumme gefunden: http://www.delphi-total.de/probs/a167.htm</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="498"></A><CODE>function <B>CRC32</B>(AFile : string) : longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>Berechnet eine CRC Pr&uuml;fsumme aus einer Datei.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="499"></A><CODE>function <B>ValidateAnchorIdentfier</B>(Ident : String; out Line: Integer) : <A href="dtSysUtils.htm#496">TPascalError</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ValidateAnchorIdentfier pr&uuml;ft, ob ein Pascal-Bezeichner Ident g&uuml;ltig ist, oder nicht. Der Unterschied zu <CODE><A href="dtSysUtils.htm#500">ValidatePascalIdentfier</A></CODE> besteht darin, dass ValidateAnchorIdentfier auch folgende Symbole zul&auml;sst : (' ','-',':','.') Der R&uuml;ckgabewert gibt mehr Aufschluss &uuml;ber die Fehlerart (<CODE><A href="dtSysUtils.htm#496">TPascalError</A></CODE>)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="500"></A><CODE>function <B>ValidatePascalIdentfier</B>(Ident : String; out Line: Integer) : <A href="dtSysUtils.htm#496">TPascalError</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ValidatePascalIdentfier pr&uuml;ft, ob ein Pascal-Bezeichner Ident g&uuml;ltig ist, oder nicht. Der R&uuml;ckgabewert gibt mehr Aufschluss &uuml;ber die Fehlerart (<CODE><A href="dtSysUtils.htm#496">TPascalError</A></CODE>)</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="495"></A>CRCT</TD>
+<TD width=100%>CRCT ist eine CRC-Tabelle, die in <CODE><A href="dtSysUtils.htm#497">calcCRC32</A></CODE> geltung findet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="496"></A>TPascalError</TD>
+<TD>TPascalError wird in <CODE><A href="dtSysUtils.htm#500">ValidatePascalIdentfier</A></CODE> und <CODE><A href="dtSysUtils.htm#499">ValidateAnchorIdentfier</A></CODE> verwendet, um Fehler darzustellen. pe_InvalidChar bedeutet ein ung&uuml;ltiges zeichen in Ident. pe_NoIdent bedeutet, dass Ident aus mehreren W&ouml;rtern besteht , die mit Leerzeichen getrennt sind pe_InvalidIdent bedeutet, dass der Bezeichner mit einer Zahl anf&auml;ngt.</TD>
+</TR>
+</TABLE><A name=Variables></A><H2>Variablen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="494"></A>CRCTableCalculated</TD>
+<TD width=100%>CRCTableCalculated wird in <CODE><A href="dtSysUtils.htm#497">calcCRC32</A></CODE> verwendet,um festzulegen, ob eine CRC-Tabelle erzeugt werden soll (Standardm&auml;&szlig;ig wird keine erzeugt)</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

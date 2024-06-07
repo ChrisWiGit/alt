@@ -1,0 +1,21 @@
+[OPTIONS]
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=Hilfe.chm
+Contents file=Hilfe.hhc
+Default Window=Default
+Default topic=F:\temp\unzipped\Delphi Tools 2\Source\extras\einleitung.html
+Display compile progress=Yes
+Error log file=Hilfe.log
+Full-text search=Yes
+Index file=Hilfe.hhk
+Title=DelphiTools 2 Hilfe
+
+[WINDOWS]
+Default="DelphiTools 2 Hilfe","Hilfe.hhc","Hilfe.hhk",,,,,,,0x23520,,0x300e,,,,,,,,0
+
+[FILES]
+
+[INFOTYPES]
+
+[MERGE FILES]

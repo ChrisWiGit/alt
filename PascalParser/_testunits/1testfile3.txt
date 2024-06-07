@@ -1,0 +1,11 @@
+unit myunit;//unit comment
+
+interface
+
+{sdfg}
+//hello
+//hello2
+procedure asdf;//hinterkommentar
+
+implementation
+end;

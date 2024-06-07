@@ -1,0 +1,10 @@
+{}
+unit compilerdirektiven;
+
+interface
+
+
+
+hier ist nach ende -> AD
+
+implementation

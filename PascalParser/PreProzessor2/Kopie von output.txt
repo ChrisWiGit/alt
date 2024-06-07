@@ -1,0 +1,8 @@
+{}
+unit compilerdirektiven;
+
+interface
+
+
+
+implementation

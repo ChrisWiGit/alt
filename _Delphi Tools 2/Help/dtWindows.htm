@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtWindows</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtWindows</H1>
+<H2>Beschreibung</H2>
+dtWindows;.pas beinhaltet Funktionen f&uuml;r dem Umgang mit Windows<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>procedure <A href="#537"><B>ChangeWindowStyle</B></A>(Handle: Longint; Style: Longint);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#538"><B>CreateFileAssociation</B></A>(Extension,InternalName, RealName, ApplicationPath: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#539"><B>EmptyRecycleBin</B></A> : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#540"><B>ExecDOC</B></A>(Doc: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#541"><B>FindWindows</B></A>(OnFindWindowProc : <A href="dtWindows.htm#534">TOnFindWindowObj</A>): TStringList; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#542"><B>FindWindows</B></A>(OnFindWindowProc : <A href="dtWindows.htm#535">TOnFindWindowProc</A>): TStringList; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#543"><B>GetAppHandle</B></A>(AppName, ClassName: string): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#544"><B>GetAppName</B></A>(Doc: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#545"><B>GetClockPos</B></A>: TPoint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#546"><B>GetClockRect</B></A>: TRect;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#547"><B>GetClockWndHandle</B></A>: Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#548"><B>GetParameter</B></A>(Para: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#549"><B>GetRAM</B></A>: cardinal;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#550"><B>HideTitlebar</B></A>(Window: TCustomForm);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#551"><B>IsAppRunning</B></A>(AppName, ClassName: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#552"><B>IsShowTaskBar</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#553"><B>MonitorPower</B></A>(Off: Boolean);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#554"><B>RegisterFile</B></A>(Regfile: <A href="dtWindows.htm#536">TRegisterFile</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#555"><B>RegisterLink</B></A>(Ext, FType, FriendlyName, Cmd: PChar);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#556"><B>RunCPL</B></A>(sName: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#557"><B>RunOnStartup</B></A>(sTitle, sCommand: string; bOnlyOnce: Boolean);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#558"><B>ScreenDump</B></A>(bmp: TBitmap);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#559"><B>SetWinOnTop</B></A>(Wnd: HWND; OnTop: Boolean);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#560"><B>ShowTaskBar</B></A>(Show: Boolean);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#561"><B>ShowTitlebar</B></A>(Window: TCustomForm);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#562"><B>TaskbarAutoHide</B></A>: boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#563"><B>TaskBarClientRect</B></A>: TRect;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#564"><B>WinDump</B></A>(Win : THandle;bmp: TBitmap);</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="537"></A><CODE>procedure <B>ChangeWindowStyle</B>(Handle: Longint; Style: Longint);</CODE></TD>
+</TR>
+</TABLE>
+<P>ChangeWindowStyle &auml;ndert das WindowStyle (HAndle = WindowHandle) in Style. N&uuml;tzlich f&uuml;r EverOnTop, da in Delphi das Fenster flackert</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="538"></A><CODE>function <B>CreateFileAssociation</B>(Extension,InternalName, RealName, ApplicationPath: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Externe Quelle 0001 CreateFileAssociation wie <CODE><A href="dtWindows.htm#554">RegisterFile</A></CODE> , nur mit einfacheren Extension ist die zu registrierende Erweiterung als InternalName oder RealName den internen oder den wirklichen Namen und als ApplicationPath den Pfad Ihrer Andwendung. Bei Erfolg , ist der R&uuml;ckgabewert TRUE. V1.302</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="539"></A><CODE>function <B>EmptyRecycleBin</B> : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>EmptyRecycleBin l&ouml;scht den Papierkorb ohne Nachfrage</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="540"></A><CODE>function <B>ExecDOC</B>(Doc: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ExecDOC f&uuml;hrt das Anwendungsprogramm mit dem Paramater Doc aus , da&szlig; mit Doc verkn&uuml;pft wurde</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="541"></A><CODE>function <B>FindWindows</B>(OnFindWindowProc : <A href="dtWindows.htm#534">TOnFindWindowObj</A>): TStringList; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>FindWindows z&auml;hlt alle Fenster auf dem Desktop auf und gibt derren Titel in einer Stringliste zur&uuml;ck. Die Objektliste enth&auml;lt die Fensterhandles als Longint - Pointer MyHandle := Longint(Windows.Objects[index]); Als Ereignis OnFindWindowProc wird eine Methode verwendet</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="542"></A><CODE>function <B>FindWindows</B>(OnFindWindowProc : <A href="dtWindows.htm#535">TOnFindWindowProc</A>): TStringList; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>FindWindows z&auml;hlt alle Fenster auf dem Desktop auf und gibt derren Titel in einer Stringliste zur&uuml;ck. Die Objektliste enth&auml;lt die Fensterhandles als Longint - Pointer MyHandle := Longint(Windows.Objects[index]); Als Ereignis OnFindWindowProc wird eine Standard-Prozedur verwendet.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="543"></A><CODE>function <B>GetAppHandle</B>(AppName, ClassName: string): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetAppHandle gibt ein Window_Handle, wenn ein Fenster mit den Applikationsname Appname und Klassname Classname gefunden wurde. zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="544"></A><CODE>function <B>GetAppName</B>(Doc: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetAppName ermittelt aus einem Dateinamen dessen verkn&uuml;pfte Anwendungsdatei z.B. f&uuml;r TXT-Dateien das NotePad</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="545"></A><CODE>function <B>GetClockPos</B>: TPoint;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetClockPos gibt die Position der Uhr zur&uuml;ck (Bildschirmkoordinaten)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="546"></A><CODE>function <B>GetClockRect</B>: TRect;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetClockRect gibt die Gr&ouml;&szlig;e der Uhrzeit zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="547"></A><CODE>function <B>GetClockWndHandle</B>: Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetClockWndHandle gibt das Fensterhandle der Uhrzeit in der Taskleiste zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="548"></A><CODE>function <B>GetParameter</B>(Para: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetParameter gibt True zur&uuml;ck , wenn der Parameter Para vom Anwender angegeben wurde. Gro&szlig;- & Kleinschreibung spielt keine Rolle.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="549"></A><CODE>function <B>GetRAM</B>: cardinal;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetRAM gibt die Gr&ouml;&szlig;e der verf&uuml;gbaren realen RAM-Speichers zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="550"></A><CODE>procedure <B>HideTitlebar</B>(Window: TCustomForm);</CODE></TD>
+</TR>
+</TABLE>
+<P>HideTitlebar l&auml;&szlig;t die Titel-Bar eines Fensters verschwinden</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="551"></A><CODE>function <B>IsAppRunning</B>(AppName, ClassName: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsAppRunning gibt TRUE zur&uuml;ck , wenn es eine Anwendung mit Namen Appnamen und und Klasse mit ClassName existiert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="552"></A><CODE>function <B>IsShowTaskBar</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsShowTaskBar ermittelt , ob die Taskbar sichtbar ist(TRUE)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="553"></A><CODE>procedure <B>MonitorPower</B>(Off: Boolean);</CODE></TD>
+</TR>
+</TABLE>
+<P>MonitorPower bringt den Bildschirm in den Powersave-modus (sofern m&ouml;glich und zugelassen)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="554"></A><CODE>function <B>RegisterFile</B>(Regfile: <A href="dtWindows.htm#536">TRegisterFile</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>Registriert eine Dateierweiterung Sollte die Dateierweiterung schon existieren wird sie &uuml;berschrieben Sollen mehrere Dateitypen registriert werden , so wird nur einmal der komplette Record definiert (also Command) und jede weitere neue Erweiterung nur FileExtension und Description (+Icon und Content , wenn erw&uuml;nscht) Dazu noch Linked auf TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="555"></A><CODE>procedure <B>RegisterLink</B>(Ext, FType, FriendlyName, Cmd: PChar);</CODE></TD>
+</TR>
+</TABLE>
+<P>RegisterLink registriert im Explorer/Dateimanager einen Dateityp Ext beschreibt die Dateiendung mit vorangegangenem Punkt. FType ist der Registriereintragsname in der Registry (Key). FriendlyName wird dem Benutzer als Beschreibung angezeigt. Cmd ist der Pfad zu einer Anwendung, die mit dem Dateityp umgehen kann. Beispiel : ('.~pa','~pafile','PAS-Backups','C:\...DragDrop.exe "%1").</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="556"></A><CODE>function <B>RunCPL</B>(sName: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>RunCPL startet ein Systemsteurerungsmodul (CPL-Datei) mit dem Namen sName</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="557"></A><CODE>procedure <B>RunOnStartup</B>(sTitle, sCommand: string; bOnlyOnce: Boolean);</CODE></TD>
+</TR>
+</TABLE>
+<P>RunOnStartup tr&auml;gt eine Anwendung in die Registry-AutoStart-Registrierung ein bOnlyOnce gibt an , ob diese Anwendung nur einmal bei einem Neustart gestartet werden soll</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="558"></A><CODE>procedure <B>ScreenDump</B>(bmp: TBitmap);</CODE></TD>
+</TR>
+</TABLE>
+<P>ScreenDump kopiert den aktuellen Bildschirm in das Bitmap bit. bmp muss vorher Initialisiert werden!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="559"></A><CODE>procedure <B>SetWinOnTop</B>(Wnd: HWND; OnTop: Boolean);</CODE></TD>
+</TR>
+</TABLE>
+<P>SetWinOnTop l&auml;sst das Windows mit den Style VS_ALWAYSONTOP darstellen ohne das es aufblinkt,wie TForm.FormStyle = fsStayOnTop</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="560"></A><CODE>procedure <B>ShowTaskBar</B>(Show: Boolean);</CODE></TD>
+</TR>
+</TABLE>
+<P>ShowTaskBar zeigt die Windows-Taskleiste an (TRUE) oder nicht (FALSE)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="561"></A><CODE>procedure <B>ShowTitlebar</B>(Window: TCustomForm);</CODE></TD>
+</TR>
+</TABLE>
+<P>ShowTitlebar l&auml;&szlig;t die Titel-Bar eines Fensters anzeigen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="562"></A><CODE>function <B>TaskbarAutoHide</B>: boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>TaskbarAutoHide ermittelt ,ob die Taskleiste sich automatisch versteckt. Dies entspricht Taskbar-Eigenschaft-"Automatisch im Hintergrund"</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="563"></A><CODE>function <B>TaskBarClientRect</B>: TRect;</CODE></TD>
+</TR>
+</TABLE>
+<P>TaskBarClientRect gibt die Gr&ouml;&szlig;e der Taskbar zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="564"></A><CODE>procedure <B>WinDump</B>(Win : THandle;bmp: TBitmap);</CODE></TD>
+</TR>
+</TABLE>
+<P>WinDump kopiert das Fenster Win in das Bitmap bmp.</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="534"></A>TOnFindWindowObj</TD>
+<TD width=100%>TOnFindWindowProc wird von <CODE><A href="dtWindows.htm#541">FindWindows</A></CODE> aufgerufen, wenn ein Fenster von FindWindows gefunden wurde. WindowText ist der Titeltext, WindowHandle das Fensterhandle. Add gibt an, ob diese Fenster in die Liste aufgenommen werden soll (TRUE). Wenn Continue TRUE ist, wird nach dem n&auml;chsten Fenster gesucht. Diese Ereignismethode wird in Klassen verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="535"></A>TOnFindWindowProc</TD>
+<TD>TOnFindWindowProc wird von <CODE><A href="dtWindows.htm#541">FindWindows</A></CODE> aufgerufen, wenn ein Fenster von FindWindows gefunden wurde. WindowText ist der Titeltext, WindowHandle das Fensterhandle. Add gibt an, ob diese Fenster in die Liste aufgenommen werden soll (TRUE). Wenn Continue TRUE ist, wird nach dem n&auml;chsten Fenster gesucht.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="536"></A>TRegisterFile</TD>
+<TD>Installiert/Registriert eine Datei in Windows mit <CODE><A href="dtWindows.htm#554">RegisterFile</A></CODE></TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

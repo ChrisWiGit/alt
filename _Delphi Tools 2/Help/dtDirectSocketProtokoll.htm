@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtDirectSocketProtokoll</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtDirectSocketProtokoll</H1>
+<H2>Beschreibung</H2>
+dtDirectSocketProtokoll.pas beinhaltet Funktionen f&uuml;r den Umgang mit Streams bei DelphiX<P>dtDirectSocketProtokoll vereinfacht die Hantierung bei TDxPlay bei DelphiX Damit ist es nun m&ouml;glich , beliebig gro&szlig;e Daten zu verschicken und mit einem Nachrichtenidentifizierer zu versehen. Um diese Funktionen zu verwenden, setzen Sie die Compilerdirektive USEDELPHIX. (*$DEFINE USEDELPHIX*). Offiziell gibt es DelphiX auf http://www.yks.ne.jp/~hori/DelphiX-e.html inofiziell dort : http://www.gamedev.net/ Das DirectSocketProtokoll kann man unter www.vclcomponents.com download, jedoch wird diese Version nicht mehr unterst&uuml;tzt. Nutzen Sie auch die mitgelieferte und erweiterte DXPlay-Unit (bis Delphiversion 5). Sie l&ouml;st Probleme, die auftreten wenn man einen Spieler w&auml;hrend des Ereignisses OnMessage l&ouml;schen will. Dadurch kann man das Objekt noch am Ende ohne Fehler l&ouml;schen.<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#153"><B>AssembleStream</B></A>(Msg,SubMsg : Integer; Stream : TMemoryStream) : TMemoryStream;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#154"><B>DisAssembleStream</B></A>(Source : TMemoryStream;var Msg,SubMsg : <A href="dtDirectSocketProtokoll.htm#152">TMessageType</A>;var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#155"><B>ReadInteger</B></A> (Stream:TStream) : Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#156"><B>ReadString</B></A> (Stream:TStream) : String;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#157"><B>ReceiveStream</B></A>(Data : Pointer; Size : Longint;var Msg,SubMsg : <A href="dtDirectSocketProtokoll.htm#152">TMessageType</A>;var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#158"><B>SendStream</B></A>(DXPlay : TDXPlay;ToID:DPID; Msg,SubMsg : <A href="dtDirectSocketProtokoll.htm#152">TMessageType</A>;Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#159"><B>SizeOfString</B></A>(Data : String) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#160"><B>WriteInteger</B></A>(Stream:TStream; Data : Integer) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#161"><B>WriteString</B></A>(Stream:TStream; Data : String) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="153"></A><CODE>function <B>AssembleStream</B>(Msg,SubMsg : Integer; Stream : TMemoryStream) : TMemoryStream;</CODE></TD>
+</TR>
+</TABLE>
+<P>AssembleStream verkn&uuml;pft eine Nachricht und einen Stream zu einen versendbaren Stream Stream wird in <CODE><A href="dtDirectSocketProtokoll.htm#153">AssembleStream</A></CODE> NICHT gel&ouml;scht! Diese Funktion wird intern verwendet.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="154"></A><CODE>function <B>DisAssembleStream</B>(Source : TMemoryStream;var Msg,SubMsg : <A href="dtDirectSocketProtokoll.htm#152">TMessageType</A>;var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Entkn&uuml;pft eine versendbaren Stream in Nachricht (Msg,SubMsg) und einen LeseStream "Stream" Stream wird in <CODE><A href="dtDirectSocketProtokoll.htm#154">DisAssembleStream</A></CODE> erstellt! Diese Funktion wird intern verwendet.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="155"></A><CODE>function <B>ReadInteger</B> (Stream:TStream) : Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadInteger liest einen Integerwert aus einem Stream</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="156"></A><CODE>function <B>ReadString</B> (Stream:TStream) : String;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadString liest den mit WriteString gespeicherten String wieder aus Bei Fehlern in der Indentifizierung wird eine leerer String ('') zur&uuml;ckgeliefert</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="157"></A><CODE>function <B>ReceiveStream</B>(Data : Pointer; Size : Longint;var Msg,SubMsg : <A href="dtDirectSocketProtokoll.htm#152">TMessageType</A>;var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReceiveStream empf&auml;ngt eine Nachricht und wertet sie aus. Wenn es eine mit Sendstream gesendete nachricht ist so wird TRUE zur&uuml;ckgegeben und die variablen Parameter Msg,SubMsg und Stream haben g&uuml;ltige Werte Stream darf nicht initialisiert werden</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="158"></A><CODE>function <B>SendStream</B>(DXPlay : TDXPlay;ToID:DPID; Msg,SubMsg : <A href="dtDirectSocketProtokoll.htm#152">TMessageType</A>;Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>SendStream sendet einen Stream mit dem Messagetyp Msg und SubMsg an ToID Msg und SubMsg sind vom Programmierer frei w&auml;hlbar. Stream muss danach freigegeben werden Mann kann nat&uuml;rlich auch leeren Stream (= nil) senden</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="159"></A><CODE>function <B>SizeOfString</B>(Data : String) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SizeOfString gibt die Bytesgr&ouml;&szlig;e die ein String im Stream braucht ,wenn er von WriteString geschrieben wurde</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="160"></A><CODE>function <B>WriteInteger</B>(Stream:TStream; Data : Integer) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteInteger speichert einen Integer-Wert im Stream ohne Signatur</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="161"></A><CODE>function <B>WriteString</B>(Stream:TStream; Data : String) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteString schreibt einen String beliebiger L&auml;nge in einen Stream Jeder String besitzt zus&auml;tzlich noch eine Indentifizierungsnummer (#1#2), um ihn eindeutig als solchen erkennen zu k&ouml;nnen. Diese Funktion wird intern verwendet.</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="152"></A>TMessageType</TD>
+<TD width=100%>Mit TMessageType kann die Typ-Gr&ouml;&szlig;e von Msg und SubMsg schnell ge&auml;ndert werden</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="150"></A>MessageTypeError</TD>
+<TD width=100%>MessageTypeError wird als anderer Fehlerwert f&uuml;r <CODE><A href="dtDirectSocketProtokoll.htm#157">ReceiveStream</A></CODE> verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="151"></A>Signature</TD>
+<TD>Signatur die eine Nachricht als echt ausweist</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

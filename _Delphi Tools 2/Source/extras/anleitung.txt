@@ -1,0 +1,12 @@
+Erstelle ein Verzeichnis und entpacke dort alle DelphiToolsdateien.
+Dann starte Delphi sowie dein Projekt und gib diesen Verzeichnispfad
+unter Men� Projekt -> Optionen -> Verzeichniss/Bedingungen -> Suchpfad 
+an.
+
+Dann einfach noch in der uses Anweisung die Delphitools eintragen und los gehts.
+(z.b. uses windows,delphitools,...)
+
+gru�
+author
+
+removed

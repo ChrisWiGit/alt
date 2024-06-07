@@ -1,0 +1,1 @@
+rename Hilfe.chm DelphiTools2.chm

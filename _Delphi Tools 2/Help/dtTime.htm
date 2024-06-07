@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtTime</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtTime</H1>
+<H2>Beschreibung</H2>
+dtTime.pas beinhaltet Funktionen f&uuml;r den Umgang mit Zeit und Datum<A name=Classes></A><H2>Klassen, Schnittstellen und Objekte</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD>Klasse&nbsp;<A href="TZI.htm">TZI</A></TD>
+<TD width=100%>TZI nimmt TimeZoneInformationen auf. Bias - Display - Dlt - DaylightName Std - StandardName Index - Index ,verwendet von GetActualTimeZone ,um die Zeitzone in der Stringlist (wie sie von GetWindowsTimeZoneStrings zur&uuml;ckgeliefert wird) anzugeben</TD>
+</TR>
+</TABLE>
+<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#506"><B>BeatsTolngTime</B></A>(GMT: <A href="dtTime.htm#504">TGMT</A>; Beats: <A href="dtTime.htm#503">TBeats</A>; var h, m, s: Word): TTime;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#507"><B>BeatsToTime</B></A>(GMT: <A href="dtTime.htm#504">TGMT</A>; Beats: <A href="dtTime.htm#503">TBeats</A>): TTime;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#508"><B>ConvertHSecToTime</B></A>(HSecs: Longint; var Hour, Minute, Second, MSec: Word);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#509"><B>ConvertHSecToTTime</B></A>(Secs: Longint): TTime;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#510"><B>ConvertSecToTime</B></A>(Secs: Longint; var Hour, Minute, Second: Word);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#511"><B>ConvertSecToTTime</B></A>(Secs: Longint): TTime;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#512"><B>ConvertTTimeToHSecs</B></A>(aTime: TTime): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#513"><B>ConvertTTimeToSecs</B></A>(aTime: TTime): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#514"><B>CorrectHour</B></A>(h: Integer): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#515"><B>GetActualTimeZone</B></A>(var ProcResult: <A href="dtTime.htm#505">TTZIResult</A>; ShowHalfTime: Boolean = TRUE): <A href="TZI.htm">TZI</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#516"><B>GetWindowsTimeZoneStrings</B></A>(ShowHalfTime: Boolean = TRUE): TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#517"><B>lngTimeToBeats</B></A>(GMT: <A href="dtTime.htm#504">TGMT</A>; h, m, s: Word): <A href="dtTime.htm#503">TBeats</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#518"><B>TimeToBeats</B></A>(GMT: <A href="dtTime.htm#504">TGMT</A>; Time: TTime): <A href="dtTime.htm#503">TBeats</A>;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="506"></A><CODE>function <B>BeatsTolngTime</B>(GMT: <A href="dtTime.htm#504">TGMT</A>; Beats: <A href="dtTime.htm#503">TBeats</A>; var h, m, s: Word): TTime;</CODE></TD>
+</TR>
+</TABLE>
+<P>BeatsTolngTime wie <CODE><A href="dtTime.htm#507">BeatsToTime</A></CODE> , liefert jedoch zus&auml;tzlich noch Stunden ,Minuten und Sekunden zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="507"></A><CODE>function <B>BeatsToTime</B>(GMT: <A href="dtTime.htm#504">TGMT</A>; Beats: <A href="dtTime.htm#503">TBeats</A>): TTime;</CODE></TD>
+</TR>
+</TABLE>
+<P>BeatsToTime ermittelt aus der Greenwich MeanTime (GMT) und der Internetzeit @ (Beat) die gew&ouml;hnliche Uhrzeit</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="508"></A><CODE>procedure <B>ConvertHSecToTime</B>(HSecs: Longint; var Hour, Minute, Second, MSec: Word);</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertHSecToTime errechnet aus der Anzahl von Milisekunden HSecs die Anzahl von Stunden , Minuten und Sekunden Man sollte Hour nicht in EncodeTime oder TimeToStr verwenden ,da Hour > 23 sein kann Minute , Second sind dazu im Gegensatz zwischen 0-59. Updated 289a</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="509"></A><CODE>function <B>ConvertHSecToTTime</B>(Secs: Longint): TTime;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertHSecToTTime konvertiert eine Zahl von MiliSekunden in einen TTime-Wert</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="510"></A><CODE>procedure <B>ConvertSecToTime</B>(Secs: Longint; var Hour, Minute, Second: Word);</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertSecToTime errechnet aus der Anzahl von Sekunden Secs die Anzahl von Stunden , Minuten und Sekunden Man sollte Hour nicht in EncodeTime oder TimeToStr verwenden ,da Hour > 23 sein kann Minute , Second sind dazu im Gegensatz zwischen 0-59. Updated 289a</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="511"></A><CODE>function <B>ConvertSecToTTime</B>(Secs: Longint): TTime;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertSecToTTime konvertiert eine Zahl von Sekunden in einen TTime-Wert</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="512"></A><CODE>function <B>ConvertTTimeToHSecs</B>(aTime: TTime): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertTTimeToHSecs konvertiert eine einen TTime-Wert in eine Zahl von MiliSekunden</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="513"></A><CODE>function <B>ConvertTTimeToSecs</B>(aTime: TTime): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertTTimeToSecs konvertiert eine einen TTime-Wert in eine Zahl von Sekunden</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="514"></A><CODE>function <B>CorrectHour</B>(h: Integer): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>CorrectHour korrigiert Zeitstunden : z.B. 24uhr -> 0uhr, 25 -> 1 , 48 -> 0, , -1 -> 23 , -24 -> 0</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="515"></A><CODE>function <B>GetActualTimeZone</B>(var ProcResult: <A href="dtTime.htm#505">TTZIResult</A>; ShowHalfTime: Boolean = TRUE): <A href="TZI.htm">TZI</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetActualTimeZone ermittelt die aktuelle Zeitzone ProcResult gibt &uuml;ber Fehler aufschlu&szlig; ShowHalfTime , ist wie bei GetWindowsTimeZoneStrings zust&auml;ndig Sollte die aktuelle Zeitzone eine Zwischenzone (z.B. : 3:30) sein und ShowHaltTime = FALSE dann wird ein Fehler zi_unknow in ProcResult geliefert Der R&uuml;ckgabewert wird !vollst&auml;ndig! gef&uuml;llt , d.h. auch .Index wird mit dem StringIndex definiert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="516"></A><CODE>function <B>GetWindowsTimeZoneStrings</B>(ShowHalfTime: Boolean = TRUE): TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetWindowsTimeZoneStrings ermittelt alle Zeitzonen , die in dieser Windows verwendet werden k&ouml;nnen ShowHalfTime gibt an , ob (TRUE) Zeiten die zwischen Zeitzonen liegen , mit in die Liste aufgenommen werden sollen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="517"></A><CODE>function <B>lngTimeToBeats</B>(GMT: <A href="dtTime.htm#504">TGMT</A>; h, m, s: Word): <A href="dtTime.htm#503">TBeats</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>lngTimeToBeats ermittelt aus der Greenwich MeanTime (GMT) und der Uhrzeit Time (h,m,s) die Internetzeit @ (Beat)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="518"></A><CODE>function <B>TimeToBeats</B>(GMT: <A href="dtTime.htm#504">TGMT</A>; Time: TTime): <A href="dtTime.htm#503">TBeats</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>TimeToBeats errechnet aus der Greenwich MeanTime (GMT) und der Uhrzeit Time die Internetzeit @ (Beat)</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="503"></A>TBeats</TD>
+<TD width=100%>TBeats ist der Typ, der Beatsschl&auml;ge aufnimmt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="504"></A>TGMT</TD>
+<TD>TGMT ist ein Green-Wich-Mean-Time-Typ, der angibt welche Zeitzone verwendet wird.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="505"></A>TTZIResult</TD>
+<TD>TTZIResult gibt die R&uuml;ckgabewerte von <CODE><A href="dtTime.htm#515">GetActualTimeZone</A></CODE> an (zi_ok - R&uuml;ckgabewert ist in Ordnung zi_unknow - R&uuml;ckgabewert ist nicht definiert zi_unexact - R&uuml;ckgabewert ist eine Auswahl aus mehreren m&ouml;glichen Zeitzonen</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="502"></A>BeatsPerSec</TD>
+<TD width=100%>BeatsPerSec berechnet die Anzahl der Beats die pro Sekunde ablaufen.</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtNetwork</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtNetwork</H1>
+<H2>Beschreibung</H2>
+dtDataBase.pas beinhaltet Funktionen f&uuml;r den Umgang mit Netzwerken und Internet<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#293"><B>CheckIP</B></A>(IP : String) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#294"><B>ConnectNetDialog</B></A>(Parent: Longint; fType: DWord = RESOURCETYPE_DISK): DWord;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#295"><B>CreateNetConnection</B></A>(LocalName, RemoteName, Comment, UserName, UserPassword: string; Flags: DWord): DWord;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#296"><B>DisConnectNetDialog</B></A>(Parent: Longint; fType: DWord = RESOURCETYPE_DISK): DWord;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#297"><B>DisconnetNetConnection</B></A>(LocalName: string; Flags: DWord; Force: Boolean): DWord;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#298"><B>GetComputerName</B></A>: string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#299"><B>GetIPData</B></A>(IP : String) : <A href="dtNetwork.htm#291">TIPData</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#300"><B>GetLocalIPs</B></A>: string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#301"><B>IsNetworkPath</B></A>(Path : String) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="293"></A><CODE>function <B>CheckIP</B>(IP : String) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>&Uuml;berpr&uuml;ft, ob es sich bei der IP-Addresse um eine "g&uuml;ltige" Addresse handelt. Dabei wird nicht untersucht, ob die IP-Addressen benutzt werden, sondern lediglich ihre Glieder innerhalb von 255 befinden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="294"></A><CODE>function <B>ConnectNetDialog</B>(Parent: Longint; fType: DWord = RESOURCETYPE_DISK): DWord;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConnectNetDialog zeigt einen StandardWindows-Verbindungsdialog an mehr unter WNetConnectionDialog</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="295"></A><CODE>function <B>CreateNetConnection</B>(LocalName, RemoteName, Comment, UserName, UserPassword: string; Flags: DWord): DWord;</CODE></TD>
+</TR>
+</TABLE>
+<P>CreateNetConnection Erstellt eine Dateisystemverbindung zu einem anderen Computer im Netzwerk LocalName ist der Festplattenpfad auf dem Client-rechner (von dem die funktion aufgerufen wird) : Bsp. M: RemoteName ist ein UNC-Pfad der auf den Host-rechner zeigt : \\Host\Platte Comment ist ein beliebieger Name welcher der Zuweisung zugewiesen wird Username ist ein Name , der als Zugriffsname zum Hostrechner verwendet wird ist Username = '' , wird der Standardbenutzername des Computers verwendet UserPassword ist ein Zugriffspasswort auf die Resource ist UserPassword = '' , wird das StandardPassword des Computers verwendet Flags definiert die Verwendungsart der Resource Funktionsergebnisse siehe in der WinAPI-SDK unter WNetAddConnection2</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="296"></A><CODE>function <B>DisConnectNetDialog</B>(Parent: Longint; fType: DWord = RESOURCETYPE_DISK): DWord;</CODE></TD>
+</TR>
+</TABLE>
+<P>Zeigt einen Cancel-Verbindungsdialog an Mehr siehe in der WinAPI-SDK unter WNetDisconnectDialog</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="297"></A><CODE>function <B>DisconnetNetConnection</B>(LocalName: string; Flags: DWord; Force: Boolean): DWord;</CODE></TD>
+</TR>
+</TABLE>
+<P>Trennt eine mit <CODE><A href="dtNetwork.htm#295">CreateNetConnection</A></CODE> aufgebaute Netzwerk-Verbindung Parameter siehe CreateNetConnection Force gibt an , ob die Resource auch dann gekappt werden soll, wenn noch offene Verbindungen (offene Dateien) bestehen Funktionsergebnisse siehe in der WinAPI-SDK unter WNetCancelConnection2</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="298"></A><CODE>function <B>GetComputerName</B>: string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetComputerName liefert den Computername (angemeldeter Netzwerkname) zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="299"></A><CODE>function <B>GetIPData</B>(IP : String) : <A href="dtNetwork.htm#291">TIPData</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>Wandelt einen IP-String in einen Record um siehe <CODE><A href="dtNetwork.htm#291">TIPData</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="300"></A><CODE>function <B>GetLocalIPs</B>: string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetLocalIPs bringt alle auf dem lokalen Computer verwendete IP-Addressen in einen String unter (druch Leerzeichen getrennt) z.b. Lokal-Netzwerk-IP oder Internet - IP</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="301"></A><CODE>function <B>IsNetworkPath</B>(Path : String) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsNetworkPath pr&uuml;ft, ob es sich bei dem Pfad: Path um ein Netzwerklaufwerkt handelt, und gibt bei Erfolg TRUE zur&uuml;ck.</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="291"></A>TIPData</TD>
+<TD width=100%>TIPData wird von <CODE><A href="dtNetwork.htm#299">GetIPData</A></CODE> verwendet, um IP-Addressen (nicht v6!) n&auml;her darzustellen. s1 bis s4 stellen die einzelnen IP-Segmente als Integer dar. Port den Kommunikationsport, der hinter manchen IPs durch ein ":" getrennt wird. Bin die IP-Addresse als Bin&auml;re schreibweise</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="292"></A>TIPResult</TD>
+<TD>TIPResult wird nicht mehr verwendet und besteht nur noch wegen der Abw&auml;rtskompatibilit&auml;t</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

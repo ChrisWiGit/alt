@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtDataBase</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtDataBase</H1>
+<H2>Beschreibung</H2>
+dtDataBase.pas beinhaltet Funktionen f&uuml;r den Umgang mit Datenbanken<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#96"><B>ExecSQL</B></A>(DSQL: TIBSQL; SQLLines : TStringList; SeperatorChar : Char = ';') : Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#97"><B>IsBDEInstalled</B></A>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="96"></A><CODE>function <B>ExecSQL</B>(DSQL: TIBSQL; SQLLines : TStringList; SeperatorChar : Char = ';') : Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>ExecSQL f&uuml;hrt eine Reihe von SQL Anweisung aus "SQLLines" in einer TIBSQL-Klasse aus. Der R&uuml;ckgabewert ist -1 im Erfolgsfall, sonst wird eine Exception (EIBInterBaseError) ausgel&ouml;st, und die Zeile, in der der Fehler auftrat zur&uuml;ckgeliefert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="97"></A><CODE>function <B>IsBDEInstalled</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsBDEInstalled untersucht ob BDE installiert ist und gibt bei Erfolg TRUE zur&uuml;ck.</P>
+<H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

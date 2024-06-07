@@ -1,0 +1,35 @@
+FeatureListe von PascalParser Version 0.8a
+von author (Mai 2003)
+
+
++ erkennt Variablen, Konstanten,
++ erkennt KlassenTypen jeder Art
++ erkennt Interface
++ erkennt Dispatched Interface
++ erkennt Records als Gesamtbild,
+  mit Case Definitionen
++ erkennt Aufz�hlungen im Gesamtbild
++ erkennt Arrays
++ erkennt Funktionskonventionen (au�er popstack)
+
++ erkennt "//","(*" und "{" Kommentare
+  + "//"-Kommentare werden mehrere untereinander erkannt und zusammengefasst.
+  + der letzte Kommentar (au�er //, dieser wird als Block angesehen)
+    wird zum n�chsten Eintrag hinzugerechnet
++ erkennt einzeilige ("//","(*" und "{") Kommentare, die direkt hintert dem Eintrag stehen
++ erkennt Includedateien und ber�cksichtigt diese unendlich geschachtelt
++ erkennt jede Art von Strings
++ erkennt external funktionen
++ erkennt export funktionen
++ erkennt Bibilotheksquelltextdateien (DLL)
++ erkennt funktionen die mit export xy deklariert wurde.
++ erkennt klassen methoden
+
+
+-/+ erkennt resourcenstrings als konstanten
+
+- erkennt keine Projektdateien (DPR)
+- automated
+- threadvar
+
+

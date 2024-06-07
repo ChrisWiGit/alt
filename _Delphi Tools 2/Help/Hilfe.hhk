@@ -1,0 +1,2406 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+</HEAD><BODY>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="AddDirToFile">
+<PARAM name="Local" value="dtFiles.htm#182">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="AddExtToFile">
+<PARAM name="Local" value="dtFiles.htm#183">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="AddInformationToFile">
+<PARAM name="Local" value="dtFiles.htm#184">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="AllowClose">
+<PARAM name="Local" value="TSplashDlg.htm#584">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="AllowDelPassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#62">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="AssembleStream">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#153">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#153">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#381">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BeatsPerSec">
+<PARAM name="Local" value="dtTime.htm#502">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BeatsTolngTime">
+<PARAM name="Local" value="dtTime.htm#506">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BeatsToTime">
+<PARAM name="Local" value="dtTime.htm#507">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Bevel1">
+<PARAM name="Local" value="TDefPassDlg.htm#23">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Bias">
+<PARAM name="Local" value="TZI.htm#521">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BinStrToInt">
+<PARAM name="Local" value="dtStrings.htm#432">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BitBtn1">
+<PARAM name="Local" value="TPassWordDlg.htm#4">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BitBtn2">
+<PARAM name="Local" value="TPassWordDlg.htm#5">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BitLinkByte">
+<PARAM name="Local" value="dtMath.htm#246">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BitLinkWord">
+<PARAM name="Local" value="dtMath.htm#247">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BitLinkWordExt">
+<PARAM name="Local" value="dtMath.htm#248">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BOOLToStr">
+<PARAM name="Local" value="dtStrings.htm#433">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BOOLToStrExt">
+<PARAM name="Local" value="dtStrings.htm#434">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="BorderButton">
+<PARAM name="Local" value="dtCL.htm#81">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ButtonNames">
+<PARAM name="Local" value="dtDialogs.htm#103">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ByteToBytes">
+<PARAM name="Local" value="dtMath.htm#249">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ByteToLong">
+<PARAM name="Local" value="dtMath.htm#250">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="calcCRC32">
+<PARAM name="Local" value="dtSysUtils.htm#497">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CancelBtn">
+<PARAM name="Local" value="TDefPassDlg.htm#24">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CancelBtnClick">
+<PARAM name="Local" value="TDefPassDlg.htm#40">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CaseSensitive">
+<PARAM name="Local" value="TDefPassDlg.htm#63">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ChangeChar">
+<PARAM name="Local" value="dtStrings.htm#435">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ChangeControlsState">
+<PARAM name="Local" value="dtCL.htm#82">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ChangeControlsStateEx">
+<PARAM name="Local" value="dtCL.htm#83">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ChangeHintStrings">
+<PARAM name="Local" value="TDefPassDlg.htm#41">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ChangeVar">
+<PARAM name="Local" value="dtSystem.htm#485">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ChangeWindowStyle">
+<PARAM name="Local" value="dtWindows.htm#537">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CharBufferLen">
+<PARAM name="Local" value="dtSystem.htm#477">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CharBufferLen1024">
+<PARAM name="Local" value="dtSystem.htm#478">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CharBufferLen512">
+<PARAM name="Local" value="dtSystem.htm#479">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CheckIP">
+<PARAM name="Local" value="dtNetwork.htm#293">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ClearNodes">
+<PARAM name="Local" value="dtCL.htm#85">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtCL Unit">
+<PARAM name="Local" value="dtCL.htm#85">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtCL Unit">
+<PARAM name="Local" value="dtCL.htm#84">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CompareInt">
+<PARAM name="Local" value="dtSystem.htm#487">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSystem Unit">
+<PARAM name="Local" value="dtSystem.htm#487">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSystem Unit">
+<PARAM name="Local" value="dtSystem.htm#486">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConnectNetDialog">
+<PARAM name="Local" value="dtNetwork.htm#294">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertFile">
+<PARAM name="Local" value="dtMultimedia.htm#269">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertFileExt">
+<PARAM name="Local" value="dtMultimedia.htm#270">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertHSecToTime">
+<PARAM name="Local" value="dtTime.htm#508">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertHSecToTTime">
+<PARAM name="Local" value="dtTime.htm#509">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertImageToNewColor">
+<PARAM name="Local" value="dtMultimedia.htm#272">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtMultimedia Unit">
+<PARAM name="Local" value="dtMultimedia.htm#272">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtMultimedia Unit">
+<PARAM name="Local" value="dtMultimedia.htm#271">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertSecToTime">
+<PARAM name="Local" value="dtTime.htm#510">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertSecToTTime">
+<PARAM name="Local" value="dtTime.htm#511">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertSemiColonStrToStringList">
+<PARAM name="Local" value="dtStrings.htm#436">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertStringToList">
+<PARAM name="Local" value="dtStrings.htm#437">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertToSignVersion">
+<PARAM name="Local" value="dtSignature.htm#354">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertTTimeToHSecs">
+<PARAM name="Local" value="dtTime.htm#512">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvertTTimeToSecs">
+<PARAM name="Local" value="dtTime.htm#513">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ConvResType">
+<PARAM name="Local" value="dtResource.htm#331">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CorrectHour">
+<PARAM name="Local" value="dtTime.htm#514">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CountDialogComponents">
+<PARAM name="Local" value="dtDialogs.htm#110">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CRC32">
+<PARAM name="Local" value="dtSysUtils.htm#498">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CRCT">
+<PARAM name="Local" value="dtSysUtils.htm#495">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CRCTableCalculated">
+<PARAM name="Local" value="dtSysUtils.htm#494">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Create">
+<PARAM name="Local" value="TDialogExt.htm#143">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateBitmapScriptResource">
+<PARAM name="Local" value="dtResource.htm#332">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateBitmapScriptResourceEx">
+<PARAM name="Local" value="dtResource.htm#333">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateDirTreeView">
+<PARAM name="Local" value="dtCL.htm#86">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateFileAssociation">
+<PARAM name="Local" value="dtWindows.htm#538">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateImageListFile">
+<PARAM name="Local" value="dtMultimedia.htm#273">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateNetConnection">
+<PARAM name="Local" value="dtNetwork.htm#295">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateNullFile">
+<PARAM name="Local" value="dtFiles.htm#185">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="CreateSignVersion">
+<PARAM name="Local" value="dtSignature.htm#355">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeAlpha">
+<PARAM name="Local" value="dtTools.htm#525">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeCode">
+<PARAM name="Local" value="dtTools.htm#526">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DefOnDialogControlStream">
+<PARAM name="Local" value="dtDialogs.htm#111">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DefPassDlg">
+<PARAM name="Local" value="DelphiToolsForm2.htm#14">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DefPassWordDlg">
+<PARAM name="Local" value="dtDialogs.htm#112">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DelBtn">
+<PARAM name="Local" value="TDefPassDlg.htm#25">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DelBtnClick">
+<PARAM name="Local" value="TDefPassDlg.htm#42">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeleteCharsFromString">
+<PARAM name="Local" value="dtStrings.htm#438">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeleteFile">
+<PARAM name="Local" value="dtFiles.htm#186">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeleteFileStr">
+<PARAM name="Local" value="dtFiles.htm#187">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeleteKey">
+<PARAM name="Local" value="dtRegistry.htm#305">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DeleteValue">
+<PARAM name="Local" value="dtRegistry.htm#306">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DelphiTools_SignVersion">
+<PARAM name="Local" value="dtSignature.htm#343">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DelSpaces">
+<PARAM name="Local" value="dtStrings.htm#439">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DialogDataFromStream">
+<PARAM name="Local" value="dtDialogs.htm#113">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DialogDataToStream">
+<PARAM name="Local" value="dtDialogs.htm#114">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DisAssembleStream">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#154">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#154">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#382">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DisConnectNetDialog">
+<PARAM name="Local" value="dtNetwork.htm#296">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DisconnetNetConnection">
+<PARAM name="Local" value="dtNetwork.htm#297">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Display">
+<PARAM name="Local" value="TZI.htm#522">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DNoSound">
+<PARAM name="Local" value="dtMultimedia.htm#274">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DoHilight">
+<PARAM name="Local" value="dtCL.htm#87">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DoMsgFlash">
+<PARAM name="Local" value="dtDialogs.htm#115">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Double2ZeroInt">
+<PARAM name="Local" value="dtStrings.htm#440">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DoubleZero">
+<PARAM name="Local" value="dtStrings.htm#441">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DoubleZeroInt">
+<PARAM name="Local" value="dtStrings.htm#442">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DSound">
+<PARAM name="Local" value="dtMultimedia.htm#275">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_ReadFileExtended_Error">
+<PARAM name="Local" value="dtStringsRes.htm#469">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_ReadFileMinStd_Error">
+<PARAM name="Local" value="dtStringsRes.htm#470">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_ReadFileMin_Error">
+<PARAM name="Local" value="dtStringsRes.htm#471">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_ReadFileStd_Error">
+<PARAM name="Local" value="dtStringsRes.htm#472">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_ReadFile_Error">
+<PARAM name="Local" value="dtStringsRes.htm#473">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_WriteFileStd_Error">
+<PARAM name="Local" value="dtStringsRes.htm#474">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream_WriteFile_Error">
+<PARAM name="Local" value="dtStringsRes.htm#475">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DWordBitLength">
+<PARAM name="Local" value="dtMath.htm#242">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="DWordToBytes">
+<PARAM name="Local" value="dtMath.htm#251">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit1">
+<PARAM name="Local" value="TDefPassDlg.htm#26">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDefPassDlg">
+<PARAM name="Local" value="TDefPassDlg.htm#26">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TPassWordDlg">
+<PARAM name="Local" value="TPassWordDlg.htm#6">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit1Change">
+<PARAM name="Local" value="TDefPassDlg.htm#43">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit1Enter">
+<PARAM name="Local" value="TDefPassDlg.htm#44">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit1Exit">
+<PARAM name="Local" value="TDefPassDlg.htm#45">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit2">
+<PARAM name="Local" value="TDefPassDlg.htm#27">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit2Change">
+<PARAM name="Local" value="TDefPassDlg.htm#46">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit2Exit">
+<PARAM name="Local" value="TDefPassDlg.htm#47">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit3">
+<PARAM name="Local" value="TDefPassDlg.htm#28">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit3Change">
+<PARAM name="Local" value="TDefPassDlg.htm#48">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Edit3Exit">
+<PARAM name="Local" value="TDefPassDlg.htm#49">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EmptyRecycleBin">
+<PARAM name="Local" value="dtWindows.htm#539">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EnAlpha">
+<PARAM name="Local" value="dtTools.htm#527">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EnCode">
+<PARAM name="Local" value="dtTools.htm#528">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EnumChars">
+<PARAM name="Local" value="dtStrings.htm#443">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EnumNumbers">
+<PARAM name="Local" value="dtStrings.htm#444">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EnumSpecChars">
+<PARAM name="Local" value="dtStrings.htm#445">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EqualSignature">
+<PARAM name="Local" value="dtSignature.htm#356">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EqualSignatureMin">
+<PARAM name="Local" value="dtSignature.htm#357">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EqualSignVersion">
+<PARAM name="Local" value="dtSignature.htm#358">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EqualSignVersionMin">
+<PARAM name="Local" value="dtSignature.htm#359">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="EqualVersion">
+<PARAM name="Local" value="dtSignature.htm#360">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ErrorMsg">
+<PARAM name="Local" value="DelphiToolsForm2.htm#15">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ERR_FileExists">
+<PARAM name="Local" value="dtFiles.htm#163">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ERR_NoError">
+<PARAM name="Local" value="dtFiles.htm#164">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExecDOC">
+<PARAM name="Local" value="dtWindows.htm#540">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExecSQL">
+<PARAM name="Local" value="dtDataBase.htm#96">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Execute">
+<PARAM name="Local" value="TDialog.htm#137">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialog">
+<PARAM name="Local" value="TDialog.htm#137">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialogExt">
+<PARAM name="Local" value="TDialogExt.htm#144">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExistsKey">
+<PARAM name="Local" value="dtRegistry.htm#307">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExistsValue">
+<PARAM name="Local" value="dtRegistry.htm#308">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExtractFileNameIndent">
+<PARAM name="Local" value="dtFiles.htm#188">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExtractIcon">
+<PARAM name="Local" value="dtResource.htm#334">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExtractLongPathName">
+<PARAM name="Local" value="dtFiles.htm#189">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExtractRegStr">
+<PARAM name="Local" value="dtRegistry.htm#309">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ExtractShortPathName">
+<PARAM name="Local" value="dtFiles.htm#190">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="fCaseSensitive">
+<PARAM name="Local" value="TDefPassDlg.htm#29">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="fEnablePassword">
+<PARAM name="Local" value="TDefPassDlg.htm#30">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FileExists">
+<PARAM name="Local" value="dtFiles.htm#191">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Filesplit">
+<PARAM name="Local" value="dtFiles.htm#192">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Filesplitext">
+<PARAM name="Local" value="dtFiles.htm#193">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FindControlStrWithTagNo">
+<PARAM name="Local" value="dtCL.htm#88">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FindControlWithTagNo">
+<PARAM name="Local" value="dtCL.htm#89">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FindInString">
+<PARAM name="Local" value="dtStrings.htm#446">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FindString">
+<PARAM name="Local" value="dtStrings.htm#447">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FindStringCall">
+<PARAM name="Local" value="dtStrings.htm#448">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FindWindows">
+<PARAM name="Local" value="dtWindows.htm#542">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtWindows Unit">
+<PARAM name="Local" value="dtWindows.htm#542">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtWindows Unit">
+<PARAM name="Local" value="dtWindows.htm#541">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="fMinLen">
+<PARAM name="Local" value="TDefPassDlg.htm#31">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="foldHintHidePause">
+<PARAM name="Local" value="TDefPassDlg.htm#32">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FontToRec">
+<PARAM name="Local" value="dtRegistry.htm#310">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormActivate">
+<PARAM name="Local" value="TDefPassDlg.htm#50">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDefPassDlg">
+<PARAM name="Local" value="TDefPassDlg.htm#50">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSplashDlg">
+<PARAM name="Local" value="TSplashDlg.htm#578">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormatHexStr">
+<PARAM name="Local" value="dtStrings.htm#449">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormClose">
+<PARAM name="Local" value="TDefPassDlg.htm#51">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormCloseQuery">
+<PARAM name="Local" value="TSplashDlg.htm#579">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormCreate">
+<PARAM name="Local" value="TDefPassDlg.htm#52">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDefPassDlg">
+<PARAM name="Local" value="TDefPassDlg.htm#52">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSplashDlg">
+<PARAM name="Local" value="TSplashDlg.htm#580">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormHexStr">
+<PARAM name="Local" value="dtStrings.htm#450">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormPaint">
+<PARAM name="Local" value="TSplashDlg.htm#581">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="FormShow">
+<PARAM name="Local" value="TSplashDlg.htm#582">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="fPassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#33">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="fPAssWordChar">
+<PARAM name="Local" value="TDefPassDlg.htm#34">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetActualTimeZone">
+<PARAM name="Local" value="dtTime.htm#515">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetAllNodes">
+<PARAM name="Local" value="dtCL.htm#91">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtCL Unit">
+<PARAM name="Local" value="dtCL.htm#91">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtCL Unit">
+<PARAM name="Local" value="dtCL.htm#90">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetAppHandle">
+<PARAM name="Local" value="dtWindows.htm#543">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetApplicationPath">
+<PARAM name="Local" value="dtFiles.htm#194">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetAppName">
+<PARAM name="Local" value="dtWindows.htm#544">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetBit">
+<PARAM name="Local" value="dtMath.htm#252">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetCharCount">
+<PARAM name="Local" value="dtStrings.htm#451">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetClockPos">
+<PARAM name="Local" value="dtWindows.htm#545">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetClockRect">
+<PARAM name="Local" value="dtWindows.htm#546">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetClockWndHandle">
+<PARAM name="Local" value="dtWindows.htm#547">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetCompletePath">
+<PARAM name="Local" value="dtFiles.htm#195">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetComputerName">
+<PARAM name="Local" value="dtNetwork.htm#298">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetCreateFileDateTime">
+<PARAM name="Local" value="dtFiles.htm#196">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetCurrentDirectory">
+<PARAM name="Local" value="dtFiles.htm#197">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetData">
+<PARAM name="Local" value="TDialog.htm#138">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialog">
+<PARAM name="Local" value="TDialog.htm#138">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialogExt">
+<PARAM name="Local" value="TDialogExt.htm#145">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDialogData">
+<PARAM name="Local" value="dtDialogs.htm#116">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDirFromPath">
+<PARAM name="Local" value="dtFiles.htm#198">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDirName">
+<PARAM name="Local" value="dtFiles.htm#199">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDiskFreeSpace">
+<PARAM name="Local" value="dtFiles.htm#200">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDrives">
+<PARAM name="Local" value="dtFiles.htm#201">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDrivesEx">
+<PARAM name="Local" value="dtFiles.htm#202">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDriveType">
+<PARAM name="Local" value="dtFiles.htm#203">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetDriveTypeByPath">
+<PARAM name="Local" value="dtFiles.htm#204">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileAttributes">
+<PARAM name="Local" value="dtFiles.htm#205">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileData">
+<PARAM name="Local" value="dtFiles.htm#206">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileDateTime">
+<PARAM name="Local" value="dtFiles.htm#207">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileDateTime_hfile">
+<PARAM name="Local" value="dtFiles.htm#208">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileExtension">
+<PARAM name="Local" value="dtFiles.htm#209">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileInformationByHandle">
+<PARAM name="Local" value="dtFiles.htm#210">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileInformationByHandle_hfile">
+<PARAM name="Local" value="dtFiles.htm#211">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileNameFromPath">
+<PARAM name="Local" value="dtFiles.htm#212">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileSize">
+<PARAM name="Local" value="dtFiles.htm#213">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileSize_hfile">
+<PARAM name="Local" value="dtFiles.htm#214">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileType">
+<PARAM name="Local" value="dtFiles.htm#215">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFileType_Hfile">
+<PARAM name="Local" value="dtFiles.htm#216">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetFullFileName">
+<PARAM name="Local" value="dtFiles.htm#217">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetHTMLColor2">
+<PARAM name="Local" value="dtWeb.htm#532">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetIconCount">
+<PARAM name="Local" value="dtResource.htm#335">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetIconNameString">
+<PARAM name="Local" value="dtResource.htm#336">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetImages">
+<PARAM name="Local" value="TExtCustomImageList.htm#289">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetInformationFromFile">
+<PARAM name="Local" value="dtFiles.htm#218">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetIPData">
+<PARAM name="Local" value="dtNetwork.htm#299">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetLocalIPs">
+<PARAM name="Local" value="dtNetwork.htm#300">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetLogicalDrives">
+<PARAM name="Local" value="dtFiles.htm#219">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetMediaList">
+<PARAM name="Local" value="dtFiles.htm#220">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetNodeByText">
+<PARAM name="Local" value="dtCL.htm#92">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetParameter">
+<PARAM name="Local" value="dtWindows.htm#548">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetPass">
+<PARAM name="Local" value="TDefPassDlg.htm#53">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetPathNames">
+<PARAM name="Local" value="dtFiles.htm#221">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetProperties">
+<PARAM name="Local" value="dtSystem.htm#488">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetPufferStreamSize">
+<PARAM name="Local" value="dtSocketProtokoll.htm#383">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetRAM">
+<PARAM name="Local" value="dtWindows.htm#549">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetRGBColor">
+<PARAM name="Local" value="dtMultimedia.htm#276">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetShortFilename">
+<PARAM name="Local" value="dtFiles.htm#222">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetSpecDirectory">
+<PARAM name="Local" value="dtFiles.htm#224">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtFiles Unit">
+<PARAM name="Local" value="dtFiles.htm#224">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtFiles Unit">
+<PARAM name="Local" value="dtFiles.htm#223">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetSpecVolList">
+<PARAM name="Local" value="dtFiles.htm#225">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetSubNode">
+<PARAM name="Local" value="dtCL.htm#93">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetTempFile">
+<PARAM name="Local" value="dtFiles.htm#226">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetTempFileEx">
+<PARAM name="Local" value="dtFiles.htm#227">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetTransString">
+<PARAM name="Local" value="dtStrings.htm#452">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetVolumeInformation">
+<PARAM name="Local" value="dtFiles.htm#228">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetVolumeName">
+<PARAM name="Local" value="dtFiles.htm#229">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GetWindowsTimeZoneStrings">
+<PARAM name="Local" value="dtTime.htm#516">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ggT">
+<PARAM name="Local" value="dtMath.htm#253">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="GoUp">
+<PARAM name="Local" value="TSplashDlg.htm#571">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Hex16ToString">
+<PARAM name="Local" value="dtStrings.htm#453">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Hex2">
+<PARAM name="Local" value="dtStrings.htm#454">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Hex4">
+<PARAM name="Local" value="dtStrings.htm#455">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Hex8">
+<PARAM name="Local" value="dtStrings.htm#456">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Hex8ToString">
+<PARAM name="Local" value="dtStrings.htm#457">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="HexArray">
+<PARAM name="Local" value="dtStrings.htm#423">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="HideTitlebar">
+<PARAM name="Local" value="dtWindows.htm#550">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="HintArray">
+<PARAM name="Local" value="DelphiToolsForm2.htm#16">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="HintHidePause">
+<PARAM name="Local" value="TDefPassDlg.htm#64">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="HKeyToTKey">
+<PARAM name="Local" value="dtRegistry.htm#311">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="iFALSE">
+<PARAM name="Local" value="dtSystem.htm#480">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ImageFileSignature">
+<PARAM name="Local" value="dtMultimedia.htm#263">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ImageFileSignatureLen">
+<PARAM name="Local" value="dtMultimedia.htm#264">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ImageFileVersion">
+<PARAM name="Local" value="dtMultimedia.htm#265">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ImageType">
+<PARAM name="Local" value="dtResource.htm#328">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Index">
+<PARAM name="Local" value="TZI.htm#523">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InfoHeaderLen">
+<PARAM name="Local" value="dtFiles.htm#165">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InfoMsg">
+<PARAM name="Local" value="DelphiToolsForm2.htm#17">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InformationHeader">
+<PARAM name="Local" value="dtFiles.htm#166">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InitiateSignature">
+<PARAM name="Local" value="dtSignature.htm#361">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InputPassWordDlg">
+<PARAM name="Local" value="dtDialogs.htm#117">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InputPassWordDlgCount">
+<PARAM name="Local" value="dtDialogs.htm#118">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InputPassWordDlgFoc">
+<PARAM name="Local" value="dtDialogs.htm#119">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InsertDir">
+<PARAM name="Local" value="dtCL.htm#94">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Int">
+<PARAM name="Local" value="TSplashDlg.htm#572">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IntToBinStr">
+<PARAM name="Local" value="dtStrings.htm#458">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InvalidChars">
+<PARAM name="Local" value="dtFiles.htm#167">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="InvalidCharsSet">
+<PARAM name="Local" value="dtFiles.htm#168">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsAppRunning">
+<PARAM name="Local" value="dtWindows.htm#551">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsBDEInstalled">
+<PARAM name="Local" value="dtDataBase.htm#97">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsDelphi4Running">
+<PARAM name="Local" value="dtTools.htm#529">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsDelphiRunning">
+<PARAM name="Local" value="dtTools.htm#530">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsDirInDir">
+<PARAM name="Local" value="dtFiles.htm#230">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsFileInDir">
+<PARAM name="Local" value="dtFiles.htm#231">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsFileNameValid">
+<PARAM name="Local" value="dtFiles.htm#232">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsFileNameValidA">
+<PARAM name="Local" value="dtFiles.htm#233">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsNetworkPath">
+<PARAM name="Local" value="dtNetwork.htm#301">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsPassWordEnabled">
+<PARAM name="Local" value="TDefPassDlg.htm#65">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsPrim">
+<PARAM name="Local" value="dtMath.htm#254">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsResourceIDValid">
+<PARAM name="Local" value="dtResource.htm#337">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsResourceNameValid">
+<PARAM name="Local" value="dtResource.htm#338">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsShowTaskBar">
+<PARAM name="Local" value="dtWindows.htm#552">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsSound">
+<PARAM name="Local" value="dtMultimedia.htm#277">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsUsedMasterPassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#66">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="IsValidObject">
+<PARAM name="Local" value="dtSystem.htm#489">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="iTRUE">
+<PARAM name="Local" value="dtSystem.htm#481">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="JoinBitmaps">
+<PARAM name="Local" value="dtMultimedia.htm#278">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="JoinBitmapsI">
+<PARAM name="Local" value="dtMultimedia.htm#279">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="kgV">
+<PARAM name="Local" value="dtMath.htm#255">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="lngTimeToBeats">
+<PARAM name="Local" value="dtTime.htm#517">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadIconFromExe">
+<PARAM name="Local" value="dtResource.htm#339">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadImageListFile">
+<PARAM name="Local" value="dtMultimedia.htm#280">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadImageListFileExt">
+<PARAM name="Local" value="dtMultimedia.htm#281">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadImageListFileFromStream">
+<PARAM name="Local" value="dtMultimedia.htm#282">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadImageListFileFromStreamExt">
+<PARAM name="Local" value="dtMultimedia.htm#283">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadStringsFromStream">
+<PARAM name="Local" value="dtStrings.htm#459">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadToBool">
+<PARAM name="Local" value="dtResource.htm#340">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LoadToStr">
+<PARAM name="Local" value="dtResource.htm#341">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LockSound">
+<PARAM name="Local" value="dtMultimedia.htm#284">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="LongToByte">
+<PARAM name="Local" value="dtMath.htm#256">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MakeRealPathName">
+<PARAM name="Local" value="dtFiles.htm#234">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="mAllowUserClose">
+<PARAM name="Local" value="TSplashDlg.htm#573">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MasterPassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#67">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MaxLength">
+<PARAM name="Local" value="TDefPassDlg.htm#68">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MessageDialog">
+<PARAM name="Local" value="dtDialogs.htm#120">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MessageDlgBtnCaption">
+<PARAM name="Local" value="dtDialogs.htm#121">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MessageDlgCaption">
+<PARAM name="Local" value="dtDialogs.htm#122">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MessageDlgExt">
+<PARAM name="Local" value="dtDialogs.htm#123">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MessageFormat">
+<PARAM name="Local" value="dtDialogs.htm#124">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MessageTypeError">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#150">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#150">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#377">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MinLength">
+<PARAM name="Local" value="TDefPassDlg.htm#69">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MinLenHint">
+<PARAM name="Local" value="DelphiToolsForm2.htm#18">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ModalSplashScreen">
+<PARAM name="Local" value="dtDialogs.htm#125">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="mOnExtraPaint">
+<PARAM name="Local" value="TSplashDlg.htm#574">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MonitorPower">
+<PARAM name="Local" value="dtWindows.htm#553">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MoreDelFlags">
+<PARAM name="Local" value="dtFiles.htm#169">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MsgDlg_CustomHideClick">
+<PARAM name="Local" value="dtDialogs.htm#126">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MsgDlg_HideClick">
+<PARAM name="Local" value="dtDialogs.htm#127">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MsgError">
+<PARAM name="Local" value="dtDialogs.htm#129">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDialogs Unit">
+<PARAM name="Local" value="dtDialogs.htm#129">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDialogs Unit">
+<PARAM name="Local" value="dtDialogs.htm#128">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="MultiReturn">
+<PARAM name="Local" value="dtStrings.htm#460">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="NOP">
+<PARAM name="Local" value="dtSystem.htm#490">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="NoPassWordHint">
+<PARAM name="Local" value="DelphiToolsForm2.htm#19">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="NullStr">
+<PARAM name="Local" value="dtSystem.htm#482">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="NULL_SignVersion">
+<PARAM name="Local" value="dtSignature.htm#344">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="OkBtn">
+<PARAM name="Local" value="TDefPassDlg.htm#35">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="OkBtnClick">
+<PARAM name="Local" value="TDefPassDlg.htm#54">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="OkCaption">
+<PARAM name="Local" value="DelphiToolsForm2.htm#20">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="OldHintHidePause">
+<PARAM name="Local" value="TDefPassDlg.htm#70">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="OnDoCloseQuery">
+<PARAM name="Local" value="TDialogExt.htm#146">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="OnExtraPaint">
+<PARAM name="Local" value="TSplashDlg.htm#585">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="PassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#71">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="PassWordChar">
+<PARAM name="Local" value="TDefPassDlg.htm#72">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDefPassDlg">
+<PARAM name="Local" value="TDefPassDlg.htm#72">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDialogs Unit">
+<PARAM name="Local" value="dtDialogs.htm#104">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="PassWordDlg">
+<PARAM name="Local" value="DelphiToolsForm1.htm#1">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="PercentToScreen">
+<PARAM name="Local" value="dtMath.htm#257">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="PopupMenu1">
+<PARAM name="Local" value="TDefPassDlg.htm#36">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="pow">
+<PARAM name="Local" value="dtMath.htm#258">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadBool">
+<PARAM name="Local" value="dtStream.htm#396">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadFile">
+<PARAM name="Local" value="dtStream.htm#397">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadFileCompatible">
+<PARAM name="Local" value="dtStream.htm#398">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadFileExtended">
+<PARAM name="Local" value="dtStream.htm#399">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadFileMin">
+<PARAM name="Local" value="dtStream.htm#400">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadFileMinStd">
+<PARAM name="Local" value="dtStream.htm#401">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadFileStd">
+<PARAM name="Local" value="dtStream.htm#402">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadInteger">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#155">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#155">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#403">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegBinary">
+<PARAM name="Local" value="dtRegistry.htm#312">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegFloat">
+<PARAM name="Local" value="dtRegistry.htm#313">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegFloatDef">
+<PARAM name="Local" value="dtRegistry.htm#314">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegFont">
+<PARAM name="Local" value="dtRegistry.htm#315">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegInt">
+<PARAM name="Local" value="dtRegistry.htm#316">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegIntDef">
+<PARAM name="Local" value="dtRegistry.htm#317">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegString">
+<PARAM name="Local" value="dtRegistry.htm#318">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRegStringDef">
+<PARAM name="Local" value="dtRegistry.htm#319">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadRGBQuadsToStream">
+<PARAM name="Local" value="dtDelphiX.htm#99">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadSignature">
+<PARAM name="Local" value="dtSignature.htm#362">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadSignVersion">
+<PARAM name="Local" value="dtSignature.htm#363">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadString">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#156">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#156">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#404">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadString2a">
+<PARAM name="Local" value="dtStream.htm#405">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadString3a">
+<PARAM name="Local" value="dtStream.htm#406">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadString4">
+<PARAM name="Local" value="dtStream.htm#407">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadTreeNodesFromStream">
+<PARAM name="Local" value="dtStream.htm#409">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#409">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#408">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadValidSignature">
+<PARAM name="Local" value="dtSignature.htm#364">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadValidSignatureMin">
+<PARAM name="Local" value="dtSignature.htm#365">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadValidSignVersion">
+<PARAM name="Local" value="dtSignature.htm#366">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadValidSignVersionMin">
+<PARAM name="Local" value="dtSignature.htm#367">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadValidVersion">
+<PARAM name="Local" value="dtSignature.htm#368">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReadVersion">
+<PARAM name="Local" value="dtSignature.htm#369">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReceiveStream">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#157">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#157">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#384">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="RecToFont">
+<PARAM name="Local" value="dtRegistry.htm#320">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="RegisterFile">
+<PARAM name="Local" value="dtWindows.htm#554">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="RegisterLink">
+<PARAM name="Local" value="dtWindows.htm#555">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReplaceInValidFile">
+<PARAM name="Local" value="dtFiles.htm#235">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReplaceLStr">
+<PARAM name="Local" value="dtStrings.htm#461">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReplaceStr">
+<PARAM name="Local" value="dtStrings.htm#462">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ResIDModalSplashScreen">
+<PARAM name="Local" value="dtDialogs.htm#130">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ResIDSplashScreen">
+<PARAM name="Local" value="dtDialogs.htm#131">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ResNameModalSplashScreen">
+<PARAM name="Local" value="dtDialogs.htm#132">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ResNameSplashScreen">
+<PARAM name="Local" value="dtDialogs.htm#133">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Return">
+<PARAM name="Local" value="dtSystem.htm#483">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ReverseString">
+<PARAM name="Local" value="dtStrings.htm#463">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="RGBToColor">
+<PARAM name="Local" value="dtMultimedia.htm#285">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="RunCPL">
+<PARAM name="Local" value="dtWindows.htm#556">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="RunOnStartup">
+<PARAM name="Local" value="dtWindows.htm#557">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SaveImageListFileToStream">
+<PARAM name="Local" value="dtMultimedia.htm#286">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SaveRGBQuadsToStream">
+<PARAM name="Local" value="dtDelphiX.htm#100">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SaveStringsToStream">
+<PARAM name="Local" value="dtStrings.htm#464">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ScreenDump">
+<PARAM name="Local" value="dtWindows.htm#558">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ScreenToPercent">
+<PARAM name="Local" value="dtMath.htm#259">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SendStream">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#158">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#158">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#386">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#385">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetAllowDelPassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#55">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetCurrentDirectory">
+<PARAM name="Local" value="dtFiles.htm#236">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetData">
+<PARAM name="Local" value="TDialog.htm#139">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialog">
+<PARAM name="Local" value="TDialog.htm#139">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialogExt">
+<PARAM name="Local" value="TDialogExt.htm#147">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetFileAttributes">
+<PARAM name="Local" value="dtFiles.htm#237">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetHintHidePause">
+<PARAM name="Local" value="TDefPassDlg.htm#56">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetMaxLength">
+<PARAM name="Local" value="TDefPassDlg.htm#57">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetMinLength">
+<PARAM name="Local" value="TDefPassDlg.htm#58">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetOkCaption">
+<PARAM name="Local" value="TDefPassDlg.htm#59">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetOrgRect">
+<PARAM name="Local" value="dtMath.htm#260">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetPassWord">
+<PARAM name="Local" value="TDefPassDlg.htm#60">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetPAssWordChar">
+<PARAM name="Local" value="TDefPassDlg.htm#61">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetPoint">
+<PARAM name="Local" value="dtSystem.htm#491">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SetWinOnTop">
+<PARAM name="Local" value="dtWindows.htm#559">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SHLApplicationHandle">
+<PARAM name="Local" value="dtDialogs.htm#102">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ShowModal">
+<PARAM name="Local" value="TDialog.htm#140">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialog">
+<PARAM name="Local" value="TDialog.htm#140">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialogExt">
+<PARAM name="Local" value="TDialogExt.htm#148">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ShowTaskBar">
+<PARAM name="Local" value="dtWindows.htm#560">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ShowTitlebar">
+<PARAM name="Local" value="dtWindows.htm#561">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Signature">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#151">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#151">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#378">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SignatureIndent">
+<PARAM name="Local" value="dtSignature.htm#345">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SignatureIndentLen">
+<PARAM name="Local" value="dtSignature.htm#346">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SignVersionCompUsrFunc">
+<PARAM name="Local" value="dtSignature.htm#347">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SizeOfSignatureRec">
+<PARAM name="Local" value="dtSignature.htm#370">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SizeOfSignVersion">
+<PARAM name="Local" value="dtSignature.htm#371">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SizeOfString">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#159">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#159">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#410">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SizeOfStringBuffer3a">
+<PARAM name="Local" value="dtStream.htm#411">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SizeOfVersionRec">
+<PARAM name="Local" value="dtSignature.htm#372">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SplashDlg">
+<PARAM name="Local" value="SplashForm.htm#567">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SplashImage">
+<PARAM name="Local" value="TSplashDlg.htm#575">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SplashScreen">
+<PARAM name="Local" value="dtDialogs.htm#134">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StaticText1">
+<PARAM name="Local" value="TDefPassDlg.htm#37">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDefPassDlg">
+<PARAM name="Local" value="TDefPassDlg.htm#37">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TPassWordDlg">
+<PARAM name="Local" value="TPassWordDlg.htm#7">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StaticText2">
+<PARAM name="Local" value="TDefPassDlg.htm#38">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StaticText3">
+<PARAM name="Local" value="TDefPassDlg.htm#39">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StrHexFormat">
+<PARAM name="Local" value="dtStrings.htm#424">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StrHexFormatStd">
+<PARAM name="Local" value="dtStrings.htm#425">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StrIdx">
+<PARAM name="Local" value="dtSystem.htm#492">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StringLabel">
+<PARAM name="Local" value="TSplashDlg.htm#576">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="StringToTCharArray">
+<PARAM name="Local" value="dtStrings.htm#465">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="T16HexBit">
+<PARAM name="Local" value="dtStrings.htm#426">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TaskbarAutoHide">
+<PARAM name="Local" value="dtWindows.htm#562">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TaskBarClientRect">
+<PARAM name="Local" value="dtWindows.htm#563">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TBeats">
+<PARAM name="Local" value="dtTime.htm#503">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TBitmapRec">
+<PARAM name="Local" value="dtMultimedia.htm#266">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TButtonStyle">
+<PARAM name="Local" value="dtCL.htm#74">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TCallCompareString">
+<PARAM name="Local" value="dtStrings.htm#427">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TCharArray">
+<PARAM name="Local" value="dtStrings.htm#428">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDefPassDlg">
+<PARAM name="Local" value="TDefPassDlg.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialog">
+<PARAM name="Local" value="TDialog.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialogData">
+<PARAM name="Local" value="dtDialogs.htm#105">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDialogExt">
+<PARAM name="Local" value="TDialogExt.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDriveRoot">
+<PARAM name="Local" value="dtFiles.htm#170">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDriveType">
+<PARAM name="Local" value="dtFiles.htm#171">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDriveTypes">
+<PARAM name="Local" value="dtFiles.htm#172">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TDSoundState">
+<PARAM name="Local" value="dtMultimedia.htm#267">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TEnumCharRec">
+<PARAM name="Local" value="dtStrings.htm#429">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TestOpenSharedFile">
+<PARAM name="Local" value="dtFiles.htm#238">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TExtCustomImageList">
+<PARAM name="Local" value="TExtCustomImageList.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFileAttribute">
+<PARAM name="Local" value="dtFiles.htm#173">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFileAttributes">
+<PARAM name="Local" value="dtFiles.htm#174">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFileAttributesToWord">
+<PARAM name="Local" value="dtFiles.htm#239">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFileInfo">
+<PARAM name="Local" value="dtFiles.htm#175">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFileType">
+<PARAM name="Local" value="dtFiles.htm#176">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFontData">
+<PARAM name="Local" value="dtRegistry.htm#303">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TFreeSpaceRec">
+<PARAM name="Local" value="dtFiles.htm#177">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TGMT">
+<PARAM name="Local" value="dtTime.htm#504">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TimeElaps">
+<PARAM name="Local" value="TPassWordDlg.htm#8">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Timer">
+<PARAM name="Local" value="TSplashDlg.htm#577">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Timer1">
+<PARAM name="Local" value="TPassWordDlg.htm#9">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Timer1Timer">
+<PARAM name="Local" value="TPassWordDlg.htm#11">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Timer2">
+<PARAM name="Local" value="TPassWordDlg.htm#10">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="Timer2Timer">
+<PARAM name="Local" value="TPassWordDlg.htm#12">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TimerTimer">
+<PARAM name="Local" value="TSplashDlg.htm#583">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TimeToBeats">
+<PARAM name="Local" value="dtTime.htm#518">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TIPData">
+<PARAM name="Local" value="dtNetwork.htm#291">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TIPResult">
+<PARAM name="Local" value="dtNetwork.htm#292">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TKEY">
+<PARAM name="Local" value="dtRegistry.htm#304">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TKeyToHKey">
+<PARAM name="Local" value="dtRegistry.htm#321">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TLoadType">
+<PARAM name="Local" value="dtResource.htm#329">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TMessageType">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#152">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#152">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtSocketProtokoll Unit">
+<PARAM name="Local" value="dtSocketProtokoll.htm#379">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnAdd">
+<PARAM name="Local" value="dtCL.htm#75">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnClearNode">
+<PARAM name="Local" value="dtCL.htm#76">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnClearNode2">
+<PARAM name="Local" value="dtCL.htm#77">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnDataRead">
+<PARAM name="Local" value="dtStrings.htm#430">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnDataWrite">
+<PARAM name="Local" value="dtStrings.htm#431">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnDialogControlRead">
+<PARAM name="Local" value="dtDialogs.htm#106">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnDialogControlWrite">
+<PARAM name="Local" value="dtDialogs.htm#107">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnExtraPaint">
+<PARAM name="Local" value="dtDialogs.htm#108">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDialogs Unit">
+<PARAM name="Local" value="dtDialogs.htm#108">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="SplashForm Unit">
+<PARAM name="Local" value="SplashForm.htm#568">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnExtReadFileData">
+<PARAM name="Local" value="dtStream.htm#388">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnFindWindowObj">
+<PARAM name="Local" value="dtWindows.htm#534">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnFindWindowProc">
+<PARAM name="Local" value="dtWindows.htm#535">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnNode">
+<PARAM name="Local" value="dtCL.htm#78">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnNode2">
+<PARAM name="Local" value="dtCL.htm#79">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnReadCompatibledFileData">
+<PARAM name="Local" value="dtStream.htm#389">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnReadFileData">
+<PARAM name="Local" value="dtStream.htm#390">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnReadFileDataStd">
+<PARAM name="Local" value="dtStream.htm#391">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnSendMessage">
+<PARAM name="Local" value="dtSocketProtokoll.htm#380">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnStreamingNode">
+<PARAM name="Local" value="dtStream.htm#392">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnStreamingNode2">
+<PARAM name="Local" value="dtStream.htm#393">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnWriteFileData">
+<PARAM name="Local" value="dtStream.htm#394">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOnWriteFileDataStd">
+<PARAM name="Local" value="dtStream.htm#395">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TOrientation">
+<PARAM name="Local" value="dtMultimedia.htm#268">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TPascalError">
+<PARAM name="Local" value="dtSysUtils.htm#496">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TPassWordDlg">
+<PARAM name="Local" value="TPassWordDlg.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TPercent">
+<PARAM name="Local" value="dtMath.htm#244">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TRegisterFile">
+<PARAM name="Local" value="dtWindows.htm#536">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TResType">
+<PARAM name="Local" value="dtResource.htm#330">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TScreens">
+<PARAM name="Local" value="dtMath.htm#245">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSignatureRec">
+<PARAM name="Local" value="dtSignature.htm#350">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSignVersion">
+<PARAM name="Local" value="dtSignature.htm#351">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSignVersionCompUsrFunc">
+<PARAM name="Local" value="dtSignature.htm#352">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSpecDirectory">
+<PARAM name="Local" value="dtFiles.htm#178">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TSplashDlg">
+<PARAM name="Local" value="TSplashDlg.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TStateType">
+<PARAM name="Local" value="dtCL.htm#80">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TStrBoolean">
+<PARAM name="Local" value="dtSystem.htm#484">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TStreamType">
+<PARAM name="Local" value="dtDialogs.htm#109">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TTypeDirectory">
+<PARAM name="Local" value="dtFiles.htm#179">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TTZIResult">
+<PARAM name="Local" value="dtTime.htm#505">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TVersionRec">
+<PARAM name="Local" value="dtSignature.htm#353">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TVolumeRecord">
+<PARAM name="Local" value="dtFiles.htm#180">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TWriteProc">
+<PARAM name="Local" value="dtFiles.htm#181">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="TZI">
+<PARAM name="Local" value="TZI.htm">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ValidateAnchorIdentfier">
+<PARAM name="Local" value="dtSysUtils.htm#499">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="ValidatePascalIdentfier">
+<PARAM name="Local" value="dtSysUtils.htm#500">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="VersionIndent">
+<PARAM name="Local" value="dtSignature.htm#348">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="VersionIndentLen">
+<PARAM name="Local" value="dtSignature.htm#349">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WinDump">
+<PARAM name="Local" value="dtWindows.htm#564">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WordBitLength">
+<PARAM name="Local" value="dtMath.htm#243">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WordToBytes">
+<PARAM name="Local" value="dtMath.htm#261">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WordToTFileAttributes">
+<PARAM name="Local" value="dtFiles.htm#240">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteBool">
+<PARAM name="Local" value="dtStream.htm#412">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteFile">
+<PARAM name="Local" value="dtStream.htm#413">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteFileStd">
+<PARAM name="Local" value="dtStream.htm#414">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteInteger">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#160">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#160">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#415">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteRegBinary">
+<PARAM name="Local" value="dtRegistry.htm#322">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteRegFloat">
+<PARAM name="Local" value="dtRegistry.htm#323">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteRegFont">
+<PARAM name="Local" value="dtRegistry.htm#324">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteRegInt">
+<PARAM name="Local" value="dtRegistry.htm#325">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteRegString">
+<PARAM name="Local" value="dtRegistry.htm#326">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteSignature">
+<PARAM name="Local" value="dtSignature.htm#373">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteSignVersion">
+<PARAM name="Local" value="dtSignature.htm#374">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteString">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#161">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtDirectSocketProtokoll Unit">
+<PARAM name="Local" value="dtDirectSocketProtokoll.htm#161">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#416">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteString2a">
+<PARAM name="Local" value="dtStream.htm#417">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteString3a">
+<PARAM name="Local" value="dtStream.htm#418">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteString4">
+<PARAM name="Local" value="dtStream.htm#419">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteTreeNodesToStream">
+<PARAM name="Local" value="dtStream.htm#421">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#421">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="dtStream Unit">
+<PARAM name="Local" value="dtStream.htm#420">
+</OBJECT>
+</UL>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="WriteVersion">
+<PARAM name="Local" value="dtSignature.htm#375">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="_EnumSpecChars">
+<PARAM name="Local" value="dtStrings.htm#466">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+<PARAM name="Name" value="_FindInString">
+<PARAM name="Local" value="dtStrings.htm#467">
+</OBJECT>
+</UL>
+</BODY></HTML>

@@ -1,0 +1,122 @@
+function ReadStringToken(var TokenLine : String) : String;
+  var pLen : Integer;
+      i,p,bpos,StartPos : Integer;
+      s : String;
+      StartFlag,
+      IsConnected,
+      DoStop : Boolean;
+  begin
+    pLen := Length(TokenLine);
+    if pLen = 0 then exit;
+
+    ClearSpacesAtBegin(TokenLine);
+    if not (TokenLine[1] in ['''','#','+']) then exit;
+
+    i := 1;
+    bpos := i;
+    StartPos := 1;
+    DoStop := FALSE;
+    StartFlag := FALSE;
+
+    While TRUE do
+    begin
+      if  (i <= Length(TokenLine)) and (TokenLine[i] = '''') then
+      begin
+        if (i+1 <= Length(TokenLine) ) and (TokenLine[i+1] = '''') and StartFlag then
+        begin
+          Inc(i);
+          Inc(bpos);
+        end
+        else
+        if not StartFlag and not IsConnected and (Length(result) > 0) then
+        begin
+          DoStop := TRUE;
+        end  
+        else
+        if StartFlag then
+        begin
+          result := result + Copy(TokenLine,StartPos,i-StartPos+1);
+          StartFlag := FALSE;
+          IsConnected := FALSE;
+        end
+        else
+        begin
+          StartFlag := TRUE;
+          StartPos := i;
+        end;
+
+        Inc(i);
+        Inc(bpos);
+        continue;
+        //Delete(TokenLine,1,i);
+      end
+      else
+      if (i <= Length(TokenLine)) and (TokenLine[i] = '+') and (not StartFlag) then
+      begin
+        result := result + '+';
+        DoStop := FALSE;
+        IsConnected := TRUE;
+      end
+      else
+      if (i <= Length(TokenLine)) and (TokenLine[i] = ' ') and (not StartFlag) then
+       result := result + ' '
+      else
+      if (i <= Length(TokenLine)) and (TokenLine[i] = '#') and (not StartFlag) then
+      begin
+        Delete(TokenLine,1,i);
+        s := ReadChars(TokenLine,NumChar);
+        result := result + '#'+s;
+        TokenLine := GetTokenLine(TRUE,TRUE);
+        pLen := Length(TokenLine);
+        i := 0;
+        bPos:= 0;
+      end
+      else
+      if  (i > Length(TokenLine)) and not DoStop then
+      begin
+        s := GetTokenLine(FALSE,TRUE,p);
+        TokenLine := TokenLine + s;
+        Inc(pLen,Length(s));
+        if Length(s) = 0 then
+         DoStop := TRUE;
+      end
+      else
+      if  (i > Length(TokenLine)) or
+          ((TokenLine[i] in BreakChar) {or (TokenLine[i] <> ' ')})  and (not StartFlag) or
+       DoStop then
+      begin
+        if (i <= Length(TokenLine)) and (TokenLine[i] in BreakChar) and IsConnected then
+        begin
+          //s := Copy(TokenLine,i,Length(tokenline));
+          //ClearBreaksAtBegin(s);
+          Inc(i);
+          Inc(bpos);
+          if TokenLine[i] in BreakChar then
+          begin
+            Inc(i);
+            Inc(bpos);
+          end;
+
+          continue;
+        end;
+        for i := Length(result) downto 1 do
+        begin
+          if result[i] = ' ' then
+          begin
+            Delete(result,i,1);
+            Dec(bPos);
+          end
+          else
+           break;
+        end;
+        p := pLen-(bpos-1);
+        Seek(-(p),soCurrent);
+        exit;
+      end;
+
+
+     Inc(i);
+     Inc(bpos);
+     if (i > Length(TokenLine)) and not IsConnected then DoStop := TRUE;
+    end;
+  end;

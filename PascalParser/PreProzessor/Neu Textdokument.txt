@@ -1,0 +1,68 @@
+{$DEFINE DLLABSTRACTION} 
+TBaseEntry = class(TRegPersistent)
+  private
+    fDeclaration,
+    fName,
+    fComment,
+    fSingleComment: string;
+
+    //        fSwitch : TSwitch;
+    fKind: TIOClassType;
+    fDeclarationType: TDeclarationType;
+    fVisibility: TVisibility;
+    fIsPacked: boolean;
+    fCORItem: TContainerEntry;
+
+  protected
+    function ReadString(Stream: TStream; var Str: string): integer; overload; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+    function ReadString(Stream: TStream): string; overload;                   {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+    function WriteString(Stream: TStream; const Str: string): integer;        {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+
+
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry);  {$IFDEF DLLABSTRACTION}dynamic;Abstract;{$ENDIF}
+    destructor Destroy;                                         {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {Erstellt aus der Klasse einen Namesverbund, dessen Besitzer durch @ getrennt sind
+     z.b.
+     UnitName.Klassename.Methodename.ParameterName}
+    function GetNamePathOf(Item : TBaseEntry) : String; overload; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+    {Erstellt aus dieser Klasse einen Namesverbund, dessen Besitzer durch @ getrennt sind}
+    function GetNamePathOfSelf : String; overload; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {Vollständige Deklaration}
+    property Declaration: string read fDeclaration write fDeclaration;
+    function GetDeclaration: PChar; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    {Deklarationsart im Quellcode}
+    property DeclarationType: TDeclarationType
+      read fDeclarationType write fDeclarationType;
+
+    {Deklarationsname}
+    property Name: string read fName write fName;
+
+    {vorangestellter Kommentar}
+    property Comment: string read fComment write fComment;
+    {nachgestellt Kommentar in derselben Zeile}
+    property SingleComment: string read fSingleComment write fSingleComment;
+
+    {zugehörige Compilerdirektiven}
+    //         property Switch : TSwitch read fSwitch write fSwitch;
+
+    {Klassentyp}
+    property Kind: TIOClassType read fKind;
+
+    {Sichtbarkeit in Klassen}
+    property Visibility: TVisibility read fVisibility write fVisibility;
+
+    {Packdeklaration für Arrays,Klassen,Objekte und records}
+    property IsPacked: boolean read fIsPacked write fIsPacked;
+
+    {Zugehörige Elternklasse, die eine Liste besitzt, worin das Child enthalten ist.}
+    property Parent : TContainerEntry read fCORItem write fCORItem;
+  end;
+
+implementation

@@ -1,0 +1,183 @@
+Unit "ssdfsdfdf" wurde erfolgreich analysiert.
+benoetigte Zeit :
+1 Datei(en) gelesen
+687 token gelesen; 139 zeilen in 0,23 sek (604 Zeilen/s)
+
+ÄÄÄÄÄÄÄÄÄÄÄÄeingebundene UnitsÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ÄÄÄÄÄÄÄÄÄÄÄÄFunktionen/ProzedurenÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1
+{I .\..\PascalParser\include.inc}
+-->procedure RaiseException(Msg:String;const Args:array of const);stdcall;exter
+nal;
+2
+{}
+-->procedure ac(asd:ds asd=0);stdcall;
+3
+{I .\..\PascalParser\include.inc}
+-->procedure RaiseException(Msg:String;const Args:array of const);stdcall;exter
+nal;
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ÄÄÄÄÄÄÄÄÄÄÄÄTypenÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1
+{}
+-->asdf = (a,b,c,d,e);
+2
+{}
+-->df = asdf;
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ÄÄÄÄÄÄÄÄÄÄÄÄVariablenÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1
+//huoi
+{}
+-->asd:asf;
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ÄÄÄÄÄÄÄÄÄÄÄÄKonstantenÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1
+{SPascalWord ist ein genaues Abbild des Typs: @TPascalWord als Text.}
+-->SPascalWord:array[pw_none .. pw_implementation]of ShortString=('','unit','li
+brary','exports','interface','type','const','var','out','procedure','fu
+nction',
+'constructor','destructor','register','pascal','forward','cdecl','d
+eprecated','
+stdcall','overload','near','far','safecall','external','varargs
+','export','set'
+,'array','of','case','interface','dispinterface','class','o
+bject','record','pac
+ked','begin','end','property','private','protected','pu
+blic','published','read'
+,'write','index','stored','default','override','vir
+tual','reintroduce','abstrac
+t','dynamic','dispid','message','implementation
+');
+2
+{}
+-->abc=pw_none .. pw_implementation;
+3
+{Methodendeklarationen, die hinter einer Methode auftauchen können}
+-->MethodDefinitions:TPascalWords=[pw_message,pw_dispid,pw_default,pw_dynamic,p
+w_abstract,pw_override,pw_virtual,pw_reintroduce,pw_overload];
+4
+{Funktionsdeklarationen, die hinter einem Funktionskopf auftauchen können}
+-->FuncDefinitions:TPascalWords=[pw_reintroduce,pw_register .. pw_safecall,pw_v
+arargs,pw_external];
+5
+{Eigenschaftendeklarationen, die hinter Eigenschaften bei Klassen und Interface
+s auftauchen können.}
+-->PropertyDefinitions:TPascalWords=[pw_dispid,pw_default,pw_read,pw_write,pw_i
+ndex];
+6
+{}
+-->fs=absolute of $FF;
+7
+{}
+-->DEBUGGER='SDF''';
+8
+//hgsadfl
+{}
+-->sadf=7;
+9
+{SPascalWord ist ein genaues Abbild des Typs: @TPascalWord als Text.}
+-->SPascalWord:array[pw_none .. pw_implementation]of ShortString=('','unit','li
+brary','exports','interface','type','const','var','out','procedure','fu
+nction',
+'constructor','destructor','register','pascal','forward','cdecl','d
+eprecated','
+stdcall','overload','near','far','safecall','external','varargs
+','export','set'
+,'array','of','case','interface','dispinterface','class','o
+bject','record','pac
+ked','begin','end','property','private','protected','pu
+blic','published','read'
+,'write','index','stored','default','override','vir
+tual','reintroduce','abstrac
+t','dynamic','dispid','message','implementation
+');
+10
+{}
+-->abc=pw_none .. pw_implementation;
+11
+{Methodendeklarationen, die hinter einer Methode auftauchen können}
+-->MethodDefinitions:TPascalWords=[pw_message,pw_dispid,pw_default,pw_dynamic,p
+w_abstract,pw_override,pw_virtual,pw_reintroduce,pw_overload];
+12
+{Funktionsdeklarationen, die hinter einem Funktionskopf auftauchen können}
+-->FuncDefinitions:TPascalWords=[pw_reintroduce,pw_register .. pw_safecall,pw_v
+arargs,pw_external];
+13
+{Eigenschaftendeklarationen, die hinter Eigenschaften bei Klassen und Interface
+s auftauchen können.}
+-->PropertyDefinitions:TPascalWords=[pw_dispid,pw_default,pw_read,pw_write,pw_i
+ndex];
+14
+{}
+-->fs=absolute of $FF;
+15
+{}
+-->DEBUGGER='SDF''';
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ÄÄÄÄÄÄÄÄÄÄÄÄKlassenÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+1
+{}
+-->sdf=class(adsf);
+ 
+________>{Löst eine Exception aus mit Dateinamen (sofern vorhanden),Zeilenangab
+          e und dem Fehlertext Msg.}
+privat-->procedure RaiseException(Msg:String;Position:Cardinal=0);overload;
+ 
+________>{}
+privat-->procedure RaiseException(Msg:String;const Args:array of const);overloa
+        d;
+2
+{}
+-->zweiteklasse=class(adsf);
+ 
+________>{Löst eine Exception aus mit Dateinamen (sofern vorhanden),Zeilenangab
+          e und dem Fehlertext Msg.}
+privat-->procedure RaiseException(Msg:String;Position:Cardinal=0);overload;
+ 
+________>{}
+privat-->procedure RaiseException(Msg:String;const Args:array of const);overloa
+        d;
+3
+{}
+-->TTextStream=class(TMemoryStream);
+ 
+________>{Erstellt ein MemoryStream mit den Inhalt der Datei Filename._       M
+          ode kann den Zugriff auf die Datei bestimmen, aller
+          dings werden Schreibrechte_ 
+                nicht ausgeführt, weil eine Kop
+          ie der Daten in den Speicher geladen und d
+          ann verwendet wird.}
+privat-->constructor Create(const FileName:string;Mode:Word);overload;
+ 
+________>{da property}
+-->property asdf;
+4
+{}
+-->sdf=class(adsf);
+ 
+________>{Löst eine Exception aus mit Dateinamen (sofern vorhanden),Zeilenangab
+          e und dem Fehlertext Msg.}
+privat-->procedure RaiseException(Msg:String;Position:Cardinal=0);overload;
+ 
+________>{}
+privat-->procedure RaiseException(Msg:String;const Args:array of const);overloa
+        d;
+5
+{}
+-->zweiteklasse=class(adsf);
+ 
+________>{Löst eine Exception aus mit Dateinamen (sofern vorhanden),Zeilenangab
+          e und dem Fehlertext Msg.}
+privat-->procedure RaiseException(Msg:String;Position:Cardinal=0);overload;
+ 
+________>{}
+privat-->procedure RaiseException(Msg:String;const Args:array of const);overloa
+        d;
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+003 Funktion(en), 002 Typ(en), 001 Variable(n), 000 Strukturen,
+015 Konstante(n), 000 Objekt(e), 005 Klasse(n), 000 Interface gefunden.

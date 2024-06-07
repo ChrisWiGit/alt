@@ -1,0 +1,52 @@
+table.bannerparthead td {font-size:70%;}
+
+
+
+div.tablediv
+	{
+	font-size:100%;
+	width: 100%; /* Works around IE5.x bug: Forces tables to have correct right margins and top spacing */
+	margin-top: -.4em;
+	}
+ol div.tablediv, ul div.tablediv, ol div.HxLinkTable, ul div.HxLinkTable
+	{
+	margin-top: 0em; /* Forces tables to have correct right margins and top spacing */
+	}
+table.dtTABLE
+	{
+	width: 100%; /* Forces tables to have correct right margin */
+	margin-top: .6em;
+	margin-bottom: .3em;
+	border-width: 1px 1px 0px 0px;
+	border-style: solid;
+	border-color: #999999;
+	background-color: #999999; 
+	font-size: 100%; /* Text in Table is same size as text outside table */
+	}
+table.dtTABLE th, table.dtTABLE td
+	{ 
+	border-style: solid; /* Creates the cell border and color */
+	border-width: 0px 0px 1px 1px;
+	border-style: solid;
+	border-color: #999999;
+	padding: 4px 6px;
+	text-align: left;
+	}
+table.dtTABLE th	
+	{ 
+	background: #cccccc; /* Creates the shaded table header row */
+	vertical-align: bottom;
+	}
+table.dtTABLE td	
+	{
+	background: #ffffff;
+	vertical-align: top;
+	}
+table.SampMgr
+	{
+	margin: 0px 0px 0px -22px;
+	}
+table.SampMgr td
+	{
+	padding-left: 22px;
+	}

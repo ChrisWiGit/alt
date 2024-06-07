@@ -1,0 +1,219 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_KEYS_ICON           ICON                    "icon3.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_RUNASGUI ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 281, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ausf�hren als..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    ICON            IDI_KEYS_ICON,IDC_STATIC,6,7,21,20
+    LTEXT           "&Auszuf�hrende \nAnwendung :",IDC_APP_STATIC,36,29,51,
+                    16
+    COMBOBOX        IDC_APPLICATION_EDIT,87,31,125,30,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDC_BROWSE_BUTTON,214,31,28,14
+    LTEXT           "Pa&rameter:",IDC_PARAMETER_STATIC,47,51,37,8
+    EDITTEXT        IDC_PARAMETER_EDIT,87,48,136,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "?",IDC_PARAMETER_HELP_BUTTON,225,47,16,16
+    GROUPBOX        "Anwendung",IDC_STATIC,31,18,216,52
+    GROUPBOX        "Benutzer",IDC_STATIC,31,69,216,57
+    LTEXT           "&Benutzername :",IDC_NAME_STATIC,38,78,52,8
+    COMBOBOX        IDC_USERNAME_COMBO,93,76,147,57,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Passwort:",IDC_PASSWORD_STATIC,56,93,33,8
+    EDITTEXT        IDC_PASSWORD_EDIT,93,92,147,14,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Benutzerprofil-&Umgebung laden undverwenden (/env)",
+                    IDC_LOCAL_LOGON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,39,
+                    111,201,10
+    LTEXT           "von Christian Wimmer\r\nOpenSource 2005\r\n",
+                    IDC_STATIC,6,137,104,27
+    CONTROL         "&Dialog nach Start ge�ffnet lassen",IDC_DONTCLOSE_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,122,153,152,10
+    DEFPUSHBUTTON   "OK",ID_RUN,140,134,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,197,134,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 274
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,1
+ PRODUCTVERSION 1,2,0,1
+ FILEFLAGSMASK 0x37L
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "RunAs Grafical User Interface (unstable)"
+            VALUE "CompanyName", "Christian Wimmer"
+            VALUE "FileDescription", "RunAs User Interface and console"
+            VALUE "FileVersion", "1, 2, 0, 1"
+            VALUE "InternalName", "RunAsGUI"
+            VALUE "LegalCopyright", "OpenSource � 2005"
+            VALUE "OriginalFilename", "RunAsGUI.exe"
+            VALUE "ProductName", "RunAs GUI"
+            VALUE "ProductVersion", "1, 2, 0, 1"
+            VALUE "SpecialBuild", "unstable extende branch build"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "Ausf�hren als... (runas GUI)"
+    IDS_COMMANDS_HELP       "\r\nSyntax von runAsGUI \r\nrunasGUI [/e] [/!c] [/!q] [/!p] [/!u] [/password:<Passwort>] [/user:<Benutzer>] <Programm>\r\n\r\n/q\tDer Dialog wird nach dem Programmstart nicht geschlossen\r\n/e\tFehler werden nicht im Dialog dargestellt.\r\n\tEs wird nur ein R�ckgabewert geliefert.\r\n\tDie Fehlermeldung wird trotdem angezeigt, wenn der Parameter /e angegeben wurde!\r\n\r\nParameter mit einem Ausrufezeichen, deaktivieren im Dialog das Eingabefeld\r\n/!c\t Die Kommandozeile Eingabe wird deaktiviert (mit Browse-Button)\r\n/!u\t Die Benutzer Eingabe wird deaktiviert\r\n/!p\t Die Passwort Eingabe wird deaktiviert\r\n/!q\t Die M�glichkeit das Feld ""Dialogfeld schlie�en nach Start"" wird gesperrt\r\n\r\n\r\nHinweis: Die Angabe des Passworts als Parameter ist sicherheitsbedenklich!"
+    IDS_USER_MISSING        "Benutzername ist erforderlich"
+    IDS_PASSWORD_MISSING    "Passwort ist erforderlich"
+    IDS_APP_MISSING         "Programmname ist erforderlich"
+    IDS_ERROR               "Fehler"
+    IDC_RUNASGUI            "RUNASGUI"
+    IDS_UNICODE_CONVERT_ERROR 
+                            "UNICODE Konvertierungsfehler  (%d). Bitte melden Sie dies dem Autor."
+    IDS_PASSWORD            "&Passwort:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_USERNAME            "&Benutzername :"
+    IDS_DONTCLOSE           "&Dialog nach Start ge�ffnet lassen"
+    IDS_APP                 "&Auszuf�hrende \nAnwendung :"
+    IDS_FILETYPES           "Ausf�hrbare Dateien (exe,com,pif)\000*.exe;*.com;*.pif\000Alle Dateien\000*.*"
+    IDS_PARAMETER           "Pa&rameter:"
+    IDS_LOCAL_LOGON         "Benutzerprofil-&Umgebung laden und verwenden (/env)"
+    IDS_APP_ERROR           "Das Operationssystem kann die Anwendung nicht starten! (wom�glich korrupt?)\nFehlernummer %d\nDen genauen Fehler kann man unter der folgenden Addressen nachlesen.\nhttp://msdn.microsoft.com/library/default.asp?url=/library/en-us/wcesdkr/html/_sdk_error_values.asp"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

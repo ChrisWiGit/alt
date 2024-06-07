@@ -1,0 +1,8 @@
+Universalkennwort eingeben :
+Bewirkt , daß man alle MBD-Dateien öffnen kann , egal ob diese Verschlüsselt
+sind oder nicht.
+Dabei öffnet man den MBD-Datei-Dialog und wählt links unten "Kennwort"
+Danach gibt man "CW18" in beide Felder ein  (Groß-/Kleinschreibung ist egal).
+Es kommt eine Universalkennwortbestätigung und nun kann man 
+jede Datei bis zum Neustarten des Programms lesen.
+

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtResource</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtResource</H1>
+<H2>Beschreibung</H2>
+dtResource.pas beinhaltet Funktionen f&uuml;r den Umgang mit Windows Resourcen<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#331"><B>ConvResType</B></A>(ResType: <A href="dtResource.htm#330">TResType</A>): PCHAR;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#332"><B>CreateBitmapScriptResource</B></A>(const BitmapFileName, BitmapScriptFileName: string; BitmapIdent: string; NewWidth, NewHeight: Integer): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#333"><B>CreateBitmapScriptResourceEx</B></A>(const BitmapFileName, BitmapScriptFileName, TempFileName: string; BitmapIdent: string; NewWidth, NewHeight: Integer; var Lines: TStringList): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#334"><B>ExtractIcon</B></A>(Name: string; Index: Integer): TICon;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#335"><B>GetIconCount</B></A>(Name: string): DWord;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#336"><B>GetIconNameString</B></A>(const Name: string; const DefaultIndex: Integer; var PathName: string; var Index: Integer): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#337"><B>IsResourceIDValid</B></A>(aModule: HMODULE; Id: Integer; ResType: <A href="dtResource.htm#330">TResType</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#338"><B>IsResourceNameValid</B></A>(aModule: HMODULE; Id: string; ResType: <A href="dtResource.htm#330">TResType</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#339"><B>LoadIconFromExe</B></A>(hinst: Longint; Name: string; Int: WORD; uType: <A href="dtResource.htm#328">ImageType</A>;Width, Height: Integer; LoadType:<A href="dtResource.htm#329">TLoadType</A>): TGraphic;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#340"><B>LoadToBool</B></A>(var b: Boolean; Indent: Integer): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#341"><B>LoadToStr</B></A>(var Title: string; Indent: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="331"></A><CODE>function <B>ConvResType</B>(ResType: <A href="dtResource.htm#330">TResType</A>): PCHAR;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvResType konvertiert ResourcenTyp in einen String</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="332"></A><CODE>function <B>CreateBitmapScriptResource</B>(const BitmapFileName, BitmapScriptFileName: string; BitmapIdent: string; NewWidth, NewHeight: Integer): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>Siehe <CODE><A href="dtResource.htm#333">CreateBitmapScriptResourceEx</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="333"></A><CODE>function <B>CreateBitmapScriptResourceEx</B>(const BitmapFileName, BitmapScriptFileName, TempFileName: string; BitmapIdent: string; NewWidth, NewHeight: Integer; var Lines: TStringList): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>CreateBitmapScriptResourceEx erstellt aus einem Bitmap eine Resourcen-skript-datei "BitmapFileName" ist die Bitmapdatei, die als Resource abgespeichert werden soll. "BitmapScriptFileName", die neue Resourcendatei. Sie kann ein leerer String sein, um "Lines" zu verwenden, wenn mehrere Skripte verwendet werden. TempFileName : tempor&auml;re Datei (mit Pfad) f&uuml;r Zwischenspeicherung wenn leer sucht windows eine aus BitmapIdent : g&uuml;ltiger Bitmap-resourcenbezeichner NewWidth,NewHeight : Angepasste Gr&ouml;sse Lines : StringList f&uuml;r Ressourcenskript wenn ben&ouml;tigt und ungleich nil</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="334"></A><CODE>function <B>ExtractIcon</B>(Name: string; Index: Integer): TICon;</CODE></TD>
+</TR>
+</TABLE>
+<P>ExtractIcon extrahiert ein Symbol aus einer ausf&uuml;hrbaren Datei heraus, dass die Nummer "Index" besitzt.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="335"></A><CODE>function <B>GetIconCount</B>(Name: string): DWord;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetIconCount liefert die Anzahl der Symbole innerhalb einer ausf&uuml;hrbaren Datei zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="336"></A><CODE>function <B>GetIconNameString</B>(const Name: string; const DefaultIndex: Integer; var PathName: string; var Index: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetIconNameString</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="337"></A><CODE>function <B>IsResourceIDValid</B>(aModule: HMODULE; Id: Integer; ResType: <A href="dtResource.htm#330">TResType</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsResourceIDValid pr&uuml;ft eine ResourcenID auf G&uuml;ltigkeit</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="338"></A><CODE>function <B>IsResourceNameValid</B>(aModule: HMODULE; Id: string; ResType: <A href="dtResource.htm#330">TResType</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsResourceNameValid pr&uuml;ft einen ResourcenName auf G&uuml;ltigkeit</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="339"></A><CODE>function <B>LoadIconFromExe</B>(hinst: Longint; Name: string; Int: WORD; uType: <A href="dtResource.htm#328">ImageType</A>;Width, Height: Integer; LoadType:<A href="dtResource.htm#329">TLoadType</A>): TGraphic;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadIconFromExe l&auml;dt ein Symbol oder Bitmap mit dem Bezeichner Int oder Name aus einer Symboldatei (EXE,DLL,ICO,BMP). Dabei kann eine Typumwandlung verwendet werden : Also kann eine Symbolbezeichner in ein TBitmap-Objekt verwandelt werden. Dazu geben Sie den Symbolbezeichner in Name oder int an und geben f&uuml;r uType aIMAGE_BITMAP oder aIMAGE_ICON an. Der R&uuml;ckgabewert richtet sich entsprechend dieser Angabe. Info : Der R&uuml;ckgabewert muss entsprechend Typumgewandelt werden. Zus&auml;tzlich kann die Breite (witdh) und H&ouml;he (height) angegeben werden , nur wird hier einfach das Bild geschnitten und nicht verzerrt. In LoadType kann die Art des Bildes angegeben werden , wie es sich darstellen soll.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="340"></A><CODE>function <B>LoadToBool</B>(var b: Boolean; Indent: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadToBool k&auml;dt, &auml;hnlich zu <CODE><A href="dtResource.htm#341">LoadToStr</A></CODE> einen Boolwert in "b". Ein String[1] (in der Resource) von 1 bedeutet TRUE , sonst FALSE</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="341"></A><CODE>function <B>LoadToStr</B>(var Title: string; Indent: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadToStr l&auml;dt eine Stringresource Indent in Title. Wenn die Resource nicht existiert wird der vordefinierte Wert Title verwendet und False zur&uuml;ckgegeben</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="328"></A>ImageType</TD>
+<TD width=100%>ImageType wird von <CODE><A href="dtResource.htm#339">LoadIconFromExe</A></CODE> verwendet, um den R&uuml;ckgabewert zu bestimmen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="329"></A>TLoadType</TD>
+<TD>TLoadType wird von <CODE><A href="dtResource.htm#339">LoadIconFromExe</A></CODE> verwendet, um festzustellen wie mit der Resource umgegangen werden soll</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="330"></A>TResType</TD>
+<TD>TResType gibt an, um was f&uuml;r eine Art von Resourcentyp es sich handelt</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+unit test;
+
+interface
+uses abc;
+
+
+function {234}MyFuncName (123) : Integer;
+
+
+
+implementation

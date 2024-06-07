@@ -1,0 +1,360 @@
+{Version 0.4a
+by author
+removed}
+unit IOClasses;
+
+
+
+{$IFDEF DLLABSTRACTION}
+ {$WARNINGS OFF}
+ {$HINTS OFF}
+{$ENDIF}
+
+interface
+
+uses Classes, SysUtils, RegClasses;
+
+type  {gibt die Deklarations- und Klassenart an}
+  TIOClassType = (
+    ct_Item,
+    ct_Switch,
+    ct_Unknown,
+    ct_Error,
+    ct_None,
+    ct_Unit,
+    ct_BaseVariable,
+    ct_Constant,
+    ct_Type,
+    ct_Function,
+    ct_TypeFunction,
+    ct_property,
+    ct_container,
+    ct_record,
+    ct_class,
+    ct_object,
+    ct_parameter,
+    ct_interface,
+    ct_dispinterface);
+
+  TVisibility = (vnone, vprivate, vprotected, vpublic, vpublished);
+
+  {Item deklarations art}
+  TDeclarationType = (dt_none, dt_type, dt_var, dt_const, dt_method,
+    dt_class, dt_object, dt_interface, dt_dispinterface, dt_record);
+
+
+  //      TBaseEntry = class;
+
+
+     (* {Compiler Schalter : nicht verwendet}
+      TSwitch = class(TPersistent)
+      public
+      end;*)
+
+  TContainerEntry = class;
+
+  TBaseEntry = class(TRegPersistent)
+  private
+    fDeclaration,
+    fName,
+    fComment,
+    fSingleComment: string;
+    fLine : Int64;
+    fFileName : String;
+
+    //        fSwitch : TSwitch;
+    fKind: TIOClassType;
+    fDeclarationType: TDeclarationType;
+    fVisibility: TVisibility;
+    fIsPacked: boolean;
+    fCORItem: TContainerEntry;
+
+  protected
+    function ReadString(Stream: TStream; var Str: string): integer; overload; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+    function ReadString(Stream: TStream): string; overload;                   {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+    function WriteString(Stream: TStream; const Str: string): integer;        {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+
+    procedure SetDeclarationType(aDeclarationType: TDeclarationType); virtual;
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry);  {$IFDEF DLLABSTRACTION}dynamic;Abstract;{$ENDIF}
+    destructor Destroy;                                         {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {Erstellt aus der Klasse einen Namesverbund, dessen Besitzer durch @ getrennt sind
+     z.b.
+     UnitName.Klassename.Methodename.ParameterName}
+    function GetNamePathOf(Item : TBaseEntry) : String; overload; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+    {Erstellt aus dieser Klasse einen Namesverbund, dessen Besitzer durch @ getrennt sind}
+    function GetNamePathOfSelf : String; overload; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {Vollst�ndige Deklaration}
+    property Declaration: string read fDeclaration write fDeclaration;
+    function GetDeclaration: PChar; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    {Deklarationsart im Quellcode}
+    property DeclarationType: TDeclarationType
+      read fDeclarationType write SetDeclarationType;
+
+    {Deklarationsname}
+    property Name: string read fName write fName;
+
+    {vorangestellter Kommentar}
+    property Comment: string read fComment write fComment;
+    {nachgestellt Kommentar in derselben Zeile}
+    property SingleComment: string read fSingleComment write fSingleComment;
+
+    {zugeh�rige Compilerdirektiven}
+    //         property Switch : TSwitch read fSwitch write fSwitch;
+
+    property FileName : String read fFileName write fFileName; 
+    property Line : Int64 read fLine write fLine;
+
+
+    {Klassentyp}
+    property Kind: TIOClassType read fKind;
+
+    {Sichtbarkeit in Klassen}
+    property Visibility: TVisibility read fVisibility write fVisibility;
+
+    {Packdeklaration f�r Arrays,Klassen,Objekte und records}
+    property IsPacked: boolean read fIsPacked write fIsPacked;
+
+    {Zugeh�rige Elternklasse, die eine Liste besitzt, worin das Child enthalten ist.}
+    property Parent : TContainerEntry read fCORItem write fCORItem;
+  end;
+
+
+  {TContainerEntry = class(TBaseEntry)}
+  TContainerEntry = class(TBaseEntry)
+  private
+    fItems: TList;
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry); {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+    destructor Destroy;                                       {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+
+    {L�scht alle Unterobjekte}
+    procedure Clear;  {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ENDIF}
+
+    {@Name f�gt einen neuen Item in Items ein.}
+    procedure Add(anItem : TBaseEntry); {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    {}
+    property Items: TList read fItems;
+  end;
+
+  {Unit-deklarations Container}
+  TUnit = class(TContainerEntry)
+  private
+    fUsesUnits: TStringList;
+    fLibrary: boolean;
+    fLines : Integer;
+    fFileName : String;
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry);{$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    destructor Destroy; {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {Definitionsliste}
+    property UsesUnits: TStringList read fUsesUnits;
+    property IsLibrary: boolean read fLibrary write fLibrary;
+
+    //@Name wird durch den Programmierer gesetzt, wenn die Daten aus einer Datei stammen  
+    property FileName : String read fFilename write fFilename;
+
+    property LineCount : Integer read fLines write fLines;
+  end;
+
+      {Standardvariable mit "var" deklariert oder
+      auch die eintr�ge in records und klassen}
+  TBaseVariableEntry = class(TBaseEntry)
+  private
+    fType, fValue: string;
+
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} virtual; {$ENDIF}
+    destructor Destroy; {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {Typenstring der Variable}
+    property TypeString: string read fType write fType;
+    property Value: string read fValue write fValue;
+  end;
+
+  TConstantEntry = class(TBaseVariableEntry)
+  protected
+    function IsReadOnly: boolean; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry);{$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    property ReadOnly: boolean read IsReadOnly;
+  end;
+
+  TTypeEntry = class(TBaseVariableEntry)
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+  end;
+
+  TPropertyEntry = class(TBaseVariableEntry)
+  private
+    fReadOnly: boolean;
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Load(Stream: TStream);{$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {wenn eine eigenschaft, kein write stadium besitzt ist readonly wahr.}
+    property ReadOnly: boolean read fReadOnly write fReadOnly;
+  end;
+
+
+  TParameter = class(TBaseVariableEntry)
+  private
+    fDefinition,
+    fDefaultValue: string;
+  public
+    constructor Create(aDeclaration : String; anOwner : TBaseEntry); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    {wie wurde der Parameter definiert : var oder const oder normal}
+    property Definition: string read fDefinition write fDefinition;
+    property DefaultValue: string read fDefaultValue write fDefaultValue;
+  end;
+
+
+  TRecordEntry = class(TContainerEntry)
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+  end;
+
+
+
+  PAncestor = ^TAncestor;
+
+      {Object Class Interface Item
+       noch nicht ausgebaut.}
+  TOCIEntry = class(TContainerEntry)
+  private
+    fAncestors: TList;
+    fGuid: TGUID;
+    fGUIDStr : String;
+    
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry; ContainerTyp: TIOClassType); {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+    destructor Destroy;{$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    procedure Store(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Load(Stream: TStream);{$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    function AddAncestor: PAncestor; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+    procedure DeleteAncestor(Index: integer); {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    property Ancestors: TList read fAncestors;
+
+    procedure Clear; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+        {Container.Guid := StringToGUID(guidstr);
+         guidstr := GUIDtoString(Container.Guid);}
+    property Guid: TGUID read fGuid write fGuid;
+    property GuidAsString: String read fGUIDStr write fGUIDStr;
+
+  end;
+
+
+      {TAncestor enth�lt Daten �ber die Vorfahren einer Klasse.
+      Die Daten k�nnen in zweierlei Form vorkommen
+       NameType = TRUE bedeutet, dass genauere Informationen zu diesem Vorfahre nicht vorhanden sind, au�er dessen Name
+       = FALSE, bedeutet, dass Informationen zu Vorfahren vorhanden sind.
+      }
+  TAncestor = record
+    Size: integer;
+    NameSize : Integer;
+    NamePath : PCHAR;
+
+    {case NameType: boolean of
+      True: (NameString: ShortString);
+      False: (NameObject: TOCIEntry); }
+  end;
+
+  {$IFNDEF DLLABSTRACTION}
+  {Erstellt eine @PAncester Verbund. Wird in @PascalScanner.TPascalScanner.ScanOci verwendet.}
+  function aCreateAnchestorPtr(aPathName : String) : PAncestor;
+  {$ENDIF}
+
+type
+      {Funktions oder Procedure deklaration.
+      Unterscheidung zwischen ihnen durch IsProcedure m�glich.}
+  TFunctionEntry = class(TContainerEntry)
+  private
+    fResult, fCallConvention: string;
+  protected
+    procedure SetDeclarationType(aDeclarationType: TDeclarationType); override;
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry);{$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+    destructor Destroy; {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+    procedure Clear;  {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    {�berpr�ft, ob es sich um eine Prozedur handelt.}
+    function IsProcedure: boolean; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    function IsDestructor: boolean; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+    function IsConstructor: boolean; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+    function IsFunction: boolean; {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    procedure Store(Stream: TStream);{$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+    procedure Load(Stream: TStream); {$IFDEF DLLABSTRACTION}override;Abstract;{$ELSE} override; {$ENDIF}
+
+         {F�gt an das Ende der Liste einen neuen Parameter ein.
+         Definition gibt die �bergabeart an : var,const}
+    function AddParameter(Name, TypeString, Definition,
+      DefaultValue: string): TParameter;{$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+
+    {Parameterliste}
+    property Parameters: TList read fItems;
+
+    {R�ckgabewerttyp}
+    property Return: string read fResult write fResult;
+
+    {Aufrufkonventionen : stdcall;}
+    property CallConvention: string read fCallConvention write fCallConvention; //
+
+  end;
+
+  {Mehtodenereignis}
+  TTypeFunctionEntry = class(TFunctionEntry)
+  public
+    constructor Create(aDeclaration: string; anOwner : TBaseEntry);  {$IFDEF DLLABSTRACTION}virtual;Abstract;{$ELSE} virtual; {$ENDIF}
+  end;
+
+  TBaseEntryClass = class of TBaseEntry;
+  TContainerEntryClass = class of TContainerEntry;
+  TUnitClass = class of TUnit;
+  TBaseVariableClass = class of TBaseVariableEntry;
+  TConstantClass = class of TConstantEntry;
+  TTypeClass = class of TTypeEntry;
+  TPropertyClass = class of TPropertyEntry;
+  TParameterClass = class of TParameter;
+  TRecordClass = class of TRecordEntry;
+  TOCIItemClass = class of TOCIEntry;
+  TFunctionClass = class of TFunctionEntry;
+  TTypeFunctionClass = class of TTypeFunctionEntry;
+
+type
+  TProcGeTBaseEntryClass = function (ClassType : TBaseEntryClass): TBaseEntryClass; stdcall;
+
+
+implementation

@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtFiles</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtFiles</H1>
+<H2>Beschreibung</H2>
+dtFiles.pas beinhaltet Funktionen f&uuml;r dem Umgang mit Dateien und Datentr&auml;gern<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#182"><B>AddDirToFile</B></A>(const FileName: string; Directory: string; OverWriteExisting: Boolean; VerifyDirectory: Boolean = TRUE): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#183"><B>AddExtToFile</B></A>(const FileName: string; Extension: string; OverWriteExisting: Boolean): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#184"><B>AddInformationToFile</B></A>(const FileName: string; WriteProc: <A href="dtFiles.htm#181">TWriteProc</A>; Data: Pointer): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#185"><B>CreateNullFile</B></A>(const FileName: string; OwerwriteExisting: Boolean = FALSE): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#186"><B>DeleteFile</B></A>(const FileName: array of string; Form: TCustomForm; AllowUndo: Boolean): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#187"><B>DeleteFileStr</B></A>(const FileName: TStrings; Form: TCustomForm; AllowUndo: Boolean): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#188"><B>ExtractFileNameIndent</B></A>(const FileName: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#189"><B>ExtractLongPathName</B></A>(const PathName: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#190"><B>ExtractShortPathName</B></A>(const FileName: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#191"><B>FileExists</B></A>(const Name: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#192"><B>Filesplit</B></A>(filename: string; var dir, name, ext: string);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#193"><B>Filesplitext</B></A>(filename: string; var lw, dir, name, ext: string);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#194"><B>GetApplicationPath</B></A>: string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#195"><B>GetCompletePath</B></A>(const Path: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#196"><B>GetCreateFileDateTime</B></A>(const FileName: string): TDateTime;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#197"><B>GetCurrentDirectory</B></A>: string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#198"><B>GetDirFromPath</B></A>(Path: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#199"><B>GetDirName</B></A>(Level : Integer; Path : String) : String;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#200"><B>GetDiskFreeSpace</B></A>(drive: char; FreeSpaceRec: <A href="dtFiles.htm#177">TFreeSpaceRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#201"><B>GetDrives</B></A>: TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#202"><B>GetDrivesEx</B></A>(DriveCase: <A href="dtFiles.htm#172">TDriveTypes</A>): TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#203"><B>GetDriveType</B></A>(Drive: <A href="dtFiles.htm#170">TDriveRoot</A>): <A href="dtFiles.htm#171">TDriveType</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#204"><B>GetDriveTypeByPath</B></A>(DrivePath: string): <A href="dtFiles.htm#171">TDriveType</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#205"><B>GetFileAttributes</B></A>(const FileName: string): <A href="dtFiles.htm#174">TFileAttributes</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#206"><B>GetFileData</B></A>(const FileName: string; var FileInfo: <A href="dtFiles.htm#175">TFileInfo</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#207"><B>GetFileDateTime</B></A>(const FileName: string; var CreateTime, AcessTime, WriteTime: TSystemTime): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#208"><B>GetFileDateTime_hfile</B></A>(fileHandle: HFILE; var CreateTime, AcessTime, WriteTime: TSystemTime): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#209"><B>GetFileExtension</B></A>(Path: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#210"><B>GetFileInformationByHandle</B></A>(const FileName: string; var lpFileInformation: TByHandleFileInformation): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#211"><B>GetFileInformationByHandle_hfile</B></A>(fileHandle: HFILE; var lpFileInformation: TByHandleFileInformation): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#212"><B>GetFileNameFromPath</B></A>(Path: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#213"><B>GetFileSize</B></A>(const FileName: string): longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#214"><B>GetFileSize_hfile</B></A>(fileHandle: HFILE): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#215"><B>GetFileType</B></A>(const FileName: string): <A href="dtFiles.htm#176">TFileType</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#216"><B>GetFileType_Hfile</B></A>(hFile: HFILE): <A href="dtFiles.htm#176">TFileType</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#217"><B>GetFullFileName</B></A>(const ShortName: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#218"><B>GetInformationFromFile</B></A>(const FileName: string; ReadProc: <A href="dtFiles.htm#181">TWriteProc</A>; Data: Pointer): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#219"><B>GetLogicalDrives</B></A>: TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#220"><B>GetMediaList</B></A>: TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#221"><B>GetPathNames</B></A>(const PathName: string; var Paths: TStrings): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#222"><B>GetShortFilename</B></A>(const FileName: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#223"><B>GetSpecDirectory</B></A>(Typ: <A href="dtFiles.htm#179">TTypeDirectory</A>): string; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#224"><B>GetSpecDirectory</B></A>(Typ: <A href="dtFiles.htm#178">TSpecDirectory</A>): string; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#225"><B>GetSpecVolList</B></A>(DriveTypes: <A href="dtFiles.htm#172">TDriveTypes</A>): TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#226"><B>GetTempFile</B></A>(const PrefixString: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#227"><B>GetTempFileEx</B></A>(const PathName, PrefixString: string;Unique: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#228"><B>GetVolumeInformation</B></A>(Drive: Char; var VolumeRecord: <A href="dtFiles.htm#180">TVolumeRecord</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#229"><B>GetVolumeName</B></A>(Drive: Char): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#230"><B>IsDirInDir</B></A>(const DirName, PathName: string): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#231"><B>IsFileInDir</B></A>(const FileName, PathName: string): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#232"><B>IsFileNameValid</B></A>(FileName: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#233"><B>IsFileNameValidA</B></A>(FileName: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#234"><B>MakeRealPathName</B></A>(Path : String) : String;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#235"><B>ReplaceInValidFile</B></A>(const FileName, NewFileName: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#236"><B>SetCurrentDirectory</B></A>(Name: string): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#237"><B>SetFileAttributes</B></A>(const FileName: string; Attr: <A href="dtFiles.htm#174">TFileAttributes</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#238"><B>TestOpenSharedFile</B></A>(const FileName: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#239"><B>TFileAttributesToWord</B></A>(FileAttributes: <A href="dtFiles.htm#174">TFileAttributes</A>): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#240"><B>WordToTFileAttributes</B></A>(FileAttributes: Word): <A href="dtFiles.htm#174">TFileAttributes</A>;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="182"></A><CODE>function <B>AddDirToFile</B>(const FileName: string; Directory: string; OverWriteExisting: Boolean; VerifyDirectory: Boolean = TRUE): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>AddDirToFile ist OverWriteExisting = TRUE wird der Verzeichnisstring von FileName durch Directory &uuml;berschrieben Wenn OverWriteExisting = FALSE ist , wird Directory nicht &uuml;ber den existierenen Verzeichnisstring von FileName geschrieben. Dies geschieht dann nur wenn FileName kein Verzeichnis beinhaltet VerifyDirectory (TRUE) pr&uuml;ft das Verzeichnis von Filename und &uuml;berschreibt es mit Directory auf jeden Fall wenn es nicht existiert Directory wird auf keinen Fall gepr&uuml;ft</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="183"></A><CODE>function <B>AddExtToFile</B>(const FileName: string; Extension: string; OverWriteExisting: Boolean): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>AddExtToFile wie AddDirToFile , nur wird die Erweiterung ge&auml;ndert anstatt das Verzeichnis</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="184"></A><CODE>function <B>AddInformationToFile</B>(const FileName: string; WriteProc: <A href="dtFiles.htm#181">TWriteProc</A>; Data: Pointer): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>AddInformationToFile schreibt an das Ende einer Datei beliebiege Informationen dabei kann der vorherige Inhalt in der Gr&ouml;&szlig;e bei jedem lesen von Informationen eine andere Gr&ouml;&szlig;e haben die Inhalte werden &uuml;ber WriteProc geschrieben es ist wichtig , da&szlig; die Anzahl der geschriebenen Bytes korrekt &uuml;bergeben wird da sonst die Daten nicht wiederhergestellt werden k&ouml;nnen. Die Anzahl der geschriebenen Bytes ist : 2*InfoHeaderLen+SizeOf(Longint) + <geschriebene Bytes in WriteProc> Data wird an WriteProc(Data) &uuml;bergeben Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes Warnung : -Manche Dateien werden von Anfang bis zum Ende gelesen dabei k&ouml;nnen die hinzugef&uuml;gten Daten unerw&uuml;nschte Nebeneffekte erbringen -Manche Programme lesen aus den Dateien nur die erforderlichen Daten und erzeugen dann eine neue , dabei verliert man den Informationsheader.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="185"></A><CODE>function <B>CreateNullFile</B>(const FileName: string; OwerwriteExisting: Boolean = FALSE): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>CreateNullFile erstellt eine leere Datei mit dem Namen FileName wenn OwerwriteExisting = FALSE und die Datei nicht schon existiert Ist OwerwriteExisting = TRUE und die Datei existiert wird sie &uuml;berschrieben Der R&uuml;ckgabewert ist oben definiert Weitere Dateierstellungsfehler werden per Exception bekanntgegeben</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="186"></A><CODE>function <B>DeleteFile</B>(const FileName: array of string; Form: TCustomForm; AllowUndo: Boolean): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>DeleteFile l&ouml;scht Dateien in den Papierkorb , wenn AllowUndo = TRUE Es k&ouml;nnen mehrere Dateien in Filename angegeben werden : ['..','..'] Form : DialogElternfenster Wenn Form = nil dann wird der Desktop benutzt</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="187"></A><CODE>function <B>DeleteFileStr</B>(const FileName: TStrings; Form: TCustomForm; AllowUndo: Boolean): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>DeleteFileStr wie <CODE><A href="dtFiles.htm#186">DeleteFile</A></CODE> nur mit TStrings f&uuml;r TOpenDialog.Files-&uuml;bergabe</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="188"></A><CODE>function <B>ExtractFileNameIndent</B>(const FileName: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ExtractFileNameIndent gibt den Dateiname (ohne Erweiterung) zur&uuml;ck Mit Erweiterung siehe GetFileNameFromPath</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="189"></A><CODE>function <B>ExtractLongPathName</B>(const PathName: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ExtractLongPathName ermittelt aus einem DOS-Pfadname einen langem Verzeichnissname</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="190"></A><CODE>function <B>ExtractShortPathName</B>(const FileName: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ExtractShortPathName ermittelt den DOS-Pfadname aus einem langem Verzeichnissname</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="191"></A><CODE>function <B>FileExists</B>(const Name: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>FileExists gibt True zur&uuml;ck , wenn die Datei oder das Verzeichnis (auch Laufwerk) existiert</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="192"></A><CODE>procedure <B>Filesplit</B>(filename: string; var dir, name, ext: string);</CODE></TD>
+</TR>
+</TABLE>
+<P>Filesplit wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="193"></A><CODE>procedure <B>Filesplitext</B>(filename: string; var lw, dir, name, ext: string);</CODE></TD>
+</TR>
+</TABLE>
+<P>Filesplitext splittet aus einem Windows9x Dateinamen das Laufwerk lw ,das Verzeichnis dir ,den DateiName name und die Erweiterung ext Lange Datei- und Verzeichnisnamen werden unterst&uuml;tzt. Version 2.1</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="194"></A><CODE>function <B>GetApplicationPath</B>: string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetApplicationPath liefert das Verzeichnis (mit "\" am Ende) der Anwendung zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="195"></A><CODE>function <B>GetCompletePath</B>(const Path: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetCompletePath liefert aus einem Dateipfad das Verzeichnis zur&uuml;ck d.h. (mit abschliessenden '\')</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="196"></A><CODE>function <B>GetCreateFileDateTime</B>(const FileName: string): TDateTime;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="197"></A><CODE>function <B>GetCurrentDirectory</B>: string;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="198"></A><CODE>function <B>GetDirFromPath</B>(Path: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetDirFromPath gibt das Verzeichnis eines Pfades zur&uuml;ck (mit Backslash am Ende)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="199"></A><CODE>function <B>GetDirName</B>(Level : Integer; Path : String) : String;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetDirName ermittelt aus einem Pfad , den n-ten (Level) Pfadname 0 bedeutet entweder der Computername (UNC-Pfad) oder der Laufwerksbuchstabe Jeder Wert gr&ouml;&szlig;er 0 ist ein Verzeichnissname der Wert -1 lieft im String die gesamte Anzahl von Verzeichnisnamen ( +1) als String zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="200"></A><CODE>function <B>GetDiskFreeSpace</B>(drive: char; FreeSpaceRec: <A href="dtFiles.htm#177">TFreeSpaceRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetDiskFreeSpace gibt Festplattenspeicherdaten zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="201"></A><CODE>function <B>GetDrives</B>: TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>Siehe <CODE><A href="dtFiles.htm#202">GetDrivesEx</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="202"></A><CODE>function <B>GetDrivesEx</B>(DriveCase: <A href="dtFiles.htm#172">TDriveTypes</A>): TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetDrivesEx z&auml;hlt alle Laufwerke (deren Typ zugelassen sind) auf siehe TDriveType Wenn Drive = [] ist , sind alle Type bis auf DRIVE_NO_ROOT_DIR zugelassen Der Wert DRIVE_NO_ROOT_DIR bezeichnet ein nicht-existierende Laufwerk aus. Anstelle von Drive = [] kann GetDrives verwendet werden -> Ist dasselbe Die StringListe darf nicht initialisiert werden! Die Eintr&auml;ge besitzen den Laufwerksbuchstaben mit :\ z.B. C:\ Vorsicht : Um den Buchstaben zu bekommen lautet die Anweisung: <TStringList>.Strings[<Nummer>][1] // nicht 0 sondern 1 Die Liste m&uuml;ssen Sie aus dem Speicher entfernen!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="203"></A><CODE>function <B>GetDriveType</B>(Drive: <A href="dtFiles.htm#170">TDriveRoot</A>): <A href="dtFiles.htm#171">TDriveType</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetDriveType stellt bei einem Laufwerk den Typ fest</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="204"></A><CODE>function <B>GetDriveTypeByPath</B>(DrivePath: string): <A href="dtFiles.htm#171">TDriveType</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="205"></A><CODE>function <B>GetFileAttributes</B>(const FileName: string): <A href="dtFiles.htm#174">TFileAttributes</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileAttributes liest den Typ der Datei Filename aus. Es k&ouml;nnen Kombinationen aus TFileAttribute entstehen die dann aus der Menge gelesen werden k&ouml;nnen GetFileAttributes wird in GetFileData unterst&uuml;tzt</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="206"></A><CODE>function <B>GetFileData</B>(const FileName: string; var FileInfo: <A href="dtFiles.htm#175">TFileInfo</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileData Packt alle oberen Funktionen in den Record <CODE><A href="dtFiles.htm#175">TFileInfo</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="207"></A><CODE>function <B>GetFileDateTime</B>(const FileName: string; var CreateTime, AcessTime, WriteTime: TSystemTime): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileDateTime wie GetFileDateTime_hfile, allerdings kann der Dateiname direkt angegeben werden</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="208"></A><CODE>function <B>GetFileDateTime_hfile</B>(fileHandle: HFILE; var CreateTime, AcessTime, WriteTime: TSystemTime): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileDateTime_hfile gibt die Erstellungs,letzte Zugriffs- und Ver&auml;nderungszeit + datum zur&uuml;ck Man braucht ein Dateihandle -> aber schneller , da keine datei&ouml;ffnungsroutine Tortzdem mu&szlig; die Datei mit OpenFile ge&ouml;ffnet werden Aber man kann mehrer Dinge damit anstellen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="209"></A><CODE>function <B>GetFileExtension</B>(Path: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileExtension ermittelt die Dateinamenerweiterung ohne "."</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="210"></A><CODE>function <B>GetFileInformationByHandle</B>(const FileName: string; var lpFileInformation: TByHandleFileInformation): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileInformationByHandle gibt noch mehr Informationen &uuml;ber die Datei zur&uuml;ck Im Record sind auch die oberen Funktionen enthalten.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="211"></A><CODE>function <B>GetFileInformationByHandle_hfile</B>(fileHandle: HFILE; var lpFileInformation: TByHandleFileInformation): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="212"></A><CODE>function <B>GetFileNameFromPath</B>(Path: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileNameFromPath gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zur&uuml;ck Ohne Erweiterung siehe ExtractFileNameIndent</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="213"></A><CODE>function <B>GetFileSize</B>(const FileName: string): longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileSize gibt die Gr&ouml;&szlig;e der Datei in Bytes zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="214"></A><CODE>function <B>GetFileSize_hfile</B>(fileHandle: HFILE): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="215"></A><CODE>function <B>GetFileType</B>(const FileName: string): <A href="dtFiles.htm#176">TFileType</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="216"></A><CODE>function <B>GetFileType_Hfile</B>(hFile: HFILE): <A href="dtFiles.htm#176">TFileType</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFileType_Hfile gibt DateiTyp zur&uuml;ck : FILE_TYPE_UNKNOWN The type of the specified file is unknown. FILE_TYPE_DISK The specified file is a disk file. FILE_TYPE_CHAR The specified file is a character file, typically an LPT device or a console. FILE_TYPE_PIPE The specified file is either a named or anonymous pipe.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="217"></A><CODE>function <B>GetFullFileName</B>(const ShortName: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetFullFileName erweitert einen kurzen Dateiname zu einem langen Dateinamen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="218"></A><CODE>function <B>GetInformationFromFile</B>(const FileName: string; ReadProc: <A href="dtFiles.htm#181">TWriteProc</A>; Data: Pointer): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetInformationFromFile lie&szlig;t Daten, die mit AddInformationToFile geschrieben wurden. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes bei Erfolg , oder -1 wenn der Header besch&auml;digt wurde oder keine Informationen existieren Warnung : -Manche Dateien werden von Anfang bis zum Ende gelesen dabei k&ouml;nnen die hinzugef&uuml;gten Daten unerw&uuml;nschte Nebeneffekte erbringen -Manche Programme lesen aus den Dateien nur die erforderlichen Daten und erzeugen dann eine neue , dabei verliert man den Informationsheader.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="219"></A><CODE>function <B>GetLogicalDrives</B>: TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetLogicalDrives ermittelt alle verf&uuml;gbaren Laufwerke und gibt die Laufwerksbuchstaben in einer Stringliste zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="220"></A><CODE>function <B>GetMediaList</B>: TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetMediaList ist <CODE><A href="dtFiles.htm#202">GetDrivesEx</A></CODE> vorzuziehen , wenn man alle Laufwerke aufgez&auml;hlt haben m&ouml;chte. Hier wird das Laufwerk nicht auf Funktionst&uuml;chtigkeit (CD enthalten od. nicht/Zugriff m&ouml;glich) gepr&uuml;ft</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="221"></A><CODE>function <B>GetPathNames</B>(const PathName: string; var Paths: TStrings): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetPathNames liefert alle Verzeichnisname in einer Stringliste zur&uuml;ck Der erste Eintrag ist immer , wenn vorhanden in PathName , das Laufwerk mit einem Doppelpunkt Die folgenden Verzeichnisnamen sind rein und besitzen kein Backslash Der R&uuml;ckgabewert ist die Anzahl der Stringlisteneintr&auml;ge Hinweis : Paths darf nicht mit Create initalisiert werden PathName kann ein syntaktisch korrekter Dateipfad sein : C:\HALLO\OHO\guten.tag ^-> Der Dateiname wird ignoriert "C:" + "HALLO" + "OHO" Achtung : Es d&uuml;rfen keine doppelte Backslash , wie in C sein</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="222"></A><CODE>function <B>GetShortFilename</B>(const FileName: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="223"></A><CODE>function <B>GetSpecDirectory</B>(Typ: <A href="dtFiles.htm#179">TTypeDirectory</A>): string; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetSpecDirectory liefert ein konstantes Systemverzeichnis zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="224"></A><CODE>function <B>GetSpecDirectory</B>(Typ: <A href="dtFiles.htm#178">TSpecDirectory</A>): string; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetSpecDirectory Hier kann mehrere FunktionsParameter an TSHFileOpStruct.fFlags &uuml;bergeben werden : siehe TSHFileOpStruct Der R&uuml;ckgabewert entspricht des der SHFileOperation-Fkt. Hinweis : FOF_ALLOWUNDO darf nicht angegeben werden , weil sie schon definiert wurde FOF_ALLOWUNDO Preserves undo information, if possible. Nicht benutzen! FOF_CONFIRMMOUSE Not implemented. FOF_FILESONLY Performs the operation only on files if a wildcard filename (*.*) is specified. FOF_MULTIDESTFILES Indicates that the pTo member specifies multiple destination files (one for each source file) rather than one directory where all source files are to be deposited. FOF_NOCONFIRMATION Responds with "yes to all" for any dialog box that is displayed. FOF_NOCONFIRMMKDIR Does not confirm the creation of a new directory if the operation requires one to be created. FOF_RENAMEONCOLLISION Gives the file being operated on a new name (such as "Copy #1 of...") in a move, copy, or rename operation if a file of the target name already exists. FOF_SILENT Does not display a progress dialog box. FOF_SIMPLEPROGRESS Displays a progress dialog box, but does not show the filenames. FOF_WANTMAPPINGHANDLE Fills in the hNameMappings member. The handle must be freed by using the SHFreeNameMappings function Erweiterte Version zu TTypeDirectory mit mehr Verzeichnisr&uuml;ckgaben</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="225"></A><CODE>function <B>GetSpecVolList</B>(DriveTypes: <A href="dtFiles.htm#172">TDriveTypes</A>): TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetSpecVolList listet alle angegebenen und verf&uuml;gbaren Laufwerke auf. Es wird nur der Laufwerksbuchstabe im String gespeichert. Siehe GetDrivesEx</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="226"></A><CODE>function <B>GetTempFile</B>(const PrefixString: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetTempFile vereinfachte Funktion von GetTempFileEx Unique = 0 , d.h. Windows bestimmt selbst eine Zahl</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="227"></A><CODE>function <B>GetTempFileEx</B>(const PathName, PrefixString: string;Unique: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetSpecDirectory erzeugt eine Tempor&auml;re Datei in PathName mit einem Prefix (Prefixstring) GetTempFileEx is &auml;quivalent zu Win32-Funktion : GetTempFileName PathName : Das Beherbergungsverzeichnis der neuen Datei - kann mit GetSpecDirectory(DIR_TEMP) herausgefunden werden PrefixString : die ersten drei Zeichen werden zu den ersten drei Zeichen im Dateinamen Unique : eine BezeichnerZiffer die an den Dateinamen hinzugef&uuml;gt wird Bsp : path\preuuuu.TMP Die Datei wird zwar erstellt ,aber nicht mehr gel&ouml;scht</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="228"></A><CODE>function <B>GetVolumeInformation</B>(Drive: Char; var VolumeRecord: <A href="dtFiles.htm#180">TVolumeRecord</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetVolumeInformation gibt Volumeninformation , d.h. FAT , Dateinamenbegrenzung</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="229"></A><CODE>function <B>GetVolumeName</B>(Drive: Char): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="230"></A><CODE>function <B>IsDirInDir</B>(const DirName, PathName: string): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsDirInDir wie <CODE><A href="dtFiles.htm#231">IsFileInDir</A></CODE> , nur eben mit Verzeichnissen anstatt Dateien</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="231"></A><CODE>function <B>IsFileInDir</B>(const FileName, PathName: string): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsFileInDir gibt die Anzahl der Dateien mit dem Namen FileName im Verzeichnis PathName zur&uuml;ck Platzhalter sind erlaubt, aber nicht mehrer Angaben. z.B. Hall* ,Hall? oder *.* , aber nicht Hallo;Oho</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="232"></A><CODE>function <B>IsFileNameValid</B>(FileName: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsFileNameValid pr&uuml;ft , ob ein Dateiname ung&uuml;ltige Zeichen enth&auml;lt (FALSE)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="233"></A><CODE>function <B>IsFileNameValidA</B>(FileName: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="234"></A><CODE>function <B>MakeRealPathName</B>(Path : String) : String;</CODE></TD>
+</TR>
+</TABLE>
+<P>MakeRealPathName erstellt alle noch nicht vorhanden Unterverzeichniss</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="235"></A><CODE>function <B>ReplaceInValidFile</B>(const FileName, NewFileName: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReplaceInValidFile gibt FileName zur&uuml;ck wenn dieser existiert sonst NewFileName</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="236"></A><CODE>function <B>SetCurrentDirectory</B>(Name: string): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="237"></A><CODE>function <B>SetFileAttributes</B>(const FileName: string; Attr: <A href="dtFiles.htm#174">TFileAttributes</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>SetFileAttributes setzt Dateiattribute aus TFileAttributes</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="238"></A><CODE>function <B>TestOpenSharedFile</B>(const FileName: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>TestOpenSharedFile testet , ob einen Datei bereits ge&ouml;ffnet wurde und liefert in diesem Fall TRUE zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="239"></A><CODE>function <B>TFileAttributesToWord</B>(FileAttributes: <A href="dtFiles.htm#174">TFileAttributes</A>): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="240"></A><CODE>function <B>WordToTFileAttributes</B>(FileAttributes: Word): <A href="dtFiles.htm#174">TFileAttributes</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="170"></A>TDriveRoot</TD>
+<TD width=100%>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="171"></A>TDriveType</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="172"></A>TDriveTypes</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="173"></A>TFileAttribute</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="174"></A>TFileAttributes</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="175"></A>TFileInfo</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="176"></A>TFileType</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="177"></A>TFreeSpaceRec</TD>
+<TD>address of name of file system</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="178"></A>TSpecDirectory</TD>
+<TD>address of total number of clusters</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="179"></A>TTypeDirectory</TD>
+<TD>File system directory that serves as a common repository for Internet history items.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="180"></A>TVolumeRecord</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="181"></A>TWriteProc</TD>
+<TD>R&uuml;ckgabewert mu&szlig; die Anzahl der geschriebenen Bytes sein</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="163"></A>ERR_FileExists</TD>
+<TD width=100%>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="164"></A>ERR_NoError</TD>
+<TD>CreateNullFile - R&uuml;ckgabewerte</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="165"></A>InfoHeaderLen</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="166"></A>InformationHeader</TD>
+<TD>_TWriteProc = function (Stream : TStream;Data : Pointer) : Longint;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="167"></A>InvalidChars</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="168"></A>InvalidCharsSet</TD>
+<TD>&nbsp;</TD>
+</TR>
+</TABLE><A name=Variables></A><H2>Variablen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="169"></A>MoreDelFlags</TD>
+<TD width=100%>&nbsp;</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+- user, passwort, applikation, parameter
+
+-ausführbar über kommandozeile mit möglichkeit zur einstellung aller
+eingaben, die auch im dialog vorkommen (einschließlich passwort)
++wenn ALLE (außer parameter) eingaben vorgenommen sind,
+dann kommt kein dialog
++es ist also auch möglich, dass man nur noch eine applikation angeben
+muss
+
+-rückgabewerte auch in der kommandozeile auswertbar
++fehlerbeschreibung in ein set setzen,dass in batch auswertbar
+(oder einfach fehlermeldung durch net helpmsg XXXX anzeigen)
+
+-fehler per dialog anzeigen oder nicht einblenden, wenn durch parameter verboten
+
+-mögliche benutzer in liste darstellen - aber immernoch mögliche eingabe zulassen
+
+-benutzerliste und kommandozeile auch fest vorgebbar (unveränderlich) durch parameter 
+ also nur passwort eingabe erforderlich
+
+-dialog wird nicht beendet, wenn erforderlich (durch parameter steuerbar)
+passwort wird (nicht) gelöscht? (durch parameter steuerbar)
+
+
+
+zukunft
+
+-start eines progs auf einem anderen pc
+
+
+##
+c++ (mit vtools) oder delphi - ohne vcl
+
+dateigröße sollte klein sein
+
+##
+
+

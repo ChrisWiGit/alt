@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtRegistry</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtRegistry</H1>
+<H2>Beschreibung</H2>
+dtRegistry.pas beinhaltet Funktionen f&uuml;r den Umgang mit der Registry<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#305"><B>DeleteKey</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key: string): boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#306"><B>DeleteValue</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key,Value: string): boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#307"><B>ExistsKey</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#308"><B>ExistsValue</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#309"><B>ExtractRegStr</B></A>(RegStr : String; var Reg : <A href="dtRegistry.htm#304">TKey</A>; var Key : String);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#310"><B>FontToRec</B></A>(Font: TFont): <A href="dtRegistry.htm#303">TFontData</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#311"><B>HKeyToTKey</B></A>(Key: HKey): <A href="dtRegistry.htm#304">TKey</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#312"><B>ReadRegBinary</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Buffer; BufSize: Integer): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#313"><B>ReadRegFloat</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Value: Double): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#314"><B>ReadRegFloatDef</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Default: Double): Double;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#315"><B>ReadRegFont</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Font: TFont): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#316"><B>ReadRegInt</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Value: Integer): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#317"><B>ReadRegIntDef</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Default: Integer): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#318"><B>ReadRegString</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Value: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#319"><B>ReadRegStringDef</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Default: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#320"><B>RecToFont</B></A>(Rec: <A href="dtRegistry.htm#303">TFontData</A>; Font: TFont);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#321"><B>TKeyToHKey</B></A>(key: <A href="dtRegistry.htm#304">TKey</A>): HKEY;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#322"><B>WriteRegBinary</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Buffer; BufSize: Integer): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#323"><B>WriteRegFloat</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Value: Double): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#324"><B>WriteRegFont</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Font: TFont): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#325"><B>WriteRegInt</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Value: Integer): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#326"><B>WriteRegString</B></A>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name, Value: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="305"></A><CODE>function <B>DeleteKey</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key: string): boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. DeleteKey l&ouml;scht einen Schl&uuml;ssel unwiderruflich. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="306"></A><CODE>function <B>DeleteValue</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key,Value: string): boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. DeleteKey l&ouml;scht einen Wert unwiderruflich. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="307"></A><CODE>function <B>ExistsKey</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ExistsValue &uuml;berpr&uuml;ft, ob ein Schl&uuml;ssel in der Registry vorhanden ist. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="308"></A><CODE>function <B>ExistsValue</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ExistsValue &uuml;berpr&uuml;ft, ob ein Wert in der Registry vorhanden ist. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="309"></A><CODE>procedure <B>ExtractRegStr</B>(RegStr : String; var Reg : <A href="dtRegistry.htm#304">TKey</A>; var Key : String);</CODE></TD>
+</TR>
+</TABLE>
+<P>ExtractRegStr extrahiert aus dem Registry-Pfad RegStr den Schl&uuml;ssel (TKey) und den reinen Pfad</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="310"></A><CODE>function <B>FontToRec</B>(Font: TFont): <A href="dtRegistry.htm#303">TFontData</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>FontToRec wandelt die Klasse TFont in den Record <CODE><A href="dtRegistry.htm#303">TFontData</A></CODE> um.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="311"></A><CODE>function <B>HKeyToTKey</B>(Key: HKey): <A href="dtRegistry.htm#304">TKey</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>HKeyToTKey wandelt ein HKEY-Typ in ein <CODE><A href="dtRegistry.htm#304">TKEY</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="312"></A><CODE>function <B>ReadRegBinary</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Buffer; BufSize: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegBinary liest Bin&auml;rwere aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="313"></A><CODE>function <B>ReadRegFloat</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Value: Double): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegFloat liest einen Double aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="314"></A><CODE>function <B>ReadRegFloatDef</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Default: Double): Double;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegFloatDef liest einen Double aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="315"></A><CODE>function <B>ReadRegFont</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Font: TFont): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegFont liest ein Font aus der Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="316"></A><CODE>function <B>ReadRegInt</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Value: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegInt liest einen Integer aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="317"></A><CODE>function <B>ReadRegIntDef</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Default: Integer): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegIntDef liest einen Integer aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="318"></A><CODE>function <B>ReadRegString</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Value: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegString liest einen String aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="319"></A><CODE>function <B>ReadRegStringDef</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Default: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegStringDef liest einen String aus die Registry, und gibt im Fehlerfall Default zur&uuml;ck. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="320"></A><CODE>procedure <B>RecToFont</B>(Rec: <A href="dtRegistry.htm#303">TFontData</A>; Font: TFont);</CODE></TD>
+</TR>
+</TABLE>
+<P>RecToFont wandelt den Record <CODE><A href="dtRegistry.htm#303">TFontData</A></CODE> in die Klasse TFont um.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="321"></A><CODE>function <B>TKeyToHKey</B>(key: <A href="dtRegistry.htm#304">TKey</A>): HKEY;</CODE></TD>
+</TR>
+</TABLE>
+<P>TKeyToHKey wandelt ein <CODE><A href="dtRegistry.htm#304">TKEY</A></CODE>-Typ in ein HKEY</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="322"></A><CODE>function <B>WriteRegBinary</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; var Buffer; BufSize: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegBinary schreibt Bin&auml;rwerte in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="323"></A><CODE>function <B>WriteRegFloat</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Value: Double): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegFloat schreibt einen Double in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="324"></A><CODE>function <B>WriteRegFont</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Font: TFont): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegFont schreibt ein Font in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="325"></A><CODE>function <B>WriteRegInt</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name: string; Value: Integer): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegInt schreibt einen Integer in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="326"></A><CODE>function <B>WriteRegString</B>(Root: <A href="dtRegistry.htm#304">TKEY</A>; Key, Name, Value: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegString schreibt einen String in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="303"></A>TFontData</TD>
+<TD width=100%>TFontData enth&auml;lt die Daten eines Fonts, die in einem Stream gespeichert werden. Die Bezeichner sind dieselben, wie in TFont.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="304"></A>TKEY</TD>
+<TD>TKEY ist ein Delphi-Typ, der den unflexiblen HKEY-Typ kopiert</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

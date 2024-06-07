@@ -1,0 +1,428 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_KEYS_ICON           ICON                    "icon3.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_RUNASGUI ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 281, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ausf�hren als..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    ICON            IDI_KEYS_ICON,IDC_STATIC,6,7,21,20
+    LTEXT           "&Auszuf�hrende \nAnwendung :",IDC_APP_STATIC,36,29,51,
+                    16
+    PUSHBUTTON      "...",IDC_BROWSE_BUTTON,225,31,16,15
+    LTEXT           "Pa&rameter:",IDC_PARAMETER_STATIC,47,51,37,8
+    EDITTEXT        IDC_APPLICATION_EDIT,87,31,124,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "?",IDC_PARAMETER_HELP_BUTTON,225,47,16,16
+    GROUPBOX        "Anwendung",IDC_STATIC,31,18,216,52
+    GROUPBOX        "Benutzer",IDC_STATIC,31,69,216,57
+    LTEXT           "&Benutzername :",IDC_NAME_STATIC,38,78,52,8
+    COMBOBOX        IDC_USERNAME_COMBO,93,76,147,167,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Passwort:",IDC_PASSWORD_STATIC,56,93,33,8
+    EDITTEXT        IDC_PASSWORD_EDIT,93,92,147,14,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Benutzerprofil-&Umgebung laden undverwenden (/env)",
+                    IDC_LOCAL_LOGON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,39,
+                    111,201,10
+    LTEXT           "von Christian Wimmer\r\nOpenSource 2005",
+                    IDC_STATIC,6,137,104,27
+    CONTROL         "&Dialog nach Start ge�ffnet lassen",IDC_DONTCLOSE_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,122,153,152,10
+    DEFPUSHBUTTON   "OK",ID_RUN,140,134,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,197,134,50,14
+    EDITTEXT        IDC_PARAMETER_EDIT,87,48,136,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "~",IDC_MENU_BUTTON,213,31,11,15
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 274
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,6
+ PRODUCTVERSION 1,2,0,6
+ FILEFLAGSMASK 0x37L
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "RunAs Grafical User Interface (unstable)"
+            VALUE "CompanyName", "Christian Wimmer"
+            VALUE "FileDescription", "RunAs User Interface and console"
+            VALUE "FileVersion", "1, 2, 0, 6"
+            VALUE "InternalName", "RunAsGUI"
+            VALUE "LegalCopyright", "OpenSource � 2005"
+            VALUE "OriginalFilename", "RunAsGUI.exe"
+            VALUE "ProductName", "RunAs GUI"
+            VALUE "ProductVersion", "1, 2, 0, 6"
+            VALUE "SpecialBuild", "unstable extende branch build"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "13"
+    BEGIN
+        MENUITEM "Deine Eingaben werden gel�scht, wenn eine Auswahl getroffen wurde.", 
+                                                ID_13_DEINEEINGABENWERDENGEL
+        , GRAYED
+        POPUP "&1. Allgemein"
+        BEGIN
+            MENUITEM "&1. Arbeitsplatz\t: explorer /n,,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}", 
+                                                    ID_QUICK_SWITCH_1
+            MENUITEM "&2. Drucker und Faxger�te\t:  explorer /n,,::{2227A280-3AEA-1069-A2DE-08002B30309D}", 
+                                                    ID_QUICK_SWITCH_2
+            MENUITEM "&3. Eigene Dateien\t: explorer /n,,::{450D8FBA-AD25-11D0-98A8-0800361B1103}", 
+                                                    ID_QUICK_SWITCH
+            MENUITEM "&4. Geplante Tasks\t: explorer /n,,::{D6277990-4C6A-11CF-8D87-00AA0060F5BF}", 
+                                                    ID_QUICK_SWITCH
+            MENUITEM "&5. Netzwerkumgebung\t: explorer /n,,::{208D2C60-3AEA-1069-A2D7-08002B30309D}", 
+                                                    ID_QUICK_SWITCH
+            MENUITEM "&6. Netzwerkverbindungen\t: explorer /n,,::{7007ACC7-3202-11D1-AAD2-00805FC1270E}", 
+                                                    ID_QUICK_SWITCH
+            MENUITEM "&7. Papierkorb\t: explorer /n,,::{645FF040-5081-101B-9F08-00AA002F954E}", 
+                                                    ID_QUICK_SWITCH
+            MENUITEM "&8. Systemsteuerung \t : control", ID_QUICK_SWITCH
+            MENUITEM "&9. Verwaltung\t: explorer /n,,::{}", ID_QUICK_SWITCH
+        END
+        POPUP "&2. Anzeige"
+        BEGIN
+            MENUITEM "&1. Darstellung\t: RunDll32.exe Shell32.dll,Control_RunDLL Desk.cpl,@0,2", 
+                                                    ID_ANZEIGE_DARSTELLUNG
+            MENUITEM "&2. Desktop-Motive (wenn installiert)\t: RunDll32.exe Shell32.dll,Control_RunDLL Themes.cpl,@0,0", 
+                                                    ID_ANZEIGE_DESKTOP
+            MENUITEM "&3. Bildschirmschoner\t: RunDll32.exe Shell32.dll,Control_RunDLL Desk.cpl,@0,1", 
+                                                    ID_ANZEIGE_BILDSCHIRMSCHONER
+
+            MENUITEM "&4. Einstellungen\t: RunDll32.exe Shell32.dll,Control_RunDLL Desk.cpl,@0,3", 
+                                                    ID_ANZEIGE_EINSTELLUNGEN
+            MENUITEM "&5. Hintergrund\t: RunDll32.exe Shell32.dll,Control_RunDLL Desk.cpl,@0,0", 
+                                                    ID_ANZEIGE_HINTERGRUND
+        END
+        POPUP "&3. Datentr�ger"
+        BEGIN
+            MENUITEM "&1. Diskette kopieren\t : RunDll32.exe DiskCopy.dll,DiskCopyRunDll", 
+                                                    ID_DATENTR_DISKETTEKOPIEREN
+
+            MENUITEM "&2. Diskette formatieren\t: RunDll32.exe Shell32.dll,SHFormatDrive", 
+                                                    ID_Menu32861
+        END
+        POPUP "&4. Eingabehilfe"
+        BEGIN
+            MENUITEM "&1. Eingabehilfe Allgemein\t : RunDll32.exe Shell32.dll,Control_RunDLL Access.cpl,,5", 
+                                                    ID_EINGABEHILFE_EINGABEHILFEALLGEMEIN
+
+            MENUITEM "&2. Eingabehilfe Anzeige\t: RunDll32.exe Shell32.dll,Control_RunDLL Access.cpl,,3", 
+                                                    ID_EINGABEHILFE_EINGABEHILFEANZEIGE
+
+            MENUITEM "&3. Eingabehilfe-Assistent\t: Accwiz.exe", 
+                                                    ID_EINGABEHILFE_EINGABEHILFE
+
+            MENUITEM "&4. Eingabehilfe Maus\t: RunDll32.exe Shell32.dll,Control_RunDLL Access.cpl,,4", 
+                                                    ID_EINGABEHILFE_EINGABEHILFEMAUS
+
+            MENUITEM "&5. Eingabehilfe Tastatur\t: RunDll32.exe Shell32.dll,Control_RunDLL Access.cpl,,1", 
+                                                    ID_Menu32823
+            MENUITEM "&6. Eingabehilfe Signale\t: RunDll32.exe Shell32.dll,Control_RunDLL Access.cpl,,2", 
+                                                    ID_EINGABEHILFE_EINGABEHILFESIGNALE
+
+        END
+        POPUP "&5. Netzwerk"
+        BEGIN
+            MENUITEM "&1. Assistent f�r ISDN\t : Cfgwiz32.exe", 
+                                                    ID_NETZWERK_ASSISTENTF
+            MENUITEM "&2. Datenschutz\t: RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,2", 
+                                                    ID_NETZWERK_DATENSCHUTZ
+            MENUITEM "&3. Erweitert\t: RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,6", 
+                                                    ID_NETZWERK_ERWEITERT
+            MENUITEM "&4. Filter, Inhalt, pers�nliche Informationen, Zertifikate\t:RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,3", 
+                                                    ID_NETZWERK_FILTER
+            MENUITEM "&5. Internet-Optionen\t: RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,0", 
+                                                    ID_NETZWERK_INTERNET
+            MENUITEM "&6. Netzwerk-Konfiguration\t: RunDll32.exe Shell32.dll,Control_RunDLL Netcpl.cpl", 
+                                                    ID_NETZWERK_NETZWERK
+            MENUITEM "&7. Programme\t: RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,5", 
+                                                    ID_NETZWERK_PROGRAMME
+            MENUITEM "&8. Sicherheit\t : RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,1", 
+                                                    ID_NETZWERK_SICHERHEIT
+            MENUITEM "&9. Verbindungen\t: RunDll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl,,4", 
+                                                    ID_NETZWERK_VERBINDUNGEN
+            MENUITEM "&0. W�hlparameter\t: RunDll32.exe Shell32.dll,Control_RunDLL Telephon.cpl", 
+                                                    ID_NETZWERK_W
+            MENUITEM SEPARATOR
+            MENUITEM "&A. ""Netzlaufwerke verbinden"" - Dialog aufrufen\t: RunDll32.exe User,WNetConnectDialog", 
+                                                    ID_NETZWERK_
+            MENUITEM "&B. ""Netzlaufwerke trennen"" - Dialog aufrufen\t : RunDll32.exe User,WNetDisconnectDialog", 
+                                                    ID_NETZWERK_32856
+            MENUITEM "&C. ""DF�-Verbindung"" - Dialog aufrufen (/1 = ohne Startbild)\t: RunDll32.exe Rnaui.dll,RnaWizard /1", 
+                                                    ID_NETZWERK_32857
+            MENUITEM "&D. ""Verbinden mit"" - Dialog aufrufen\t: RunDll32.exe Rnaui.dll,RnaDial Internet", 
+                                                    ID_NETZWERK_32858
+        END
+        POPUP "&6. Multimedia"
+        BEGIN
+            MENUITEM "&1. Akustische Signale\t: RunDll32.exe Shell32.dll,Control_RunDLL Mmsys.cpl,@1,0", 
+                                                    ID_MULTIMEDIA_AKUSTISCHESIGNALE
+
+            MENUITEM "&2. Audio\t: RunDll32.exe Shell32.dll,Control_RunDLL Mmsys.cpl,@0,0", 
+                                                    ID_MULTIMEDIA_AUDIO
+            MENUITEM "&3. Ger�te\t: RunDll32.exe Shell32.dll,Control_RunDLL Mmsys.cpl,@0,4", 
+                                                    ID_MULTIMEDIA_GER
+            MENUITEM "&4. Midi\t: RunDll32.exe Shell32.dll,Control_RunDLL Mmsys.cpl,@0,1", 
+                                                    ID_MULTIMEDIA_MIDI
+            MENUITEM "&5. Musik-CD\t: RunDll32.exe Shell32.dll,Control_RunDLL Mmsys.cpl,@0,3", 
+                                                    ID_MULTIMEDIA_MUSIK
+            MENUITEM "&6. Video\t: RunDll32.exe Shell32.dll,Control_RunDLL Mmsys.cpl,@0,2", 
+                                                    ID_MULTIMEDIA_VIDEO
+        END
+        POPUP "&7. Hardware"
+        BEGIN
+            MENUITEM "&1. Assistent f�r Druckerinstallation\t: RunDll32.exe Shell32.dll,SHHelpShortcuts_RunDLL AddPrinter", 
+                                                    ID_HARDWARE_ASSISTENTF
+            MENUITEM "&2. Ger�temanager\t : RunDll32.exe Shell32.dll,Control_RunDLL Sysdm.cpl,@0,1", 
+                                                    ID_HARDWARE_GER
+            MENUITEM "&3. Hardwareprofile\t: RunDll32.exe Shell32.dll,Control_RunDLL Sysdm.cpl,@0,2", 
+                                                    ID_HARDWARE_HARDWAREPROFILE
+
+            MENUITEM "&4. Hardware-Assistent (automatische Erkennung starten)\t: RunDll32.exe Shell32.dll,Control_RunDLL Sysdm.cpl,@1,0", 
+                                                    ID_HARDWARE_HARDWARE
+            MENUITEM "&5. Hardware-Assistent (automatische Erkennung �berspringen)\t : RunDll32.exe Sysdm.cpl,Installdevice_Rundll", 
+                                                    ID_HARDWARE_HARDWARE32807
+
+            MENUITEM "&6. Joystick / Gamecontroller\t : RunDll32.exe Shell32.dll,Control_RunDLL Joy.cpl,@0", 
+                                                    ID_HARDWARE_JOYSTICK
+            MENUITEM "&7. Maus\t: RunDll32.exe Shell32.dll,Control_RunDLL Main.cpl,@0,0", 
+                                                    ID_HARDWARE_MAUS
+            MENUITEM "&8. Modemeigenschaften\t : RunDll32.exe Shell32.dll,Control_RunDLL Modem.cpl,@0", 
+                                                    ID_HARDWARE_MODEMEIGENSCHAFTEN
+
+            MENUITEM "&9. neues Modem installieren\t : RunDll32.exe Shell32.dll,Control_RunDLL Modem.cpl,,add", 
+                                                    ID_HARDWARE_NEUESMODEMINSTALLIEREN
+
+            MENUITEM "&0. Scanner / Kamera\t: RunDll32.exe Shell32.dll,Control_RunDLL Sticpl.cpl,@0", 
+                                                    ID_HARDWARE_SCANNER
+            MENUITEM "&A. Tastatur\t: RunDll32.exe Shell32.dll,Control_RunDLL Main.cpl,@1,0", 
+                                                    ID_HARDWARE_TASTATUR
+        END
+        POPUP "&8. Region"
+        BEGIN
+            MENUITEM "&1. Datumsformat �ndern\t : RunDll32.exe Shell32.dll,Control_RunDLL Intl.cpl,,4", 
+                                                    ID_REGION_DATUMSFORMAT
+            MENUITEM "&2. L�ndereinstellungen\t: RunDll32.exe Shell32.dll,Control_RunDLL Intl.cpl,,0", 
+                                                    ID_REGION_L
+            MENUITEM "&3. W�hrungsformat �ndern\t: RunDll32.exe Shell32.dll,Control_RunDLL Intl.cpl,,2", 
+                                                    ID_REGION_W
+            MENUITEM "&4. Zahlenformat �ndern\t: RunDll32.exe Shell32.dll,Control_RunDLL Intl.cpl,,1", 
+                                                    ID_REGION_ZAHLENFORMAT
+            MENUITEM "&5. Zeitformat �ndern\t : RunDll32.exe Shell32.dll,Control_RunDLL Intl.cpl,,3", 
+                                                    ID_REGION_ZEITFORMAT
+        END
+        POPUP "&9. Software"
+        BEGIN
+            MENUITEM "&1. Install- /Deinstall-Fenster\t: RunDll32.exe Shell32.dll,Control_RunDLL Appwiz.cpl,,1", 
+                                                    ID_SOFTWARE_INSTALL
+            MENUITEM "&2. Startdiskette erstellen\t:RunDll32.exe Shell32.dll,Control_RunDLL Appwiz.cpl,,3", 
+                                                    ID_SOFTWARE_STARTDISKETTEERSTELLEN
+
+            MENUITEM "&3. Windows-Setup\t: RunDll32.exe Shell32.dll,Control_RunDLL Appwiz.cpl,,2", 
+                                                    ID_SOFTWARE_WINDOWS
+        END
+        POPUP "&0. Systemordner"
+        BEGIN
+            MENUITEM "&1. Drucker\t : RunDll32.exe Shell32.dll,Control_RunDLL Main.cpl,@2,0", 
+                                                    ID_SYSTEMORDNER_DRUCKER
+            MENUITEM "&2. Schriftarten\t: RunDll32.exe Shell32.dll,Control_RunDLL Main.cpl,@3,0", 
+                                                    ID_SYSTEMORDNER_SCHRIFTARTEN
+
+            MENUITEM "&3. Systemsteuerung\t : RunDll32.exe Shell32.dll,Control_RunDLL", 
+                                                    ID_SYSTEMORDNER_SYSTEMSTEUERUNG
+
+        END
+        MENUITEM "&A. Systemsteuerung",         ID_13_SYSTEMCONTROL
+        POPUP "&B. Umgebung"
+        BEGIN
+            MENUITEM "&1. Datum / Uhrzeit\t: RunDll32.exe Shell32.dll,Control_RunDLL Timedate.cpl,@0,0", 
+                                                    ID_UMGEBUNG_DATUM
+            MENUITEM "&2. Energieschema\t: RunDll32.exe Shell32.dll,Control_RunDLL Powercfg.cpl,@0,0", 
+                                                    ID_UMGEBUNG_ENERGIESCHEMA
+
+            MENUITEM "&3. Kennw�rter / Benutzerprofile\t: RunDll32.exe Shell32.dll,Control_RunDLL Password.cpl,,0", 
+                                                    ID_UMGEBUNG_KENNW
+            MENUITEM "&4. Leistungsmerkmale\t: RunDll32.exe Shell32.dll,Control_RunDLL Sysdm.cpl,@0,3", 
+                                                    ID_UMGEBUNG_LEISTUNGSMERKMALE
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Z. Explorer: RunDll32.exe Shell,ShellExecute", 
+                                                ID_13_EXPLORER
+        MENUITEM "&Y. Kommandozeile: cmd.exe",  ID_13_KOMMANDOZEILE
+        MENUITEM "&X. Windows beenden: RunDll32.exe User,ExitWindows", 
+                                                ID_13_WINDOWSBEENDEN
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "Ausf�hren als... (runas GUI)"
+    IDS_COMMANDS_HELP       "\r\nSyntax von runAsGUI \r\nrunasGUI [/e] [/!c] [/!q] [/!p] [/!u] [/password:<Passwort>] [/user:<Benutzer>] <Programm>\r\n\r\n/q\tDer Dialog wird nach dem Programmstart nicht geschlossen\r\n/e\tFehler werden nicht im Dialog dargestellt.\r\n\tEs wird nur ein R�ckgabewert geliefert.\r\n\tDie Fehlermeldung wird trotdem angezeigt, wenn der Parameter /e angegeben wurde!\r\n\r\nParameter mit einem Ausrufezeichen, deaktivieren im Dialog das Eingabefeld\r\n/!c\t Die Kommandozeile Eingabe wird deaktiviert (mit Browse-Button)\r\n/!u\t Die Benutzer Eingabe wird deaktiviert\r\n/!p\t Die Passwort Eingabe wird deaktiviert\r\n/!q\t Die M�glichkeit das Feld ""Dialogfeld schlie�en nach Start"" wird gesperrt\r\n\r\n\r\nHinweis: Die Angabe des Passworts als Parameter ist sicherheitsbedenklich!"
+    IDS_USER_MISSING        "Benutzername ist erforderlich"
+    IDS_PASSWORD_MISSING    "Passwort ist erforderlich"
+    IDS_APP_MISSING         "Programmname ist erforderlich"
+    IDS_ERROR               "Fehler"
+    IDC_RUNASGUI            "RUNASGUI"
+    IDS_UNICODE_CONVERT_ERROR 
+                            "UNICODE Konvertierungsfehler  (%d). Bitte melden Sie dies dem Autor."
+    IDS_PASSWORD            "&Passwort:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_USERNAME            "&Benutzername :"
+    IDS_DONTCLOSE           "&Dialog nach Start ge�ffnet lassen"
+    IDS_APP                 "&Auszuf�hrende \nAnwendung :"
+    IDS_FILETYPES           "Ausf�hrbare Dateien (exe,com,pif)\000*.exe;*.com;*.pif\000Alle Dateien\000*.*"
+    IDS_PARAMETER           "Pa&rameter:"
+    IDS_LOCAL_LOGON         "Benutzerprofil-&Umgebung laden und verwenden (/env)"
+    IDS_APP_ERROR           "Das Operationssystem kann die Anwendung nicht starten! (wom�glich korrupt?)\nFehlernummer %d\nDen genauen Fehler kann man unter der folgenden Addressen nachlesen.\nhttp://msdn.microsoft.com/library/default.asp?url=/library/en-us/wcesdkr/html/_sdk_error_values.asp"
+    IDS_CMD_EXIT_WARNING    "Warnung:\r\nDas Kommando k�nnte m�glicherweise den Computer ohne Warnung herunterfahren!!"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

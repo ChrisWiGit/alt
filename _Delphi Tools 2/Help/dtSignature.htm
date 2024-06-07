@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtSignature</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtSignature</H1>
+<H2>Beschreibung</H2>
+dtSignature.pas beinhaltet Funktionen f&uuml;r den Umgang mit Dateisignaturen<P>Signaturen werden in Dateien verwendet, um ihren Inhalt und Aktualit&auml;t schon vor dem eigentlich Lesen festzustellen. Damit kann auf eine schnelle Art und Weise der Benutzer auf Versionsunterschiede oder sogar fehlerhaften Dateiinhalten hingewiesen werden. Signaturen werden am Anfang der Datei abgelegt, und k&ouml;nnen neben der Dateiversion, auch Kommentare, Autorhinweise und andere Texte hinzugef&uuml;gt werden. Mehr dazu siehe in der Unit dtSignature. Hinweis: Es wird kein CRC Fehlererkennungsystem unterst&uuml;tzt.<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#354"><B>ConvertToSignVersion</B></A>(Version: <A href="dtSignature.htm#353">TVersionRec</A>; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): <A href="dtSignature.htm#351">TSignVersion</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#355"><B>CreateSignVersion</B></A>: TSignVersion;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#356"><B>EqualSignature</B></A>(SignatureData1, SignatureData2: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#357"><B>EqualSignatureMin</B></A>(SignatureData1, SignatureData2: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#358"><B>EqualSignVersion</B></A>(SignatureData1, SignatureData2: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#359"><B>EqualSignVersionMin</B></A>(SignatureData1, SignatureData2: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#360"><B>EqualVersion</B></A>(Version1, Version2: <A href="dtSignature.htm#353">TVersionRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#361"><B>InitiateSignature</B></A>(var SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#362"><B>ReadSignature</B></A>(Stream: TStream): <A href="dtSignature.htm#350">TSignatureRec</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#363"><B>ReadSignVersion</B></A>(Stream: TStream): <A href="dtSignature.htm#351">TSignVersion</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#364"><B>ReadValidSignature</B></A>(Stream: TStream; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#365"><B>ReadValidSignatureMin</B></A>(Stream: TStream; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#366"><B>ReadValidSignVersion</B></A>(Stream: TStream; SignatureData: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#367"><B>ReadValidSignVersionMin</B></A>(Stream: TStream; SignatureData: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#368"><B>ReadValidVersion</B></A>(Stream: TStream; Version: <A href="dtSignature.htm#353">TVersionRec</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#369"><B>ReadVersion</B></A>(Stream: TStream): <A href="dtSignature.htm#353">TVersionRec</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#370"><B>SizeOfSignatureRec</B></A>(Rec: <A href="dtSignature.htm#350">TSignatureRec</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#371"><B>SizeOfSignVersion</B></A>(Sign: <A href="dtSignature.htm#351">TSignVersion</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#372"><B>SizeOfVersionRec</B></A>(Rec: <A href="dtSignature.htm#353">TVersionRec</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#373"><B>WriteSignature</B></A>(Stream: TStream; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#374"><B>WriteSignVersion</B></A>(Stream: TStream; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#375"><B>WriteVersion</B></A>(Stream: TStream; Version: <A href="dtSignature.htm#353">TVersionRec</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="354"></A><CODE>function <B>ConvertToSignVersion</B>(Version: <A href="dtSignature.htm#353">TVersionRec</A>; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): <A href="dtSignature.htm#351">TSignVersion</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertToSignVersion kopiert TVersionRec und TSignatureRec zusammen in ein TSignVersion-Record</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="355"></A><CODE>function <B>CreateSignVersion</B>: TSignVersion;</CODE></TD>
+</TR>
+</TABLE>
+<P>CreateSignVersion erstellt eine leere TSignVersion.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="356"></A><CODE>function <B>EqualSignature</B>(SignatureData1, SignatureData2: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>EqualSignature vergleicht zwei TSignatureRec-Datentypen miteinander in jeder Beziehung. Siehe auch <CODE><A href="dtSignature.htm#357">EqualSignatureMin</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="357"></A><CODE>function <B>EqualSignatureMin</B>(SignatureData1, SignatureData2: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>EqualSignatureMin vergleicht zwei TSignatureRec-Datentypen miteinander Folgende Daten werden verglichen : SignatureStr,SubSignature,FileName,FileTyp. Siehe auch <CODE><A href="dtSignature.htm#356">EqualSignature</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="358"></A><CODE>function <B>EqualSignVersion</B>(SignatureData1, SignatureData2: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>EqualSignVersion vergleicht zwei TSignVersion-Datentypen in jeder Beziehung miteinander. Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="359"></A><CODE>function <B>EqualSignVersionMin</B>(SignatureData1, SignatureData2: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>EqualSignVersionMin vergleicht zwei TSignVersion-Datentypen in jeder Beziehung miteinander. Folgende Daten werden verglichen : SignatureStr,SubSignature,FileName,FileTyp , Version Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="360"></A><CODE>function <B>EqualVersion</B>(Version1, Version2: <A href="dtSignature.htm#353">TVersionRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Vergleicht zwei <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE>-Datentypen miteinander in jeder Beziehung. Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="361"></A><CODE>procedure <B>InitiateSignature</B>(var SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>);</CODE></TD>
+</TR>
+</TABLE>
+<P>InitiateSignature initialisiert einen Record <CODE><A href="dtSignature.htm#350">TSignatureRec</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="362"></A><CODE>function <B>ReadSignature</B>(Stream: TStream): <A href="dtSignature.htm#350">TSignatureRec</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadSignature liest TSignatureRec aus einem Stream und gibt ihn als R&uuml;ckgabewert zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="363"></A><CODE>function <B>ReadSignVersion</B>(Stream: TStream): <A href="dtSignature.htm#351">TSignVersion</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadSignVersion liest TSignVersion aus einem Stream und gibt es zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="364"></A><CODE>function <B>ReadValidSignature</B>(Stream: TStream; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadValidSignature liest den TSignatureRec -Record als Bin&auml;rtdaten aus dem Stream und vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="365"></A><CODE>function <B>ReadValidSignatureMin</B>(Stream: TStream; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadValidSignatureMin liest den TSignatureRec -Record als Bin&auml;rtdaten aus dem Stream und vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck Im Gegensatz zu <CODE><A href="dtSignature.htm#364">ReadValidSignature</A></CODE> werden nur folgende Daten verglichen : SignatureStr,SubSignature,FileName,FileTyp</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="366"></A><CODE>function <B>ReadValidSignVersion</B>(Stream: TStream; SignatureData: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadValidSignVersion liest den TSignVersion-Record als Bin&auml;rtdaten aus den Stream , vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck. Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="367"></A><CODE>function <B>ReadValidSignVersionMin</B>(Stream: TStream; SignatureData: <A href="dtSignature.htm#351">TSignVersion</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadValidSignVersionMin liest den TSignVersion-Record als Bin&auml;rtdaten aus den Stream , vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck. Folgende Daten werden verglichen : SignatureStr,SubSignature,FileName,FileTyp , Version Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="368"></A><CODE>function <B>ReadValidVersion</B>(Stream: TStream; Version: <A href="dtSignature.htm#353">TVersionRec</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Liest den Record Version : <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> als Bin&auml;rtdaten aus den Stream , vergleicht den geladenen Record mit "Version" und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck. Siehe auch <CODE><A href="dtSignature.htm#369">ReadVersion</A></CODE> ; <CODE><A href="dtSignature.htm#360">EqualVersion</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="369"></A><CODE>function <B>ReadVersion</B>(Stream: TStream): <A href="dtSignature.htm#353">TVersionRec</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadVersion liest den Record <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> als Bin&auml;rtdaten aus dem Stream Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="370"></A><CODE>function <B>SizeOfSignatureRec</B>(Rec: <A href="dtSignature.htm#350">TSignatureRec</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SizeOfSignatureRec liefert die Anzahl der Bytes in TSignatureRec zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="371"></A><CODE>function <B>SizeOfSignVersion</B>(Sign: <A href="dtSignature.htm#351">TSignVersion</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SizeOfSignVersion ermittelt die Anzahl der verwendeten Bytes in Sign.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="372"></A><CODE>function <B>SizeOfVersionRec</B>(Rec: <A href="dtSignature.htm#353">TVersionRec</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SizeOfVersionRec liefert die Gr&ouml;&szlig;e von Rec zur&uuml;ck. Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="373"></A><CODE>function <B>WriteSignature</B>(Stream: TStream; SignatureData: <A href="dtSignature.htm#350">TSignatureRec</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteSignature schreibt TSignatureRec in einen Stream. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Siehe dazu <CODE><A href="dtSignature.htm#370">SizeOfSignatureRec</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="374"></A><CODE>function <B>WriteSignVersion</B>(Stream: TStream; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteSignVersion schreibt TSignVersion in einen Stream und liefert die Anzahl der geschriebenen Bytes zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="375"></A><CODE>function <B>WriteVersion</B>(Stream: TStream; Version: <A href="dtSignature.htm#353">TVersionRec</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteVersion schreibt den Record Version : <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> als Bin&auml;rtdaten in den Stream. Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="350"></A>TSignatureRec</TD>
+<TD width=100%>TSignatureRec enth&auml;lt alle Textdaten die als Signatur gespeichert gelesen werden soll. SignatureStr und SubSignature beinhaltet einen beliebigen String, der beim Lesen der Datei veglichen werden wird. Programmer,Company,CopyRight,Notice,Comment,FileName,FileTyp sind Informationen, die dem leichteren Identifizieren der Datei f&uuml;r den Benutzer dienen. DateTime,TimeStamp beinhaltet den originalen Zeitstempel der Datei.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="351"></A>TSignVersion</TD>
+<TD>TSignVersion setzt <CODE><A href="dtSignature.htm#350">TSignatureRec</A></CODE> und <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> zusammen, um eine leichtere Handhabung zu gew&auml;hrleisten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="352"></A>TSignVersionCompUsrFunc</TD>
+<TD>TSignVersionCompUsrFunc wird von <CODE><A href="dtSignature.htm#366">ReadValidSignVersion</A></CODE> , <CODE><A href="dtSignature.htm#358">EqualSignVersion</A></CODE> und <CODE><A href="dtSignature.htm#359">EqualSignVersionMin</A></CODE> aufgerufen , wenn deren Parameter SignVersionCompUsrFunc ungleich nil ist, und damit eine eigene Vergleichsfunktion f&uuml;r die Version erfolgen soll. Die Paramater werden den Funktionen wie folgt &uuml;bergeben : ReadValidSignVersion : SignVersionCompUsrFunc(SignatureData,0); EqualSignVersion : SignVersionCompUsrFunc(SignatureData1,SignatureData2); EqualSignVersionMin : SignVersionCompUsrFunc(SignatureData1,SignatureData2);</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="353"></A>TVersionRec</TD>
+<TD>TVersionRec beinhaltet die Dateiversion als Integer-Wert sowie Hi und Lo Byte.</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="343"></A>DelphiTools_SignVersion</TD>
+<TD width=100%>DelphiTools_SignVersion bezeichnet eine Dateisignatur, die intern verwendet wird. Sie kann als Beispiel einer solchen konstanten Definition verwendet werden. Siehe mehr dazu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="344"></A>NULL_SignVersion</TD>
+<TD>NULL_SignVersion wird als leere Signatur verwendet. So wird eine TSignVersion-Struktur als Konstante definiert : Beispiel 1 : SignVersion : link(TSignVersion) = ( Signature : ( SignatureStr : ''; SubSignature : ''; Programmer : ''; Company : ''; CopyRight : ''; Notice : ''; Comment : ''; FileName : ''; FileTyp : ''; DateTime : 0; TimeStamp : ( Time : 0; Date : 0 ) ); Version : ( Hi:0 Lo:0; Version:0 ) ); Beispiel 2 : Signature : <CODE><A href="dtSignature.htm#350">TSignatureRec</A></CODE> = ( SignatureStr : ''; SubSignature : ''; Programmer : ''; Company : ''; CopyRight : ''; Notice : ''; Comment : ''; FileName : ''; FileTyp : ''; DateTime : 0; TimeStamp : ( Time : 0; Date : 0 ) ); Beispiel 3 : Version : <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> = ( Hi:0 Lo:0; Version:0 );</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="345"></A>SignatureIndent</TD>
+<TD>SignatureIndent wird verwendet, um intern bestimmen zu k&ouml;nnen, um was es sich bei der Datei handelt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="346"></A>SignatureIndentLen</TD>
+<TD>SignatureIndentLen bezeichnet die L&auml;nge des Signaturstrings <CODE><A href="dtSignature.htm#345">SignatureIndent</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="347"></A>SignVersionCompUsrFunc</TD>
+<TD>SignVersionCompUsrFunc erm&ouml;glicht es einen benutzerdefinierte Vergleich bei einer Signatureerkennung. Man mu&szlig; nur eine Funktion des Typs <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE> an SignVersionCompUsrFunc &uuml;bergeben/zuweisen. Sollen die Standardvergleiche verwendet werden mu&szlig; SignVersionCompUsrFunc auf nil gesetzt werden (voreingestellt)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="348"></A>VersionIndent</TD>
+<TD>VersionIndent wird verwendet, um intern bestimmen zu k&ouml;nnen, um was es sich bei der Datei handelt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="349"></A>VersionIndentLen</TD>
+<TD>VersionIndentLen bezeichnet die L&auml;nge des Versionssignaturstrings <CODE><A href="dtSignature.htm#348">VersionIndent</A></CODE></TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

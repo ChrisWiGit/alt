@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtCL</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtCL</H1>
+<H2>Beschreibung</H2>
+dtCl.pas beinhaltet Funktionen mit dem Umgang von Steuerelementen<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>procedure <A href="#81"><B>BorderButton</B></A>(aButton: TButton; Style: <A href="dtCL.htm#74">TButtonStyle</A>);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#82"><B>ChangeControlsState</B></A>(d_Type: <A href="dtCL.htm#80">TStateType</A>; d: Boolean; MainControl: TWinControl): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#83"><B>ChangeControlsStateEx</B></A>(d_Type: <A href="dtCL.htm#80">TStateType</A>; d: Boolean; MainControl: TWinControl;const ExControls1: array of const): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#84"><B>ClearNodes</B></A>(Nodes: TTreeNodes; OnClearNode: <A href="dtCL.htm#77">TOnClearNode2</A>); overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#85"><B>ClearNodes</B></A>(Nodes: TTreeNodes; OnClearNode: <A href="dtCL.htm#76">TOnClearNode</A>); overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#86"><B>CreateDirTreeView</B></A>(TreeView : TTreeView; Parent : TTreeNode; DirList : TStringList; OnAdd : <A href="dtCL.htm#75">TOnAdd</A>) : Cardinal;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#87"><B>DoHilight</B></A>(Times, PeriodeTime: Integer; StopOnVisible: Boolean; Tab: TTabsheet);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#88"><B>FindControlStrWithTagNo</B></A>(Owner: TWinControl; ClassName: string; TagNo: Integer): TWinControl;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#89"><B>FindControlWithTagNo</B></A>(Owner: TWinControl; ClassName: TClass; TagNo: Integer): TWinControl;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#90"><B>GetAllNodes</B></A>(Nodes: TTreeNodes; OnNode: <A href="dtCL.htm#79">TOnNode2</A>; Data: Pointer); overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#91"><B>GetAllNodes</B></A>(Nodes: TTreeNodes; OnNode: <A href="dtCL.htm#78">TOnNode</A>; Data: Pointer); overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#92"><B>GetNodeByText</B></A>(Nodes:TTreeNodes;Parent : TTreeNode; Name : String) : TTreeNode;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#93"><B>GetSubNode</B></A>(Nodes:TTreeNodes;Parent : TTreeNode; Path,Name : String; var c : Integer;OnAdd : <A href="dtCL.htm#75">TOnAdd</A>) : TTreeNode;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#94"><B>InsertDir</B></A>(Nodes:TTreeNodes;Parent : TTreeNode; Path : String; OnAdd : <A href="dtCL.htm#75">TOnAdd</A>) : Integer;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="81"></A><CODE>procedure <B>BorderButton</B>(aButton: TButton; Style: <A href="dtCL.htm#74">TButtonStyle</A>);</CODE></TD>
+</TR>
+</TABLE>
+<P>BorderButton &auml;ndert das Aussehen eines TButton-Kontrollelementes.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="82"></A><CODE>function <B>ChangeControlsState</B>(d_Type: <A href="dtCL.htm#80">TStateType</A>; d: Boolean; MainControl: TWinControl): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>Setzt die Eigenschaft Enabled/Visible/Beide aller untergeordnete Steuerelemente auf den Wert "d", ohne Maincontrol dabei zu ver&auml;ndern. Der R&uuml;ckgabewert ist die Anzahl der ver&auml;nderten Unterkontrollelemente.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="83"></A><CODE>function <B>ChangeControlsStateEx</B>(d_Type: <A href="dtCL.htm#80">TStateType</A>; d: Boolean; MainControl: TWinControl;const ExControls1: array of const): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>Setzt die Eigenschaft Enabled/Visible/Beide aller untergeordnete Steuerelemente - mit der Ausnahme ExControls1 - auf den Wert "d", ohne Maincontrol dabei zu ver&auml;ndern. Der Array kann aus Klassennamen, Kontrollnamen als String oder Typenbezeichnung bestehen. Der R&uuml;ckgabewert ist die Anzahl der ver&auml;nderten Unterkontrollelemente.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="84"></A><CODE>procedure <B>ClearNodes</B>(Nodes: TTreeNodes; OnClearNode: <A href="dtCL.htm#77">TOnClearNode2</A>); overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>L&ouml;scht alle Knoten im Baum Nodes. Damit auch die Eigenschaft Data jedes Knotens entfernt werden kann, werden zuerst zu jedem Knoten das Ereignis OnClearNode aufgerufen Hierin kann dann Data (Pointer) entsorgt werden, was die Methode Clear von TTreeNodes normalerweise nicht tut. Danach wird der Baum dann mit Clear gel&ouml;scht. Diese Prozedur wird aufgerufen, wenn die Ereignisbehandlungsroutine eine Prozedur ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="85"></A><CODE>procedure <B>ClearNodes</B>(Nodes: TTreeNodes; OnClearNode: <A href="dtCL.htm#76">TOnClearNode</A>); overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>L&ouml;scht alle Knoten im Baum Nodes. Damit auch die Eigenschaft Data jedes Knotens entfernt werden kann, werden zuerst zu jedem Knoten das Ereignis OnClearNode aufgerufen Hierin kann dann Data (Pointer) entsorgt werden, was die Methode Clear von TTreeNodes normalerweise nicht tut. Danach wird der Baum dann mit Clear gel&ouml;scht. Diese Prozedur wird aufgerufen, wenn die Ereignisbehandlungsroutine eine Methode ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="86"></A><CODE>function <B>CreateDirTreeView</B>(TreeView : TTreeView; Parent : TTreeNode; DirList : TStringList; OnAdd : <A href="dtCL.htm#75">TOnAdd</A>) : Cardinal;</CODE></TD>
+</TR>
+</TABLE>
+<P>CreateDirTreeView erstellt aus einer Stringliste , gef&uuml;llt mit Verzeichnispfaden , einen Verzeichnisbaum, der an den Knoten "Parent" angeh&auml;ngt wird. (kann auch nil sein ,damit der ganze Baum genutzt wird) OnAdd wird immer dann aufgerufen , wenn ein neues Unterverzeichnis erstellt werden soll ist CanADD false , werden keine Unterverzeichnisse mehr erstellt. Allerdings bleiben , alle davor erstellten , &uuml;bergeordneten Verzeichnisse erhalten. Der R&uuml;ckgabewert ist die Anzahl , der eingef&uuml;gten Verzeichnisse</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="87"></A><CODE>procedure <B>DoHilight</B>(Times, PeriodeTime: Integer; StopOnVisible: Boolean; Tab: TTabsheet);</CODE></TD>
+</TR>
+</TABLE>
+<P>DoHilight l&auml;sst eine Tableiste "Tab" , "Times"-mal blinken , jeweils mit einer Dauer von "PeriodeTime" msek. Einmal blinken (an - aus) dauert damit "PeriodeTime"-mal. Wenn Times = -1 ist ,wird bei StopOnVisible solange geblinkt bis das Tabsheet aktiviert wird. StopOnVisible gibt an , ob das Blinken vorzeitig gestoppt werden soll , wenn die Tableiste aktiviert wird Wenn TRUE wird kein Blinken initiert , wenn die Tableiste schon aktiviert ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="88"></A><CODE>function <B>FindControlStrWithTagNo</B>(Owner: TWinControl; ClassName: string; TagNo: Integer): TWinControl;</CODE></TD>
+</TR>
+</TABLE>
+<P>Liefert das Unterelement von Owner zur&uuml;ck , da&szlig; denselben Klassennamen ClassName (als String) und dieselbe Eigenschaft Tag = TagNo besitzt</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="89"></A><CODE>function <B>FindControlWithTagNo</B>(Owner: TWinControl; ClassName: TClass; TagNo: Integer): TWinControl;</CODE></TD>
+</TR>
+</TABLE>
+<P>Liefert das Unterelement von Owner zur&uuml;ck , da&szlig; denselben Klassennamen ClassName (als Typname) und dieselbe Eigenschaft Tag = TagNo besitzt</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="90"></A><CODE>procedure <B>GetAllNodes</B>(Nodes: TTreeNodes; OnNode: <A href="dtCL.htm#79">TOnNode2</A>; Data: Pointer); overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetAllNodes durchl&auml;uft index-orientiert alle Knoten eines Baumes, und liefert der Ereignisbehandlungsroutine den Parameter Data und den aktuellen Knoten zur&uuml;ck. Diese Prozedur wird aufgerufen, wenn die Ereignisbehandlungsroutine eine Prozedur ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="91"></A><CODE>procedure <B>GetAllNodes</B>(Nodes: TTreeNodes; OnNode: <A href="dtCL.htm#78">TOnNode</A>; Data: Pointer); overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetAllNodes durchl&auml;uft index-orientiert alle Knoten eines Baumes, und liefert der Ereignisbehandlungsroutine den Parameter Data und den aktuellen Knoten zur&uuml;ck. Diese Prozedur wird aufgerufen, wenn die Ereignisbehandlungsroutine eine Methode ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="92"></A><CODE>function <B>GetNodeByText</B>(Nodes:TTreeNodes;Parent : TTreeNode; Name : String) : TTreeNode;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetNodeByText liefert den Knoten zur&uuml;ck, der (ohne Ber&uuml;cksichtigung von Gro&szlig;- und Kleinschreibung) denselben Text besitzt, wie in Name angegeben. Wenn Parent nicht nil ist, werden alle Unterknoten von Parent nach dem Namen durchsucht. $$$ Nicht vollst&auml;ndig fertiggestellt!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="93"></A><CODE>function <B>GetSubNode</B>(Nodes:TTreeNodes;Parent : TTreeNode; Path,Name : String; var c : Integer;OnAdd : <A href="dtCL.htm#75">TOnAdd</A>) : TTreeNode;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="94"></A><CODE>function <B>InsertDir</B>(Nodes:TTreeNodes;Parent : TTreeNode; Path : String; OnAdd : <A href="dtCL.htm#75">TOnAdd</A>) : Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="74"></A>TButtonStyle</TD>
+<TD width=100%>TButtonStyle wird von BorderButton verwendet und definiert das Aussehen eines Buttons. Statisch - Flach und Normal</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="75"></A>TOnAdd</TD>
+<TD>TOnAdd wird von CreateDirTreeView, GetNodeByText, GetSubNode und InsertDir verwendet, um das Verhalten vor dem Einf&uuml;gen eines Knotens in den Baum zu kontrollieren. Node beschreibt den einzuf&uuml;gendenden Knoten. Path beschreibt den vollst&auml;ndigen Pfad bis zu diesem Knoten als String. CanAdd gibt an, ob dieser Knoten eingef&uuml;gt werden soll.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="76"></A>TOnClearNode</TD>
+<TD>Wird von ClearNodes vor dem l&ouml;schen aufgerufen,wenn programm-spezifische Daten des Baumeeintrages gel&ouml;scht werden soll. Dieses Ereignis wird in Klassen verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="77"></A>TOnClearNode2</TD>
+<TD>Wird von ClearNodes vor dem l&ouml;schen aufgerufen,wenn programm-spezifische Daten des Baumeeintrages gel&ouml;scht werden soll. Dieses Ereignis wird in Units verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="78"></A>TOnNode</TD>
+<TD>TOnNode wird von GetAllNodes aufgerufen, wenn durch alle Knoten des Baumes gesprungen wird. Dieses Ereignis wird in Klassen verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="79"></A>TOnNode2</TD>
+<TD>TOnNode wird von GetAllNodes aufgerufen, wenn durch alle Knoten des Baumes gesprungen wird. Dieses Ereignis wird in Units verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="80"></A>TStateType</TD>
+<TD>TStateTyp gibt an was mit dem Control passieren soll - wird u.a. von ChangeControlsState verwendet</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtTools</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtTools</H1>
+<H2>Beschreibung</H2>
+dtTools.pas beinhaltet allgemeine Funktionen f&uuml;r den Umgang mit Delphi<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#525"><B>DeAlpha</B></A>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#526"><B>DeCode</B></A>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#527"><B>EnAlpha</B></A>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#528"><B>EnCode</B></A>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#529"><B>IsDelphi4Running</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#530"><B>IsDelphiRunning</B></A>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="525"></A><CODE>function <B>DeAlpha</B>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>DeAlpha decodiert wie <CODE><A href="dtTools.htm#526">DeCode</A></CODE> den String s Es werden allerdings nur Buchstaben (ohne Umlaute) kodiert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="526"></A><CODE>function <B>DeCode</B>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>DeCode decodiert nach dem ASCII-Zeichensatz einen String und gibt den codierten String zur&uuml;ck. Dabei wird der String s einfach um -m Zeichen verschoben. Diese Funktion ist nicht f&uuml;r den professionellen Einsatz geeignet und kann leicht durch Brute-Force-Attacken gecrackt werden. Siehe auch <CODE><A href="dtTools.htm#528">EnCode</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="527"></A><CODE>function <B>EnAlpha</B>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>EnAlpha codiert wie <CODE><A href="dtTools.htm#528">EnCode</A></CODE> den String s Es werden allerdings nur Buchstaben (ohne Umlaute) kodiert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="528"></A><CODE>function <B>EnCode</B>(s: string; m: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>EnCode codiert nach dem ASCII-Zeichensatz einen String und gibt den codierten String zur&uuml;ck. Dabei wird der String s einfach um m Zeichen verschoben. Diese Funktion ist nicht f&uuml;r den professionellen Einsatz geeignet und kann leicht durch Brute-Force-Attacken gecrackt werden. Siehe auch <CODE><A href="dtTools.htm#526">DeCode</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="529"></A><CODE>function <B>IsDelphi4Running</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsDelphi4Running gibt True zur&uuml;ck , wenn Delphi 4 aktiv ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="530"></A><CODE>function <B>IsDelphiRunning</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsDelphiRunning gibt True zur&uuml;ck , wenn Delphi aktiv ist, unabh&auml;nging von der Version</P>
+<H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

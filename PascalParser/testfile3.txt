@@ -1,0 +1,21 @@
+unit myunit;//unit comment
+
+interface
+ (*Projektverzeichnis,wo der User seine Projekte ablegen kann*)
+
+
+var 
+   FlatSB_EnableScrollBar: function(hWnd: HWND; wSBflags, wArrows: UINT): BOOL; stdcall;
+
+
+procedure asdfasdF(my : myunit.abc);
+
+type
+    myclass = Tasdfasdf(myunit.Tbaseasd);
+
+
+const abc : myunit.THallo = myunit.cohallo;
+
+
+implementation
+end;

@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RunAsGUI", "RunAsGUI.vcproj", "{E22CB8EA-85D2-4EAA-AEE9-9B3192C48A75}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D71BD560-FFAB-45B6-8836-D8470A696CB1} = {D71BD560-FFAB-45B6-8836-D8470A696CB1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VTools", "..\..\VTools\VTools.vcproj", "{D71BD560-FFAB-45B6-8836-D8470A696CB1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E22CB8EA-85D2-4EAA-AEE9-9B3192C48A75}.Debug.ActiveCfg = Debug|Win32
+		{E22CB8EA-85D2-4EAA-AEE9-9B3192C48A75}.Debug.Build.0 = Debug|Win32
+		{E22CB8EA-85D2-4EAA-AEE9-9B3192C48A75}.Release.ActiveCfg = Release|Win32
+		{E22CB8EA-85D2-4EAA-AEE9-9B3192C48A75}.Release.Build.0 = Release|Win32
+		{D71BD560-FFAB-45B6-8836-D8470A696CB1}.Debug.ActiveCfg = Debug|Win32
+		{D71BD560-FFAB-45B6-8836-D8470A696CB1}.Debug.Build.0 = Debug|Win32
+		{D71BD560-FFAB-45B6-8836-D8470A696CB1}.Release.ActiveCfg = Release|Win32
+		{D71BD560-FFAB-45B6-8836-D8470A696CB1}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

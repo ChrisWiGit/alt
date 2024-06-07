@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtSocketProtokoll</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtSocketProtokoll</H1>
+<H2>Beschreibung</H2>
+dtSocketProtokoll.pas beinhaltet Funktionen f&uuml;r den Umgang mit Streams bei Sockets<P>dtSocketProtokoll vereinfacht die Hantierung bei TServerSocket und TClientSocket mit Streams Damit ist es nun m&ouml;glich , beliebig gro&szlig;e Daten zu verschicken und mit einem Nachrichtenidentifizierer zu versehen BETA 3 VERSION !!!!!!! Das DirectSocketProtokoll kann man unter www.vclcomponents.com download, jedoch wird diese Version nicht mehr unterst&uuml;tzt.<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#381"><B>AssembleStream</B></A>(Msg,SubMsg : Integer; Stream : TMemoryStream) : TMemoryStream;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#382"><B>DisAssembleStream</B></A>(Source : TMemoryStream;var Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>;var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#383"><B>GetPufferStreamSize</B></A>(Stream : TStream) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#384"><B>ReceiveStream</B></A>(Socket:TCustomWinSocket; Count : Longint; var Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>; var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#385"><B>SendStream</B></A>(Socket:TCustomWinSocket; Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>;Stream : TMemoryStream) : Longint; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#386"><B>SendStream</B></A>(Socket:TCustomWinSocket; Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>;Stream : TMemoryStream; OnMessage : <A href="dtSocketProtokoll.htm#380">TOnSendMessage</A>) : Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="381"></A><CODE>function <B>AssembleStream</B>(Msg,SubMsg : Integer; Stream : TMemoryStream) : TMemoryStream;</CODE></TD>
+</TR>
+</TABLE>
+<P>AssembleStream verkn&uuml;pft eine Nachricht und einen Stream zu einen versendbaren Stream Stream wird in AssembleStream NICHT gel&ouml;scht! Diese Funktion wird intern verwendet.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="382"></A><CODE>function <B>DisAssembleStream</B>(Source : TMemoryStream;var Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>;var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>DisAssembleStream entkn&uuml;pft eine versendbaren Stream in Nachricht und einen LeseStream Stream wird in DisAssembleStream erstellt! Diese Funktion wird intern verwendet.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="383"></A><CODE>function <B>GetPufferStreamSize</B>(Stream : TStream) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetPufferStreamSize gibt die Gr&ouml;&szlig;e des gesendeten Streams + extra Informationen zur&uuml;ck (Msg , SubMsg,...) extra Informationen haben Standardm&auml;&szlig;ig eine Gr&ouml;&szlig;e von 16 Bytes (abh&auml;ngig vom Typ TMessageType)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="384"></A><CODE>function <B>ReceiveStream</B>(Socket:TCustomWinSocket; Count : Longint; var Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>; var Stream : TMemoryStream) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>Sollte als einzige Funktion in Empfangs-Nachrichten (TClientSocket.OnRead;TServerSocket.OnClienRead/OnClientWrite) eingetragen sein. D.h. nach dem Aufruf ist der Nachrichtenpuffer leer! in Msg ( und SubMsg) steht dann der Typ der Nachricht , oder wenn fehlerhaft : MessageTypeError (-1) und der R&uuml;ckgabewert FALSE Stream wird immer erstellt , au&szlig;er es wurde SendStream mit nil aufgerufen Stream wird evtl. auch dann mit Daten gef&uuml;llt , wenn ReceiveStream FALSE zur&uuml;ckliefert. Diese Daten wurden dann auf eine andere Art gesendet (Bsp. Socket.SendBuf) Ein Beispiel gibt es in der Datei : SocketBsp.txt</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="385"></A><CODE>function <B>SendStream</B>(Socket:TCustomWinSocket; Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>;Stream : TMemoryStream) : Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>SendStream kehrt sofort zur&uuml;ck , und gibt bei einem zu kleinem Puffer -1 zur&uuml;ck - Siehe DelphiHilfe -> SendBuf</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="386"></A><CODE>function <B>SendStream</B>(Socket:TCustomWinSocket; Msg,SubMsg : <A href="dtSocketProtokoll.htm#379">TMessageType</A>;Stream : TMemoryStream; OnMessage : <A href="dtSocketProtokoll.htm#380">TOnSendMessage</A>) : Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>SendStream sendet einen Stream mit dem Messagetyp Msg und SubMsg an Socket Stream muss danach freigegeben werden Nicht identisch mit TServersocket/TClientSocket.SendStream !! ReceiveStream erkennt diese abgeschickten Nachricht nicht. Mann kann nat&uuml;rlich auch Stream = nil senden Warnung : Mehr als (8*1024 - 16) Bytes zu senden wird aufgrund des zu kleinen WinSock Puffers fehlschlagen!!!! (2*1024 - 16) ist meine Empfehlung. Der R&uuml;ckgabewert ist die Anzahl von Bytes OnMessage wird immer dann aufgerufen , wenn das Senden aufgrund eines zu kleinen WinSock Puffers fehlgeschlagen ist. SendStream Funktion kehrt erst dann zur&uuml;ck wenn der Puffer gef&uuml;llt wurde. D.h. aber nicht , dass die Daten schon gesendet wurden!!!</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="379"></A>TMessageType</TD>
+<TD width=100%>Mit TMessageType kann die Typ-Gr&ouml;&szlig;e von Msg und SubMsg schnell ge&auml;ndert werden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="380"></A>TOnSendMessage</TD>
+<TD>TOnSendMessage wird aufgerufen, wenn eine Nachricht gesendet wird. Count = Anzahl von Sendeversuchen; WaitTime = Anzahl von Milisekunden , die gewartet werden sollen , bis ein weiterer Sende-Versuch gemacht werden. (Standard = 10); Break = Abbruch des Sende-Versuch</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="377"></A>MessageTypeError</TD>
+<TD width=100%>MessageTypeError wird als anderer Fehlerwert f&uuml;r <CODE><A href="dtSocketProtokoll.htm#384">ReceiveStream</A></CODE> verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="378"></A>Signature</TD>
+<TD>Signatur die eine Nachricht als echt ausweist</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtStrings</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtStrings</H1>
+<H2>Beschreibung</H2>
+dtStrings.pas beinhaltet Funktionen f&uuml;r den Umgang mit Zeichenkettent<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#432"><B>BinStrToInt</B></A>(BitsStr: string): Int64;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#433"><B>BOOLToStr</B></A>(b: Boolean): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#434"><B>BOOLToStrExt</B></A>(b: Boolean; sTRUE, sFALSE: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#435"><B>ChangeChar</B></A>(str: string; ch, toch: Char): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#436"><B>ConvertSemiColonStrToStringList</B></A>(aString: string): TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#437"><B>ConvertStringToList</B></A>(const Str: string; const NewLineChar: Char): TStringList;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#438"><B>DeleteCharsFromString</B></A>(Text: string; Chars: array of const): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#439"><B>DelSpaces</B></A>(Str: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#440"><B>Double2ZeroInt</B></A>(str: Integer; DoIt: Boolean): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#441"><B>DoubleZero</B></A>(str: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#442"><B>DoubleZeroInt</B></A>(str: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#443"><B>EnumChars</B></A>(Text: string; var EnumCharRec: <A href="dtStrings.htm#429">TEnumCharRec</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#444"><B>EnumNumbers</B></A>(Text: string; var EnumCharRec: <A href="dtStrings.htm#429">TEnumCharRec</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#445"><B>EnumSpecChars</B></A>(Text: string; const Chars: <A href="dtStrings.htm#428">TCharArray</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#446"><B>FindInString</B></A>(Source: string; FindStrings: array of const; CaseSensitive: Boolean = FALSE): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#447"><B>FindString</B></A>(Strings: TStrings; Str: string): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#448"><B>FindStringCall</B></A>(Strings: TStrings; Proc: <A href="dtStrings.htm#427">TCallCompareString</A>; FindStr: string): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#449"><B>FormatHexStr</B></A>(L: DWORD): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#450"><B>FormHexStr</B></A>(L: DWORD): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#451"><B>GetCharCount</B></A>(aChar: Char; EnumCharRec: <A href="dtStrings.htm#429">TEnumCharRec</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#452"><B>GetTransString</B></A>(str: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#453"><B>Hex16ToString</B></A>(Hexchar: <A href="dtStrings.htm#426">T16HexBit</A>): Byte;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#454"><B>Hex2</B></A>(B: Byte): ShortString;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#455"><B>Hex4</B></A>(W: Word): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#456"><B>Hex8</B></A>(L: DWORD): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#457"><B>Hex8ToString</B></A>(Hexchar: char): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#458"><B>IntToBinStr</B></A>(Bits: Int64; Count: Byte): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#459"><B>LoadStringsFromStream</B></A>(StringList: TStringList; Stream: TStream; OnDataRead: <A href="dtStrings.htm#430">TOnDataRead</A> = nil): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#460"><B>MultiReturn</B></A>(Times: Integer): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#461"><B>ReplaceLStr</B></A>(const Text, ReplaceText, NewText: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#462"><B>ReplaceStr</B></A>(const Text, ReplaceText, NewText: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#463"><B>ReverseString</B></A>(Str: string): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#464"><B>SaveStringsToStream</B></A>(StringList: TStrings; Stream: TStream; OnDataWrite: <A href="dtStrings.htm#431">TOnDataWrite</A> = nil): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#465"><B>StringToTCharArray</B></A>(Chars: string): <A href="dtStrings.htm#428">TCharArray</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#466"><B>_EnumSpecChars</B></A>(Text: string; const Chars: array of char): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#467"><B>_FindInString</B></A>(Source: string; FindStrings: array of const; var FindStringLen: Integer; CaseSensitive: Boolean = FALSE): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="432"></A><CODE>function <B>BinStrToInt</B>(BitsStr: string): Int64;</CODE></TD>
+</TR>
+</TABLE>
+<P>BinStrToInt erstellt einen Integerwert aus einem BitString (BitStr) Es werden nur 1 f&uuml;r Bit gesetzt und 0 f&uuml;r nicht gesetzt als Bits erkannt Auserdem wird nur bis zu dem ersten ung&uuml;ltigen Zeichen (oder StringEnde) die Bitkombination erstellt</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="433"></A><CODE>function <B>BOOLToStr</B>(b: Boolean): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>BOOLToStr liefert 'TRUE' oder 'FALSE' als gleichnamigen String zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="434"></A><CODE>function <B>BOOLToStrExt</B>(b: Boolean; sTRUE, sFALSE: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>BOOLToStrExt liefert sTRUE oder sFALSE zur&uuml;ck, wenn b einen gleichnamigen Wert annimmt.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="435"></A><CODE>function <B>ChangeChar</B>(str: string; ch, toch: Char): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ChangeChar vertauscht alle Zeichen ch im String str mit Toch.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="436"></A><CODE>function <B>ConvertSemiColonStrToStringList</B>(aString: string): TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertSemiColonStrToStringList kovertiert einen String , welcher als Stringbegrenzungen das ";" enth&auml;lt in eine Stringliste siehe auch <CODE><A href="dtStrings.htm#437">ConvertStringToList</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="437"></A><CODE>function <B>ConvertStringToList</B>(const Str: string; const NewLineChar: Char): TStringList;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertStringToList splittet den String Str in mehrere einzelne Strings bei dem Zeichen NewLineChar auf und gibt sie in einer StringListe zur&uuml;ck Feature : NewLineChar mu&szlig; nicht als letztes Zeichen gesetzt sein</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="438"></A><CODE>function <B>DeleteCharsFromString</B>(Text: string; Chars: array of const): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>DeleteCharsFromString entfernt aus einem Text alle Zeichen, die in Chars vorkommen, und liefert das Resultat zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="439"></A><CODE>function <B>DelSpaces</B>(Str: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>DelSpaces l&ouml;scht alle Leerzeichen (#255), die in dem String Str vorkommen. Der R&uuml;ckgabewert ist dann der String ohne Leerzeichen.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="440"></A><CODE>function <B>Double2ZeroInt</B>(str: Integer; DoIt: Boolean): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>Double2ZeroInt - noch nicht kommentiert -- ??</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="441"></A><CODE>function <B>DoubleZero</B>(str: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>DoubleZero wandelt eine einstellige Zahl (Bsp : 1) in eine zweistellige : 2 -> 02</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="442"></A><CODE>function <B>DoubleZeroInt</B>(str: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>DoubleZeroInt wandelt eine einstellige Zahl als String (Bsp : 1) in eine zweistellige : 2 -> 02</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="443"></A><CODE>function <B>EnumChars</B>(Text: string; var EnumCharRec: <A href="dtStrings.htm#429">TEnumCharRec</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>EnumChars z&auml;hlt in einem String die Zahl des Auftretens aller Zeichen zusammen. Der R&uuml;ckgabewert ist die Anzahl der Zeichen und eine spezifierte Aufgliederung in EnumCharRec. Um den Inhalt von EnumCharRec zu verstehen, wird die Funktion <CODE><A href="dtStrings.htm#451">GetCharCount</A></CODE> verwendet.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="444"></A><CODE>function <B>EnumNumbers</B>(Text: string; var EnumCharRec: <A href="dtStrings.htm#429">TEnumCharRec</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>EnumNumbers sucht aus einem String alle ganzzahligen Werte (positive und negative) der R&uuml;ckgabewert entspricht dessen Summe</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="445"></A><CODE>function <B>EnumSpecChars</B>(Text: string; const Chars: <A href="dtStrings.htm#428">TCharArray</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>EnumSpecChars gibt die Gesamtanzahl der in Chars angegebenen und in Text gefundenen Zeichen zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="446"></A><CODE>function <B>FindInString</B>(Source: string; FindStrings: array of const; CaseSensitive: Boolean = FALSE): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>FindInString sucht nach fast beliebigen Typen in einem String "Source". In FindStrings k&ouml;nnen nach folgende Typen gesucht werden : Integer , Boolean , Char , String Bsp . : ..('123 TRUE FalSCH c, FALSE hallo',[123,TRUE,FALSE,'c','hallo',FALSE) ergibt : 1 (f&uuml;r 123) boolean - Ausdr&uuml;cke werden in Deutsch und Englisch verstanden (WAHR,FALSCH,TRUE,FALSE) CaseSensitive gibt an ob zwischen Gro&szlig;- und Kleinschreibung unterschieden werden soll (TRUE) Der R&uuml;ckgabewert ist die Anfangsposition des zuerst gefundenen Strings wurde keine &Uuml;bereinstimmung gefunden , wird 0 zur&uuml;ckgeliefert</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="447"></A><CODE>function <B>FindString</B>(Strings: TStrings; Str: string): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>FindString sucht in einer StringListe nach dem Vorkommen von Str, ohne Gro&szlig;- und Kleinschreibung zu beachten. Der R&uuml;ckgabewert ist der Index, des ersten gefundenen Strings in der Stringliste. Bei nicht-vorkommen wird -1 zur&uuml;ckgeliefert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="448"></A><CODE>function <B>FindStringCall</B>(Strings: TStrings; Proc: <A href="dtStrings.htm#427">TCallCompareString</A>; FindStr: string): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>FindStringCall sucht benutzerdefiniert in einer StringListe nach dem Vorkommen von Str, ohne Gro&szlig;- und Kleinschreibung zu beachten. Der R&uuml;ckgabewert ist der Index, des ersten gefundenen Strings in der Stringliste. Bei nicht-vorkommen wird -1 zur&uuml;ckgeliefert.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="449"></A><CODE>function <B>FormatHexStr</B>(L: DWORD): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>FormatHexStr wandelt eine DWord in eine formatierte Hexdezimalzahl als String um. Die Art der Darstellung kann in <CODE><A href="dtStrings.htm#424">StrHexFormat</A></CODE> ge&auml;ndert werden. Jeder String in StrHexFormat ist 4 Zeichen lang (0..9,A..F)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="450"></A><CODE>function <B>FormHexStr</B>(L: DWORD): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>FormHexStr, siehe <CODE><A href="dtStrings.htm#449">FormatHexStr</A></CODE> -- ??</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="451"></A><CODE>function <B>GetCharCount</B>(aChar: Char; EnumCharRec: <A href="dtStrings.htm#429">TEnumCharRec</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetCharCount ermittelt die Anzahl eines Zeichens aChar im String zur&uuml;ck. Die Berechnung wurde zuvor in EnumChars durchgef&uuml;hrt und mu&szlig; GetCharCount &uuml;bergeben werden. Der R&uuml;ckgabewert ist dann die Anzahl des gew&uuml;nschten Zeichens.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="452"></A><CODE>function <B>GetTransString</B>(str: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetTransString kehrt einen String um. ABCD -> DCBA</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="453"></A><CODE>function <B>Hex16ToString</B>(Hexchar: <A href="dtStrings.htm#426">T16HexBit</A>): Byte;</CODE></TD>
+</TR>
+</TABLE>
+<P>Hex16ToString wandelt einen 2-Hex-Char-Wert in einen Integer Wert um. M&ouml;gliche Werte sind in <CODE><A href="dtStrings.htm#423">HexArray</A></CODE> enthalten.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="454"></A><CODE>function <B>Hex2</B>(B: Byte): ShortString;</CODE></TD>
+</TR>
+</TABLE>
+<P>Hex2 wandelt einen Byte-Wert in eine Hexdezimale Zahl um. Dezimal - Hexdezimal 01 - 01 02 - 02 .. 09 - 09 10 - 0A 11 - 0B ... 15 - 0F 16 - 10 17 - 11 ... 25 - 19 26 - 1A ....</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="455"></A><CODE>function <B>Hex4</B>(W: Word): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>Hex4 wandelt ein vorzeichenlosen 16-Bit-Word-wert in einen hexdezimalen Wert um (max 4Hexzahlen) Max Word : 65535 -> FFFF</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="456"></A><CODE>function <B>Hex8</B>(L: DWORD): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>Hex8 wandelt einen 32-Bit-DWORD-Wert in einen hexdezimalen Wert um (max 8Hexzahlen) Max DWORD : 4294967295 -> FFFFFFFF (ohne Vorzeichen!)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="457"></A><CODE>function <B>Hex8ToString</B>(Hexchar: char): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>Hex8ToString wandelt ein Hex-Char-Wert in einen Integer-Wert um. M&ouml;gliche Werte sind in <CODE><A href="dtStrings.htm#423">HexArray</A></CODE> enthalten.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="458"></A><CODE>function <B>IntToBinStr</B>(Bits: Int64; Count: Byte): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>IntToBinStr erstellt einen String aus den Bits (Bits) der nur Count Bits enth&auml;lt Bsp : 5 -> 101</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="459"></A><CODE>function <B>LoadStringsFromStream</B>(StringList: TStringList; Stream: TStream; OnDataRead: <A href="dtStrings.htm#430">TOnDataRead</A> = nil): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadStringsFromStream l&auml;dt eine StringListe in einen Stream und liefert die Anzahl der gelesenen Bytes zur&uuml;ck. Benutzerdaten k&ouml;nnen in OnDataRead geschrieben werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="460"></A><CODE>function <B>MultiReturn</B>(Times: Integer): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>MultiReturn wiederholt den String <CODE><A href="dtSystem.htm#483">Return</A></CODE> "times"-Mal</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="461"></A><CODE>function <B>ReplaceLStr</B>(const Text, ReplaceText, NewText: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReplaceLStr ersetzt ,wie <CODE><A href="dtStrings.htm#462">ReplaceStr</A></CODE> einen Text durch einen anderen, nur ohne Ber&uuml;cksichtigung der Gro&szlig;- und Kleinschreibung</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="462"></A><CODE>function <B>ReplaceStr</B>(const Text, ReplaceText, NewText: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetTransString ersetzt in einem Text den String ReplaceText , unter Ber&uuml;cksichtiung der Gro&szlig;- und Kleinschreibung ,durch den Text NewText</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="463"></A><CODE>function <B>ReverseString</B>(Str: string): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReverseString dreht einen String um, und liefert diesen dann zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="464"></A><CODE>function <B>SaveStringsToStream</B>(StringList: TStrings; Stream: TStream; OnDataWrite: <A href="dtStrings.htm#431">TOnDataWrite</A> = nil): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SaveStringsToStream speichert eine StringListe in einen Stream und liefert die Anzahl der geschrieben Bytes zur&uuml;ck. Benutzerdaten k&ouml;nnen in OndataWrite geschrieben werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="465"></A><CODE>function <B>StringToTCharArray</B>(Chars: string): <A href="dtStrings.htm#428">TCharArray</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>StringToTCharArray konvertiert einen String in einen Array of char</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="466"></A><CODE>function <B>_EnumSpecChars</B>(Text: string; const Chars: array of char): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>_EnumSpecChars l&auml;&szlig;t die eckige Klammerschreibweise f&uuml;r Chars zu (Bsp : ['s','d'])</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="467"></A><CODE>function <B>_FindInString</B>(Source: string; FindStrings: array of const; var FindStringLen: Integer; CaseSensitive: Boolean = FALSE): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>keine Kommentierung -- ??</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="426"></A>T16HexBit</TD>
+<TD width=100%>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="427"></A>TCallCompareString</TD>
+<TD>TCallCompareString wird von <CODE><A href="dtStrings.htm#448">FindStringCall</A></CODE> verwendet, um benutzerdefiniert in einer StringListe zu suchen. Index ist der aktuelle Indexwert in der Stringliste. Stringname der Text an der Stelle Index. StrObject bezeichnet den Data-Wert (kann nil sein) und CompareWithStr ist der Text, welcher FindStringCall &uuml;bergeben wurde, um nach ihm zu suchen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="428"></A>TCharArray</TD>
+<TD>Anzahl von Zeichen , ohne da&szlig; doppelte mitgez&auml;hlt worden sind/ f&uuml;r Zahlen : = 0</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="429"></A>TEnumCharRec</TD>
+<TD>TEnumCharRec wird von <CODE><A href="dtStrings.htm#443">EnumChars</A></CODE> und <CODE><A href="dtStrings.htm#451">GetCharCount</A></CODE> verwendet, um den R&uuml;ckgabewert zu bestimmen. CharCount entspricht der Anzahl von einzelnen Zeichen, Count der Gesamtzahl aller Zeichen. SingelCharCount ist die Anzahl von Zeichen , ohne da&szlig; doppelte mitgez&auml;hlt worden sind/ f&uuml;r Zahlen : = 0</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="430"></A>TOnDataRead</TD>
+<TD>TOnDataWrite wird von <CODE><A href="dtStrings.htm#459">LoadStringsFromStream</A></CODE> verwendet, um benutzerdefinierte Daten mit aus dem Stream zu laden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="431"></A>TOnDataWrite</TD>
+<TD>TOnDataWrite wird von <CODE><A href="dtStrings.htm#464">SaveStringsToStream</A></CODE> verwendet, um benutzerdefinierte Daten mit in den Stream zu speichern.</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="423"></A>HexArray</TD>
+<TD width=100%>Ein Array, der alle Hex-Zeichen beinhaltet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="424"></A>StrHexFormat</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="425"></A>StrHexFormatStd</TD>
+<TD>Standard DoubleWord - Stringhexformat</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

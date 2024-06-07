@@ -1,0 +1,6 @@
+
+
+11/02/2005 -
+
+Added templates to create dialogs much faster. Simple copy a template
+and replace placeholder. 

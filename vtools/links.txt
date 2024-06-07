@@ -1,0 +1,1 @@
+http://www.thecodeproject.com/win32/cwin32error.asp

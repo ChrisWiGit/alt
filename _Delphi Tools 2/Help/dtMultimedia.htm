@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtMultimedia</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtMultimedia</H1>
+<H2>Beschreibung</H2>
+dtMultimedia.pas beinhaltet Funktionen f&uuml;r den Umgang mit Multimediadaten<A name=Classes></A><H2>Klassen, Schnittstellen und Objekte</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD>Klasse&nbsp;<A href="TExtCustomImageList.htm">TExtCustomImageList</A></TD>
+<TD width=100%>TExtCustomImageList wird intern benutzt, um die Prozedur GetImages verwenden zu k&ouml;nnen. Folgende Funktionen nutzen diese Klasse: <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> <CODE><A href="dtMultimedia.htm#282">LoadImageListFileFromStream</A></CODE> <CODE><A href="dtMultimedia.htm#283">LoadImageListFileFromStreamExt</A></CODE></TD>
+</TR>
+</TABLE>
+<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#269"><B>ConvertFile</B></A>(FileName, NewFileName: string; MaskColor, NewColor: TColor): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#270"><B>ConvertFileExt</B></A>(FileName: string; var Bitmap: TBitmap; MaskColor, NewColor: TColor): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#271"><B>ConvertImageToNewColor</B></A>(Image: TPicture; MaskColor, NewColor: TColor): TPicture; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#272"><B>ConvertImageToNewColor</B></A>(Image: TBitmap; MaskColor, NewColor: TColor): TBitmap; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#273"><B>CreateImageListFile</B></A>(const FileName: string; ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#274"><B>DNoSound</B></A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#275"><B>DSound</B></A>(Hz: Word);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#276"><B>GetRGBColor</B></A>(Color: TColor): TRGBQuad;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#277"><B>IsSound</B></A>: Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#278"><B>JoinBitmaps</B></A>(ImageList : TImageList; ImageIndexes : Array of const; Orientation : <A href="dtMultimedia.htm#268">TOrientation</A>) : TBitmap;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#279"><B>JoinBitmapsI</B></A>(ImageList : TImageList; ImageIndexes : Array of integer; Orientation : <A href="dtMultimedia.htm#268">TOrientation</A>) : TBitmap;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#280"><B>LoadImageListFile</B></A>(const FileName: string; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#281"><B>LoadImageListFileExt</B></A>(const FileName: string; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>; const DoNotLoad: array of const): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#282"><B>LoadImageListFileFromStream</B></A>(Stream: TStream; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#283"><B>LoadImageListFileFromStreamExt</B></A>(Stream: TStream; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>; const DoNotLoad: array of const): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#284"><B>LockSound</B></A>(State: <A href="dtMultimedia.htm#267">TDSoundState</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#285"><B>RGBToColor</B></A>(Color: TRGBQuad): TColor;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#286"><B>SaveImageListFileToStream</B></A>(Stream: TStream; ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="269"></A><CODE>function <B>ConvertFile</B>(FileName, NewFileName: string; MaskColor, NewColor: TColor): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertFile arbeitet wie die Funktion <CODE><A href="dtMultimedia.htm#271">ConvertImageToNewColor</A></CODE>. Allerdings werden Dateien dazu verwendet, und auch nur Bildertypen verarbeitet , die auch von TPicture verarbeitet werden k&ouml;nnen. FileName ist die Quelldatei, die das Bild enth&auml;lt welches ver&auml;ndert in NewFileName gespeichert wird.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="270"></A><CODE>function <B>ConvertFileExt</B>(FileName: string; var Bitmap: TBitmap; MaskColor, NewColor: TColor): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertFileExt l&auml;dt ein Bitmap aus einer Datei und konvertiert es in eine Klasse TBitmap. Bitmap darf nicht initialisiert , mu&szlig; aber nach Gebrauch gel&ouml;scht werden. Siehe auch <CODE><A href="dtMultimedia.htm#269">ConvertFile</A></CODE> und <CODE><A href="dtMultimedia.htm#271">ConvertImageToNewColor</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="271"></A><CODE>function <B>ConvertImageToNewColor</B>(Image: TPicture; MaskColor, NewColor: TColor): TPicture; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertImageToNewColor &auml;ndert die Farbei eines Bitmaps und gibt das Ergebnis als ein neues Bitmap zur&uuml;ck Image enth&auml;lt das Quellbitmap , das konvertiert werden soll Maskcolor ist die Farbe , die unangetastet bleiben soll NewColor ist die Farbe , die alle anderen Farben au&szlig;er Maskcolor annehmen Wichtig : Das Ergebnis mu&szlig; wieder gel&ouml;scht werden , wenn es nicht mehr gebraucht wird. Diese Prozedur verwendet statt eines TBitmaps eine TPicture-Klasse als Container.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="272"></A><CODE>function <B>ConvertImageToNewColor</B>(Image: TBitmap; MaskColor, NewColor: TColor): TBitmap; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>ConvertImageToNewColor &auml;ndert die Farbei eines Bitmaps und gibt das Ergebnis als ein neues Bitmap zur&uuml;ck Image enth&auml;lt das Quellbitmap , das konvertiert werden soll Maskcolor ist die Farbe , die unangetastet bleiben soll NewColor ist die Farbe , die alle anderen Farben au&szlig;er Maskcolor annehmen Wichtig : Das Ergebnis mu&szlig; wieder gel&ouml;scht werden , wenn es nicht mehr gebraucht wird. Diese Funktion l&ouml;sst folgendes Problem : Ich will ein Bitmap , da&szlig; nur scharz, wei&szlig; und grau&auml;hnliche Farben besitzt , also eine Maskenbitmap , zur Laufzeit eine andere Farbe zuweisen. So sollen alle wei&szlig;e Pixel , z.B. gr&uuml;n werden. Nun gibt es am Rand (=von schwarz zu zu wei&szlig; im Maskenbitmap) das Problem , da&szlig; die Pixel ja nicht mehr ganz wei&szlig; sind = weiche Abstufung. Sie sollen aber nat&uuml;rlich auch gr&uuml;n werden , nur dementsprechend etwas dunkler , so da&szlig; eine WEICHE Abstufung von gr&uuml;n zu schwarz entsteht. Das daraus entstehende Bild soll nun wie das Maskenbitmap aussehen , nur in anderer Farbe. Dabei sollen alle Abstufungen ber&uuml;cksichtig werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="273"></A><CODE>function <B>CreateImageListFile</B>(const FileName: string; ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>CreateImageListFile speichert eine ImageList in einer vollst&auml;ndigen ImageListDatei Die Datei enth&auml;lt eine f&uuml;r sie typische ImageListDateierkennungssignatur. Siehe <CODE><A href="dtMultimedia.htm#263">ImageFileSignature</A></CODE>, <CODE><A href="dtMultimedia.htm#264">ImageFileSignatureLen</A></CODE>, <CODE><A href="dtMultimedia.htm#265">ImageFileVersion</A></CODE> und <CODE><A href="TExtCustomImageList.htm">TExtCustomImageList</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="274"></A><CODE>procedure <B>DNoSound</B>;</CODE></TD>
+</TR>
+</TABLE>
+<P>DNoSound stoppt den mit DSound erzeugten HerzTon Die Prozedur ist nicht implementiert!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="275"></A><CODE>procedure <B>DSound</B>(Hz: Word);</CODE></TD>
+</TR>
+</TABLE>
+<P>DSound gibt &uuml;ber PC-Lautsprecher einen Hz-Hertz Ton aus. Die Prozedur ist nicht implementiert!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="276"></A><CODE>function <B>GetRGBColor</B>(Color: TColor): TRGBQuad;</CODE></TD>
+</TR>
+</TABLE>
+<P>Ermittelt aus einem TColorwert die einzelnen RGB-Farben. Siehe auch <CODE><A href="dtMultimedia.htm#285">RGBToColor</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="277"></A><CODE>function <B>IsSound</B>: Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsSound gibt TRUE zur&uuml;ck, wen derzeit ein Ton mit DSound ausgegeben wird. Die Prozedur ist nicht implementiert!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="278"></A><CODE>function <B>JoinBitmaps</B>(ImageList : TImageList; ImageIndexes : Array of const; Orientation : <A href="dtMultimedia.htm#268">TOrientation</A>) : TBitmap;</CODE></TD>
+</TR>
+</TABLE>
+<P>JoinBitmaps verkn&uuml;pft mehrere Bitmaps einer ImageListe zu einem Die Bitmaps werden in der Reihenfolge in ImageIndexes in der angegeben Richtung in Orientation :<CODE><A href="dtMultimedia.htm#268">TOrientation</A></CODE> zusammengef&uuml;gt. Sollen dynamische Bitmapnummer (ImageIndexes) verwendet werden ist <CODE><A href="dtMultimedia.htm#279">JoinBitmapsI</A></CODE> vorzuziehen.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="279"></A><CODE>function <B>JoinBitmapsI</B>(ImageList : TImageList; ImageIndexes : Array of integer; Orientation : <A href="dtMultimedia.htm#268">TOrientation</A>) : TBitmap;</CODE></TD>
+</TR>
+</TABLE>
+<P>JoinBitmapsI verkn&uuml;pft mehrere Bitmaps einer ImageListe zu einem. Die Bitmaps werden in der Reihenfolge in ImageIndexes in der angegeben Richtung in Orientation :<CODE><A href="dtMultimedia.htm#268">TOrientation</A></CODE> zusammengef&uuml;gt. Ein Array Of Integer kann im Gegensatz zu einem Array Of Const bequemer gehandhabt werden, und ist somit viel flexibler.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="280"></A><CODE>function <B>LoadImageListFile</B>(const FileName: string; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadImageListFile l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#273">CreateImageListFile</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! Der R&uuml;ckgabewert ist immer Null.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="281"></A><CODE>function <B>LoadImageListFileExt</B>(const FileName: string; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>; const DoNotLoad: array of const): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadImageListFileExt l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#273">CreateImageListFile</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! DoNotLoad ist ein Array Of Integer, der angibt welche IndexNummer nicht geladen werden sollen. Der R&uuml;ckgabewert ist immer Null.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="282"></A><CODE>function <B>LoadImageListFileFromStream</B>(Stream: TStream; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadImageListFileFromStream l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! Der R&uuml;ckgabewert ist immer Null.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="283"></A><CODE>function <B>LoadImageListFileFromStreamExt</B>(Stream: TStream; var ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>; const DoNotLoad: array of const): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>LoadImageListFileFromStream l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! DoNotLoad ist ein Array Of Integer, der angibt welche IndexNummer nicht geladen werden sollen. Der R&uuml;ckgabewert ist immer Null.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="284"></A><CODE>function <B>LockSound</B>(State: <A href="dtMultimedia.htm#267">TDSoundState</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>LockSound verhindert ,wenn State = DSS_LOCKED ist , da&szlig; DSound einen Ton spielt. DSS_UNLOCKED kehrt den Befehl um. DSS_RET gibt nur den aktuellen Status von SoundLock zur&uuml;ck Die Prozedur ist nicht implementiert!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="285"></A><CODE>function <B>RGBToColor</B>(Color: TRGBQuad): TColor;</CODE></TD>
+</TR>
+</TABLE>
+<P>Ermittelt aus einem RGBQuad einen TColor-wert Siehe auch <CODE><A href="dtMultimedia.htm#276">GetRGBColor</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="286"></A><CODE>function <B>SaveImageListFileToStream</B>(Stream: TStream; ImageList: <A href="TExtCustomImageList.htm">TExtCustomImageList</A>): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>SaveImageListFileToStream speichert eine Bilderliste in einem Stream ohne dabei eine Dateisignatur (<CODE><A href="dtMultimedia.htm#273">CreateImageListFile</A></CODE>) zu verwende. Der R&uuml;ckgabewert ist immer Null.</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="266"></A>TBitmapRec</TD>
+<TD width=100%>F&uuml;r <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> und  wird TBitmapRec benutzt. UseBitmap gibt an, ob ein Bitmap verwendet werden soll. Bitmap gibt das Bild an. UseMask gibt an, ob eine Maske (schwarz-wei&szlig; Bild) verwendet werden soll. Mask beinhaltet das Maskenbild</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="267"></A>TDSoundState</TD>
+<TD>TDSoundState wird von <CODE><A href="dtMultimedia.htm#284">LockSound</A></CODE> verwendet, um den aktuellen Status setzen zu k&ouml;nnen. DSS_Locked gibt an, dass der Lautsprecher verwendet wird. DSS_UnLocked gibt an, dass der Lautsprecher nicht verwendet wird. DSS_RET gibt nur den aktuellen Status von SoundLock zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="268"></A>TOrientation</TD>
+<TD>TOrientation wird von <CODE><A href="dtMultimedia.htm#278">JoinBitmaps</A></CODE> und <CODE><A href="dtMultimedia.htm#279">JoinBitmapsI</A></CODE> verwendet, um die Ausrichtung der anhgeh&auml;ngten Bilder anzugeben. orVertical bedeutet, dass die Bilder vertikal (|) angeh&auml;ngt werden, orHorizontal demnach horizontal. (-)</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="263"></A>ImageFileSignature</TD>
+<TD width=100%>ImageFileSignature ist eine ImageListDateierkennungssignatur als String</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="264"></A>ImageFileSignatureLen</TD>
+<TD>ImageFileSignatureLen ist die ImageListDateierkennungssignaturl&auml;nge von ImageFileSignature</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="265"></A>ImageFileVersion</TD>
+<TD>ImageFileVersion ist die aktuell in DelphiTools verwendete DateiVersion f&uuml;r die Speicherung von Bilderlisten.</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

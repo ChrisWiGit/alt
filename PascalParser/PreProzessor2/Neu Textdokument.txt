@@ -1,0 +1,8 @@
+
+
+fixed - {$I wird entfernt 
+- man sollte einstellen können, ob 
+die zeilen beibehalten werden, wo direktiven standen
+fixed - ab implementation weg? (einstellbar)
+fixed - man sollte einstellen können ob 
+direktiven im quelltext ignoriert werden oder nicht

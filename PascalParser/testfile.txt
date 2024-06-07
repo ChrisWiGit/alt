@@ -1,0 +1,27 @@
+program {aprojek}
+
+program Project2;
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils,
+  SParser in 'SParser.pas',
+  IOClasses in 'IOClasses.pas',
+  PasStream in 'PasStream.pas';
+
+var F : TTextStream;
+begin
+  { TODO -oUser -cConsole Main : Insert code here }
+  F := TTextStream.Create(ExtractFileDir(ParamStr(0))+'\Project2.dpr',fmopenread);
+
+  while not F.EOF do
+   try
+    Writeln(F.ReadLine);
+   except
+    break;
+   end;
+
+  F.Free;
+
+  readln;
+end.

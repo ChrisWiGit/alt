@@ -1,0 +1,1835 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>Alle Bezeichner</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Alle Bezeichner</H1>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Unit</TH><TH>Beschreibung</TH></TR> 
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#182">AddDirToFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD width=100%>AddDirToFile ist OverWriteExisting = TRUE wird der Verzeichnisstring von FileName durch Directory &uuml;berschrieben Wenn OverWriteExisting = FALSE ist , wird Directory nicht &uuml;ber den existierenen Verzeichnisstring von FileName geschrieben. Dies geschieht dann nur wenn FileName kein Verzeichnis beinhaltet VerifyDirectory (TRUE) pr&uuml;ft das Verzeichnis von Filename und &uuml;berschreibt es mit Directory auf jeden Fall wenn es nicht existiert Directory wird auf keinen Fall gepr&uuml;ft</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#183">AddExtToFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>AddExtToFile wie AddDirToFile , nur wird die Erweiterung ge&auml;ndert anstatt das Verzeichnis</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#184">AddInformationToFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>AddInformationToFile schreibt an das Ende einer Datei beliebiege Informationen dabei kann der vorherige Inhalt in der Gr&ouml;&szlig;e bei jedem lesen von Informationen eine andere Gr&ouml;&szlig;e haben die Inhalte werden &uuml;ber WriteProc geschrieben es ist wichtig , da&szlig; die Anzahl der geschriebenen Bytes korrekt &uuml;bergeben wird da sonst die Daten nicht wiederhergestellt werden k&ouml;nnen. Die Anzahl der geschriebenen Bytes ist : 2*InfoHeaderLen+SizeOf(Longint) + <geschriebene Bytes in WriteProc> Data wird an WriteProc(Data) &uuml;bergeben Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes Warnung : -Manche Dateien werden von Anfang bis zum Ende gelesen dabei k&ouml;nnen die hinzugef&uuml;gten Daten unerw&uuml;nschte Nebeneffekte erbringen -Manche Programme lesen aus den Dateien nur die erforderlichen Daten und erzeugen dann eine neue , dabei verliert man den Informationsheader.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#153">AssembleStream</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>AssembleStream verkn&uuml;pft eine Nachricht und einen Stream zu einen versendbaren Stream Stream wird in <CODE><A href="dtDirectSocketProtokoll.htm#153">AssembleStream</A></CODE> NICHT gel&ouml;scht! Diese Funktion wird intern verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#381">AssembleStream</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>AssembleStream verkn&uuml;pft eine Nachricht und einen Stream zu einen versendbaren Stream Stream wird in AssembleStream NICHT gel&ouml;scht! Diese Funktion wird intern verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#502">BeatsPerSec</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>BeatsPerSec berechnet die Anzahl der Beats die pro Sekunde ablaufen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#506">BeatsTolngTime</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>BeatsTolngTime wie <CODE><A href="dtTime.htm#507">BeatsToTime</A></CODE> , liefert jedoch zus&auml;tzlich noch Stunden ,Minuten und Sekunden zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#507">BeatsToTime</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>BeatsToTime ermittelt aus der Greenwich MeanTime (GMT) und der Internetzeit @ (Beat) die gew&ouml;hnliche Uhrzeit</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#432">BinStrToInt</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>BinStrToInt erstellt einen Integerwert aus einem BitString (BitStr) Es werden nur 1 f&uuml;r Bit gesetzt und 0 f&uuml;r nicht gesetzt als Bits erkannt Auserdem wird nur bis zu dem ersten ung&uuml;ltigen Zeichen (oder StringEnde) die Bitkombination erstellt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#246">BitLinkByte</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>BitLinkByte verkn&uuml;pft Bit-weise zwei Bytes zu einem Word Z.B. Integer in einer Bin&auml;r-Datei sind immer in zwei Bytes (die vertauscht sind) gespeichert : D007 Diese zwei Bytes k&ouml;nnen aber nicht ohne weiteres in einen Integerwert transferiert werden Deshalb wird Bit1 $D0 und Bit2 $07 zugewiesen um einen Wordwert (2000) zu resultieren Hinweis : In Bin&auml;r-Dateien sind die Zahlenwerte in der H&auml;lfte ihrer Anzahl von Bits vertauscht : Bsp : Bin&auml;r : 10101111 01000000(2 Bytes) , als Integerwert zu lesen = 01000000 10101111 oder BitLinkByte(64,175) = 16559 (Word) Steht in der Datei z.B. $12 $23 $45 $67 , so entspricht dies nicht dem Aufruf von BitLinkWord(BitLinkByte($12,$23),BitLinkByte($45,$67)) sondern , da $12 $23 und $45 $67 vertauscht werden m&uuml;ssen : BitLinkWord(BitLinkByte($45,$67),BitLinkByte($12,$23)) = 304301415 Exakt dasselbe Ergebnis liefert BitLinkWordExt($12,$23,$45,$67)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#247">BitLinkWord</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>Transferiert zwei Word-werte zu einem Double-Word -> $12 und $34 zu $3412 (12818) mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#248">BitLinkWordExt</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>Transferiert vier Byte-werte zu einem Dword , dabei werden Bit1 und Bit2 mit Bit3 und Bit4 vertauscht und verkn&uuml;pft wiedergegeben Diese Funktion entspricht der folgenden Aufrufes : Result := BitLinkWord(BitLinkByte(Bit3,Bit4),BitLinkByte(Bit1,Bit2)); mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#433">BOOLToStr</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>BOOLToStr liefert 'TRUE' oder 'FALSE' als gleichnamigen String zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#434">BOOLToStrExt</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>BOOLToStrExt liefert sTRUE oder sFALSE zur&uuml;ck, wenn b einen gleichnamigen Wert annimmt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#81">BorderButton</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>BorderButton &auml;ndert das Aussehen eines TButton-Kontrollelementes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#103">ButtonNames</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>ButtonNames wird von <CODE><A href="dtDialogs.htm#121">MessageDlgBtnCaption</A></CODE> verwendet, um die &Auml;nderung der Schaltertexte zuzulassen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#249">ByteToBytes</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>ByteToBytes spaltet ein Byte in ein erstes und zweites Bit auf. mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#250">ByteToLong</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>ByteToLong konvertiert 4 Byte Werte in ein Longint. Siehe auch <CODE><A href="dtMath.htm#256">LongToByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#497">calcCRC32</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>Berechnet eine CRC Pr&uuml;fsumme gefunden: http://www.delphi-total.de/probs/a167.htm</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#435">ChangeChar</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>ChangeChar vertauscht alle Zeichen ch im String str mit Toch.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#82">ChangeControlsState</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>Setzt die Eigenschaft Enabled/Visible/Beide aller untergeordnete Steuerelemente auf den Wert "d", ohne Maincontrol dabei zu ver&auml;ndern. Der R&uuml;ckgabewert ist die Anzahl der ver&auml;nderten Unterkontrollelemente.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#83">ChangeControlsStateEx</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>Setzt die Eigenschaft Enabled/Visible/Beide aller untergeordnete Steuerelemente - mit der Ausnahme ExControls1 - auf den Wert "d", ohne Maincontrol dabei zu ver&auml;ndern. Der Array kann aus Klassennamen, Kontrollnamen als String oder Typenbezeichnung bestehen. Der R&uuml;ckgabewert ist die Anzahl der ver&auml;nderten Unterkontrollelemente.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#485">ChangeVar</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>TStrBoolean vertauscht zwei Variablen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#537">ChangeWindowStyle</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>ChangeWindowStyle &auml;ndert das WindowStyle (HAndle = WindowHandle) in Style. N&uuml;tzlich f&uuml;r EverOnTop, da in Delphi das Fenster flackert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#477">CharBufferLen</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#478">CharBufferLen1024</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#479">CharBufferLen512</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#293">CheckIP</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>&Uuml;berpr&uuml;ft, ob es sich bei der IP-Addresse um eine "g&uuml;ltige" Addresse handelt. Dabei wird nicht untersucht, ob die IP-Addressen benutzt werden, sondern lediglich ihre Glieder innerhalb von 255 befinden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#85">ClearNodes</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>L&ouml;scht alle Knoten im Baum Nodes. Damit auch die Eigenschaft Data jedes Knotens entfernt werden kann, werden zuerst zu jedem Knoten das Ereignis OnClearNode aufgerufen Hierin kann dann Data (Pointer) entsorgt werden, was die Methode Clear von TTreeNodes normalerweise nicht tut. Danach wird der Baum dann mit Clear gel&ouml;scht. Diese Prozedur wird aufgerufen, wenn die Ereignisbehandlungsroutine eine Methode ist.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#487">CompareInt</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>CompareInt vergleicht wie CompareStr zwei Integervariablen. Der R&uuml;ckgabewert ist dergleiche, wie CompareText.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#294">ConnectNetDialog</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>ConnectNetDialog zeigt einen StandardWindows-Verbindungsdialog an mehr unter WNetConnectionDialog</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#269">ConvertFile</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>ConvertFile arbeitet wie die Funktion <CODE><A href="dtMultimedia.htm#271">ConvertImageToNewColor</A></CODE>. Allerdings werden Dateien dazu verwendet, und auch nur Bildertypen verarbeitet , die auch von TPicture verarbeitet werden k&ouml;nnen. FileName ist die Quelldatei, die das Bild enth&auml;lt welches ver&auml;ndert in NewFileName gespeichert wird.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#270">ConvertFileExt</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>ConvertFileExt l&auml;dt ein Bitmap aus einer Datei und konvertiert es in eine Klasse TBitmap. Bitmap darf nicht initialisiert , mu&szlig; aber nach Gebrauch gel&ouml;scht werden. Siehe auch <CODE><A href="dtMultimedia.htm#269">ConvertFile</A></CODE> und <CODE><A href="dtMultimedia.htm#271">ConvertImageToNewColor</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#508">ConvertHSecToTime</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>ConvertHSecToTime errechnet aus der Anzahl von Milisekunden HSecs die Anzahl von Stunden , Minuten und Sekunden Man sollte Hour nicht in EncodeTime oder TimeToStr verwenden ,da Hour > 23 sein kann Minute , Second sind dazu im Gegensatz zwischen 0-59. Updated 289a</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#509">ConvertHSecToTTime</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>ConvertHSecToTTime konvertiert eine Zahl von MiliSekunden in einen TTime-Wert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#272">ConvertImageToNewColor</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>ConvertImageToNewColor &auml;ndert die Farbei eines Bitmaps und gibt das Ergebnis als ein neues Bitmap zur&uuml;ck Image enth&auml;lt das Quellbitmap , das konvertiert werden soll Maskcolor ist die Farbe , die unangetastet bleiben soll NewColor ist die Farbe , die alle anderen Farben au&szlig;er Maskcolor annehmen Wichtig : Das Ergebnis mu&szlig; wieder gel&ouml;scht werden , wenn es nicht mehr gebraucht wird. Diese Funktion l&ouml;sst folgendes Problem : Ich will ein Bitmap , da&szlig; nur scharz, wei&szlig; und grau&auml;hnliche Farben besitzt , also eine Maskenbitmap , zur Laufzeit eine andere Farbe zuweisen. So sollen alle wei&szlig;e Pixel , z.B. gr&uuml;n werden. Nun gibt es am Rand (=von schwarz zu zu wei&szlig; im Maskenbitmap) das Problem , da&szlig; die Pixel ja nicht mehr ganz wei&szlig; sind = weiche Abstufung. Sie sollen aber nat&uuml;rlich auch gr&uuml;n werden , nur dementsprechend etwas dunkler , so da&szlig; eine WEICHE Abstufung von gr&uuml;n zu schwarz entsteht. Das daraus entstehende Bild soll nun wie das Maskenbitmap aussehen , nur in anderer Farbe. Dabei sollen alle Abstufungen ber&uuml;cksichtig werden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#510">ConvertSecToTime</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>ConvertSecToTime errechnet aus der Anzahl von Sekunden Secs die Anzahl von Stunden , Minuten und Sekunden Man sollte Hour nicht in EncodeTime oder TimeToStr verwenden ,da Hour > 23 sein kann Minute , Second sind dazu im Gegensatz zwischen 0-59. Updated 289a</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#511">ConvertSecToTTime</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>ConvertSecToTTime konvertiert eine Zahl von Sekunden in einen TTime-Wert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#436">ConvertSemiColonStrToStringList</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>ConvertSemiColonStrToStringList kovertiert einen String , welcher als Stringbegrenzungen das ";" enth&auml;lt in eine Stringliste siehe auch <CODE><A href="dtStrings.htm#437">ConvertStringToList</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#437">ConvertStringToList</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>ConvertStringToList splittet den String Str in mehrere einzelne Strings bei dem Zeichen NewLineChar auf und gibt sie in einer StringListe zur&uuml;ck Feature : NewLineChar mu&szlig; nicht als letztes Zeichen gesetzt sein</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#354">ConvertToSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ConvertToSignVersion kopiert TVersionRec und TSignatureRec zusammen in ein TSignVersion-Record</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#512">ConvertTTimeToHSecs</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>ConvertTTimeToHSecs konvertiert eine einen TTime-Wert in eine Zahl von MiliSekunden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#513">ConvertTTimeToSecs</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>ConvertTTimeToSecs konvertiert eine einen TTime-Wert in eine Zahl von Sekunden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#331">ConvResType</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>ConvResType konvertiert ResourcenTyp in einen String</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#514">CorrectHour</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>CorrectHour korrigiert Zeitstunden : z.B. 24uhr -> 0uhr, 25 -> 1 , 48 -> 0, , -1 -> 23 , -24 -> 0</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#110">CountDialogComponents</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>CountDialogComponents lieftert die Anzahl der Komponenten in Form zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#498">CRC32</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>Berechnet eine CRC Pr&uuml;fsumme aus einer Datei.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#495">CRCT</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>CRCT ist eine CRC-Tabelle, die in <CODE><A href="dtSysUtils.htm#497">calcCRC32</A></CODE> geltung findet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#494">CRCTableCalculated</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>CRCTableCalculated wird in <CODE><A href="dtSysUtils.htm#497">calcCRC32</A></CODE> verwendet,um festzulegen, ob eine CRC-Tabelle erzeugt werden soll (Standardm&auml;&szlig;ig wird keine erzeugt)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#332">CreateBitmapScriptResource</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>Siehe <CODE><A href="dtResource.htm#333">CreateBitmapScriptResourceEx</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#333">CreateBitmapScriptResourceEx</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>CreateBitmapScriptResourceEx erstellt aus einem Bitmap eine Resourcen-skript-datei "BitmapFileName" ist die Bitmapdatei, die als Resource abgespeichert werden soll. "BitmapScriptFileName", die neue Resourcendatei. Sie kann ein leerer String sein, um "Lines" zu verwenden, wenn mehrere Skripte verwendet werden. TempFileName : tempor&auml;re Datei (mit Pfad) f&uuml;r Zwischenspeicherung wenn leer sucht windows eine aus BitmapIdent : g&uuml;ltiger Bitmap-resourcenbezeichner NewWidth,NewHeight : Angepasste Gr&ouml;sse Lines : StringList f&uuml;r Ressourcenskript wenn ben&ouml;tigt und ungleich nil</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#86">CreateDirTreeView</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>CreateDirTreeView erstellt aus einer Stringliste , gef&uuml;llt mit Verzeichnispfaden , einen Verzeichnisbaum, der an den Knoten "Parent" angeh&auml;ngt wird. (kann auch nil sein ,damit der ganze Baum genutzt wird) OnAdd wird immer dann aufgerufen , wenn ein neues Unterverzeichnis erstellt werden soll ist CanADD false , werden keine Unterverzeichnisse mehr erstellt. Allerdings bleiben , alle davor erstellten , &uuml;bergeordneten Verzeichnisse erhalten. Der R&uuml;ckgabewert ist die Anzahl , der eingef&uuml;gten Verzeichnisse</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#538">CreateFileAssociation</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>Externe Quelle 0001 CreateFileAssociation wie <CODE><A href="dtWindows.htm#554">RegisterFile</A></CODE> , nur mit einfacheren Extension ist die zu registrierende Erweiterung als InternalName oder RealName den internen oder den wirklichen Namen und als ApplicationPath den Pfad Ihrer Andwendung. Bei Erfolg , ist der R&uuml;ckgabewert TRUE. V1.302</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#273">CreateImageListFile</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>CreateImageListFile speichert eine ImageList in einer vollst&auml;ndigen ImageListDatei Die Datei enth&auml;lt eine f&uuml;r sie typische ImageListDateierkennungssignatur. Siehe <CODE><A href="dtMultimedia.htm#263">ImageFileSignature</A></CODE>, <CODE><A href="dtMultimedia.htm#264">ImageFileSignatureLen</A></CODE>, <CODE><A href="dtMultimedia.htm#265">ImageFileVersion</A></CODE> und <CODE><A href="TExtCustomImageList.htm">TExtCustomImageList</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#295">CreateNetConnection</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>CreateNetConnection Erstellt eine Dateisystemverbindung zu einem anderen Computer im Netzwerk LocalName ist der Festplattenpfad auf dem Client-rechner (von dem die funktion aufgerufen wird) : Bsp. M: RemoteName ist ein UNC-Pfad der auf den Host-rechner zeigt : \\Host\Platte Comment ist ein beliebieger Name welcher der Zuweisung zugewiesen wird Username ist ein Name , der als Zugriffsname zum Hostrechner verwendet wird ist Username = '' , wird der Standardbenutzername des Computers verwendet UserPassword ist ein Zugriffspasswort auf die Resource ist UserPassword = '' , wird das StandardPassword des Computers verwendet Flags definiert die Verwendungsart der Resource Funktionsergebnisse siehe in der WinAPI-SDK unter WNetAddConnection2</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#185">CreateNullFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>CreateNullFile erstellt eine leere Datei mit dem Namen FileName wenn OwerwriteExisting = FALSE und die Datei nicht schon existiert Ist OwerwriteExisting = TRUE und die Datei existiert wird sie &uuml;berschrieben Der R&uuml;ckgabewert ist oben definiert Weitere Dateierstellungsfehler werden per Exception bekanntgegeben</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#355">CreateSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>CreateSignVersion erstellt eine leere TSignVersion.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTools.htm#525">DeAlpha</A></TD>
+<TD><A href="dtTools.htm">dtTools</A></TD>
+<TD>DeAlpha decodiert wie <CODE><A href="dtTools.htm#526">DeCode</A></CODE> den String s Es werden allerdings nur Buchstaben (ohne Umlaute) kodiert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTools.htm#526">DeCode</A></TD>
+<TD><A href="dtTools.htm">dtTools</A></TD>
+<TD>DeCode decodiert nach dem ASCII-Zeichensatz einen String und gibt den codierten String zur&uuml;ck. Dabei wird der String s einfach um -m Zeichen verschoben. Diese Funktion ist nicht f&uuml;r den professionellen Einsatz geeignet und kann leicht durch Brute-Force-Attacken gecrackt werden. Siehe auch <CODE><A href="dtTools.htm#528">EnCode</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#111">DefOnDialogControlStream</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>DefOnDialogControlStream definiert eine Funktion , die Daten von Controls speichert bzw. ausliest und die geschriebenen/gelesenen Bytes zur&uuml;ckgibt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#14">DefPassDlg</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>DefPassDlg wird benutzt, um eine globale Klassenreferenz auf den Passwortdialog zu erzeugen. Diese Variable wird normalerweise nicht benutzt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#112">DefPassWordDlg</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>DefPassWordDlg zeigt ein Dialog, der die Eingabe eines neuen Passwortes zul&auml;sst (mit Best&auml;tigung). N&auml;heres zu Data siehe in <CODE><A href="dtDialogs.htm#105">TDialogData</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#438">DeleteCharsFromString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>DeleteCharsFromString entfernt aus einem Text alle Zeichen, die in Chars vorkommen, und liefert das Resultat zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#186">DeleteFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>DeleteFile l&ouml;scht Dateien in den Papierkorb , wenn AllowUndo = TRUE Es k&ouml;nnen mehrere Dateien in Filename angegeben werden : ['..','..'] Form : DialogElternfenster Wenn Form = nil dann wird der Desktop benutzt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#187">DeleteFileStr</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>DeleteFileStr wie <CODE><A href="dtFiles.htm#186">DeleteFile</A></CODE> nur mit TStrings f&uuml;r TOpenDialog.Files-&uuml;bergabe</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#305">DeleteKey</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. DeleteKey l&ouml;scht einen Schl&uuml;ssel unwiderruflich. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#306">DeleteValue</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. DeleteKey l&ouml;scht einen Wert unwiderruflich. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#343">DelphiTools_SignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>DelphiTools_SignVersion bezeichnet eine Dateisignatur, die intern verwendet wird. Sie kann als Beispiel einer solchen konstanten Definition verwendet werden. Siehe mehr dazu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#439">DelSpaces</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>DelSpaces l&ouml;scht alle Leerzeichen (#255), die in dem String Str vorkommen. Der R&uuml;ckgabewert ist dann der String ohne Leerzeichen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#113">DialogDataFromStream</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>DialogDataFromStream geht durch alle Controls von Form , um diese dann mit OnDialogControlRead derren Inhaltsdaten zu lesen. Der r&uuml;ckgabewert ist die Anzahl der gelesenen Bytes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#114">DialogDataToStream</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>DialogDataToStream geht durch alle Controls von Form , um diese dann mit OnDialogControlWrite derren Inhaltsdaten zu speichern. Der r&uuml;ckgabewert ist die Anzahl der gespeicherten Bytes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#154">DisAssembleStream</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>Entkn&uuml;pft eine versendbaren Stream in Nachricht (Msg,SubMsg) und einen LeseStream "Stream" Stream wird in <CODE><A href="dtDirectSocketProtokoll.htm#154">DisAssembleStream</A></CODE> erstellt! Diese Funktion wird intern verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#382">DisAssembleStream</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>DisAssembleStream entkn&uuml;pft eine versendbaren Stream in Nachricht und einen LeseStream Stream wird in DisAssembleStream erstellt! Diese Funktion wird intern verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#296">DisConnectNetDialog</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>Zeigt einen Cancel-Verbindungsdialog an Mehr siehe in der WinAPI-SDK unter WNetDisconnectDialog</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#297">DisconnetNetConnection</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>Trennt eine mit <CODE><A href="dtNetwork.htm#295">CreateNetConnection</A></CODE> aufgebaute Netzwerk-Verbindung Parameter siehe CreateNetConnection Force gibt an , ob die Resource auch dann gekappt werden soll, wenn noch offene Verbindungen (offene Dateien) bestehen Funktionsergebnisse siehe in der WinAPI-SDK unter WNetCancelConnection2</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#274">DNoSound</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>DNoSound stoppt den mit DSound erzeugten HerzTon Die Prozedur ist nicht implementiert!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#87">DoHilight</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>DoHilight l&auml;sst eine Tableiste "Tab" , "Times"-mal blinken , jeweils mit einer Dauer von "PeriodeTime" msek. Einmal blinken (an - aus) dauert damit "PeriodeTime"-mal. Wenn Times = -1 ist ,wird bei StopOnVisible solange geblinkt bis das Tabsheet aktiviert wird. StopOnVisible gibt an , ob das Blinken vorzeitig gestoppt werden soll , wenn die Tableiste aktiviert wird Wenn TRUE wird kein Blinken initiert , wenn die Tableiste schon aktiviert ist.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#115">DoMsgFlash</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>DoMsgFlash l&auml;sst das aktuelle Fenster kurz aufblinken.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#440">Double2ZeroInt</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Double2ZeroInt - noch nicht kommentiert -- ??</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#441">DoubleZero</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>DoubleZero wandelt eine einstellige Zahl (Bsp : 1) in eine zweistellige : 2 -> 02</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#442">DoubleZeroInt</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>DoubleZeroInt wandelt eine einstellige Zahl als String (Bsp : 1) in eine zweistellige : 2 -> 02</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#275">DSound</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>DSound gibt &uuml;ber PC-Lautsprecher einen Hz-Hertz Ton aus. Die Prozedur ist nicht implementiert!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#469">dtStream_ReadFileExtended_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#470">dtStream_ReadFileMinStd_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#471">dtStream_ReadFileMin_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#472">dtStream_ReadFileStd_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#473">dtStream_ReadFile_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#474">dtStream_WriteFileStd_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStringsRes.htm#475">dtStream_WriteFile_Error</A></TD>
+<TD><A href="dtStringsRes.htm">dtStringsRes</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#242">DWordBitLength</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>DWordBitLength ist die L&auml;nge eines DWord in Bitdarstellung</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#251">DWordToBytes</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>DWordToBytes liefert vier Byte-werte aus dem ein DWORD-wert bestehen kann mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#539">EmptyRecycleBin</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>EmptyRecycleBin l&ouml;scht den Papierkorb ohne Nachfrage</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTools.htm#527">EnAlpha</A></TD>
+<TD><A href="dtTools.htm">dtTools</A></TD>
+<TD>EnAlpha codiert wie <CODE><A href="dtTools.htm#528">EnCode</A></CODE> den String s Es werden allerdings nur Buchstaben (ohne Umlaute) kodiert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTools.htm#528">EnCode</A></TD>
+<TD><A href="dtTools.htm">dtTools</A></TD>
+<TD>EnCode codiert nach dem ASCII-Zeichensatz einen String und gibt den codierten String zur&uuml;ck. Dabei wird der String s einfach um m Zeichen verschoben. Diese Funktion ist nicht f&uuml;r den professionellen Einsatz geeignet und kann leicht durch Brute-Force-Attacken gecrackt werden. Siehe auch <CODE><A href="dtTools.htm#526">DeCode</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#443">EnumChars</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>EnumChars z&auml;hlt in einem String die Zahl des Auftretens aller Zeichen zusammen. Der R&uuml;ckgabewert ist die Anzahl der Zeichen und eine spezifierte Aufgliederung in EnumCharRec. Um den Inhalt von EnumCharRec zu verstehen, wird die Funktion <CODE><A href="dtStrings.htm#451">GetCharCount</A></CODE> verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#444">EnumNumbers</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>EnumNumbers sucht aus einem String alle ganzzahligen Werte (positive und negative) der R&uuml;ckgabewert entspricht dessen Summe</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#445">EnumSpecChars</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>EnumSpecChars gibt die Gesamtanzahl der in Chars angegebenen und in Text gefundenen Zeichen zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#356">EqualSignature</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>EqualSignature vergleicht zwei TSignatureRec-Datentypen miteinander in jeder Beziehung. Siehe auch <CODE><A href="dtSignature.htm#357">EqualSignatureMin</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#357">EqualSignatureMin</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>EqualSignatureMin vergleicht zwei TSignatureRec-Datentypen miteinander Folgende Daten werden verglichen : SignatureStr,SubSignature,FileName,FileTyp. Siehe auch <CODE><A href="dtSignature.htm#356">EqualSignature</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#358">EqualSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>EqualSignVersion vergleicht zwei TSignVersion-Datentypen in jeder Beziehung miteinander. Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#359">EqualSignVersionMin</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>EqualSignVersionMin vergleicht zwei TSignVersion-Datentypen in jeder Beziehung miteinander. Folgende Daten werden verglichen : SignatureStr,SubSignature,FileName,FileTyp , Version Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#360">EqualVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>Vergleicht zwei <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE>-Datentypen miteinander in jeder Beziehung. Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#15">ErrorMsg</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#163">ERR_FileExists</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#164">ERR_NoError</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>CreateNullFile - R&uuml;ckgabewerte</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#540">ExecDOC</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>ExecDOC f&uuml;hrt das Anwendungsprogramm mit dem Paramater Doc aus , da&szlig; mit Doc verkn&uuml;pft wurde</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDataBase.htm#96">ExecSQL</A></TD>
+<TD><A href="dtDataBase.htm">dtDataBase</A></TD>
+<TD>ExecSQL f&uuml;hrt eine Reihe von SQL Anweisung aus "SQLLines" in einer TIBSQL-Klasse aus. Der R&uuml;ckgabewert ist -1 im Erfolgsfall, sonst wird eine Exception (EIBInterBaseError) ausgel&ouml;st, und die Zeile, in der der Fehler auftrat zur&uuml;ckgeliefert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#307">ExistsKey</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ExistsValue &uuml;berpr&uuml;ft, ob ein Schl&uuml;ssel in der Registry vorhanden ist. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#308">ExistsValue</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ExistsValue &uuml;berpr&uuml;ft, ob ein Wert in der Registry vorhanden ist. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#188">ExtractFileNameIndent</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>ExtractFileNameIndent gibt den Dateiname (ohne Erweiterung) zur&uuml;ck Mit Erweiterung siehe GetFileNameFromPath</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#334">ExtractIcon</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>ExtractIcon extrahiert ein Symbol aus einer ausf&uuml;hrbaren Datei heraus, dass die Nummer "Index" besitzt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#189">ExtractLongPathName</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>ExtractLongPathName ermittelt aus einem DOS-Pfadname einen langem Verzeichnissname</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#309">ExtractRegStr</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>ExtractRegStr extrahiert aus dem Registry-Pfad RegStr den Schl&uuml;ssel (TKey) und den reinen Pfad</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#190">ExtractShortPathName</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>ExtractShortPathName ermittelt den DOS-Pfadname aus einem langem Verzeichnissname</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#191">FileExists</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>FileExists gibt True zur&uuml;ck , wenn die Datei oder das Verzeichnis (auch Laufwerk) existiert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#192">Filesplit</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>Filesplit wie FileSplitExt , nur ohne Laufwerk. Das Laufwerk ist in dir enthalten</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#193">Filesplitext</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>Filesplitext splittet aus einem Windows9x Dateinamen das Laufwerk lw ,das Verzeichnis dir ,den DateiName name und die Erweiterung ext Lange Datei- und Verzeichnisnamen werden unterst&uuml;tzt. Version 2.1</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#88">FindControlStrWithTagNo</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>Liefert das Unterelement von Owner zur&uuml;ck , da&szlig; denselben Klassennamen ClassName (als String) und dieselbe Eigenschaft Tag = TagNo besitzt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#89">FindControlWithTagNo</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>Liefert das Unterelement von Owner zur&uuml;ck , da&szlig; denselben Klassennamen ClassName (als Typname) und dieselbe Eigenschaft Tag = TagNo besitzt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#446">FindInString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>FindInString sucht nach fast beliebigen Typen in einem String "Source". In FindStrings k&ouml;nnen nach folgende Typen gesucht werden : Integer , Boolean , Char , String Bsp . : ..('123 TRUE FalSCH c, FALSE hallo',[123,TRUE,FALSE,'c','hallo',FALSE) ergibt : 1 (f&uuml;r 123) boolean - Ausdr&uuml;cke werden in Deutsch und Englisch verstanden (WAHR,FALSCH,TRUE,FALSE) CaseSensitive gibt an ob zwischen Gro&szlig;- und Kleinschreibung unterschieden werden soll (TRUE) Der R&uuml;ckgabewert ist die Anfangsposition des zuerst gefundenen Strings wurde keine &Uuml;bereinstimmung gefunden , wird 0 zur&uuml;ckgeliefert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#447">FindString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>FindString sucht in einer StringListe nach dem Vorkommen von Str, ohne Gro&szlig;- und Kleinschreibung zu beachten. Der R&uuml;ckgabewert ist der Index, des ersten gefundenen Strings in der Stringliste. Bei nicht-vorkommen wird -1 zur&uuml;ckgeliefert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#448">FindStringCall</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>FindStringCall sucht benutzerdefiniert in einer StringListe nach dem Vorkommen von Str, ohne Gro&szlig;- und Kleinschreibung zu beachten. Der R&uuml;ckgabewert ist der Index, des ersten gefundenen Strings in der Stringliste. Bei nicht-vorkommen wird -1 zur&uuml;ckgeliefert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#542">FindWindows</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>FindWindows z&auml;hlt alle Fenster auf dem Desktop auf und gibt derren Titel in einer Stringliste zur&uuml;ck. Die Objektliste enth&auml;lt die Fensterhandles als Longint - Pointer MyHandle := Longint(Windows.Objects[index]); Als Ereignis OnFindWindowProc wird eine Standard-Prozedur verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#310">FontToRec</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>FontToRec wandelt die Klasse TFont in den Record <CODE><A href="dtRegistry.htm#303">TFontData</A></CODE> um.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#449">FormatHexStr</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>FormatHexStr wandelt eine DWord in eine formatierte Hexdezimalzahl als String um. Die Art der Darstellung kann in <CODE><A href="dtStrings.htm#424">StrHexFormat</A></CODE> ge&auml;ndert werden. Jeder String in StrHexFormat ist 4 Zeichen lang (0..9,A..F)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#450">FormHexStr</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>FormHexStr, siehe <CODE><A href="dtStrings.htm#449">FormatHexStr</A></CODE> -- ??</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#515">GetActualTimeZone</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>GetActualTimeZone ermittelt die aktuelle Zeitzone ProcResult gibt &uuml;ber Fehler aufschlu&szlig; ShowHalfTime , ist wie bei GetWindowsTimeZoneStrings zust&auml;ndig Sollte die aktuelle Zeitzone eine Zwischenzone (z.B. : 3:30) sein und ShowHaltTime = FALSE dann wird ein Fehler zi_unknow in ProcResult geliefert Der R&uuml;ckgabewert wird !vollst&auml;ndig! gef&uuml;llt , d.h. auch .Index wird mit dem StringIndex definiert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#91">GetAllNodes</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>GetAllNodes durchl&auml;uft index-orientiert alle Knoten eines Baumes, und liefert der Ereignisbehandlungsroutine den Parameter Data und den aktuellen Knoten zur&uuml;ck. Diese Prozedur wird aufgerufen, wenn die Ereignisbehandlungsroutine eine Methode ist.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#543">GetAppHandle</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetAppHandle gibt ein Window_Handle, wenn ein Fenster mit den Applikationsname Appname und Klassname Classname gefunden wurde. zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#194">GetApplicationPath</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetApplicationPath liefert das Verzeichnis (mit "\" am Ende) der Anwendung zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#544">GetAppName</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetAppName ermittelt aus einem Dateinamen dessen verkn&uuml;pfte Anwendungsdatei z.B. f&uuml;r TXT-Dateien das NotePad</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#252">GetBit</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>GetBit gibt den Status (gesetzt oder nicht) eines bestimmten Bits (BitNo) von Combination zur&uuml;ck Die Z&auml;hlung f&auml;ngt bei 0 an und h&ouml;rt bei 63 (64Bit bei Int64) auf Es ist allgemein so ,dass das Z&auml;hlen beim Bits rechts und von 0 anf&auml;ngt. Das erste bit von links ist also das 7 Bit. mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#451">GetCharCount</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>GetCharCount ermittelt die Anzahl eines Zeichens aChar im String zur&uuml;ck. Die Berechnung wurde zuvor in EnumChars durchgef&uuml;hrt und mu&szlig; GetCharCount &uuml;bergeben werden. Der R&uuml;ckgabewert ist dann die Anzahl des gew&uuml;nschten Zeichens.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#545">GetClockPos</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetClockPos gibt die Position der Uhr zur&uuml;ck (Bildschirmkoordinaten)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#546">GetClockRect</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetClockRect gibt die Gr&ouml;&szlig;e der Uhrzeit zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#547">GetClockWndHandle</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetClockWndHandle gibt das Fensterhandle der Uhrzeit in der Taskleiste zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#195">GetCompletePath</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetCompletePath liefert aus einem Dateipfad das Verzeichnis zur&uuml;ck d.h. (mit abschliessenden '\')</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#298">GetComputerName</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>GetComputerName liefert den Computername (angemeldeter Netzwerkname) zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#196">GetCreateFileDateTime</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#197">GetCurrentDirectory</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#116">GetDialogData</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>GetDialogData erzeugt einen <CODE><A href="dtDialogs.htm#105">TDialogData</A></CODE> -Record mit leerem Inhalt und dem Besitzer (aOwner). N&auml;heres zum R&uuml;ckgabewert siehe in <CODE><A href="dtDialogs.htm#105">TDialogData</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#198">GetDirFromPath</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetDirFromPath gibt das Verzeichnis eines Pfades zur&uuml;ck (mit Backslash am Ende)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#199">GetDirName</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetDirName ermittelt aus einem Pfad , den n-ten (Level) Pfadname 0 bedeutet entweder der Computername (UNC-Pfad) oder der Laufwerksbuchstabe Jeder Wert gr&ouml;&szlig;er 0 ist ein Verzeichnissname der Wert -1 lieft im String die gesamte Anzahl von Verzeichnisnamen ( +1) als String zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#200">GetDiskFreeSpace</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetDiskFreeSpace gibt Festplattenspeicherdaten zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#201">GetDrives</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>Siehe <CODE><A href="dtFiles.htm#202">GetDrivesEx</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#202">GetDrivesEx</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetDrivesEx z&auml;hlt alle Laufwerke (deren Typ zugelassen sind) auf siehe TDriveType Wenn Drive = [] ist , sind alle Type bis auf DRIVE_NO_ROOT_DIR zugelassen Der Wert DRIVE_NO_ROOT_DIR bezeichnet ein nicht-existierende Laufwerk aus. Anstelle von Drive = [] kann GetDrives verwendet werden -> Ist dasselbe Die StringListe darf nicht initialisiert werden! Die Eintr&auml;ge besitzen den Laufwerksbuchstaben mit :\ z.B. C:\ Vorsicht : Um den Buchstaben zu bekommen lautet die Anweisung: <TStringList>.Strings[<Nummer>][1] // nicht 0 sondern 1 Die Liste m&uuml;ssen Sie aus dem Speicher entfernen!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#203">GetDriveType</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetDriveType stellt bei einem Laufwerk den Typ fest</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#204">GetDriveTypeByPath</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#205">GetFileAttributes</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileAttributes liest den Typ der Datei Filename aus. Es k&ouml;nnen Kombinationen aus TFileAttribute entstehen die dann aus der Menge gelesen werden k&ouml;nnen GetFileAttributes wird in GetFileData unterst&uuml;tzt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#206">GetFileData</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileData Packt alle oberen Funktionen in den Record <CODE><A href="dtFiles.htm#175">TFileInfo</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#207">GetFileDateTime</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileDateTime wie GetFileDateTime_hfile, allerdings kann der Dateiname direkt angegeben werden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#208">GetFileDateTime_hfile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileDateTime_hfile gibt die Erstellungs,letzte Zugriffs- und Ver&auml;nderungszeit + datum zur&uuml;ck Man braucht ein Dateihandle -> aber schneller , da keine datei&ouml;ffnungsroutine Tortzdem mu&szlig; die Datei mit OpenFile ge&ouml;ffnet werden Aber man kann mehrer Dinge damit anstellen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#209">GetFileExtension</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileExtension ermittelt die Dateinamenerweiterung ohne "."</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#210">GetFileInformationByHandle</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileInformationByHandle gibt noch mehr Informationen &uuml;ber die Datei zur&uuml;ck Im Record sind auch die oberen Funktionen enthalten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#211">GetFileInformationByHandle_hfile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#212">GetFileNameFromPath</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileNameFromPath gibt den Dateinamen + Erweiterung aus einer kompletten Pfadangabe zur&uuml;ck Ohne Erweiterung siehe ExtractFileNameIndent</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#213">GetFileSize</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileSize gibt die Gr&ouml;&szlig;e der Datei in Bytes zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#214">GetFileSize_hfile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#215">GetFileType</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#216">GetFileType_Hfile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFileType_Hfile gibt DateiTyp zur&uuml;ck : FILE_TYPE_UNKNOWN The type of the specified file is unknown. FILE_TYPE_DISK The specified file is a disk file. FILE_TYPE_CHAR The specified file is a character file, typically an LPT device or a console. FILE_TYPE_PIPE The specified file is either a named or anonymous pipe.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#217">GetFullFileName</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetFullFileName erweitert einen kurzen Dateiname zu einem langen Dateinamen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWeb.htm#532">GetHTMLColor2</A></TD>
+<TD><A href="dtWeb.htm">dtWeb</A></TD>
+<TD>GetHTMLColor2 errechnet aus einem Farb- einen hexdezimalen Wert in der Form #xxxxxx (wobei x f&uuml;r eine hexdezimale Zahl steht)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#335">GetIconCount</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>GetIconCount liefert die Anzahl der Symbole innerhalb einer ausf&uuml;hrbaren Datei zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#336">GetIconNameString</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>GetIconNameString</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#218">GetInformationFromFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetInformationFromFile lie&szlig;t Daten, die mit AddInformationToFile geschrieben wurden. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes bei Erfolg , oder -1 wenn der Header besch&auml;digt wurde oder keine Informationen existieren Warnung : -Manche Dateien werden von Anfang bis zum Ende gelesen dabei k&ouml;nnen die hinzugef&uuml;gten Daten unerw&uuml;nschte Nebeneffekte erbringen -Manche Programme lesen aus den Dateien nur die erforderlichen Daten und erzeugen dann eine neue , dabei verliert man den Informationsheader.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#299">GetIPData</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>Wandelt einen IP-String in einen Record um siehe <CODE><A href="dtNetwork.htm#291">TIPData</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#300">GetLocalIPs</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>GetLocalIPs bringt alle auf dem lokalen Computer verwendete IP-Addressen in einen String unter (druch Leerzeichen getrennt) z.b. Lokal-Netzwerk-IP oder Internet - IP</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#219">GetLogicalDrives</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetLogicalDrives ermittelt alle verf&uuml;gbaren Laufwerke und gibt die Laufwerksbuchstaben in einer Stringliste zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#220">GetMediaList</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetMediaList ist <CODE><A href="dtFiles.htm#202">GetDrivesEx</A></CODE> vorzuziehen , wenn man alle Laufwerke aufgez&auml;hlt haben m&ouml;chte. Hier wird das Laufwerk nicht auf Funktionst&uuml;chtigkeit (CD enthalten od. nicht/Zugriff m&ouml;glich) gepr&uuml;ft</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#92">GetNodeByText</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>GetNodeByText liefert den Knoten zur&uuml;ck, der (ohne Ber&uuml;cksichtigung von Gro&szlig;- und Kleinschreibung) denselben Text besitzt, wie in Name angegeben. Wenn Parent nicht nil ist, werden alle Unterknoten von Parent nach dem Namen durchsucht. $$$ Nicht vollst&auml;ndig fertiggestellt!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#548">GetParameter</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetParameter gibt True zur&uuml;ck , wenn der Parameter Para vom Anwender angegeben wurde. Gro&szlig;- & Kleinschreibung spielt keine Rolle.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#221">GetPathNames</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetPathNames liefert alle Verzeichnisname in einer Stringliste zur&uuml;ck Der erste Eintrag ist immer , wenn vorhanden in PathName , das Laufwerk mit einem Doppelpunkt Die folgenden Verzeichnisnamen sind rein und besitzen kein Backslash Der R&uuml;ckgabewert ist die Anzahl der Stringlisteneintr&auml;ge Hinweis : Paths darf nicht mit Create initalisiert werden PathName kann ein syntaktisch korrekter Dateipfad sein : C:\HALLO\OHO\guten.tag ^-> Der Dateiname wird ignoriert "C:" + "HALLO" + "OHO" Achtung : Es d&uuml;rfen keine doppelte Backslash , wie in C sein</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#488">GetProperties</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>GetProperties listet alle Eigenschaftsnamen eines Objekts Obj als Strings in Items auf. Items muss vorher erzeugt werden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#383">GetPufferStreamSize</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>GetPufferStreamSize gibt die Gr&ouml;&szlig;e des gesendeten Streams + extra Informationen zur&uuml;ck (Msg , SubMsg,...) extra Informationen haben Standardm&auml;&szlig;ig eine Gr&ouml;&szlig;e von 16 Bytes (abh&auml;ngig vom Typ TMessageType)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#549">GetRAM</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>GetRAM gibt die Gr&ouml;&szlig;e der verf&uuml;gbaren realen RAM-Speichers zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#276">GetRGBColor</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>Ermittelt aus einem TColorwert die einzelnen RGB-Farben. Siehe auch <CODE><A href="dtMultimedia.htm#285">RGBToColor</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#222">GetShortFilename</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#224">GetSpecDirectory</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetSpecDirectory Hier kann mehrere FunktionsParameter an TSHFileOpStruct.fFlags &uuml;bergeben werden : siehe TSHFileOpStruct Der R&uuml;ckgabewert entspricht des der SHFileOperation-Fkt. Hinweis : FOF_ALLOWUNDO darf nicht angegeben werden , weil sie schon definiert wurde FOF_ALLOWUNDO Preserves undo information, if possible. Nicht benutzen! FOF_CONFIRMMOUSE Not implemented. FOF_FILESONLY Performs the operation only on files if a wildcard filename (*.*) is specified. FOF_MULTIDESTFILES Indicates that the pTo member specifies multiple destination files (one for each source file) rather than one directory where all source files are to be deposited. FOF_NOCONFIRMATION Responds with "yes to all" for any dialog box that is displayed. FOF_NOCONFIRMMKDIR Does not confirm the creation of a new directory if the operation requires one to be created. FOF_RENAMEONCOLLISION Gives the file being operated on a new name (such as "Copy #1 of...") in a move, copy, or rename operation if a file of the target name already exists. FOF_SILENT Does not display a progress dialog box. FOF_SIMPLEPROGRESS Displays a progress dialog box, but does not show the filenames. FOF_WANTMAPPINGHANDLE Fills in the hNameMappings member. The handle must be freed by using the SHFreeNameMappings function Erweiterte Version zu TTypeDirectory mit mehr Verzeichnisr&uuml;ckgaben</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#225">GetSpecVolList</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetSpecVolList listet alle angegebenen und verf&uuml;gbaren Laufwerke auf. Es wird nur der Laufwerksbuchstabe im String gespeichert. Siehe GetDrivesEx</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#93">GetSubNode</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#226">GetTempFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetTempFile vereinfachte Funktion von GetTempFileEx Unique = 0 , d.h. Windows bestimmt selbst eine Zahl</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#227">GetTempFileEx</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetSpecDirectory erzeugt eine Tempor&auml;re Datei in PathName mit einem Prefix (Prefixstring) GetTempFileEx is &auml;quivalent zu Win32-Funktion : GetTempFileName PathName : Das Beherbergungsverzeichnis der neuen Datei - kann mit GetSpecDirectory(DIR_TEMP) herausgefunden werden PrefixString : die ersten drei Zeichen werden zu den ersten drei Zeichen im Dateinamen Unique : eine BezeichnerZiffer die an den Dateinamen hinzugef&uuml;gt wird Bsp : path\preuuuu.TMP Die Datei wird zwar erstellt ,aber nicht mehr gel&ouml;scht</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#452">GetTransString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>GetTransString kehrt einen String um. ABCD -> DCBA</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#228">GetVolumeInformation</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>GetVolumeInformation gibt Volumeninformation , d.h. FAT , Dateinamenbegrenzung</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#229">GetVolumeName</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#516">GetWindowsTimeZoneStrings</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>GetWindowsTimeZoneStrings ermittelt alle Zeitzonen , die in dieser Windows verwendet werden k&ouml;nnen ShowHalfTime gibt an , ob (TRUE) Zeiten die zwischen Zeitzonen liegen , mit in die Liste aufgenommen werden sollen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#253">ggT</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>ggT ermittelt (rechnerisch) den gr&ouml;&szlig;ten gemeinsamen Teiler zweier Zahlen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#453">Hex16ToString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Hex16ToString wandelt einen 2-Hex-Char-Wert in einen Integer Wert um. M&ouml;gliche Werte sind in <CODE><A href="dtStrings.htm#423">HexArray</A></CODE> enthalten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#454">Hex2</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Hex2 wandelt einen Byte-Wert in eine Hexdezimale Zahl um. Dezimal - Hexdezimal 01 - 01 02 - 02 .. 09 - 09 10 - 0A 11 - 0B ... 15 - 0F 16 - 10 17 - 11 ... 25 - 19 26 - 1A ....</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#455">Hex4</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Hex4 wandelt ein vorzeichenlosen 16-Bit-Word-wert in einen hexdezimalen Wert um (max 4Hexzahlen) Max Word : 65535 -> FFFF</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#456">Hex8</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Hex8 wandelt einen 32-Bit-DWORD-Wert in einen hexdezimalen Wert um (max 8Hexzahlen) Max DWORD : 4294967295 -> FFFFFFFF (ohne Vorzeichen!)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#457">Hex8ToString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Hex8ToString wandelt ein Hex-Char-Wert in einen Integer-Wert um. M&ouml;gliche Werte sind in <CODE><A href="dtStrings.htm#423">HexArray</A></CODE> enthalten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#423">HexArray</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Ein Array, der alle Hex-Zeichen beinhaltet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#550">HideTitlebar</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>HideTitlebar l&auml;&szlig;t die Titel-Bar eines Fensters verschwinden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#16">HintArray</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>HintArray gibt alle Hinweis-Texte der Kontrollelemente an</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#311">HKeyToTKey</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>HKeyToTKey wandelt ein HKEY-Typ in ein <CODE><A href="dtRegistry.htm#304">TKEY</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#480">iFALSE</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>iFALSE liefert den Integerwert einen booleschen iFALSE-Wertes zur&uuml;ck : 0 Siehe auch <CODE><A href="dtSystem.htm#481">iTRUE</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#263">ImageFileSignature</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>ImageFileSignature ist eine ImageListDateierkennungssignatur als String</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#264">ImageFileSignatureLen</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>ImageFileSignatureLen ist die ImageListDateierkennungssignaturl&auml;nge von ImageFileSignature</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#265">ImageFileVersion</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>ImageFileVersion ist die aktuell in DelphiTools verwendete DateiVersion f&uuml;r die Speicherung von Bilderlisten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#328">ImageType</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>ImageType wird von <CODE><A href="dtResource.htm#339">LoadIconFromExe</A></CODE> verwendet, um den R&uuml;ckgabewert zu bestimmen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#165">InfoHeaderLen</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#17">InfoMsg</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#166">InformationHeader</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>_TWriteProc = function (Stream : TStream;Data : Pointer) : Longint;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#361">InitiateSignature</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>InitiateSignature initialisiert einen Record <CODE><A href="dtSignature.htm#350">TSignatureRec</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#117">InputPassWordDlg</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>InputPassWordDlg verh&auml;lt sich wie InputQuery (siehe Delphihilfe), allerdings wird das Editierfeld mit Passwordchar verwendet. PassWordChar ist das Zeichen , welches im Editierfeld anstelle des eingegebenen Zeichens gezeigt wird. Der R&uuml;ckgabewert ist TRUE, wenn ein korrektes Passwort eingegeben wurde, bei Abbruch FALSE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#118">InputPassWordDlgCount</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>InputPassWordDlgCount verh&auml;lt sich wie InputQuery (siehe Delphihilfe), allerdings wird das Editierfeld mit Passwordchar verwendet. PassWordChar ist das Zeichen , welches im Editierfeld anstelle des eingegebenen Zeichens gezeigt wird. Nach "Count"-Milisekunden wird der Dialog abgebrochen (FALSE) Der R&uuml;ckgabewert betr&auml;gt dann mrNone, sonst <CODE><A href="dtSystem.htm#481">iTRUE</A></CODE> oder <CODE><A href="dtSystem.htm#480">iFALSE</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#119">InputPassWordDlgFoc</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>InputPassWordDlgFoc verh&auml;lt sich wie InputQuery (siehe Delphihilfe), allerdings wird das Editierfeld mit Passwordchar verwendet. PassWordChar ist das Zeichen , welches im Editierfeld anstelle des eingegebenen Zeichens gezeigt wird. Im Gegensatz zu <CODE><A href="dtDialogs.htm#117">InputPassWordDlg</A></CODE> wird ein Fensterhandle (Handle) als Parent verwendet. Der R&uuml;ckgabewert ist TRUE, wenn ein korrektes Passwort eingegeben wurde, bei Abbruch FALSE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#94">InsertDir</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#458">IntToBinStr</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>IntToBinStr erstellt einen String aus den Bits (Bits) der nur Count Bits enth&auml;lt Bsp : 5 -> 101</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#167">InvalidChars</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#168">InvalidCharsSet</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#551">IsAppRunning</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>IsAppRunning gibt TRUE zur&uuml;ck , wenn es eine Anwendung mit Namen Appnamen und und Klasse mit ClassName existiert.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDataBase.htm#97">IsBDEInstalled</A></TD>
+<TD><A href="dtDataBase.htm">dtDataBase</A></TD>
+<TD>IsBDEInstalled untersucht ob BDE installiert ist und gibt bei Erfolg TRUE zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTools.htm#529">IsDelphi4Running</A></TD>
+<TD><A href="dtTools.htm">dtTools</A></TD>
+<TD>IsDelphi4Running gibt True zur&uuml;ck , wenn Delphi 4 aktiv ist.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTools.htm#530">IsDelphiRunning</A></TD>
+<TD><A href="dtTools.htm">dtTools</A></TD>
+<TD>IsDelphiRunning gibt True zur&uuml;ck , wenn Delphi aktiv ist, unabh&auml;nging von der Version</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#230">IsDirInDir</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>IsDirInDir wie <CODE><A href="dtFiles.htm#231">IsFileInDir</A></CODE> , nur eben mit Verzeichnissen anstatt Dateien</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#231">IsFileInDir</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>IsFileInDir gibt die Anzahl der Dateien mit dem Namen FileName im Verzeichnis PathName zur&uuml;ck Platzhalter sind erlaubt, aber nicht mehrer Angaben. z.B. Hall* ,Hall? oder *.* , aber nicht Hallo;Oho</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#232">IsFileNameValid</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>IsFileNameValid pr&uuml;ft , ob ein Dateiname ung&uuml;ltige Zeichen enth&auml;lt (FALSE)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#233">IsFileNameValidA</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#301">IsNetworkPath</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>IsNetworkPath pr&uuml;ft, ob es sich bei dem Pfad: Path um ein Netzwerklaufwerkt handelt, und gibt bei Erfolg TRUE zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#254">IsPrim</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#337">IsResourceIDValid</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>IsResourceIDValid pr&uuml;ft eine ResourcenID auf G&uuml;ltigkeit</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#338">IsResourceNameValid</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>IsResourceNameValid pr&uuml;ft einen ResourcenName auf G&uuml;ltigkeit</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#552">IsShowTaskBar</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>IsShowTaskBar ermittelt , ob die Taskbar sichtbar ist(TRUE)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#277">IsSound</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>IsSound gibt TRUE zur&uuml;ck, wen derzeit ein Ton mit DSound ausgegeben wird. Die Prozedur ist nicht implementiert!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#489">IsValidObject</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>IsValidObject testet ob eine Objektvariable noch g&uuml;ltig ist (TRUE). Es k&ouml;nnen auch Objektvariablen &uuml;bergeben werden , die nicht mehr eindeutig als g&uuml;ltig zu indentifizieren sind mehr zu dem Thema ung&uuml;litge Objektvariablen , in der mitgelieferten Textdatei "Objekteigenschaft.txt"</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#481">iTRUE</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>iTRUE liefert den Integerwert einen booleschen TRUE-Wertes zur&uuml;ck : 1 Siehe auch <CODE><A href="dtSystem.htm#480">iFALSE</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#278">JoinBitmaps</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>JoinBitmaps verkn&uuml;pft mehrere Bitmaps einer ImageListe zu einem Die Bitmaps werden in der Reihenfolge in ImageIndexes in der angegeben Richtung in Orientation :<CODE><A href="dtMultimedia.htm#268">TOrientation</A></CODE> zusammengef&uuml;gt. Sollen dynamische Bitmapnummer (ImageIndexes) verwendet werden ist <CODE><A href="dtMultimedia.htm#279">JoinBitmapsI</A></CODE> vorzuziehen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#279">JoinBitmapsI</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>JoinBitmapsI verkn&uuml;pft mehrere Bitmaps einer ImageListe zu einem. Die Bitmaps werden in der Reihenfolge in ImageIndexes in der angegeben Richtung in Orientation :<CODE><A href="dtMultimedia.htm#268">TOrientation</A></CODE> zusammengef&uuml;gt. Ein Array Of Integer kann im Gegensatz zu einem Array Of Const bequemer gehandhabt werden, und ist somit viel flexibler.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#255">kgV</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>kgV ermittelt (rechnerisch) den kleinsten gemeinsamen Teiler zweier Zahlen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#517">lngTimeToBeats</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>lngTimeToBeats ermittelt aus der Greenwich MeanTime (GMT) und der Uhrzeit Time (h,m,s) die Internetzeit @ (Beat)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#339">LoadIconFromExe</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>LoadIconFromExe l&auml;dt ein Symbol oder Bitmap mit dem Bezeichner Int oder Name aus einer Symboldatei (EXE,DLL,ICO,BMP). Dabei kann eine Typumwandlung verwendet werden : Also kann eine Symbolbezeichner in ein TBitmap-Objekt verwandelt werden. Dazu geben Sie den Symbolbezeichner in Name oder int an und geben f&uuml;r uType aIMAGE_BITMAP oder aIMAGE_ICON an. Der R&uuml;ckgabewert richtet sich entsprechend dieser Angabe. Info : Der R&uuml;ckgabewert muss entsprechend Typumgewandelt werden. Zus&auml;tzlich kann die Breite (witdh) und H&ouml;he (height) angegeben werden , nur wird hier einfach das Bild geschnitten und nicht verzerrt. In LoadType kann die Art des Bildes angegeben werden , wie es sich darstellen soll.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#280">LoadImageListFile</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>LoadImageListFile l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#273">CreateImageListFile</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! Der R&uuml;ckgabewert ist immer Null.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#281">LoadImageListFileExt</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>LoadImageListFileExt l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#273">CreateImageListFile</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! DoNotLoad ist ein Array Of Integer, der angibt welche IndexNummer nicht geladen werden sollen. Der R&uuml;ckgabewert ist immer Null.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#282">LoadImageListFileFromStream</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>LoadImageListFileFromStream l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! Der R&uuml;ckgabewert ist immer Null.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#283">LoadImageListFileFromStreamExt</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>LoadImageListFileFromStream l&auml;dt eine zuvor mit <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> gespeicherte Bilderliste zur&uuml;ck in eine TimageList-Klasse, die zuvor erstellt werden muss! DoNotLoad ist ein Array Of Integer, der angibt welche IndexNummer nicht geladen werden sollen. Der R&uuml;ckgabewert ist immer Null.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#459">LoadStringsFromStream</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>LoadStringsFromStream l&auml;dt eine StringListe in einen Stream und liefert die Anzahl der gelesenen Bytes zur&uuml;ck. Benutzerdaten k&ouml;nnen in OnDataRead geschrieben werden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#340">LoadToBool</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>LoadToBool k&auml;dt, &auml;hnlich zu <CODE><A href="dtResource.htm#341">LoadToStr</A></CODE> einen Boolwert in "b". Ein String[1] (in der Resource) von 1 bedeutet TRUE , sonst FALSE</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#341">LoadToStr</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>LoadToStr l&auml;dt eine Stringresource Indent in Title. Wenn die Resource nicht existiert wird der vordefinierte Wert Title verwendet und False zur&uuml;ckgegeben</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#284">LockSound</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>LockSound verhindert ,wenn State = DSS_LOCKED ist , da&szlig; DSound einen Ton spielt. DSS_UNLOCKED kehrt den Befehl um. DSS_RET gibt nur den aktuellen Status von SoundLock zur&uuml;ck Die Prozedur ist nicht implementiert!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#256">LongToByte</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>Seit DelphiTools Version 1.302 dabei. Externe Quelle : 0002 (siehe Quelltext) LongToByte konvertiert einen Longintwert in 4 Bytewerte</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#234">MakeRealPathName</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>MakeRealPathName erstellt alle noch nicht vorhanden Unterverzeichniss</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#120">MessageDialog</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MessageDialog gibt eine Nachricht aus einer String-Resource mit der Nummer "Ident" aus. Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog".</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#121">MessageDlgBtnCaption</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>1.308 MessageDlgBtnCaption l&auml;sst die &Auml;nderung der Beschriftung zu durch <CODE><A href="dtDialogs.htm#103">ButtonNames</A></CODE> Im Beispiel wird der OK-Button mit Okedele beschriftet dargestellt Hinweis : wenn die Titelzeile nicht ge&auml;ndert werden soll, dann einfach einen leeren String an den Parameter aCaption &uuml;bergeben ButtonNames[mrOK] := 'Okedele'; MessageDlgExt('asd','asd',mtInformation,[mbok,mbcancel,mbyes,mbno,mbRetry,mbIgnore,mball],0);</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#122">MessageDlgCaption</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MessageDlgCaption gibt eine Nachricht mit einer ge&auml;ndert &Uuml;berschrift (aCaption) auf dem Bildschirm aus. Args &uuml;bernimmt, wie die Funktion "Format" (Siehe DelphiHilfe) die Argumentliste des Textes) Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog".</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#123">MessageDlgExt</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MessageFormat gibt eine Nachricht auf dem Bildschirm aus. Args &uuml;bernimmt, wie die Funktion "Format" (Siehe DelphiHilfe) die Argumentliste des Textes) Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog". z.b. MessageDlgExt('%s - %d',['Hallo',4],mterror,[mbok],0);</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#124">MessageFormat</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MessageFormat gibt eine Nachricht aus einer String-Resource mit der Nummer "Ident" aus. Args &uuml;bernimmt, wie die Funktion "Format" (Siehe DelphiHilfe) die Argumentliste des Textes) Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog". z.b. MessageDlgExt('%s - %d',['Hallo',4],mterror,[mbok],0);</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#150">MessageTypeError</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>MessageTypeError wird als anderer Fehlerwert f&uuml;r <CODE><A href="dtDirectSocketProtokoll.htm#157">ReceiveStream</A></CODE> verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#377">MessageTypeError</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>MessageTypeError wird als anderer Fehlerwert f&uuml;r <CODE><A href="dtSocketProtokoll.htm#384">ReceiveStream</A></CODE> verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#18">MinLenHint</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#125">ModalSplashScreen</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>ModalSplashScreen gibt ein modales SplashBitmap mit dem Dateinamen SplashBitmap auf dem Bildschirm aus. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#553">MonitorPower</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>MonitorPower bringt den Bildschirm in den Powersave-modus (sofern m&ouml;glich und zugelassen)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#169">MoreDelFlags</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#126">MsgDlg_CustomHideClick</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MsgDlg_CustomHideClick erstellt einen Nachrichtendialog (wie MessageDlg) mit einer CheckBox in der Gr&ouml;&szlig;e HidePos Den CheckBox-Namen wird in HideLabel angegeben Die Position innerhalb des Dialogs wird in HidePos definiert HideClick gibt an , ob die CheckBox einen Haken besitzt oder nicht</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#127">MsgDlg_HideClick</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MsgDlg_HideClick erstellt einen Nachrichtendialog (wie MessageDlg) mit einer CheckBox Den CheckBox-Namen wird in HideLabel angegeben Die Position innerhalb des Dialogs wird in HidePos definiert HideClick gibt an , ob die CheckBox einen Haken besitzt oder nicht. Um die Position/Gr&ouml;&szlig;e von HideLabel zu setzten, nutzen Sie <CODE><A href="dtDialogs.htm#126">MsgDlg_CustomHideClick</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#129">MsgError</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>MsgError gibt per MessageDlg eine Fehler-Dialogbox mit OK-Button aus</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#460">MultiReturn</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>MultiReturn wiederholt den String <CODE><A href="dtSystem.htm#483">Return</A></CODE> "times"-Mal</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#490">NOP</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>NOP ist eine Platzhalterprozedur, um den Delphi-Editor davon abzuhalten, Funktionen aus dem Quelltext zu nehmen. Sie hat sonst keinerlei Funktion.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#19">NoPassWordHint</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#482">NullStr</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#344">NULL_SignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>NULL_SignVersion wird als leere Signatur verwendet. So wird eine TSignVersion-Struktur als Konstante definiert : Beispiel 1 : SignVersion : link(TSignVersion) = ( Signature : ( SignatureStr : ''; SubSignature : ''; Programmer : ''; Company : ''; CopyRight : ''; Notice : ''; Comment : ''; FileName : ''; FileTyp : ''; DateTime : 0; TimeStamp : ( Time : 0; Date : 0 ) ); Version : ( Hi:0 Lo:0; Version:0 ) ); Beispiel 2 : Signature : <CODE><A href="dtSignature.htm#350">TSignatureRec</A></CODE> = ( SignatureStr : ''; SubSignature : ''; Programmer : ''; Company : ''; CopyRight : ''; Notice : ''; Comment : ''; FileName : ''; FileTyp : ''; DateTime : 0; TimeStamp : ( Time : 0; Date : 0 ) ); Beispiel 3 : Version : <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> = ( Hi:0 Lo:0; Version:0 );</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm2.htm#20">OkCaption</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#104">PassWordChar</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>PassWordChar ist das Zeichen, das stattdessen des eingegebenen Zeichens dargestellt wird.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="DelphiToolsForm1.htm#1">PassWordDlg</A></TD>
+<TD><A href="DelphiToolsForm1.htm">DelphiToolsForm1</A></TD>
+<TD>PassWordDlg wird benutzt, um eine globale Klassenreferenz auf den Passwortdialog zu erzeugen. Diese Variable wird normalerweise nicht benutzt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#257">PercentToScreen</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>PercentToScreen berechnet aus Prozentwerten (Perc) und den dazugeh&ouml;rigen Gr&ouml;&szlig;enangaben Screen, die Position innerhalb von Screen. Mehr siehe <CODE><A href="dtMath.htm#259">ScreenToPercent</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#258">pow</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>Pow errechnet aus Base und einen beliebigen Wert die Potenz. Die Funktion arbeitet im Ergebnis mit Int64.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#396">ReadBool</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadBool liest einen Boolwert, der mit <CODE><A href="dtStream.htm#412">WriteBool</A></CODE> geschrieben wurde, aus einen Stream.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#397">ReadFile</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadFile lie&szlig;t eine Datei mit einer Signatur und den darauf beliebigen Daten. OnReadFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Lesen der korrekten Signatur aufgerufen Wurde eine inkorrekte SignVersion gefunden , so wird OnReadFileData nicht aufgerufen und der R&uuml;ckgabewert <= <CODE><A href="dtSignature.htm#371">SizeOfSignVersion</A></CODE> (<SignVersion>) Nat&uuml;rlich funktioniert der Benutzervergleich mit <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE> Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht worden ist.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#398">ReadFileCompatible</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadFileCompatible</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#399">ReadFileExtended</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadFileExtended liest eine Datei ein und &uuml;bergibt der Lese Routine <CODE><A href="dtStream.htm#388">TOnExtReadFileData</A></CODE> die gelesene Dateiversion. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#400">ReadFileMin</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadFileMin funktioniert, wie <CODE><A href="dtStream.htm#397">ReadFile</A></CODE> mit der Einschr&auml;nkung: Beim Vergleich werden folgende Daten verglichen : SignatureStr,SubSignature,FileName,FileTyp.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#401">ReadFileMinStd</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadFileMinStd funktioniert, wie <CODE><A href="dtStream.htm#402">ReadFileStd</A></CODE> mit der Einschr&auml;nkung: Beim Vergleich werden folgende Daten verglichen : SignatureStr,SubSignature,FileName,FileTyp. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#402">ReadFileStd</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadFileStd lie&szlig;t eine Datei mit einer Signatur und den darauf beliebigen Daten. OnReadFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Lesen der korrekten Signatur aufgerufen Wurde eine inkorrekte SignVersion gefunden , so wird OnReadFileData nicht aufgerufen und der R&uuml;ckgabewert <= <CODE><A href="dtSignature.htm#371">SizeOfSignVersion</A></CODE> (<SignVersion>) Nat&uuml;rlich funktioniert der Benutzervergleich mit <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE> Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht worden ist. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#155">ReadInteger</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>ReadInteger liest einen Integerwert aus einem Stream</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#403">ReadInteger</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadInteger liest einen Integerwert, der mit <CODE><A href="dtStream.htm#415">WriteInteger</A></CODE> geschrieben wurde.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#312">ReadRegBinary</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegBinary liest Bin&auml;rwere aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#313">ReadRegFloat</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegFloat liest einen Double aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#314">ReadRegFloatDef</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegFloatDef liest einen Double aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#315">ReadRegFont</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegFont liest ein Font aus der Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#316">ReadRegInt</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegInt liest einen Integer aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#317">ReadRegIntDef</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegIntDef liest einen Integer aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#318">ReadRegString</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegString liest einen String aus die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#319">ReadRegStringDef</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. ReadRegStringDef liest einen String aus die Registry, und gibt im Fehlerfall Default zur&uuml;ck. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDelphiX.htm#99">ReadRGBQuadsToStream</A></TD>
+<TD><A href="dtDelphiX.htm">dtDelphiX</A></TD>
+<TD>ReadRGBQuadsToStream l&auml;dt ein RGBQuads Typ aus einen Stream. Der R&uuml;ckgabewert ist die Anzahl der geladenen Bytes. Hinweis : Zur Nutzung dieser Funktion muss die Compilerdirektive : USEDELPHIX definiert worden sein. $DEFINE USEDELPHIX (in geschweiften Klammern) Siehe auch <CODE><A href="dtDelphiX.htm#100">SaveRGBQuadsToStream</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#362">ReadSignature</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadSignature liest TSignatureRec aus einem Stream und gibt ihn als R&uuml;ckgabewert zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#363">ReadSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadSignVersion liest TSignVersion aus einem Stream und gibt es zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#156">ReadString</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>ReadString liest den mit WriteString gespeicherten String wieder aus Bei Fehlern in der Indentifizierung wird eine leerer String ('') zur&uuml;ckgeliefert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#404">ReadString</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadString liest den mit <CODE><A href="dtStream.htm#416">WriteString</A></CODE> gespeicherten String wieder aus. ReadString funktioniert nur bei Daten, die mit <CODE><A href="dtStream.htm#416">WriteString</A></CODE> gespeichert wurden! Bei Fehlern in der Indentifiezierung wird eine Exception ausgel&ouml;st NICHT KOMPATIBEL MIT DEM WRITESTRING/READSTRING VON TSTRINGSTREAM (ODER ANDEREN OBJEKTEN VON DELPHI)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#405">ReadString2a</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadString2a liest den mit <CODE><A href="dtStream.htm#417">WriteString2a</A></CODE> gespeicherten String wieder aus. ReadString2a funktioniert nur bei Daten, die mit <CODE><A href="dtStream.htm#417">WriteString2a</A></CODE> gespeichert wurden!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#406">ReadString3a</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadString3a liest den mit <CODE><A href="dtStream.htm#418">WriteString3a</A></CODE> gespeicherten String wieder aus. ReadString3a funktioniert nur bei Daten, die mit <CODE><A href="dtStream.htm#418">WriteString3a</A></CODE> gespeichert wurden!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#407">ReadString4</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadString4 liest sehr schnell einen String, der mit WriteString3 geschrieben wurde, aus einem Stream. Siehe auch <CODE><A href="dtStream.htm#419">WriteString4</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#409">ReadTreeNodesFromStream</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>ReadTreeNodesFromStream lie&szlig;t einen Baum "Nodes" aus einem Stream Dabei wird zus&auml;tzlich zu jedem Knoten das Ereignis OnReadNode aufgerufen Das KlassenEreignis wird aufgerufen nachdem der Knoten gelesen , erzeugt und dem Baum hinzugef&uuml;hrt wurde So kann z.B. die Eigenschaft Data ge&auml;ndert werden , oder aber auch alle Anderen Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#364">ReadValidSignature</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadValidSignature liest den TSignatureRec -Record als Bin&auml;rtdaten aus dem Stream und vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#365">ReadValidSignatureMin</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadValidSignatureMin liest den TSignatureRec -Record als Bin&auml;rtdaten aus dem Stream und vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck Im Gegensatz zu <CODE><A href="dtSignature.htm#364">ReadValidSignature</A></CODE> werden nur folgende Daten verglichen : SignatureStr,SubSignature,FileName,FileTyp</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#366">ReadValidSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadValidSignVersion liest den TSignVersion-Record als Bin&auml;rtdaten aus den Stream , vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck. Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadValidSignVersionMin liest den TSignVersion-Record als Bin&auml;rtdaten aus den Stream , vergleicht den geladenen Record mit SignatureData und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck. Folgende Daten werden verglichen : SignatureStr,SubSignature,FileName,FileTyp , Version Siehe auch <CODE><A href="dtSignature.htm#367">ReadValidSignVersionMin</A></CODE> und <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#368">ReadValidVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>Liest den Record Version : <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> als Bin&auml;rtdaten aus den Stream , vergleicht den geladenen Record mit "Version" und gibt bei Gleichheit TRUE , sonst FALSE zur&uuml;ck. Siehe auch <CODE><A href="dtSignature.htm#369">ReadVersion</A></CODE> ; <CODE><A href="dtSignature.htm#360">EqualVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#369">ReadVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>ReadVersion liest den Record <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> als Bin&auml;rtdaten aus dem Stream Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#157">ReceiveStream</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>ReceiveStream empf&auml;ngt eine Nachricht und wertet sie aus. Wenn es eine mit Sendstream gesendete nachricht ist so wird TRUE zur&uuml;ckgegeben und die variablen Parameter Msg,SubMsg und Stream haben g&uuml;ltige Werte Stream darf nicht initialisiert werden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#384">ReceiveStream</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>Sollte als einzige Funktion in Empfangs-Nachrichten (TClientSocket.OnRead;TServerSocket.OnClienRead/OnClientWrite) eingetragen sein. D.h. nach dem Aufruf ist der Nachrichtenpuffer leer! in Msg ( und SubMsg) steht dann der Typ der Nachricht , oder wenn fehlerhaft : MessageTypeError (-1) und der R&uuml;ckgabewert FALSE Stream wird immer erstellt , au&szlig;er es wurde SendStream mit nil aufgerufen Stream wird evtl. auch dann mit Daten gef&uuml;llt , wenn ReceiveStream FALSE zur&uuml;ckliefert. Diese Daten wurden dann auf eine andere Art gesendet (Bsp. Socket.SendBuf) Ein Beispiel gibt es in der Datei : SocketBsp.txt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#320">RecToFont</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>RecToFont wandelt den Record <CODE><A href="dtRegistry.htm#303">TFontData</A></CODE> in die Klasse TFont um.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#554">RegisterFile</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>Registriert eine Dateierweiterung Sollte die Dateierweiterung schon existieren wird sie &uuml;berschrieben Sollen mehrere Dateitypen registriert werden , so wird nur einmal der komplette Record definiert (also Command) und jede weitere neue Erweiterung nur FileExtension und Description (+Icon und Content , wenn erw&uuml;nscht) Dazu noch Linked auf TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#555">RegisterLink</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>RegisterLink registriert im Explorer/Dateimanager einen Dateityp Ext beschreibt die Dateiendung mit vorangegangenem Punkt. FType ist der Registriereintragsname in der Registry (Key). FriendlyName wird dem Benutzer als Beschreibung angezeigt. Cmd ist der Pfad zu einer Anwendung, die mit dem Dateityp umgehen kann. Beispiel : ('.~pa','~pafile','PAS-Backups','C:\...DragDrop.exe "%1").</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#235">ReplaceInValidFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>ReplaceInValidFile gibt FileName zur&uuml;ck wenn dieser existiert sonst NewFileName</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#461">ReplaceLStr</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>ReplaceLStr ersetzt ,wie <CODE><A href="dtStrings.htm#462">ReplaceStr</A></CODE> einen Text durch einen anderen, nur ohne Ber&uuml;cksichtigung der Gro&szlig;- und Kleinschreibung</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#462">ReplaceStr</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>GetTransString ersetzt in einem Text den String ReplaceText , unter Ber&uuml;cksichtiung der Gro&szlig;- und Kleinschreibung ,durch den Text NewText</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#130">ResIDModalSplashScreen</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>ResIDModalSplashScreen gibt ein modalen Splashscreen aus einer Resource als Formular zur&uuml;ck. aInstance ist das Modul, dass das Bitmap mit der Resourcennummer SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#131">ResIDSplashScreen</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>ResIDSplashScreen gibt ein Splashscreen aus einer Resource als Formular zur&uuml;ck aInstance ist das Modul, dass das Bitmap mit der Resourcennummer SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#132">ResNameModalSplashScreen</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>ResNameModalSplashScreen gibt ein Splashscreen aus einer Resource als Formular zur&uuml;ck. aInstance ist das Modul, dass das Bitmap mit dem Resourcenstring SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#133">ResNameSplashScreen</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>ResNameSplashScreen gibt ein Splashscreen aus einer Resource als Formular zur&uuml;ck. aInstance ist das Modul, dass das Bitmap mit dem Resourcenstring SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#483">Return</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>Return ist eine Konstante die einen Standard-Zeilenumbruch darstellt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#463">ReverseString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>ReverseString dreht einen String um, und liefert diesen dann zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#285">RGBToColor</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>Ermittelt aus einem RGBQuad einen TColor-wert Siehe auch <CODE><A href="dtMultimedia.htm#276">GetRGBColor</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#556">RunCPL</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>RunCPL startet ein Systemsteurerungsmodul (CPL-Datei) mit dem Namen sName</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#557">RunOnStartup</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>RunOnStartup tr&auml;gt eine Anwendung in die Registry-AutoStart-Registrierung ein bOnlyOnce gibt an , ob diese Anwendung nur einmal bei einem Neustart gestartet werden soll</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>SaveImageListFileToStream speichert eine Bilderliste in einem Stream ohne dabei eine Dateisignatur (<CODE><A href="dtMultimedia.htm#273">CreateImageListFile</A></CODE>) zu verwende. Der R&uuml;ckgabewert ist immer Null.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDelphiX.htm#100">SaveRGBQuadsToStream</A></TD>
+<TD><A href="dtDelphiX.htm">dtDelphiX</A></TD>
+<TD>SaveRGBQuadsToStream speichert ein RGBQuads Typ in einen Stream. Der R&uuml;ckgabewert ist die Anzahl der gespeicherten Bytes. Hinweis : Zur Nutzung dieser Funktion muss die Compilerdirektive : USEDELPHIX definiert worden sein. $DEFINE USEDELPHIX (in geschweiften Klammern) Siehe auch <CODE><A href="dtDelphiX.htm#99">ReadRGBQuadsToStream</A></CODE>.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#464">SaveStringsToStream</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>SaveStringsToStream speichert eine StringListe in einen Stream und liefert die Anzahl der geschrieben Bytes zur&uuml;ck. Benutzerdaten k&ouml;nnen in OndataWrite geschrieben werden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#558">ScreenDump</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>ScreenDump kopiert den aktuellen Bildschirm in das Bitmap bit. bmp muss vorher Initialisiert werden!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#259">ScreenToPercent</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>ScreenToPercent berechnet aus einer Gr&ouml;&szlig;e Screen und dem Anteil Pos den Prozentwert Sie wird dazu verwendet, absolute Koordinaten auf dem Bildschirm unabh&auml;ngig zu anderen Aufl&ouml;sungen zu machen, um so immer z.B. Fenstergr&ouml;&szlig;en und Positionen zu wahren.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#158">SendStream</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>SendStream sendet einen Stream mit dem Messagetyp Msg und SubMsg an ToID Msg und SubMsg sind vom Programmierer frei w&auml;hlbar. Stream muss danach freigegeben werden Mann kann nat&uuml;rlich auch leeren Stream (= nil) senden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#386">SendStream</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>SendStream sendet einen Stream mit dem Messagetyp Msg und SubMsg an Socket Stream muss danach freigegeben werden Nicht identisch mit TServersocket/TClientSocket.SendStream !! ReceiveStream erkennt diese abgeschickten Nachricht nicht. Mann kann nat&uuml;rlich auch Stream = nil senden Warnung : Mehr als (8*1024 - 16) Bytes zu senden wird aufgrund des zu kleinen WinSock Puffers fehlschlagen!!!! (2*1024 - 16) ist meine Empfehlung. Der R&uuml;ckgabewert ist die Anzahl von Bytes OnMessage wird immer dann aufgerufen , wenn das Senden aufgrund eines zu kleinen WinSock Puffers fehlgeschlagen ist. SendStream Funktion kehrt erst dann zur&uuml;ck wenn der Puffer gef&uuml;llt wurde. D.h. aber nicht , dass die Daten schon gesendet wurden!!!</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#236">SetCurrentDirectory</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#237">SetFileAttributes</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>SetFileAttributes setzt Dateiattribute aus TFileAttributes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#260">SetOrgRect</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>SetOrgRect setzt die H&ouml;he und Weite als Koordinaten um, d.h. R.Bottom := Y+Height R.Right := X+ Width</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#491">SetPoint</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>SetPoint erzeugt einen TPoint-Record mit den angegeben Koordinaten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#559">SetWinOnTop</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>SetWinOnTop l&auml;sst das Windows mit den Style VS_ALWAYSONTOP darstellen ohne das es aufblinkt,wie TForm.FormStyle = fsStayOnTop</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#102">SHLApplicationHandle</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>SHLApplicationHandle enth&auml;lt das ParentFensterHandle f&uuml;r Anwendungsbezogene Dialogboxen , aufgerufen von SHGetSpecialFolderLocation Standard ist das DesktopFenster.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#560">ShowTaskBar</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>ShowTaskBar zeigt die Windows-Taskleiste an (TRUE) oder nicht (FALSE)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#561">ShowTitlebar</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>ShowTitlebar l&auml;&szlig;t die Titel-Bar eines Fensters anzeigen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#151">Signature</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>Signatur die eine Nachricht als echt ausweist</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#378">Signature</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>Signatur die eine Nachricht als echt ausweist</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#345">SignatureIndent</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>SignatureIndent wird verwendet, um intern bestimmen zu k&ouml;nnen, um was es sich bei der Datei handelt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#346">SignatureIndentLen</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>SignatureIndentLen bezeichnet die L&auml;nge des Signaturstrings <CODE><A href="dtSignature.htm#345">SignatureIndent</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#347">SignVersionCompUsrFunc</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>SignVersionCompUsrFunc erm&ouml;glicht es einen benutzerdefinierte Vergleich bei einer Signatureerkennung. Man mu&szlig; nur eine Funktion des Typs <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE> an SignVersionCompUsrFunc &uuml;bergeben/zuweisen. Sollen die Standardvergleiche verwendet werden mu&szlig; SignVersionCompUsrFunc auf nil gesetzt werden (voreingestellt)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#370">SizeOfSignatureRec</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>SizeOfSignatureRec liefert die Anzahl der Bytes in TSignatureRec zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#371">SizeOfSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>SizeOfSignVersion ermittelt die Anzahl der verwendeten Bytes in Sign.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#159">SizeOfString</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>SizeOfString gibt die Bytesgr&ouml;&szlig;e die ein String im Stream braucht ,wenn er von WriteString geschrieben wurde</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#410">SizeOfString</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>SizeOfString ermittelt, den Verbrauch eines Strings "Data" in einem Stream. Siehe <CODE><A href="dtStream.htm#416">WriteString</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#411">SizeOfStringBuffer3a</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>SizeOfStringBuffer3a liefert die Anzahl der gespeicherten Bytes f&uuml;r WriteString2a und WriteString3a zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#372">SizeOfVersionRec</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>SizeOfVersionRec liefert die Gr&ouml;&szlig;e von Rec zur&uuml;ck. Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="SplashForm.htm#567">SplashDlg</A></TD>
+<TD><A href="SplashForm.htm">SplashForm</A></TD>
+<TD>SplashDlg wird benutzt, um eine globale Klassenreferenz auf den Splashdialog zu erzeugen. Diese Variable wird normalerweise nicht benutzt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#134">SplashScreen</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>SplashScreen gibt ein Objekt TForm mit dem SplashBitmap zur&uuml;ck Wie lange es angezeigt wird , wird in DelayTime (in Milisekunden : 1s = 100ms) angegeben Wenn DelayTime kleiner oder gleich 0 ist wird keine AutoClose verwendet Das Ereignis OnExtraPaint wird bei OnActivate ausgel&ouml;st (Bei OnPaint gibt es rekursive Aufrufe!!) Damit kann man Extras auf das Bitmap bringen In der Unit SplashForm existiert die Klasse <CODE><A href="TSplashDlg.htm">TSplashDlg</A></CODE> , welche verwendet wird Um etwas auf die Zeichenfl&auml;che zu zeichnen , mu&szlig; man das ImageObject SplashImage.Canvas von TSplashDlg verwenden Um einfach nur einen Text auszugeben kann man StringLabel (vom Typ TLabel) verwenden Dabei mu&szlig; man beachten , da&szlig; die Positioneneigenschaften (Left,Top,Height,Width) eingestellt werden Und zus&auml;tzlich Visible von StringLabel auf TRUE gestellt wird (Standard : FALSE) Eine Eigenschaft von TSplashDlg ist AllowClose, die wenn FALSE verhindert , da&szlig; der Benutzer den Dialog schlie&szlig;en kann. Um die Eigenschaften von SplashDlg mit SplashScreen verwenden zu k&ouml;nnen mu&szlig; eine TypUmwandlung stattfinden uses ...,SplashForm,... var x : TSplashDlg begin x := TSplashDlg(SplashScreen(...)); ... x.Free;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#424">StrHexFormat</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#425">StrHexFormatStd</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Standard DoubleWord - Stringhexformat</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#492">StrIdx</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>StrIdx macht case-Anweisung auch mit Strings m&ouml;glich aus PC Magazin August 2001 - Seite 208 Bsp. case strIdx(edit1.Text, ['eins','zwei','drei']) of 0 : listbox1.Itemindex := 0; 1 : listbox1.Itemindex := 1; 2 : listbox1.Itemindex := 2; 3 : listbox1.Itemindex := 3; end;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#465">StringToTCharArray</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>StringToTCharArray konvertiert einen String in einen Array of char</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#426">T16HexBit</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#562">TaskbarAutoHide</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>TaskbarAutoHide ermittelt ,ob die Taskleiste sich automatisch versteckt. Dies entspricht Taskbar-Eigenschaft-"Automatisch im Hintergrund"</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#563">TaskBarClientRect</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>TaskBarClientRect gibt die Gr&ouml;&szlig;e der Taskbar zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#503">TBeats</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>TBeats ist der Typ, der Beatsschl&auml;ge aufnimmt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#266">TBitmapRec</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>F&uuml;r <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> und  wird TBitmapRec benutzt. UseBitmap gibt an, ob ein Bitmap verwendet werden soll. Bitmap gibt das Bild an. UseMask gibt an, ob eine Maske (schwarz-wei&szlig; Bild) verwendet werden soll. Mask beinhaltet das Maskenbild</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#74">TButtonStyle</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>TButtonStyle wird von BorderButton verwendet und definiert das Aussehen eines Buttons. Statisch - Flach und Normal</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#427">TCallCompareString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>TCallCompareString wird von <CODE><A href="dtStrings.htm#448">FindStringCall</A></CODE> verwendet, um benutzerdefiniert in einer StringListe zu suchen. Index ist der aktuelle Indexwert in der Stringliste. Stringname der Text an der Stelle Index. StrObject bezeichnet den Data-Wert (kann nil sein) und CompareWithStr ist der Text, welcher FindStringCall &uuml;bergeben wurde, um nach ihm zu suchen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#428">TCharArray</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>Anzahl von Zeichen , ohne da&szlig; doppelte mitgez&auml;hlt worden sind/ f&uuml;r Zahlen : = 0</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TDefPassDlg.htm">TDefPassDlg</A></TD>
+<TD><A href="DelphiToolsForm2.htm">DelphiToolsForm2</A></TD>
+<TD>TDefPassDlg stellt den Dialog zur Verf&uuml;gung, die eine &Auml;nderung des Passwortes mit Best&auml;tigung zul&auml;sst. Siehe <CODE><A href="dtDialogs.htm">dtDialogs</A></CODE> - <CODE><A href="dtDialogs.htm#112">DefPassWordDlg</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TDialog.htm">TDialog</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>TDialog erweitertert die VCL-Klasse TForm mit Dialogmethoden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#105">TDialogData</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>TDialogData wird von <CODE><A href="dtDialogs.htm#112">DefPassWordDlg</A></CODE> und <CODE><A href="dtDialogs.htm#116">GetDialogData</A></CODE> verwendet, um den Dialog wunschgerecht darzustellen. Owner ist der Besitzer des Dialogs. PassWord das Passwort, dass eingegeben werden muss. MasterPassWord das MasterPasswort (als zweites Passwort), um durchzukommen. MinLength die kleinste Gr&ouml;&szlig;e des Passwortes, MaxLength die gr&ouml;&szlig;te M&ouml;glichkeit. PassWordChar ist das Zeichen, dass statt dem eingegeben ausgegeben wird. CaseSensitive sagt aus, ob zwischen Gro&szlig;- und Kleinschreibung unterschieden wird. Caption beinhaltet die &Uuml;berschrift des Passwort-Dialoges. AllowDelPassWord gibt an, ob das Passwort gel&ouml;scht werden darf oder ob es immer NEU angegeben werden muss. MasterPassWordUsed gibt nach dem Beenden an, ob ein MasterPassword benutzt worden ist. PassWordDeleted gibt nach dem Beenden an, ob das Passwort gel&ouml;scht wurde.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TDialogExt.htm">TDialogExt</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>TDialogExt erweitert TDialog um die M&ouml;glichkeit, das Dialogende zu bestimmen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#170">TDriveRoot</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#171">TDriveType</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#172">TDriveTypes</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#267">TDSoundState</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>TDSoundState wird von <CODE><A href="dtMultimedia.htm#284">LockSound</A></CODE> verwendet, um den aktuellen Status setzen zu k&ouml;nnen. DSS_Locked gibt an, dass der Lautsprecher verwendet wird. DSS_UnLocked gibt an, dass der Lautsprecher nicht verwendet wird. DSS_RET gibt nur den aktuellen Status von SoundLock zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#429">TEnumCharRec</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>TEnumCharRec wird von <CODE><A href="dtStrings.htm#443">EnumChars</A></CODE> und <CODE><A href="dtStrings.htm#451">GetCharCount</A></CODE> verwendet, um den R&uuml;ckgabewert zu bestimmen. CharCount entspricht der Anzahl von einzelnen Zeichen, Count der Gesamtzahl aller Zeichen. SingelCharCount ist die Anzahl von Zeichen , ohne da&szlig; doppelte mitgez&auml;hlt worden sind/ f&uuml;r Zahlen : = 0</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#238">TestOpenSharedFile</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>TestOpenSharedFile testet , ob einen Datei bereits ge&ouml;ffnet wurde und liefert in diesem Fall TRUE zur&uuml;ck</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TExtCustomImageList.htm">TExtCustomImageList</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>TExtCustomImageList wird intern benutzt, um die Prozedur GetImages verwenden zu k&ouml;nnen. Folgende Funktionen nutzen diese Klasse: <CODE><A href="dtMultimedia.htm#286">SaveImageListFileToStream</A></CODE> <CODE><A href="dtMultimedia.htm#282">LoadImageListFileFromStream</A></CODE> <CODE><A href="dtMultimedia.htm#283">LoadImageListFileFromStreamExt</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#173">TFileAttribute</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#174">TFileAttributes</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#239">TFileAttributesToWord</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#175">TFileInfo</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#176">TFileType</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#303">TFontData</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>TFontData enth&auml;lt die Daten eines Fonts, die in einem Stream gespeichert werden. Die Bezeichner sind dieselben, wie in TFont.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#177">TFreeSpaceRec</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>address of name of file system</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#504">TGMT</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>TGMT ist ein Green-Wich-Mean-Time-Typ, der angibt welche Zeitzone verwendet wird.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#518">TimeToBeats</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>TimeToBeats errechnet aus der Greenwich MeanTime (GMT) und der Uhrzeit Time die Internetzeit @ (Beat)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#291">TIPData</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>TIPData wird von <CODE><A href="dtNetwork.htm#299">GetIPData</A></CODE> verwendet, um IP-Addressen (nicht v6!) n&auml;her darzustellen. s1 bis s4 stellen die einzelnen IP-Segmente als Integer dar. Port den Kommunikationsport, der hinter manchen IPs durch ein ":" getrennt wird. Bin die IP-Addresse als Bin&auml;re schreibweise</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtNetwork.htm#292">TIPResult</A></TD>
+<TD><A href="dtNetwork.htm">dtNetwork</A></TD>
+<TD>TIPResult wird nicht mehr verwendet und besteht nur noch wegen der Abw&auml;rtskompatibilit&auml;t</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#304">TKEY</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>TKEY ist ein Delphi-Typ, der den unflexiblen HKEY-Typ kopiert</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#321">TKeyToHKey</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>TKeyToHKey wandelt ein <CODE><A href="dtRegistry.htm#304">TKEY</A></CODE>-Typ in ein HKEY</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#329">TLoadType</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>TLoadType wird von <CODE><A href="dtResource.htm#339">LoadIconFromExe</A></CODE> verwendet, um festzustellen wie mit der Resource umgegangen werden soll</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#152">TMessageType</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>Mit TMessageType kann die Typ-Gr&ouml;&szlig;e von Msg und SubMsg schnell ge&auml;ndert werden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#379">TMessageType</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>Mit TMessageType kann die Typ-Gr&ouml;&szlig;e von Msg und SubMsg schnell ge&auml;ndert werden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#75">TOnAdd</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>TOnAdd wird von CreateDirTreeView, GetNodeByText, GetSubNode und InsertDir verwendet, um das Verhalten vor dem Einf&uuml;gen eines Knotens in den Baum zu kontrollieren. Node beschreibt den einzuf&uuml;gendenden Knoten. Path beschreibt den vollst&auml;ndigen Pfad bis zu diesem Knoten als String. CanAdd gibt an, ob dieser Knoten eingef&uuml;gt werden soll.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#76">TOnClearNode</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>Wird von ClearNodes vor dem l&ouml;schen aufgerufen,wenn programm-spezifische Daten des Baumeeintrages gel&ouml;scht werden soll. Dieses Ereignis wird in Klassen verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#77">TOnClearNode2</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>Wird von ClearNodes vor dem l&ouml;schen aufgerufen,wenn programm-spezifische Daten des Baumeeintrages gel&ouml;scht werden soll. Dieses Ereignis wird in Units verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#430">TOnDataRead</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>TOnDataWrite wird von <CODE><A href="dtStrings.htm#459">LoadStringsFromStream</A></CODE> verwendet, um benutzerdefinierte Daten mit aus dem Stream zu laden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#431">TOnDataWrite</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>TOnDataWrite wird von <CODE><A href="dtStrings.htm#464">SaveStringsToStream</A></CODE> verwendet, um benutzerdefinierte Daten mit in den Stream zu speichern.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#106">TOnDialogControlRead</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>TOnDialogControlRead wird aufgerufen, wenn ein Kontrollelement gelesen wird</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#107">TOnDialogControlWrite</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>TOnDialogControlWrite wird aufgerufen, wenn ein Kontrollelement geschrieben wird</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#108">TOnExtraPaint</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="SplashForm.htm#568">TOnExtraPaint</A></TD>
+<TD><A href="SplashForm.htm">SplashForm</A></TD>
+<TD>TOnExtraPaint ist das Ereignis, dass aufgerufen wird, wenn etwas auf den Dialog gezeichnet werden soll.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#388">TOnExtReadFileData</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnExtReadFileData wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen und die Version manuell verglichen werden soll. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#399">ReadFileExtended</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#534">TOnFindWindowObj</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>TOnFindWindowProc wird von <CODE><A href="dtWindows.htm#541">FindWindows</A></CODE> aufgerufen, wenn ein Fenster von FindWindows gefunden wurde. WindowText ist der Titeltext, WindowHandle das Fensterhandle. Add gibt an, ob diese Fenster in die Liste aufgenommen werden soll (TRUE). Wenn Continue TRUE ist, wird nach dem n&auml;chsten Fenster gesucht. Diese Ereignismethode wird in Klassen verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#535">TOnFindWindowProc</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>TOnFindWindowProc wird von <CODE><A href="dtWindows.htm#541">FindWindows</A></CODE> aufgerufen, wenn ein Fenster von FindWindows gefunden wurde. WindowText ist der Titeltext, WindowHandle das Fensterhandle. Add gibt an, ob diese Fenster in die Liste aufgenommen werden soll (TRUE). Wenn Continue TRUE ist, wird nach dem n&auml;chsten Fenster gesucht.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#78">TOnNode</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>TOnNode wird von GetAllNodes aufgerufen, wenn durch alle Knoten des Baumes gesprungen wird. Dieses Ereignis wird in Klassen verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#79">TOnNode2</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>TOnNode wird von GetAllNodes aufgerufen, wenn durch alle Knoten des Baumes gesprungen wird. Dieses Ereignis wird in Units verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#389">TOnReadCompatibledFileData</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnReadCompatibledFileData wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#398">ReadFileCompatible</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#390">TOnReadFileData</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnReadFileData wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#397">ReadFile</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#391">TOnReadFileDataStd</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnReadFileDataStd wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird als Ereignisfunktion auserhalb von Klassen verwendet. Siehe <CODE><A href="dtStream.htm#402">ReadFileStd</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSocketProtokoll.htm#380">TOnSendMessage</A></TD>
+<TD><A href="dtSocketProtokoll.htm">dtSocketProtokoll</A></TD>
+<TD>TOnSendMessage wird aufgerufen, wenn eine Nachricht gesendet wird. Count = Anzahl von Sendeversuchen; WaitTime = Anzahl von Milisekunden , die gewartet werden sollen , bis ein weiterer Sende-Versuch gemacht werden. (Standard = 10); Break = Abbruch des Sende-Versuch</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#392">TOnStreamingNode</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnStreamingNode wird aufgerufen, wenn ein Knoten gelesen oder geschrieben werden soll. Stream , ist der Stream in den geschrieben oder aus dem gelesen wird. Node ist der Knoten , der geschrieben oder gelesen werden soll. Sie wird in Klassen als Ereignis verwendet. Der R&uuml;ckgabewert sind die geschriebenen oder gelesenen Bytes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#393">TOnStreamingNode2</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnStreamingNode2 wird aufgerufen, wenn ein Knoten gelesen oder geschrieben werden soll. Stream , ist der Stream in den geschrieben oder aus dem gelesen wird. Node ist der Knoten , der geschrieben oder gelesen werden soll Sie wird als Ereignisfunktion auserhalb von Klassen verwendet. Der R&uuml;ckgabewert sind die geschriebenen oder gelesenen Bytes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#394">TOnWriteFileData</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnWriteFileData wird aufgerufen, wenn BenutzerDaten in die Datei geschrieben werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#413">WriteFile</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#395">TOnWriteFileDataStd</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>TOnWriteFileDataStd wird aufgerufen, wenn BenutzerDaten in die Datei geschrieben werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird als Ereignisfunktion auserhalb von Klassen verwendet. Siehe <CODE><A href="dtStream.htm#414">WriteFileStd</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMultimedia.htm#268">TOrientation</A></TD>
+<TD><A href="dtMultimedia.htm">dtMultimedia</A></TD>
+<TD>TOrientation wird von <CODE><A href="dtMultimedia.htm#278">JoinBitmaps</A></CODE> und <CODE><A href="dtMultimedia.htm#279">JoinBitmapsI</A></CODE> verwendet, um die Ausrichtung der anhgeh&auml;ngten Bilder anzugeben. orVertical bedeutet, dass die Bilder vertikal (|) angeh&auml;ngt werden, orHorizontal demnach horizontal. (-)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#496">TPascalError</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>TPascalError wird in <CODE><A href="dtSysUtils.htm#500">ValidatePascalIdentfier</A></CODE> und <CODE><A href="dtSysUtils.htm#499">ValidateAnchorIdentfier</A></CODE> verwendet, um Fehler darzustellen. pe_InvalidChar bedeutet ein ung&uuml;ltiges zeichen in Ident. pe_NoIdent bedeutet, dass Ident aus mehreren W&ouml;rtern besteht , die mit Leerzeichen getrennt sind pe_InvalidIdent bedeutet, dass der Bezeichner mit einer Zahl anf&auml;ngt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TPassWordDlg.htm">TPassWordDlg</A></TD>
+<TD><A href="DelphiToolsForm1.htm">DelphiToolsForm1</A></TD>
+<TD>TPassWordDlg stellt einen Dialog zur Verf&uuml;gung, der die eingabe eines Passworts zul&auml;sst. Diese Klasse ist nur zur Abw&auml;rtskompatiblit&auml;t noch vorhanden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#244">TPercent</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>TScreens wird von <CODE><A href="dtMath.htm#259">ScreenToPercent</A></CODE> und <CODE><A href="dtMath.htm#257">PercentToScreen</A></CODE> verwendet, um Breite und H&ouml;he des Bildschirms in Prozent zu speichern</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#536">TRegisterFile</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>Installiert/Registriert eine Datei in Windows mit <CODE><A href="dtWindows.htm#554">RegisterFile</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtResource.htm#330">TResType</A></TD>
+<TD><A href="dtResource.htm">dtResource</A></TD>
+<TD>TResType gibt an, um was f&uuml;r eine Art von Resourcentyp es sich handelt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#245">TScreens</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>TScreens wird von <CODE><A href="dtMath.htm#259">ScreenToPercent</A></CODE> und <CODE><A href="dtMath.htm#257">PercentToScreen</A></CODE> verwendet, um Breite und H&ouml;he des Bildschirms zu speichern</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#350">TSignatureRec</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>TSignatureRec enth&auml;lt alle Textdaten die als Signatur gespeichert gelesen werden soll. SignatureStr und SubSignature beinhaltet einen beliebigen String, der beim Lesen der Datei veglichen werden wird. Programmer,Company,CopyRight,Notice,Comment,FileName,FileTyp sind Informationen, die dem leichteren Identifizieren der Datei f&uuml;r den Benutzer dienen. DateTime,TimeStamp beinhaltet den originalen Zeitstempel der Datei.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#351">TSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>TSignVersion setzt <CODE><A href="dtSignature.htm#350">TSignatureRec</A></CODE> und <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> zusammen, um eine leichtere Handhabung zu gew&auml;hrleisten.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>TSignVersionCompUsrFunc wird von <CODE><A href="dtSignature.htm#366">ReadValidSignVersion</A></CODE> , <CODE><A href="dtSignature.htm#358">EqualSignVersion</A></CODE> und <CODE><A href="dtSignature.htm#359">EqualSignVersionMin</A></CODE> aufgerufen , wenn deren Parameter SignVersionCompUsrFunc ungleich nil ist, und damit eine eigene Vergleichsfunktion f&uuml;r die Version erfolgen soll. Die Paramater werden den Funktionen wie folgt &uuml;bergeben : ReadValidSignVersion : SignVersionCompUsrFunc(SignatureData,0); EqualSignVersion : SignVersionCompUsrFunc(SignatureData1,SignatureData2); EqualSignVersionMin : SignVersionCompUsrFunc(SignatureData1,SignatureData2);</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#178">TSpecDirectory</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>address of total number of clusters</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TSplashDlg.htm">TSplashDlg</A></TD>
+<TD><A href="SplashForm.htm">SplashForm</A></TD>
+<TD>TSplashDlg wird benutzt, um eine Informationsanzeige darzustellen, w&auml;hrend das Hauptprogramm damit besch&auml;ftigt ist Daten zu laden.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtCL.htm#80">TStateType</A></TD>
+<TD><A href="dtCL.htm">dtCL</A></TD>
+<TD>TStateTyp gibt an was mit dem Control passieren soll - wird u.a. von ChangeControlsState verwendet</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSystem.htm#484">TStrBoolean</A></TD>
+<TD><A href="dtSystem.htm">dtSystem</A></TD>
+<TD>TStrBoolean liefert den deutschen Text eines boolean Wertes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDialogs.htm#109">TStreamType</A></TD>
+<TD><A href="dtDialogs.htm">dtDialogs</A></TD>
+<TD>TStreamType - In einen Stream schreiben oder lesen. Wird u.a. in <CODE><A href="dtDialogs.htm#111">DefOnDialogControlStream</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#179">TTypeDirectory</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>File system directory that serves as a common repository for Internet history items.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtTime.htm#505">TTZIResult</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>TTZIResult gibt die R&uuml;ckgabewerte von <CODE><A href="dtTime.htm#515">GetActualTimeZone</A></CODE> an (zi_ok - R&uuml;ckgabewert ist in Ordnung zi_unknow - R&uuml;ckgabewert ist nicht definiert zi_unexact - R&uuml;ckgabewert ist eine Auswahl aus mehreren m&ouml;glichen Zeitzonen</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#353">TVersionRec</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>TVersionRec beinhaltet die Dateiversion als Integer-Wert sowie Hi und Lo Byte.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#180">TVolumeRecord</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#181">TWriteProc</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>R&uuml;ckgabewert mu&szlig; die Anzahl der geschriebenen Bytes sein</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="TZI.htm">TZI</A></TD>
+<TD><A href="dtTime.htm">dtTime</A></TD>
+<TD>TZI nimmt TimeZoneInformationen auf. Bias - Display - Dlt - DaylightName Std - StandardName Index - Index ,verwendet von GetActualTimeZone ,um die Zeitzone in der Stringlist (wie sie von GetWindowsTimeZoneStrings zur&uuml;ckgeliefert wird) anzugeben</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#499">ValidateAnchorIdentfier</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>ValidateAnchorIdentfier pr&uuml;ft, ob ein Pascal-Bezeichner Ident g&uuml;ltig ist, oder nicht. Der Unterschied zu <CODE><A href="dtSysUtils.htm#500">ValidatePascalIdentfier</A></CODE> besteht darin, dass ValidateAnchorIdentfier auch folgende Symbole zul&auml;sst : (' ','-',':','.') Der R&uuml;ckgabewert gibt mehr Aufschluss &uuml;ber die Fehlerart (<CODE><A href="dtSysUtils.htm#496">TPascalError</A></CODE>)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSysUtils.htm#500">ValidatePascalIdentfier</A></TD>
+<TD><A href="dtSysUtils.htm">dtSysUtils</A></TD>
+<TD>ValidatePascalIdentfier pr&uuml;ft, ob ein Pascal-Bezeichner Ident g&uuml;ltig ist, oder nicht. Der R&uuml;ckgabewert gibt mehr Aufschluss &uuml;ber die Fehlerart (<CODE><A href="dtSysUtils.htm#496">TPascalError</A></CODE>)</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#348">VersionIndent</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>VersionIndent wird verwendet, um intern bestimmen zu k&ouml;nnen, um was es sich bei der Datei handelt.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#349">VersionIndentLen</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>VersionIndentLen bezeichnet die L&auml;nge des Versionssignaturstrings <CODE><A href="dtSignature.htm#348">VersionIndent</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtWindows.htm#564">WinDump</A></TD>
+<TD><A href="dtWindows.htm">dtWindows</A></TD>
+<TD>WinDump kopiert das Fenster Win in das Bitmap bmp.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#243">WordBitLength</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>WordBitLength ist die L&auml;nge eines Word in Bitdarstellung</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtMath.htm#261">WordToBytes</A></TD>
+<TD><A href="dtMath.htm">dtMath</A></TD>
+<TD>WordToBytes und DWordToBytes sind die Gegenfunktionen zu den obeneren Funktionen WordToBytes liefert das h&ouml;her und niederwertige Byte von Worth zur&uuml;ck Diese Funktion ist identisch mit dem Aufruf von Lo f&uuml;r Bit2 und Hi f&uuml;r Bit1 mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtFiles.htm#240">WordToTFileAttributes</A></TD>
+<TD><A href="dtFiles.htm">dtFiles</A></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#412">WriteBool</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteBool schreibt einen Boolwert in einen Stream.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#413">WriteFile</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteFile schreibt eine Datei mit einer Signatur und den darauf beliebigen Daten. OnWriteFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Schreiben der Signatur aufgerufen Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht werden soll</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#414">WriteFileStd</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteFileStd schreibt eine Datei mit einer Signatur und den darauf beliebigen Daten. OnWriteFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Schreiben der Signatur aufgerufen Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht werden soll</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#160">WriteInteger</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>WriteInteger speichert einen Integer-Wert im Stream ohne Signatur</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#415">WriteInteger</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteInteger schreibt einen Integerwert in einen Stream.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#322">WriteRegBinary</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegBinary schreibt Bin&auml;rwerte in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#323">WriteRegFloat</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegFloat schreibt einen Double in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#324">WriteRegFont</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegFont schreibt ein Font in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#325">WriteRegInt</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegInt schreibt einen Integer in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtRegistry.htm#326">WriteRegString</A></TD>
+<TD><A href="dtRegistry.htm">dtRegistry</A></TD>
+<TD>Behandlungen f&uuml;r den schnellen Zugriff auf die Registry. WriteRegString schreibt einen String in die Registry. Der R&uuml;ckgabewert ist im Erfolgsfall TRUE.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#373">WriteSignature</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>WriteSignature schreibt TSignatureRec in einen Stream. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Siehe dazu <CODE><A href="dtSignature.htm#370">SizeOfSignatureRec</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#374">WriteSignVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>WriteSignVersion schreibt TSignVersion in einen Stream und liefert die Anzahl der geschriebenen Bytes zur&uuml;ck.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtDirectSocketProtokoll.htm#161">WriteString</A></TD>
+<TD><A href="dtDirectSocketProtokoll.htm">dtDirectSocketProtokoll</A></TD>
+<TD>WriteString schreibt einen String beliebiger L&auml;nge in einen Stream Jeder String besitzt zus&auml;tzlich noch eine Indentifizierungsnummer (#1#2), um ihn eindeutig als solchen erkennen zu k&ouml;nnen. Diese Funktion wird intern verwendet.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#416">WriteString</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteString schreibt einen String in einen Stream. Jeder String besitzt zus&auml;tzlich eine Indentifiezierungsnummer (#1#2), um ihn eindeutig als solchen erkennen zu k&ouml;nnen Aufbau : #1#1[StrL&auml;nge als Integer][Str als PChar] NICHT KOMPATIBEL MIT DEM WRITESTRING/READSTRING VON TSTRINGSTREAM (ODER ANDEREN OBJEKTEN VON DELPHI) Siehe auch <CODE><A href="dtStream.htm#417">WriteString2a</A></CODE>,<CODE><A href="dtStream.htm#418">WriteString3a</A></CODE>,<CODE><A href="dtStream.htm#419">WriteString4</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#417">WriteString2a</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteString2a schreibt einen String in einen Stream. Siehe auch <CODE><A href="dtStream.htm#416">WriteString</A></CODE>,<CODE><A href="dtStream.htm#418">WriteString3a</A></CODE>,<CODE><A href="dtStream.htm#419">WriteString4</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#418">WriteString3a</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteString3a schreibt einen String in einen Stream. Siehe auch <CODE><A href="dtStream.htm#416">WriteString</A></CODE>,<CODE><A href="dtStream.htm#417">WriteString2a</A></CODE>,<CODE><A href="dtStream.htm#419">WriteString4</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#419">WriteString4</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteString4 schreibt sehr schnell einen String in einen Stream Der R&uuml;ckgabewert ist die anzahl der geschriebenen Bytes. Siehe auch <CODE><A href="dtStream.htm#416">WriteString</A></CODE>,<CODE><A href="dtStream.htm#417">WriteString2a</A></CODE>,<CODE><A href="dtStream.htm#418">WriteString3a</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStream.htm#421">WriteTreeNodesToStream</A></TD>
+<TD><A href="dtStream.htm">dtStream</A></TD>
+<TD>WriteTreeNodesToStream schreibt einen kompletten Baum "Nodes" in einen Stream. Dabei wird zus&auml;tzlich zu jedem Knoten das Ereignis OnWriteNode aufgerufen Das Klassen-Ereignis wird erst nach dem Schreiben der Knotendaten ausgel&ouml;st. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtSignature.htm#375">WriteVersion</A></TD>
+<TD><A href="dtSignature.htm">dtSignature</A></TD>
+<TD>WriteVersion schreibt den Record Version : <CODE><A href="dtSignature.htm#353">TVersionRec</A></CODE> als Bin&auml;rtdaten in den Stream. Um mehr &uuml;ber die verwendeten Datencontainer zu erfahren, gehen Sie zu <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#466">_EnumSpecChars</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>_EnumSpecChars l&auml;&szlig;t die eckige Klammerschreibweise f&uuml;r Chars zu (Bsp : ['s','d'])</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A href="dtStrings.htm#467">_FindInString</A></TD>
+<TD><A href="dtStrings.htm">dtStrings</A></TD>
+<TD>keine Kommentierung -- ??</TD>
+</TR>
+</TABLE>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

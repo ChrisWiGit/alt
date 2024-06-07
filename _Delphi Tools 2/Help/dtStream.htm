@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtStream</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtStream</H1>
+<H2>Beschreibung</H2>
+dtStream.pas beinhaltet Funktionen f&uuml;r den Umgang mit Streams<P>Streams sind m&auml;chtige Werkzeuge um Daten im Speicher oder auf Festplatte (Dateien) zu verwalte. Im Zusammenhang mit Signaturen kann man schnell und effizient, Daten schreiben und nur dann lesen, wenn es sich um korrekte Inhalte handelt. Mehr dazu siehe in der Unit dtSignature<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#396"><B>ReadBool</B></A>(Stream : TStream) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#397"><B>ReadFile</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#390">TOnReadFileData</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#398"><B>ReadFileCompatible</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#390">TOnReadFileData</A>; OnReadCompatibleFileData: <A href="dtStream.htm#389">TOnReadCompatibledFileData</A>): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#399"><B>ReadFileExtended</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnExtReadFileData : <A href="dtStream.htm#388">TOnExtReadFileData</A>) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#400"><B>ReadFileMin</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#390">TOnReadFileData</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#401"><B>ReadFileMinStd</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#391">TOnReadFileDataStd</A>; var Data: Pointer): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#402"><B>ReadFileStd</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#391">TOnReadFileDataStd</A>; var Data: Pointer): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#403"><B>ReadInteger</B></A>(Stream: TStream): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#404"><B>ReadString</B></A>(Stream: TStream): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#405"><B>ReadString2a</B></A>(Stream: TStream): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#406"><B>ReadString3a</B></A>(Stream: TStream): string;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#407"><B>ReadString4</B></A>(Stream : TStream;var Text : String) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#408"><B>ReadTreeNodesFromStream</B></A>(Nodes: TTreeNodes; Stream: TStream; OnReadNode: <A href="dtStream.htm#393">TOnStreamingNode2</A>): Longint; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#409"><B>ReadTreeNodesFromStream</B></A>(Nodes: TTreeNodes; Stream: TStream; OnReadNode: <A href="dtStream.htm#392">TOnStreamingNode</A>): Longint; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#410"><B>SizeOfString</B></A>(Data: string): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#411"><B>SizeOfStringBuffer3a</B></A>(Data: string): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#412"><B>WriteBool</B></A>(Stream : TStream; Bool : Boolean) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#413"><B>WriteFile</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnWriteFileData: <A href="dtStream.htm#394">TOnWriteFileData</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#414"><B>WriteFileStd</B></A>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnWriteFileData: <A href="dtStream.htm#395">TOnWriteFileDataStd</A>; Data: Pointer): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#415"><B>WriteInteger</B></A>(Stream: TStream; Data: Integer): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#416"><B>WriteString</B></A>(Stream: TStream; Data: string): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#417"><B>WriteString2a</B></A>(Stream: TStream; Data: string);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#418"><B>WriteString3a</B></A>(Stream: TStream; Data: string);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#419"><B>WriteString4</B></A>(Stream : TStream; Text : String) : Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#420"><B>WriteTreeNodesToStream</B></A>(Nodes: TTreeNodes; Stream: TStream; OnWriteNode: <A href="dtStream.htm#393">TOnStreamingNode2</A>): Longint; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#421"><B>WriteTreeNodesToStream</B></A>(Nodes: TTreeNodes; Stream: TStream; OnWriteNode: <A href="dtStream.htm#392">TOnStreamingNode</A>): Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="396"></A><CODE>function <B>ReadBool</B>(Stream : TStream) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadBool liest einen Boolwert, der mit <CODE><A href="dtStream.htm#412">WriteBool</A></CODE> geschrieben wurde, aus einen Stream.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="397"></A><CODE>function <B>ReadFile</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#390">TOnReadFileData</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadFile lie&szlig;t eine Datei mit einer Signatur und den darauf beliebigen Daten. OnReadFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Lesen der korrekten Signatur aufgerufen Wurde eine inkorrekte SignVersion gefunden , so wird OnReadFileData nicht aufgerufen und der R&uuml;ckgabewert <= <CODE><A href="dtSignature.htm#371">SizeOfSignVersion</A></CODE> (<SignVersion>) Nat&uuml;rlich funktioniert der Benutzervergleich mit <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE> Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht worden ist.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="398"></A><CODE>function <B>ReadFileCompatible</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#390">TOnReadFileData</A>; OnReadCompatibleFileData: <A href="dtStream.htm#389">TOnReadCompatibledFileData</A>): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadFileCompatible</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="399"></A><CODE>function <B>ReadFileExtended</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnExtReadFileData : <A href="dtStream.htm#388">TOnExtReadFileData</A>) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadFileExtended liest eine Datei ein und &uuml;bergibt der Lese Routine <CODE><A href="dtStream.htm#388">TOnExtReadFileData</A></CODE> die gelesene Dateiversion. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="400"></A><CODE>function <B>ReadFileMin</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#390">TOnReadFileData</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadFileMin funktioniert, wie <CODE><A href="dtStream.htm#397">ReadFile</A></CODE> mit der Einschr&auml;nkung: Beim Vergleich werden folgende Daten verglichen : SignatureStr,SubSignature,FileName,FileTyp.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="401"></A><CODE>function <B>ReadFileMinStd</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#391">TOnReadFileDataStd</A>; var Data: Pointer): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadFileMinStd funktioniert, wie <CODE><A href="dtStream.htm#402">ReadFileStd</A></CODE> mit der Einschr&auml;nkung: Beim Vergleich werden folgende Daten verglichen : SignatureStr,SubSignature,FileName,FileTyp. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="402"></A><CODE>function <B>ReadFileStd</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnReadFileData: <A href="dtStream.htm#391">TOnReadFileDataStd</A>; var Data: Pointer): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadFileStd lie&szlig;t eine Datei mit einer Signatur und den darauf beliebigen Daten. OnReadFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Lesen der korrekten Signatur aufgerufen Wurde eine inkorrekte SignVersion gefunden , so wird OnReadFileData nicht aufgerufen und der R&uuml;ckgabewert <= <CODE><A href="dtSignature.htm#371">SizeOfSignVersion</A></CODE> (<SignVersion>) Nat&uuml;rlich funktioniert der Benutzervergleich mit <CODE><A href="dtSignature.htm#352">TSignVersionCompUsrFunc</A></CODE> Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht worden ist. Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="403"></A><CODE>function <B>ReadInteger</B>(Stream: TStream): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadInteger liest einen Integerwert, der mit <CODE><A href="dtStream.htm#415">WriteInteger</A></CODE> geschrieben wurde.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="404"></A><CODE>function <B>ReadString</B>(Stream: TStream): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadString liest den mit <CODE><A href="dtStream.htm#416">WriteString</A></CODE> gespeicherten String wieder aus. ReadString funktioniert nur bei Daten, die mit <CODE><A href="dtStream.htm#416">WriteString</A></CODE> gespeichert wurden! Bei Fehlern in der Indentifiezierung wird eine Exception ausgel&ouml;st NICHT KOMPATIBEL MIT DEM WRITESTRING/READSTRING VON TSTRINGSTREAM (ODER ANDEREN OBJEKTEN VON DELPHI)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="405"></A><CODE>function <B>ReadString2a</B>(Stream: TStream): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadString2a liest den mit <CODE><A href="dtStream.htm#417">WriteString2a</A></CODE> gespeicherten String wieder aus. ReadString2a funktioniert nur bei Daten, die mit <CODE><A href="dtStream.htm#417">WriteString2a</A></CODE> gespeichert wurden!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="406"></A><CODE>function <B>ReadString3a</B>(Stream: TStream): string;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadString3a liest den mit <CODE><A href="dtStream.htm#418">WriteString3a</A></CODE> gespeicherten String wieder aus. ReadString3a funktioniert nur bei Daten, die mit <CODE><A href="dtStream.htm#418">WriteString3a</A></CODE> gespeichert wurden!</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="407"></A><CODE>function <B>ReadString4</B>(Stream : TStream;var Text : String) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadString4 liest sehr schnell einen String, der mit WriteString3 geschrieben wurde, aus einem Stream. Siehe auch <CODE><A href="dtStream.htm#419">WriteString4</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="408"></A><CODE>function <B>ReadTreeNodesFromStream</B>(Nodes: TTreeNodes; Stream: TStream; OnReadNode: <A href="dtStream.htm#393">TOnStreamingNode2</A>): Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadTreeNodesFromStream lie&szlig;t einen Baum "Nodes" aus einem Stream Dabei wird zus&auml;tzlich zu jedem Knoten das Ereignis OnReadNode aufgerufen Das FunktionsEreignis wird aufgerufen nachdem der Knoten gelesen , erzeugt und dem Baum hinzugef&uuml;hrt wurde So kann z.B. die Eigenschaft Data ge&auml;ndert werden , oder aber auch alle Anderen Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="409"></A><CODE>function <B>ReadTreeNodesFromStream</B>(Nodes: TTreeNodes; Stream: TStream; OnReadNode: <A href="dtStream.htm#392">TOnStreamingNode</A>): Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>ReadTreeNodesFromStream lie&szlig;t einen Baum "Nodes" aus einem Stream Dabei wird zus&auml;tzlich zu jedem Knoten das Ereignis OnReadNode aufgerufen Das KlassenEreignis wird aufgerufen nachdem der Knoten gelesen , erzeugt und dem Baum hinzugef&uuml;hrt wurde So kann z.B. die Eigenschaft Data ge&auml;ndert werden , oder aber auch alle Anderen Der R&uuml;ckgabewert ist die Anzahl der gelesenen Bytes</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="410"></A><CODE>function <B>SizeOfString</B>(Data: string): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SizeOfString ermittelt, den Verbrauch eines Strings "Data" in einem Stream. Siehe <CODE><A href="dtStream.htm#416">WriteString</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="411"></A><CODE>function <B>SizeOfStringBuffer3a</B>(Data: string): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SizeOfStringBuffer3a liefert die Anzahl der gespeicherten Bytes f&uuml;r WriteString2a und WriteString3a zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="412"></A><CODE>function <B>WriteBool</B>(Stream : TStream; Bool : Boolean) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteBool schreibt einen Boolwert in einen Stream.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="413"></A><CODE>function <B>WriteFile</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnWriteFileData: <A href="dtStream.htm#394">TOnWriteFileData</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteFile schreibt eine Datei mit einer Signatur und den darauf beliebigen Daten. OnWriteFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Schreiben der Signatur aufgerufen Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht werden soll</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="414"></A><CODE>function <B>WriteFileStd</B>(const FileName: string; SignVersion: <A href="dtSignature.htm#351">TSignVersion</A>; OnWriteFileData: <A href="dtStream.htm#395">TOnWriteFileDataStd</A>; Data: Pointer): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteFileStd schreibt eine Datei mit einer Signatur und den darauf beliebigen Daten. OnWriteFileData mu&szlig; definiert worden sein, es wird dann einmalig nach dem Schreiben der Signatur aufgerufen Verwende f&uuml;r SignVersion die Konstante <CODE><A href="dtSignature.htm#344">NULL_SignVersion</A></CODE> , wenn keine Signatur gebraucht werden soll</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="415"></A><CODE>function <B>WriteInteger</B>(Stream: TStream; Data: Integer): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteInteger schreibt einen Integerwert in einen Stream.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="416"></A><CODE>function <B>WriteString</B>(Stream: TStream; Data: string): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteString schreibt einen String in einen Stream. Jeder String besitzt zus&auml;tzlich eine Indentifiezierungsnummer (#1#2), um ihn eindeutig als solchen erkennen zu k&ouml;nnen Aufbau : #1#1[StrL&auml;nge als Integer][Str als PChar] NICHT KOMPATIBEL MIT DEM WRITESTRING/READSTRING VON TSTRINGSTREAM (ODER ANDEREN OBJEKTEN VON DELPHI) Siehe auch <CODE><A href="dtStream.htm#417">WriteString2a</A></CODE>,<CODE><A href="dtStream.htm#418">WriteString3a</A></CODE>,<CODE><A href="dtStream.htm#419">WriteString4</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="417"></A><CODE>procedure <B>WriteString2a</B>(Stream: TStream; Data: string);</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteString2a schreibt einen String in einen Stream. Siehe auch <CODE><A href="dtStream.htm#416">WriteString</A></CODE>,<CODE><A href="dtStream.htm#418">WriteString3a</A></CODE>,<CODE><A href="dtStream.htm#419">WriteString4</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="418"></A><CODE>procedure <B>WriteString3a</B>(Stream: TStream; Data: string);</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteString3a schreibt einen String in einen Stream. Siehe auch <CODE><A href="dtStream.htm#416">WriteString</A></CODE>,<CODE><A href="dtStream.htm#417">WriteString2a</A></CODE>,<CODE><A href="dtStream.htm#419">WriteString4</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="419"></A><CODE>function <B>WriteString4</B>(Stream : TStream; Text : String) : Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteString4 schreibt sehr schnell einen String in einen Stream Der R&uuml;ckgabewert ist die anzahl der geschriebenen Bytes. Siehe auch <CODE><A href="dtStream.htm#416">WriteString</A></CODE>,<CODE><A href="dtStream.htm#417">WriteString2a</A></CODE>,<CODE><A href="dtStream.htm#418">WriteString3a</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="420"></A><CODE>function <B>WriteTreeNodesToStream</B>(Nodes: TTreeNodes; Stream: TStream; OnWriteNode: <A href="dtStream.htm#393">TOnStreamingNode2</A>): Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteTreeNodesToStream schreibt einen kompletten Baum "Nodes" in einen Stream. Dabei wird zus&auml;tzlich zu jedem Knoten das Ereignis OnWriteNode aufgerufen Das FunktionsEreignis wird erst nach dem Schreiben der Knotendaten ausgel&ouml;st. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="421"></A><CODE>function <B>WriteTreeNodesToStream</B>(Nodes: TTreeNodes; Stream: TStream; OnWriteNode: <A href="dtStream.htm#392">TOnStreamingNode</A>): Longint; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>WriteTreeNodesToStream schreibt einen kompletten Baum "Nodes" in einen Stream. Dabei wird zus&auml;tzlich zu jedem Knoten das Ereignis OnWriteNode aufgerufen Das Klassen-Ereignis wird erst nach dem Schreiben der Knotendaten ausgel&ouml;st. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="388"></A>TOnExtReadFileData</TD>
+<TD width=100%>TOnExtReadFileData wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen und die Version manuell verglichen werden soll. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#399">ReadFileExtended</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="389"></A>TOnReadCompatibledFileData</TD>
+<TD>TOnReadCompatibledFileData wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#398">ReadFileCompatible</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="390"></A>TOnReadFileData</TD>
+<TD>TOnReadFileData wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#397">ReadFile</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="391"></A>TOnReadFileDataStd</TD>
+<TD>TOnReadFileDataStd wird aufgerufen, wenn BenutzerDaten aus der Datei gelesen werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird als Ereignisfunktion auserhalb von Klassen verwendet. Siehe <CODE><A href="dtStream.htm#402">ReadFileStd</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="392"></A>TOnStreamingNode</TD>
+<TD>TOnStreamingNode wird aufgerufen, wenn ein Knoten gelesen oder geschrieben werden soll. Stream , ist der Stream in den geschrieben oder aus dem gelesen wird. Node ist der Knoten , der geschrieben oder gelesen werden soll. Sie wird in Klassen als Ereignis verwendet. Der R&uuml;ckgabewert sind die geschriebenen oder gelesenen Bytes.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="393"></A>TOnStreamingNode2</TD>
+<TD>TOnStreamingNode2 wird aufgerufen, wenn ein Knoten gelesen oder geschrieben werden soll. Stream , ist der Stream in den geschrieben oder aus dem gelesen wird. Node ist der Knoten , der geschrieben oder gelesen werden soll Sie wird als Ereignisfunktion auserhalb von Klassen verwendet. Der R&uuml;ckgabewert sind die geschriebenen oder gelesenen Bytes</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="394"></A>TOnWriteFileData</TD>
+<TD>TOnWriteFileData wird aufgerufen, wenn BenutzerDaten in die Datei geschrieben werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird in Klassen als Ereignis verwendet. Siehe <CODE><A href="dtStream.htm#413">WriteFile</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="395"></A>TOnWriteFileDataStd</TD>
+<TD>TOnWriteFileDataStd wird aufgerufen, wenn BenutzerDaten in die Datei geschrieben werden sollen. Der R&uuml;ckgabewert ist die Anzahl der geschriebenen Bytes. Sie wird als Ereignisfunktion auserhalb von Klassen verwendet. Siehe <CODE><A href="dtStream.htm#414">WriteFileStd</A></CODE></TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

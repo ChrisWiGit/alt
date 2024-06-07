@@ -1,0 +1,35 @@
+Kopieren Sie dieses Beispiel in einen Editor!:
+Beispiel :
+procedure TForm1......
+var Mem : TMemoryStream;
+begim
+  Mem := TMemoryStream.Create;
+  ... um Strings in den Stream speichern zu können , benutze WriteString/WriteString2a in
+  ... DelphiTools (http://www.vclcomponents.com/search.asp?ID_CATEGORY=152&GRP=1)
+
+  if SendStream(Socket,1,0,Mem) <> -1 then ...alles ok ....
+
+  Mem.Free;
+end;
+
+
+procedure TForm1.OnRead(Sender: TObject; Socket: TCustomWinSocket);
+var Msg,SubMsg : TMessageType;
+    Stream : TMemoryStream;
+begin
+  if ReceiveStream(Socket,Socket.ReceiveLength,Msg,SubMsg,Stream) then
+  begin
+    if not Assigned(Stream) then //es wurde SendStream mit Stream = nil aufgerufen
+    then
+     ....
+    else
+    case Msg of
+      1 : ....;
+    end;
+  end
+  else
+  begin
+    //fehler : unbekannte Daten
+  end;
+
+end;

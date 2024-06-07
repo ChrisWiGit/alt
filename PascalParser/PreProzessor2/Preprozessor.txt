@@ -1,0 +1,8 @@
+1;Preprocessor;---;GetNextPreProcessorString;55.30;3;98175;294526;98175;294526;55.30
+1;Preprocessor;---;IsDirectiveActive;0.76;1;4069;4069;4069;4069;0.76
+1;Preprocessor;---;CopyFrom;3.11;2;8293;16585;8293;16585;3.11
+1;Preprocessor;---;ComputeExpression;6.22;1;33146;33146;33146;33146;6.22
+1;Preprocessor;---;GetDeclaration;1.25;4;1662;6646;1662;6646;1.25
+1;Preprocessor;---;IsDefinitionsDefined;27.49;1;146413;146413;191388;191388;35.93
+1;Preprocessor;---;AddBreaks;2.94;1;15640;15640;15640;15640;2.94
+1;Preprocessor;---;Preprocessing;2.72;1;14488;14488;532627;532627;100.00

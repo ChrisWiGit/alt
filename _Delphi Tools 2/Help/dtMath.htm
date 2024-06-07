@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtMath</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtMath</H1>
+<H2>Beschreibung</H2>
+dtMath.pas beinhaltet Funktionen f&uuml;r den Umgang mit Mathematik<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#246"><B>BitLinkByte</B></A>(bit1, bit2: Byte): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#247"><B>BitLinkWord</B></A>(bit1, bit2: Word): DWORD;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#248"><B>BitLinkWordExt</B></A>(Bit1, Bit2, Bit3, Bit4: Byte): DWORD;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#249"><B>ByteToBytes</B></A>(Worth: Byte; var Bit1, Bit2: Byte);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#250"><B>ByteToLong</B></A>(b1,b2,b3,b4 : byte) : longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#251"><B>DWordToBytes</B></A>(Worth: DWord; var Bit1, Bit2, Bit3, Bit4: Byte);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#252"><B>GetBit</B></A>(Combination: Int64; BitNo: Byte): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#253"><B>ggT</B></A>(a, b: integer): integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#254"><B>IsPrim</B></A>(z: Int64): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#255"><B>kgV</B></A>(a, b: Integer): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#256"><B>LongToByte</B></A>(l : longint; var b1,b2,b3,b4 : byte);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#257"><B>PercentToScreen</B></A>(Perc: <A href="dtMath.htm#244">TPercent</A>; Screen: <A href="dtMath.htm#245">TScreens</A>): TPoint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#258"><B>pow</B></A>(base, Exp: Integer): int64;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#259"><B>ScreenToPercent</B></A>(Screen: <A href="dtMath.htm#245">TScreens</A>; Pos: TPoint): <A href="dtMath.htm#244">TPercent</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#260"><B>SetOrgRect</B></A>(var r: TRect; x, y, width, height: Integer);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#261"><B>WordToBytes</B></A>(Worth: Word; var Bit1, Bit2: Byte);</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="246"></A><CODE>function <B>BitLinkByte</B>(bit1, bit2: Byte): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>BitLinkByte verkn&uuml;pft Bit-weise zwei Bytes zu einem Word Z.B. Integer in einer Bin&auml;r-Datei sind immer in zwei Bytes (die vertauscht sind) gespeichert : D007 Diese zwei Bytes k&ouml;nnen aber nicht ohne weiteres in einen Integerwert transferiert werden Deshalb wird Bit1 $D0 und Bit2 $07 zugewiesen um einen Wordwert (2000) zu resultieren Hinweis : In Bin&auml;r-Dateien sind die Zahlenwerte in der H&auml;lfte ihrer Anzahl von Bits vertauscht : Bsp : Bin&auml;r : 10101111 01000000(2 Bytes) , als Integerwert zu lesen = 01000000 10101111 oder BitLinkByte(64,175) = 16559 (Word) Steht in der Datei z.B. $12 $23 $45 $67 , so entspricht dies nicht dem Aufruf von BitLinkWord(BitLinkByte($12,$23),BitLinkByte($45,$67)) sondern , da $12 $23 und $45 $67 vertauscht werden m&uuml;ssen : BitLinkWord(BitLinkByte($45,$67),BitLinkByte($12,$23)) = 304301415 Exakt dasselbe Ergebnis liefert BitLinkWordExt($12,$23,$45,$67)</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="247"></A><CODE>function <B>BitLinkWord</B>(bit1, bit2: Word): DWORD;</CODE></TD>
+</TR>
+</TABLE>
+<P>Transferiert zwei Word-werte zu einem Double-Word -> $12 und $34 zu $3412 (12818) mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="248"></A><CODE>function <B>BitLinkWordExt</B>(Bit1, Bit2, Bit3, Bit4: Byte): DWORD;</CODE></TD>
+</TR>
+</TABLE>
+<P>Transferiert vier Byte-werte zu einem Dword , dabei werden Bit1 und Bit2 mit Bit3 und Bit4 vertauscht und verkn&uuml;pft wiedergegeben Diese Funktion entspricht der folgenden Aufrufes : Result := BitLinkWord(BitLinkByte(Bit3,Bit4),BitLinkByte(Bit1,Bit2)); mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="249"></A><CODE>procedure <B>ByteToBytes</B>(Worth: Byte; var Bit1, Bit2: Byte);</CODE></TD>
+</TR>
+</TABLE>
+<P>ByteToBytes spaltet ein Byte in ein erstes und zweites Bit auf. mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="250"></A><CODE>function <B>ByteToLong</B>(b1,b2,b3,b4 : byte) : longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>ByteToLong konvertiert 4 Byte Werte in ein Longint. Siehe auch <CODE><A href="dtMath.htm#256">LongToByte</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="251"></A><CODE>procedure <B>DWordToBytes</B>(Worth: DWord; var Bit1, Bit2, Bit3, Bit4: Byte);</CODE></TD>
+</TR>
+</TABLE>
+<P>DWordToBytes liefert vier Byte-werte aus dem ein DWORD-wert bestehen kann mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="252"></A><CODE>function <B>GetBit</B>(Combination: Int64; BitNo: Byte): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetBit gibt den Status (gesetzt oder nicht) eines bestimmten Bits (BitNo) von Combination zur&uuml;ck Die Z&auml;hlung f&auml;ngt bei 0 an und h&ouml;rt bei 63 (64Bit bei Int64) auf Es ist allgemein so ,dass das Z&auml;hlen beim Bits rechts und von 0 anf&auml;ngt. Das erste bit von links ist also das 7 Bit. mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="253"></A><CODE>function <B>ggT</B>(a, b: integer): integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>ggT ermittelt (rechnerisch) den gr&ouml;&szlig;ten gemeinsamen Teiler zweier Zahlen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="254"></A><CODE>function <B>IsPrim</B>(z: Int64): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>&nbsp;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="255"></A><CODE>function <B>kgV</B>(a, b: Integer): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>kgV ermittelt (rechnerisch) den kleinsten gemeinsamen Teiler zweier Zahlen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="256"></A><CODE>procedure <B>LongToByte</B>(l : longint; var b1,b2,b3,b4 : byte);</CODE></TD>
+</TR>
+</TABLE>
+<P>Seit DelphiTools Version 1.302 dabei. Externe Quelle : 0002 (siehe Quelltext) LongToByte konvertiert einen Longintwert in 4 Bytewerte</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="257"></A><CODE>function <B>PercentToScreen</B>(Perc: <A href="dtMath.htm#244">TPercent</A>; Screen: <A href="dtMath.htm#245">TScreens</A>): TPoint;</CODE></TD>
+</TR>
+</TABLE>
+<P>PercentToScreen berechnet aus Prozentwerten (Perc) und den dazugeh&ouml;rigen Gr&ouml;&szlig;enangaben Screen, die Position innerhalb von Screen. Mehr siehe <CODE><A href="dtMath.htm#259">ScreenToPercent</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="258"></A><CODE>function <B>pow</B>(base, Exp: Integer): int64;</CODE></TD>
+</TR>
+</TABLE>
+<P>Pow errechnet aus Base und einen beliebigen Wert die Potenz. Die Funktion arbeitet im Ergebnis mit Int64.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="259"></A><CODE>function <B>ScreenToPercent</B>(Screen: <A href="dtMath.htm#245">TScreens</A>; Pos: TPoint): <A href="dtMath.htm#244">TPercent</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>ScreenToPercent berechnet aus einer Gr&ouml;&szlig;e Screen und dem Anteil Pos den Prozentwert Sie wird dazu verwendet, absolute Koordinaten auf dem Bildschirm unabh&auml;ngig zu anderen Aufl&ouml;sungen zu machen, um so immer z.B. Fenstergr&ouml;&szlig;en und Positionen zu wahren.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="260"></A><CODE>procedure <B>SetOrgRect</B>(var r: TRect; x, y, width, height: Integer);</CODE></TD>
+</TR>
+</TABLE>
+<P>SetOrgRect setzt die H&ouml;he und Weite als Koordinaten um, d.h. R.Bottom := Y+Height R.Right := X+ Width</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="261"></A><CODE>procedure <B>WordToBytes</B>(Worth: Word; var Bit1, Bit2: Byte);</CODE></TD>
+</TR>
+</TABLE>
+<P>WordToBytes und DWordToBytes sind die Gegenfunktionen zu den obeneren Funktionen WordToBytes liefert das h&ouml;her und niederwertige Byte von Worth zur&uuml;ck Diese Funktion ist identisch mit dem Aufruf von Lo f&uuml;r Bit2 und Hi f&uuml;r Bit1 mehr dazu siehe <CODE><A href="dtMath.htm#246">BitLinkByte</A></CODE></P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="244"></A>TPercent</TD>
+<TD width=100%>TScreens wird von <CODE><A href="dtMath.htm#259">ScreenToPercent</A></CODE> und <CODE><A href="dtMath.htm#257">PercentToScreen</A></CODE> verwendet, um Breite und H&ouml;he des Bildschirms in Prozent zu speichern</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="245"></A>TScreens</TD>
+<TD>TScreens wird von <CODE><A href="dtMath.htm#259">ScreenToPercent</A></CODE> und <CODE><A href="dtMath.htm#257">PercentToScreen</A></CODE> verwendet, um Breite und H&ouml;he des Bildschirms zu speichern</TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="242"></A>DWordBitLength</TD>
+<TD width=100%>DWordBitLength ist die L&auml;nge eines DWord in Bitdarstellung</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="243"></A>WordBitLength</TD>
+<TD>WordBitLength ist die L&auml;nge eines Word in Bitdarstellung</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

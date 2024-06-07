@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtDialogs</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtDialogs</H1>
+<H2>Beschreibung</H2>
+dtDialogs.pas beinhaltet Funktionen f&uuml;r dem Umgang mit Dialogen<A name=Classes></A><H2>Klassen, Schnittstellen und Objekte</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD>Klasse&nbsp;<A href="TDialog.htm">TDialog</A></TD>
+<TD width=100%>TDialog erweitertert die VCL-Klasse TForm mit Dialogmethoden</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD>Klasse&nbsp;<A href="TDialogExt.htm">TDialogExt</A></TD>
+<TD>TDialogExt erweitert TDialog um die M&ouml;glichkeit, das Dialogende zu bestimmen.</TD>
+</TR>
+</TABLE>
+<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>function <A href="#110"><B>CountDialogComponents</B></A>(Form: TComponent): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#111"><B>DefOnDialogControlStream</B></A>(Control: TControl; Stream: TStream; StreamType: <A href="dtDialogs.htm#109">TStreamType</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#112"><B>DefPassWordDlg</B></A>(var Data: <A href="dtDialogs.htm#105">TDialogData</A>): boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#113"><B>DialogDataFromStream</B></A>(Stream: TStream; Form: TComponent; OnDialogControlRead: <A href="dtDialogs.htm#106">TOnDialogControlRead</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#114"><B>DialogDataToStream</B></A>(Stream: TStream; Form: TComponent; OnDialogControlWrite: <A href="dtDialogs.htm#107">TOnDialogControlWrite</A>): Longint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#115"><B>DoMsgFlash</B></A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#116"><B>GetDialogData</B></A>(aOwner: TComponent): <A href="dtDialogs.htm#105">TDialogData</A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#117"><B>InputPassWordDlg</B></A>(Owner: TComponent; const ACaption, APrompt: string; var Value: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#118"><B>InputPassWordDlgCount</B></A>(Owner: TComponent; const ACaption, APrompt: string; var Value: string; Count: Integer): Integer;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#119"><B>InputPassWordDlgFoc</B></A>(Handle: Longint; const ACaption, APrompt: string; var Value: string): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#120"><B>MessageDialog</B></A>(const Indent: Integer; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#121"><B>MessageDlgBtnCaption</B></A>(const aMessage,aCaption: string; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#122"><B>MessageDlgCaption</B></A>(const aMessage,aCaption: string; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#123"><B>MessageDlgExt</B></A>(const aMessage: string; const Args: array of const; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#124"><B>MessageFormat</B></A>(const Indent: Integer; const Args: array of const; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#125"><B>ModalSplashScreen</B></A>(SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#126"><B>MsgDlg_CustomHideClick</B></A>(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; HideLabel: string; HidePos: TRect; var HideClick: Boolean): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#127"><B>MsgDlg_HideClick</B></A>(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; HideLabel: string; var HideClick: Boolean): Word;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#128"><B>MsgError</B></A>(const Msg: string; const Args: array of const); overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#129"><B>MsgError</B></A>(const Msg: string; HelpCtx : Integer = 0); overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#130"><B>ResIDModalSplashScreen</B></A>(aInstance: THandle; SplashBitmap: Integer; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#131"><B>ResIDSplashScreen</B></A>(aInstance: THandle; SplashBitmap: Integer; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): TForm;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#132"><B>ResNameModalSplashScreen</B></A>(aInstance: THandle; SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#133"><B>ResNameSplashScreen</B></A>(aInstance: THandle; SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): TForm;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#134"><B>SplashScreen</B></A>(SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): TForm;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="110"></A><CODE>function <B>CountDialogComponents</B>(Form: TComponent): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>CountDialogComponents lieftert die Anzahl der Komponenten in Form zur&uuml;ck</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="111"></A><CODE>function <B>DefOnDialogControlStream</B>(Control: TControl; Stream: TStream; StreamType: <A href="dtDialogs.htm#109">TStreamType</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>DefOnDialogControlStream definiert eine Funktion , die Daten von Controls speichert bzw. ausliest und die geschriebenen/gelesenen Bytes zur&uuml;ckgibt.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="112"></A><CODE>function <B>DefPassWordDlg</B>(var Data: <A href="dtDialogs.htm#105">TDialogData</A>): boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>DefPassWordDlg zeigt ein Dialog, der die Eingabe eines neuen Passwortes zul&auml;sst (mit Best&auml;tigung). N&auml;heres zu Data siehe in <CODE><A href="dtDialogs.htm#105">TDialogData</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="113"></A><CODE>function <B>DialogDataFromStream</B>(Stream: TStream; Form: TComponent; OnDialogControlRead: <A href="dtDialogs.htm#106">TOnDialogControlRead</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>DialogDataFromStream geht durch alle Controls von Form , um diese dann mit OnDialogControlRead derren Inhaltsdaten zu lesen. Der r&uuml;ckgabewert ist die Anzahl der gelesenen Bytes</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="114"></A><CODE>function <B>DialogDataToStream</B>(Stream: TStream; Form: TComponent; OnDialogControlWrite: <A href="dtDialogs.htm#107">TOnDialogControlWrite</A>): Longint;</CODE></TD>
+</TR>
+</TABLE>
+<P>DialogDataToStream geht durch alle Controls von Form , um diese dann mit OnDialogControlWrite derren Inhaltsdaten zu speichern. Der r&uuml;ckgabewert ist die Anzahl der gespeicherten Bytes</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="115"></A><CODE>procedure <B>DoMsgFlash</B>;</CODE></TD>
+</TR>
+</TABLE>
+<P>DoMsgFlash l&auml;sst das aktuelle Fenster kurz aufblinken.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="116"></A><CODE>function <B>GetDialogData</B>(aOwner: TComponent): <A href="dtDialogs.htm#105">TDialogData</A>;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetDialogData erzeugt einen <CODE><A href="dtDialogs.htm#105">TDialogData</A></CODE> -Record mit leerem Inhalt und dem Besitzer (aOwner). N&auml;heres zum R&uuml;ckgabewert siehe in <CODE><A href="dtDialogs.htm#105">TDialogData</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="117"></A><CODE>function <B>InputPassWordDlg</B>(Owner: TComponent; const ACaption, APrompt: string; var Value: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>InputPassWordDlg verh&auml;lt sich wie InputQuery (siehe Delphihilfe), allerdings wird das Editierfeld mit Passwordchar verwendet. PassWordChar ist das Zeichen , welches im Editierfeld anstelle des eingegebenen Zeichens gezeigt wird. Der R&uuml;ckgabewert ist TRUE, wenn ein korrektes Passwort eingegeben wurde, bei Abbruch FALSE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="118"></A><CODE>function <B>InputPassWordDlgCount</B>(Owner: TComponent; const ACaption, APrompt: string; var Value: string; Count: Integer): Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>InputPassWordDlgCount verh&auml;lt sich wie InputQuery (siehe Delphihilfe), allerdings wird das Editierfeld mit Passwordchar verwendet. PassWordChar ist das Zeichen , welches im Editierfeld anstelle des eingegebenen Zeichens gezeigt wird. Nach "Count"-Milisekunden wird der Dialog abgebrochen (FALSE) Der R&uuml;ckgabewert betr&auml;gt dann mrNone, sonst <CODE><A href="dtSystem.htm#481">iTRUE</A></CODE> oder <CODE><A href="dtSystem.htm#480">iFALSE</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="119"></A><CODE>function <B>InputPassWordDlgFoc</B>(Handle: Longint; const ACaption, APrompt: string; var Value: string): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>InputPassWordDlgFoc verh&auml;lt sich wie InputQuery (siehe Delphihilfe), allerdings wird das Editierfeld mit Passwordchar verwendet. PassWordChar ist das Zeichen , welches im Editierfeld anstelle des eingegebenen Zeichens gezeigt wird. Im Gegensatz zu <CODE><A href="dtDialogs.htm#117">InputPassWordDlg</A></CODE> wird ein Fensterhandle (Handle) als Parent verwendet. Der R&uuml;ckgabewert ist TRUE, wenn ein korrektes Passwort eingegeben wurde, bei Abbruch FALSE.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="120"></A><CODE>function <B>MessageDialog</B>(const Indent: Integer; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>MessageDialog gibt eine Nachricht aus einer String-Resource mit der Nummer "Ident" aus. Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog".</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="121"></A><CODE>function <B>MessageDlgBtnCaption</B>(const aMessage,aCaption: string; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>1.308 MessageDlgBtnCaption l&auml;sst die &Auml;nderung der Beschriftung zu durch <CODE><A href="dtDialogs.htm#103">ButtonNames</A></CODE> Im Beispiel wird der OK-Button mit Okedele beschriftet dargestellt Hinweis : wenn die Titelzeile nicht ge&auml;ndert werden soll, dann einfach einen leeren String an den Parameter aCaption &uuml;bergeben ButtonNames[mrOK] := 'Okedele'; MessageDlgExt('asd','asd',mtInformation,[mbok,mbcancel,mbyes,mbno,mbRetry,mbIgnore,mball],0);</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="122"></A><CODE>function <B>MessageDlgCaption</B>(const aMessage,aCaption: string; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>MessageDlgCaption gibt eine Nachricht mit einer ge&auml;ndert &Uuml;berschrift (aCaption) auf dem Bildschirm aus. Args &uuml;bernimmt, wie die Funktion "Format" (Siehe DelphiHilfe) die Argumentliste des Textes) Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog".</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="123"></A><CODE>function <B>MessageDlgExt</B>(const aMessage: string; const Args: array of const; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>MessageFormat gibt eine Nachricht auf dem Bildschirm aus. Args &uuml;bernimmt, wie die Funktion "Format" (Siehe DelphiHilfe) die Argumentliste des Textes) Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog". z.b. MessageDlgExt('%s - %d',['Hallo',4],mterror,[mbok],0);</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="124"></A><CODE>function <B>MessageFormat</B>(const Indent: Integer; const Args: array of const; AType: TMsgDlgType; AButtons: TMsgDlgButtons; HelpCtx: Longint): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>MessageFormat gibt eine Nachricht aus einer String-Resource mit der Nummer "Ident" aus. Args &uuml;bernimmt, wie die Funktion "Format" (Siehe DelphiHilfe) die Argumentliste des Textes) Infos zu den Parametern siehe in der Delphi-Hilfe unter "MessageDialog". z.b. MessageDlgExt('%s - %d',['Hallo',4],mterror,[mbok],0);</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="125"></A><CODE>function <B>ModalSplashScreen</B>(SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ModalSplashScreen gibt ein modales SplashBitmap mit dem Dateinamen SplashBitmap auf dem Bildschirm aus. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="126"></A><CODE>function <B>MsgDlg_CustomHideClick</B>(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; HideLabel: string; HidePos: TRect; var HideClick: Boolean): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>MsgDlg_CustomHideClick erstellt einen Nachrichtendialog (wie MessageDlg) mit einer CheckBox in der Gr&ouml;&szlig;e HidePos Den CheckBox-Namen wird in HideLabel angegeben Die Position innerhalb des Dialogs wird in HidePos definiert HideClick gibt an , ob die CheckBox einen Haken besitzt oder nicht</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="127"></A><CODE>function <B>MsgDlg_HideClick</B>(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons; HideLabel: string; var HideClick: Boolean): Word;</CODE></TD>
+</TR>
+</TABLE>
+<P>MsgDlg_HideClick erstellt einen Nachrichtendialog (wie MessageDlg) mit einer CheckBox Den CheckBox-Namen wird in HideLabel angegeben Die Position innerhalb des Dialogs wird in HidePos definiert HideClick gibt an , ob die CheckBox einen Haken besitzt oder nicht. Um die Position/Gr&ouml;&szlig;e von HideLabel zu setzten, nutzen Sie <CODE><A href="dtDialogs.htm#126">MsgDlg_CustomHideClick</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="128"></A><CODE>procedure <B>MsgError</B>(const Msg: string; const Args: array of const); overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>MsgError gibt per MessageDlg eine Fehler-Dialogbox mit Argumenten und OK-Button aus. Siehe auch <CODE><A href="dtDialogs.htm#123">MessageDlgExt</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="129"></A><CODE>procedure <B>MsgError</B>(const Msg: string; HelpCtx : Integer = 0); overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>MsgError gibt per MessageDlg eine Fehler-Dialogbox mit OK-Button aus</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="130"></A><CODE>function <B>ResIDModalSplashScreen</B>(aInstance: THandle; SplashBitmap: Integer; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ResIDModalSplashScreen gibt ein modalen Splashscreen aus einer Resource als Formular zur&uuml;ck. aInstance ist das Modul, dass das Bitmap mit der Resourcennummer SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="131"></A><CODE>function <B>ResIDSplashScreen</B>(aInstance: THandle; SplashBitmap: Integer; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): TForm;</CODE></TD>
+</TR>
+</TABLE>
+<P>ResIDSplashScreen gibt ein Splashscreen aus einer Resource als Formular zur&uuml;ck aInstance ist das Modul, dass das Bitmap mit der Resourcennummer SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="132"></A><CODE>function <B>ResNameModalSplashScreen</B>(aInstance: THandle; SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>ResNameModalSplashScreen gibt ein Splashscreen aus einer Resource als Formular zur&uuml;ck. aInstance ist das Modul, dass das Bitmap mit dem Resourcenstring SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="133"></A><CODE>function <B>ResNameSplashScreen</B>(aInstance: THandle; SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): TForm;</CODE></TD>
+</TR>
+</TABLE>
+<P>ResNameSplashScreen gibt ein Splashscreen aus einer Resource als Formular zur&uuml;ck. aInstance ist das Modul, dass das Bitmap mit dem Resourcenstring SplashBitmap enth&auml;lt. Siehe auch <CODE><A href="dtDialogs.htm#134">SplashScreen</A></CODE></P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="134"></A><CODE>function <B>SplashScreen</B>(SplashBitmap: string; ParentWindow: TForm; DelayTime: Integer; OnExtraPaint: <A href="dtDialogs.htm#108">TOnExtraPaint</A> = nil): TForm;</CODE></TD>
+</TR>
+</TABLE>
+<P>SplashScreen gibt ein Objekt TForm mit dem SplashBitmap zur&uuml;ck Wie lange es angezeigt wird , wird in DelayTime (in Milisekunden : 1s = 100ms) angegeben Wenn DelayTime kleiner oder gleich 0 ist wird keine AutoClose verwendet Das Ereignis OnExtraPaint wird bei OnActivate ausgel&ouml;st (Bei OnPaint gibt es rekursive Aufrufe!!) Damit kann man Extras auf das Bitmap bringen In der Unit SplashForm existiert die Klasse <CODE><A href="TSplashDlg.htm">TSplashDlg</A></CODE> , welche verwendet wird Um etwas auf die Zeichenfl&auml;che zu zeichnen , mu&szlig; man das ImageObject SplashImage.Canvas von TSplashDlg verwenden Um einfach nur einen Text auszugeben kann man StringLabel (vom Typ TLabel) verwenden Dabei mu&szlig; man beachten , da&szlig; die Positioneneigenschaften (Left,Top,Height,Width) eingestellt werden Und zus&auml;tzlich Visible von StringLabel auf TRUE gestellt wird (Standard : FALSE) Eine Eigenschaft von TSplashDlg ist AllowClose, die wenn FALSE verhindert , da&szlig; der Benutzer den Dialog schlie&szlig;en kann. Um die Eigenschaften von SplashDlg mit SplashScreen verwenden zu k&ouml;nnen mu&szlig; eine TypUmwandlung stattfinden uses ...,SplashForm,... var x : TSplashDlg begin x := TSplashDlg(SplashScreen(...)); ... x.Free;</P>
+<A name=Types></A><H2>Typen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="105"></A>TDialogData</TD>
+<TD width=100%>TDialogData wird von <CODE><A href="dtDialogs.htm#112">DefPassWordDlg</A></CODE> und <CODE><A href="dtDialogs.htm#116">GetDialogData</A></CODE> verwendet, um den Dialog wunschgerecht darzustellen. Owner ist der Besitzer des Dialogs. PassWord das Passwort, dass eingegeben werden muss. MasterPassWord das MasterPasswort (als zweites Passwort), um durchzukommen. MinLength die kleinste Gr&ouml;&szlig;e des Passwortes, MaxLength die gr&ouml;&szlig;te M&ouml;glichkeit. PassWordChar ist das Zeichen, dass statt dem eingegeben ausgegeben wird. CaseSensitive sagt aus, ob zwischen Gro&szlig;- und Kleinschreibung unterschieden wird. Caption beinhaltet die &Uuml;berschrift des Passwort-Dialoges. AllowDelPassWord gibt an, ob das Passwort gel&ouml;scht werden darf oder ob es immer NEU angegeben werden muss. MasterPassWordUsed gibt nach dem Beenden an, ob ein MasterPassword benutzt worden ist. PassWordDeleted gibt nach dem Beenden an, ob das Passwort gel&ouml;scht wurde.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="106"></A>TOnDialogControlRead</TD>
+<TD>TOnDialogControlRead wird aufgerufen, wenn ein Kontrollelement gelesen wird</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="107"></A>TOnDialogControlWrite</TD>
+<TD>TOnDialogControlWrite wird aufgerufen, wenn ein Kontrollelement geschrieben wird</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="108"></A>TOnExtraPaint</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="109"></A>TStreamType</TD>
+<TD>TStreamType - In einen Stream schreiben oder lesen. Wird u.a. in <CODE><A href="dtDialogs.htm#111">DefOnDialogControlStream</A></CODE></TD>
+</TR>
+</TABLE><A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="102"></A>SHLApplicationHandle</TD>
+<TD width=100%>SHLApplicationHandle enth&auml;lt das ParentFensterHandle f&uuml;r Anwendungsbezogene Dialogboxen , aufgerufen von SHGetSpecialFolderLocation Standard ist das DesktopFenster.</TD>
+</TR>
+</TABLE><A name=Variables></A><H2>Variablen</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="103"></A>ButtonNames</TD>
+<TD width=100%>ButtonNames wird von <CODE><A href="dtDialogs.htm#121">MessageDlgBtnCaption</A></CODE> verwendet, um die &Auml;nderung der Schaltertexte zuzulassen.</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="104"></A>PassWordChar</TD>
+<TD>PassWordChar ist das Zeichen, das stattdessen des eingegebenen Zeichens dargestellt wird.</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

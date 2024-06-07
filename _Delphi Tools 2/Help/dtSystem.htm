@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtSystem</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<H1>Unit dtSystem</H1>
+<H2>Beschreibung</H2>
+dtSystem.pas beinhaltet grundlegende Funktionen f&uuml;r den Umgang mit Delphi<A name=FuncsProcs></A><H2>Funktionen und Prozeduren</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><CODE>procedure <A href="#485"><B>ChangeVar</B></A>(var a, b: integer);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#486"><B>CompareInt</B></A>(i1, i2: string): Integer; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#487"><B>CompareInt</B></A>(i1, i2: Integer): Integer; overload;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#488"><B>GetProperties</B></A>(Obj: TObject; Items: TStrings);</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#489"><B>IsValidObject</B></A>(Obj : TObject) : Boolean;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>procedure <A href="#490"><B>NOP</B></A>;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#491"><B>SetPoint</B></A>(x, y: Integer): TPoint;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><CODE>function <A href="#492"><B>StrIdx</B></A>(needle : String; stack : array of String) : Integer;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="485"></A><CODE>procedure <B>ChangeVar</B>(var a, b: integer);</CODE></TD>
+</TR>
+</TABLE>
+<P>TStrBoolean vertauscht zwei Variablen</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="486"></A><CODE>function <B>CompareInt</B>(i1, i2: string): Integer; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>CompareInt vergleicht wie CompareStr zwei Integervariablen als Text. Der R&uuml;ckgabewert ist dergleiche, wie CompareText.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="487"></A><CODE>function <B>CompareInt</B>(i1, i2: Integer): Integer; overload;</CODE></TD>
+</TR>
+</TABLE>
+<P>CompareInt vergleicht wie CompareStr zwei Integervariablen. Der R&uuml;ckgabewert ist dergleiche, wie CompareText.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="488"></A><CODE>procedure <B>GetProperties</B>(Obj: TObject; Items: TStrings);</CODE></TD>
+</TR>
+</TABLE>
+<P>GetProperties listet alle Eigenschaftsnamen eines Objekts Obj als Strings in Items auf. Items muss vorher erzeugt werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="489"></A><CODE>function <B>IsValidObject</B>(Obj : TObject) : Boolean;</CODE></TD>
+</TR>
+</TABLE>
+<P>IsValidObject testet ob eine Objektvariable noch g&uuml;ltig ist (TRUE). Es k&ouml;nnen auch Objektvariablen &uuml;bergeben werden , die nicht mehr eindeutig als g&uuml;ltig zu indentifizieren sind mehr zu dem Thema ung&uuml;litge Objektvariablen , in der mitgelieferten Textdatei "Objekteigenschaft.txt"</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="490"></A><CODE>procedure <B>NOP</B>;</CODE></TD>
+</TR>
+</TABLE>
+<P>NOP ist eine Platzhalterprozedur, um den Delphi-Editor davon abzuhalten, Funktionen aus dem Quelltext zu nehmen. Sie hat sonst keinerlei Funktion.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="491"></A><CODE>function <B>SetPoint</B>(x, y: Integer): TPoint;</CODE></TD>
+</TR>
+</TABLE>
+<P>SetPoint erzeugt einen TPoint-Record mit den angegeben Koordinaten.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD width=100%><A name="492"></A><CODE>function <B>StrIdx</B>(needle : String; stack : array of String) : Integer;</CODE></TD>
+</TR>
+</TABLE>
+<P>StrIdx macht case-Anweisung auch mit Strings m&ouml;glich aus PC Magazin August 2001 - Seite 208 Bsp. case strIdx(edit1.Text, ['eins','zwei','drei']) of 0 : listbox1.Itemindex := 0; 1 : listbox1.Itemindex := 1; 2 : listbox1.Itemindex := 2; 3 : listbox1.Itemindex := 3; end;</P>
+<A name=Constants></A><H2>Konstanten</H2>
+<TABLE cellspacing=2 cellpadding=4 width=100%><TR bgcolor="#e0e0e0"><TH>Name</TH><TH>Beschreibung</TH></TR>
+<TR bgcolor=#efefef valign=top><TD><A name="477"></A>CharBufferLen</TD>
+<TD width=100%>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="478"></A>CharBufferLen1024</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="479"></A>CharBufferLen512</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="480"></A>iFALSE</TD>
+<TD>iFALSE liefert den Integerwert einen booleschen iFALSE-Wertes zur&uuml;ck : 0 Siehe auch <CODE><A href="dtSystem.htm#481">iTRUE</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="481"></A>iTRUE</TD>
+<TD>iTRUE liefert den Integerwert einen booleschen TRUE-Wertes zur&uuml;ck : 1 Siehe auch <CODE><A href="dtSystem.htm#480">iFALSE</A></CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="482"></A>NullStr</TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="483"></A>Return</TD>
+<TD>Return ist eine Konstante die einen Standard-Zeilenumbruch darstellt</TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><A name="484"></A>TStrBoolean</TD>
+<TD>TStrBoolean liefert den deutschen Text eines boolean Wertes.</TD>
+</TR>
+</TABLE><H2>Autor</H2>
+<P>author <<A href="mailto:removed">removed</A>></P>
+<H2>Erstellt</H2>
+<P>25 Dec 2002</P>
+<H2>Letzte &Auml;nderung</H2>
+<P>26 Dec 2002
+</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:28</EM>
+</BODY>
+</HTML>

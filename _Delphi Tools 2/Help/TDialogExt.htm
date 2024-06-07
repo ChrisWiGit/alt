@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtDialogs: Klasse TDialogExt</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<A name="142"></A><H1>Klasse TDialogExt</H1>
+<H2>Unit</H2>
+<A href="dtDialogs.htm">dtDialogs</A><BR><H2>Deklaration</H2>
+<P><CODE>type TDialogExt = class()</CODE></P><H2>Beschreibung</H2>
+TDialogExt erweitert TDialog um die M&ouml;glichkeit, das Dialogende zu bestimmen.<A name=Methods></A><H2>Methoden</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><CODE>constructor <A href="TDialogExt.htm#143"><B>Create</B></A>(AOwner: TComponent); override;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>function <A href="TDialogExt.htm#144"><B>Execute</B></A>: Boolean; virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDialogExt.htm#145"><B>GetData</B></A>(var DoClose: Boolean); virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDialogExt.htm#146"><B>OnDoCloseQuery</B></A>(Sender: TObject; var CanClose: Boolean); virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDialogExt.htm#147"><B>SetData</B></A>; virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>function <A href="TDialogExt.htm#148"><B>ShowModal</B></A>: Integer; override;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="143"></A><CODE>constructor <B>Create</B>(AOwner: TComponent); override;</CODE></TD>
+</TR>
+</TABLE>
+<P>Create erzeugt den Dialog</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="144"></A><CODE>function <B>Execute</B>: Boolean; virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>Execute stellt den Dialog dar, und liefert TRUE bei OK, und FALSE bei Abbruch zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="145"></A><CODE>procedure <B>GetData</B>(var DoClose: Boolean); virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetData wird nach Dialogschluss (immer) aufgerufen und muss &uuml;berschrieben werden, wenn die Daten des Dialogs untersucht werden sollen. Weil diese Methode immer bei der Beendigung aufgerufen wird,sollte mit ModalResult die Sachlage erfragt werden : if ModalResult <> mrOk then Exit;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="146"></A><CODE>procedure <B>OnDoCloseQuery</B>(Sender: TObject; var CanClose: Boolean); virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>OnDoCloseQuery wird aufgerufen, wenn der Benutzer den Dialog beenden will. &Uuml;berschreiben Sie OnDoCloseQuery, um mit Canclose das Dialogende zu bestimmen.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="147"></A><CODE>procedure <B>SetData</B>; virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>SetData wird vor der Darstellung des Dialoges aufgerufen, um Kontrollelemente mit Inhalt aufzuf&uuml;llen. Sie muss dazu &uuml;berschrieben werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="148"></A><CODE>function <B>ShowModal</B>: Integer; override;</CODE></TD>
+</TR>
+</TABLE>
+<P>ShowModal stellt den Dialog modal dar.</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>

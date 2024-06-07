@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<META name="GENERATOR" content="DIPasDoc 0.8.0">
+<TITLE>dtDialogs: Klasse TDialog</TITLE>
+<LINK rel="StyleSheet" href="Hilfe.css">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#FF0000">
+<A name="136"></A><H1>Klasse TDialog</H1>
+<H2>Unit</H2>
+<A href="dtDialogs.htm">dtDialogs</A><BR><H2>Deklaration</H2>
+<P><CODE>type TDialog = class()</CODE></P><H2>Beschreibung</H2>
+TDialog erweitertert die VCL-Klasse TForm mit Dialogmethoden<A name=Methods></A><H2>Methoden</H2>
+<H3>&Uuml;bersicht</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><CODE>function <A href="TDialog.htm#137"><B>Execute</B></A>: Boolean; virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDialog.htm#138"><B>GetData</B></A>; virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>procedure <A href="TDialog.htm#139"><B>SetData</B></A>; virtual;</CODE></TD>
+</TR>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD><CODE>function <A href="TDialog.htm#140"><B>ShowModal</B></A>: Integer; override;</CODE></TD>
+</TR>
+</TABLE>
+<H3>Beschreibung</H3>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="137"></A><CODE>function <B>Execute</B>: Boolean; virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>Execute stellt den Dialog dar, und liefert TRUE bei OK, und FALSE bei Abbruch zur&uuml;ck.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="138"></A><CODE>procedure <B>GetData</B>; virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>GetData wird nach Dialogschluss (immer) aufgerufen und muss &uuml;berschrieben werden, wenn die Daten des Dialogs untersucht werden sollen. Weil diese Methode immer bei der Beendigung aufgerufen wird,sollte mit ModalResult die Sachlage erfragt werden : if ModalResult <> mrOk then Exit;</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="139"></A><CODE>procedure <B>SetData</B>; virtual;</CODE></TD>
+</TR>
+</TABLE>
+<P>SetData wird vor der Darstellung des Dialoges aufgerufen, um Kontrollelemente mit Inhalt aufzuf&uuml;llen. Sie muss dazu &uuml;berschrieben werden.</P>
+<TABLE cellspacing=2 cellpadding=4 width=100%>
+<TR bgcolor=#efefef valign=top><TD><IMG src="public.gif" alt="Public"></TD>
+<TD width=100%><A name="140"></A><CODE>function <B>ShowModal</B>: Integer; override;</CODE></TD>
+</TR>
+</TABLE>
+<P>ShowModal stellt den Dialog modal dar.</P>
+<HR noshade size=1><EM>Generated on Thu 13 Feb 2003 15:52:27</EM>
+</BODY>
+</HTML>
